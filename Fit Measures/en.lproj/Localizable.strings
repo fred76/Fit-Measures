@@ -1,0 +1,111 @@
+/* 
+  Localizable.strings
+  iFit Girths & Caliper
+
+  Created by Alberto Lunardini on 06/01/2019.
+  Copyright © 2019 Alberto Lunardini. All rights reserved.
+*/
+
+// Circ
+"LOCALWeight" = "Weight";
+"LOCALNeck" = "Neck";
+"LOCALBicep_R" = "Bicep_R";
+"LOCALBicep_L" = "Bicep_L";
+"LOCALForearm_R" = "Forearm_R";
+"LOCALForearm_L" = "Forearm_L";
+"LOCALChest" = "Chest";
+"LOCALWrist" = "Wrist";
+"LOCALWaist" = "Waist";
+"LOCALHips" = "Hips";
+"LOCALThigh_R" = "Thigh_R";
+"LOCALThigh_L" = "Thigh_L";
+"LOCALCalf_R" = "Calf_R";
+"LOCALCalf_L" = "Calf_L";
+//Pliche
+"LOCALChest" = "Chest";
+"LOCALTriceps" = "Tricep";
+"LOCALBiceps" = "Bicep";
+"LOCALMidaxillary" = "Midaxillary";
+"LOCALAbdominal" = "Abdominal";
+"LOCALSubscapular" = "Subscapular";
+"LOCALSuprailiac" = "Suprailiac";
+"LOCALThigh" = "Thigh";
+
+"LOCALlean" = "Lean";
+"LOCALfat" = "Fat";
+
+"LOCALPlicheSum" = "Skin folds Sum";
+"LOCALBodyDensity" = "Body Density";
+"LOCALbodyFat%" = "body Fat %";
+"LOCALLeanBodyMass" = "Lean Body Mass";
+
+"weight_Descr" = "Stand still, with your weight distributed evenly on both feet.";
+"neck_Descr" = "Standing, measure your neck at its largest girth, right over the Adam’s apple.";
+"bicep_R_Descr" = "Measure at its largest girth, flexed with arm bent.";
+"bicep_L_Descr" = "Measure at its largest girth, flexed with arm bent.";
+"Forearm_R_Descr" = "Measure at its largest girth, hand clenched.";
+"forearm_L_Descr" = "Measure at its largest girth, hand clenched.";
+"wrist_Descr" = "Measure at wrist joint hand open.";
+"chest_Descr" = "Standing, measure with breath out just above the nipple.";
+"waist_Descr" = "Standing, measure at the narrowest point or at the midway point between the top of the hip bone and the bottom of the rib cage.";
+"hips_Descr" = "Measure at the largest girth, where the butt is protruding the greatest.";
+"Thigh_R_Descr" = "Standing, measure at the largest girth, just below the butt.";
+"thigh_L_Descr" = "Standing, measure at the largest girth, just below the butt.";
+"Calf_R_Descr" = "Seated if you are measuring yourself or standing if you have a partner, measure at its largest girth.";
+"calf_L_Descr" = "Seated if you are measuring yourself or standing if you have a partner, measure at its largest girth.";
+
+"tricipite_Descr" = "Vertical fold Posterior midline of the upper arm Halfway between the acromion (shoulder) and olecranon processes (elbow) Arm held freely to the side of the body.";
+"sottoscapola_Descr" = "Diagonal fold 1 to 2 cm below the inferior angle of the scapula.";
+"sottoscapola_Descr" = "Vertical fold Anterior midline of the thigh Midway between the proximal border of the patella (upper knee) and the inguinal crease (hip).";
+"addome_Descr" = "Vertical (modern technique) 2 cm or 1 inch to the right side of the umbilicus  Horizontal fold (traditional) 2 cm to the right side of the umbilicus.";
+"petto_Descr" = "Diagonal fold Men: one-half the distance between the anterior axillary line (crease of the underarm) and the nipple Women: one-third of the distance between the anterior axillary line and the nipple.";
+"soprailliaca_Descr" = "Diagonal fold Anterior axillary line (modern technique) immediately superior to the iliac crest in line with the natural angle of the iliac crest taken Mid-axillary line (traditional Superior to the iliac crest.";
+"bicipite_Descr" = "Vertical fold Anterior aspect of the arm over the belly of the biceps muscle 1 cm above the level used to mark the triceps site.";
+"ascella_Descr" = "Vertical or Horizontal fold Midaxillary line at the level of the xiphoid process of the sternum";
+
+"LOCALTricepsfold" = "Triceps fold";
+"LOCALBicepsfold" = "Biceps fold";
+"LOCALSubscapularfold" = "Subscapular fold";
+"LOCALSuprailiacfold" = "Suprailiac fold";
+"LOCALMidaxillaryfold" = "Midaxillary fold";
+"LOCALAbdominalfold" = "Abdominal fold";
+"LOCALChestfold" = "Chest fold";
+"LOCALThighfold" = "Thigh fold";
+
+"LOCALOverlayBicepgirth" = "Overlay Bicep girth";
+"LOCALOverlayChestgirth" = "Overlay Chest girth";
+"LOCALOverlayWaistgirth" = "Overlay Waist girth";
+"LOCALOverlayThighgirth" = "Overlay Thigh girth";
+
+
+"LOCALOverlayWeight" = "Overlay Weight";
+
+
+
+
+"Good Job" = "Good Job";
+"Check Your Insight" = "Check Your Insight";
+
+"No body weight availabe" = "No body weight availabe";
+
+"You want use " = "You want use ";
+" Kg for calcultate body data?" = " Kg for calcultate body data?";
+"Body Weight " = "Body Weight ";
+
+"Body weight not available lean mass will be not calculated" = "Body weight not available lean mass will be not calculated";
+
+
+"First Girth's date: " = "First Girth's date: ";
+"Last Girth's date: " = "Last Girth's date: ";
+"Are not in range with first Skinfold's date: " = "Are not in range with first Skinfold's date: ";
+"last Skinfold's date: " = "last Skinfold's date: ";
+
+"WARNING" = "WARNING";
+"Entry All Measurement" = "Entry All Measurement";
+
+"INTROTXT"= "All calculations provided in Girth & Caliper are intended to assist users with reaaching their fitness goal. All values are only exstimated and should not  be considered a substitute of a physician. For specific evaluation of your body composition or overall health, please consult a trained professional.";
+
+"LOCALmsg" = "In order to change the language, the App must be closed and reopened by you.";
+"LOCALTitle" = "App restart required";
+"LOCALOK" = "Close now";
+"LOCALCancel" = "Cancel";

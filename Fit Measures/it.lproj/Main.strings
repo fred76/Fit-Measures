@@ -1,0 +1,355 @@
+
+/* Class = "UILabel"; text = "Age"; ObjectID = "2GC-0k-5vt"; */
+"2GC-0k-5vt.text" = "Età";
+
+/* Class = "UILabel"; text = "Raw Data Skin Fold"; ObjectID = "2Qh-Pj-kf9"; */
+"2Qh-Pj-kf9.text" = "Dati Pliche";
+
+/* Class = "UILabel"; text = "Method & Use"; ObjectID = "2Qq-Ds-4oS"; */
+"2Qq-Ds-4oS.text" = "Metodi e Uso";
+
+/* Class = "UILabel"; text = "Suprailiac"; ObjectID = "2R6-s4-MvA"; */
+"2R6-s4-MvA.text" = "Soprailiaca";
+
+/* Class = "UINavigationItem"; title = "Pictures"; ObjectID = "2To-CL-DOS"; */
+"2To-CL-DOS.title" = "Foto";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "2Vm-lt-zIF"; */
+"2Vm-lt-zIF.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "2zL-hg-IYE"; */
+"2zL-hg-IYE.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "Pictures"; ObjectID = "44e-jc-6Ra"; */
+"44e-jc-6Ra.title" = "Foto";
+
+/* Class = "UISegmentedControl"; 4Kw-Os-TyD.segmentTitles[0] = "IS"; ObjectID = "4Kw-Os-TyD"; */
+"4Kw-Os-TyD.segmentTitles[0]" = "IS";
+
+/* Class = "UISegmentedControl"; 4Kw-Os-TyD.segmentTitles[1] = "IU"; ObjectID = "4Kw-Os-TyD"; */
+"4Kw-Os-TyD.segmentTitles[1]" = "IU";
+
+/* Class = "UILabel"; text = "Body Density"; ObjectID = "4fh-NS-VvE"; */
+"4fh-NS-VvE.text" = "Densità Corporea";
+
+/* Class = "UILabel"; text = "Skin fold against relative girth over the time"; ObjectID = "5RK-un-XoV"; */
+"5RK-un-XoV.text" = "Pliche su relativa circonferenza nel tempo";
+
+/* Class = "UITabBarItem"; title = "Settings"; ObjectID = "6yW-Dv-aKy"; */
+"6yW-Dv-aKy.title" = "Impostazioni";
+
+/* Class = "UIButton"; normalTitle = "Ok"; ObjectID = "8ht-5c-Xvz"; */
+"8ht-5c-Xvz.normalTitle" = "Ok";
+
+/* Class = "UILabel"; text = "Body WeightValue "; ObjectID = "9Jw-PK-lhp"; */
+"9Jw-PK-lhp.text" = "Peso ";
+
+/* Class = "UILabel"; text = "Subscapular"; ObjectID = "9yE-nq-q5E"; */
+"9yE-nq-q5E.text" = "Subscapolare";
+
+/* Class = "UILabel"; text = "Contact Support"; ObjectID = "AJ9-cA-ymP"; */
+"AJ9-cA-ymP.text" = "Contattaci";
+
+/* Class = "UIViewController"; title = "Privacy"; ObjectID = "AUc-yD-wPV"; */
+"AUc-yD-wPV.title" = "Privacy";
+
+/* Class = "UILabel"; text = "Abdominal"; ObjectID = "Ae5-UA-Ova"; */
+"Ae5-UA-Ova.text" = "Addominale";
+
+/* Class = "UILabel"; text = "7"; ObjectID = "Agv-AF-Lgr"; */
+"Agv-AF-Lgr.text" = "7";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "B4M-Ma-Qa1"; */
+"B4M-Ma-Qa1.text" = "Label";
+
+/* Class = "UILabel"; text = "4"; ObjectID = "CHe-R1-Xso"; */
+"CHe-R1-Xso.text" = "4";
+
+/* Class = "UIButton"; normalTitle = "Ok"; ObjectID = "D2n-zP-9ba"; */
+"D2n-zP-9ba.normalTitle" = "Ok";
+
+/* Class = "UILabel"; text = "Method"; ObjectID = "ECE-GF-VZM"; */
+"ECE-GF-VZM.text" = "Metodo";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Ejg-KJ-YIb"; */
+"Ejg-KJ-YIb.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "GAy-Q4-N5K"; */
+"GAy-Q4-N5K.normalTitle" = "Annulla";
+
+/* Class = "UILabel"; text = "Augmented reality : "; ObjectID = "GTa-qj-b4s"; */
+"GTa-qj-b4s.text" = "Realtà aumentata : ";
+
+/* Class = "UILabel"; text = "Body Density Value"; ObjectID = "GaH-NX-LQN"; */
+"GaH-NX-LQN.text" = "Densità Corporea";
+
+/* Class = "UILabel"; text = "Nothing to do here"; ObjectID = "GwF-my-ZDJ"; */
+"GwF-my-ZDJ.text" = "Niente da fare";
+
+/* Class = "UILabel"; text = "Back"; ObjectID = "GxT-dS-PeT"; */
+"GxT-dS-PeT.text" = "Retro";
+
+/* Class = "UISegmentedControl"; HG5-ur-hXZ.segmentTitles[0] = "IS"; ObjectID = "HG5-ur-hXZ"; */
+"HG5-ur-hXZ.segmentTitles[0]" = "IS";
+
+/* Class = "UISegmentedControl"; HG5-ur-hXZ.segmentTitles[1] = "IU"; ObjectID = "HG5-ur-hXZ"; */
+"HG5-ur-hXZ.segmentTitles[1]" = "IU";
+
+/* Class = "UILabel"; text = "Weight"; ObjectID = "If2-rJ-1Tz"; */
+"If2-rJ-1Tz.text" = "Peso";
+
+/* Class = "UILabel"; text = "Midaxillary"; ObjectID = "Ilo-zT-3dc"; */
+"Ilo-zT-3dc.text" = "Ascellare";
+
+/* Class = "UIButton"; normalTitle = "Export Skin Fold"; ObjectID = "Iqe-Hv-eTE"; */
+"Iqe-Hv-eTE.normalTitle" = "Esporta Pliche";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "JwS-pR-Dbb"; */
+"JwS-pR-Dbb.text" = "Label";
+
+/* Class = "UILabel"; text = " "; ObjectID = "Kt6-a5-0Xk"; */
+"Kt6-a5-0Xk.text" = " ";
+
+/* Class = "UIButton"; normalTitle = "Import Skin Fold"; ObjectID = "Lpl-Ej-cgZ"; */
+"Lpl-Ej-cgZ.normalTitle" = "Importa Pliche";
+
+/* Class = "UILabel"; text = "Thigh"; ObjectID = "Ly1-rC-qPP"; */
+"Ly1-rC-qPP.text" = "Coscia";
+
+/* Class = "UILabel"; text = "Last weight"; ObjectID = "MBN-yk-fKu"; */
+"MBN-yk-fKu.text" = "Ultimo peso";
+
+/* Class = "UILabel"; text = "Chest"; ObjectID = "MIM-1H-bj5"; */
+"MIM-1H-bj5.text" = "Torace";
+
+/* Class = "UILabel"; text = "Height (cm)"; ObjectID = "N5j-6G-ycK"; */
+"N5j-6G-ycK.text" = "Altezza (cm)";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "N6G-YT-U8k"; */
+"N6G-YT-U8k.text" = "Label";
+
+/* Class = "UILabel"; text = "Chest"; ObjectID = "NhH-yQ-1RC"; */
+"NhH-yQ-1RC.text" = "Torace";
+
+/* Class = "UITabBarItem"; title = "Caliper"; ObjectID = "NuV-cm-HEg"; */
+"NuV-cm-HEg.title" = "Caliper";
+
+/* Class = "UILabel"; text = "Triceps"; ObjectID = "OfM-tL-adl"; */
+"OfM-tL-adl.text" = "Tricipiti";
+
+/* Class = "UIButton"; normalTitle = "Import Griths"; ObjectID = "Qbf-HV-yn8"; */
+"Qbf-HV-yn8.normalTitle" = "Importa Circonferenze";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Qd0-OU-TkN"; */
+"Qd0-OU-TkN.text" = "Label";
+
+/* Class = "UILabel"; text = "3"; ObjectID = "RHN-61-HtL"; */
+"RHN-61-HtL.text" = "3";
+
+/* Class = "UIButton"; normalTitle = "Ok"; ObjectID = "Rhj-De-lbU"; */
+"Rhj-De-lbU.normalTitle" = "Ok";
+
+/* Class = "UILabel"; text = "Suprailiac"; ObjectID = "Rke-Dg-eDw"; */
+"Rke-Dg-eDw.text" = "Soprailiaca";
+
+/* Class = "UILabel"; text = "Rate iFit on App Store"; ObjectID = "RoY-A1-yuD"; */
+"RoY-A1-yuD.text" = "Valuta G&C on App Store";
+
+/* Class = "UITabBarItem"; title = "Body Measurement"; ObjectID = "SFq-Kj-qt1"; */
+"SFq-Kj-qt1.title" = "Circonferenze";
+
+/* Class = "UISegmentedControl"; SUe-sE-nDy.segmentTitles[0] = "Male"; ObjectID = "SUe-sE-nDy"; */
+"SUe-sE-nDy.segmentTitles[0]" = "Uomo";
+
+/* Class = "UISegmentedControl"; SUe-sE-nDy.segmentTitles[1] = "Female"; ObjectID = "SUe-sE-nDy"; */
+"SUe-sE-nDy.segmentTitles[1]" = "Donna";
+
+/* Class = "UILabel"; text = "Abdominal"; ObjectID = "ShH-xE-IeW"; */
+"ShH-xE-IeW.text" = "Addominale";
+
+/* Class = "UILabel"; text = "Privacy"; ObjectID = "T4b-86-GWH"; */
+"T4b-86-GWH.text" = "Privacy";
+
+/* Class = "UINavigationItem"; title = "Body Girths"; ObjectID = "TJR-IR-nFi"; */
+"TJR-IR-nFi.title" = "Circonferenze";
+
+/* Class = "UILabel"; text = "Sottoscapola"; ObjectID = "Vf2-3Q-jE7"; */
+"Vf2-3Q-jE7.text" = "Sottoscapola";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "W02-Ph-uO9"; */
+"W02-Ph-uO9.text" = "Label";
+
+/* Class = "UITableViewSection"; headerTitle = "PROFILE"; ObjectID = "W9g-tR-v8I"; */
+"W9g-tR-v8I.headerTitle" = "PROFILO UTENTE";
+
+/* Class = "UIButton"; normalTitle = "Do not show Again."; ObjectID = "WCC-iI-fOT"; */
+"WCC-iI-fOT.normalTitle" = "Non mostrare più.";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "WY6-oh-QKU"; */
+"WY6-oh-QKU.text" = "Label";
+
+/* Class = "UILabel"; text = "Body Weight"; ObjectID = "XIC-gN-Gtw"; */
+"XIC-gN-Gtw.text" = "Peso";
+
+/* Class = "UIButton"; normalTitle = "Weight"; ObjectID = "Y3a-eA-mcI"; */
+"Y3a-eA-mcI.normalTitle" = "Overlay Peso";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "YM1-eX-rrq"; */
+"YM1-eX-rrq.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Take Pictures Today"; ObjectID = "ZHs-ZP-hbj"; */
+"ZHs-ZP-hbj.normalTitle" = "Scatta una Ffoto";
+
+/* Class = "UILabel"; text = "Thigh"; ObjectID = "ZK9-cN-XSZ"; */
+"ZK9-cN-XSZ.text" = "Coscia";
+
+/* Class = "UILabel"; text = "7"; ObjectID = "ZMq-Vf-LeW"; */
+"ZMq-Vf-LeW.text" = "7";
+
+/* Class = "UILabel"; text = "Triceps"; ObjectID = "a1N-fx-Wdf"; */
+"a1N-fx-Wdf.text" = "Tricipite";
+
+/* Class = "UILabel"; text = "Selfie : "; ObjectID = "aGK-tk-TYw"; */
+"aGK-tk-TYw.text" = "Selfie : ";
+
+/* Class = "UINavigationItem"; title = "Insight"; ObjectID = "aPf-t3-s1m"; */
+"aPf-t3-s1m.title" = "Grafici";
+
+/* Class = "UITextField"; placeholder = "Skin fold 1 in mm"; ObjectID = "aU4-N9-BMv"; */
+"aU4-N9-BMv.placeholder" = "Pliche 1 in mm";
+
+/* Class = "UITextField"; placeholder = "Skin fold 3 in mm"; ObjectID = "acn-Au-EZd"; */
+"acn-Au-EZd.placeholder" = "Pliche 3 in mm";
+
+/* Class = "UILabel"; text = "Managing External Data"; ObjectID = "b5f-7c-cnU"; */
+"b5f-7c-cnU.text" = "Dati Esterni";
+
+/* Class = "UIButton"; normalTitle = "Export Griths"; ObjectID = "blV-Zk-OUW"; */
+"blV-Zk-OUW.normalTitle" = "Esporta Circonferenze";
+
+/* Class = "UILabel"; text = "Sloan"; ObjectID = "c3V-a1-Tbv"; */
+"c3V-a1-Tbv.text" = "Sloan";
+
+/* Class = "UITextField"; placeholder = "Mesaure"; ObjectID = "d6l-xu-PkF"; */
+"d6l-xu-PkF.placeholder" = "Circonferenza";
+
+/* Class = "UILabel"; text = "2"; ObjectID = "dGT-ZK-YQQ"; */
+"dGT-ZK-YQQ.text" = "2";
+
+/* Class = "UILabel"; text = "Lenght Unit"; ObjectID = "e1m-o1-xaG"; */
+"e1m-o1-xaG.text" = "Lunghezza";
+
+/* Class = "UILabel"; text = "29/11/18 1000"; ObjectID = "ejT-Xn-pO0"; */
+"ejT-Xn-pO0.text" = "29/11/18 1000";
+
+/* Class = "UILabel"; text = "Body Fat % Value"; ObjectID = "f8v-DA-eRM"; */
+"f8v-DA-eRM.text" = "% Massa Grassa";
+
+/* Class = "UITextField"; placeholder = "Skin fold 2 in mm"; ObjectID = "fQ7-1r-Gv5"; */
+"fQ7-1r-Gv5.placeholder" = "Pliche 2 in mm";
+
+/* Class = "UILabel"; text = "✓"; ObjectID = "fUb-nZ-75j"; */
+"fUb-nZ-75j.text" = "✓";
+
+/* Class = "UILabel"; text = "Edit this data will compromise  the calculated value"; ObjectID = "fWr-8q-NuP"; */
+"fWr-8q-NuP.text" = "Manipolare questi dati comprometterà i calcoli eseguiti";
+
+/* Class = "UILabel"; text = "Weight Unit"; ObjectID = "gIQ-kK-TqC"; */
+"gIQ-kK-TqC.text" = "Peso";
+
+/* Class = "UITabBarItem"; title = "Insights"; ObjectID = "gYB-cj-S2c"; */
+"gYB-cj-S2c.title" = "Grafici";
+
+/* Class = "UITextView"; text = "All calculations provided in iFit are intended to assist users with reaaching their fitness goal. All values are only exstimated and should not  be considered a substitute of a physician. For specific evaluation of your body composition or overall health, please consult a trained professional."; ObjectID = "h2r-g8-Aqf"; */
+
+"h2r-g8-Aqf.text" = "Tutti i dati forniti da Girth & Caliper sono intesi ad assistere l'utente a raggiungere la forma fisica richiesta. Tali dati sono solo una stima e non devono essere considerati un sostituto del parere medico. Per una valutazione della composizione corprea e sulla salute in generale rivolgersi ad un medico.";
+
+/* Class = "UILabel"; text = "Credits"; ObjectID = "hGg-Qf-fXc"; */
+"hGg-Qf-fXc.text" = "Crediti";
+
+/* Class = "UILabel"; text = "Midaxillary"; ObjectID = "hOj-Q4-SxH"; */
+"hOj-Q4-SxH.text" = "Ascellare";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium "; ObjectID = "i8h-Tk-Oxr"; */
+"i8h-Tk-Oxr.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium ";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "ih3-JK-efd"; */
+"ih3-JK-efd.title" = "Item";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "jZQ-Jt-YmQ"; */
+"jZQ-Jt-YmQ.text" = "Label";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "jsP-Hj-PcR"; */
+"jsP-Hj-PcR.title" = "Item";
+
+/* Class = "UILabel"; text = "Front"; ObjectID = "kDr-Rp-qKK"; */
+"kDr-Rp-qKK.text" = "Fronte";
+
+/* Class = "UIButton"; normalTitle = "Griths Template "; ObjectID = "leT-nZ-9l3"; */
+"leT-nZ-9l3.normalTitle" = "Griths Template ";
+
+/* Class = "UITextView"; text = " ddddddd"; ObjectID = "mk3-MY-wok"; */
+"mk3-MY-wok.text" = " ddddddd";
+
+/* Class = "UILabel"; text = "Thigh"; ObjectID = "ndg-ZT-nBD"; */
+"ndg-ZT-nBD.text" = "Coscia";
+
+/* Class = "UILabel"; text = "Jackson & Polloc"; ObjectID = "oHL-Jw-etZ"; */
+"oHL-Jw-etZ.text" = "Jackson & Polloc";
+
+/* Class = "UILabel"; text = "Jackson & Polloc"; ObjectID = "pJL-xU-7I4"; */
+"pJL-xU-7I4.text" = "Jackson & Polloc";
+
+/* Class = "UILabel"; text = "or"; ObjectID = "qsg-hT-K6l"; */
+"qsg-hT-K6l.text" = "or";
+
+/* Class = "UILabel"; text = "Raw Data Body Measurements"; ObjectID = "rik-IA-KZv"; */
+"rik-IA-KZv.text" = "Dati Circonferenze";
+
+/* Class = "UITableViewSection"; headerTitle = "Data Management"; ObjectID = "stU-he-Dgk"; */
+"stU-he-Dgk.headerTitle" = "DATI";
+
+/* Class = "UINavigationItem"; title = "Skin Folds"; ObjectID = "t52-5Y-rGC"; */
+"t52-5Y-rGC.title" = "Plicometria";
+
+/* Class = "UILabel"; text = "Biological Sex"; ObjectID = "tUW-1F-OWZ"; */
+"tUW-1F-OWZ.text" = "Sesso";
+
+/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "tgN-uE-ZRn"; */
+"tgN-uE-ZRn.title" = "Impostazioni";
+
+/* Class = "UILabel"; text = "Durnin e Womersley"; ObjectID = "tlq-Z7-KpM"; */
+"tlq-Z7-KpM.text" = "Durnin e Womersley";
+
+/* Class = "UILabel"; text = "Share iFit"; ObjectID = "tsI-E2-ry0"; */
+"tsI-E2-ry0.text" = "Condividi iFit";
+
+/* Class = "UILabel"; text = "Biceps"; ObjectID = "vey-uR-Jho"; */
+"vey-uR-Jho.text" = "Bicipite";
+
+/* Class = "UILabel"; text = "12/12/11"; ObjectID = "wUZ-Ca-u4X"; */
+"wUZ-Ca-u4X.text" = "12/12/11";
+
+/* Class = "UILabel"; text = "Body Fat %"; ObjectID = "wzp-bd-1k8"; */
+"wzp-bd-1k8.text" = "% Massa Grassa";
+
+/* Class = "UITableViewSection"; headerTitle = "ABOUT FIT MEASURE"; ObjectID = "xeK-sL-puW"; */
+"xeK-sL-puW.headerTitle" = "ABOUT FIT MEASURE";
+
+/* Class = "UIButton"; normalTitle = "Got It"; ObjectID = "xoK-qg-1gL"; */
+"xoK-qg-1gL.normalTitle" = "Fatto";
+
+/* Class = "UILabel"; text = "Subscapular"; ObjectID = "y54-9T-C5T"; */
+"y54-9T-C5T.text" = "Subscapolare";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "yhp-Yg-Z5G"; */
+"yhp-Yg-Z5G.normalTitle" = "Annulla";
+
+/* Class = "UIButton"; normalTitle = "Skin Fold Template "; ObjectID = "zWg-gp-qSt"; */
+"zWg-gp-qSt.normalTitle" = "Pliche Template ";
+
+/* Class = "UILabel"; text = "Jackson & Polloc"; ObjectID = "zlT-nW-8yb"; */
+"zlT-nW-8yb.text" = "Jackson & Polloc";
+
+"vqr-f6-gyg.text" = "Lingua";
+

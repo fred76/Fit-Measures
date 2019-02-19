@@ -1,0 +1,109 @@
+/* 
+  Localizable.strings
+  iFit Girths & Caliper
+
+  Created by Alberto Lunardini on 06/01/2019.
+  Copyright © 2019 Alberto Lunardini. All rights reserved.
+*/
+
+//  MeasureMainController.swift
+"LOCALWeight" = "Peso";
+"LOCALNeck" = "Collo";
+"LOCALBicep_R" = "Bicipite_D";
+"LOCALBicep_L" = "Bicipite_S";
+"LOCALForearm_R" = "Avambraccio_D";
+"LOCALForearm_L" = "Avambraccio_S";
+"LOCALChest" = "Torace";
+"LOCALWrist" = "Polso";
+"LOCALWaist" = "Vita";
+"LOCALHips" = "Fianchi";
+"LOCALThigh_R" = "Coscia_D";
+"LOCALThigh_L" = "Coscia_S";
+"LOCALCalf_R" = "Polpaccio_D";
+"LOCALCalf_L" = "Polpaccio_S";
+
+"LOCALChest" = "Torace";
+"LOCALTriceps" = "Tricipite";
+"LOCALBiceps" = "Bicipite";
+"LOCALMidaxillary" = "Ascellare";
+"LOCALAbdominal" = "Addominale";
+"LOCALSubscapular" = "Subscapolare";
+"LOCALSuprailiac" = "Soprailliaca";
+"LOCALThigh" = "Coscia";
+
+"LOCALlean" = "Magra";
+"LOCALfat" = "Grassa";
+
+"LOCALPlicheSum" = "Somma Pliche";
+"LOCALBodyDensity" = "Densità Corporea";
+"LOCALbodyFat%" = "% Massa Grassa";
+"LOCALLeanBodyMass" = "Massa Magra";
+
+"weight_Descr" = "In piedi, Con il peso distribuito univormemente sui piedi.";
+"neck_Descr" = "In piedi, misura il collo nella parte più larga, sopra il pomo di Adamo.";
+"bicep_R_Descr" = "Misura la massima circonferenza con il braccio peigato.";
+"bicep_L_Descr" = "Misura la massima circonferenza con il braccio peigato.";
+"Forearm_R_Descr" = "Misura la massima circonferenza, mano chiusa.";
+"forearm_L_Descr" = "Misura la massima circonferenza, mano chiusa.";
+"wrist_Descr" = "misura al polso.";
+"chest_Descr" = "In piedi, misura in espirazione all'altezza dei capezzoli.";
+"waist_Descr" = "In piedi,Misura la minima circonferenza, a metà tra la cresta illiaca e le costole.";
+"hips_Descr" = "Misura la massima circonferenza.";
+"Thigh_R_Descr" = "In piedi, misura alla massima circonferenza.";
+"thigh_L_Descr" = "In piedi, misura alla massima circonferenza.";
+"Calf_R_Descr" = "Seduto se da solo o in piedi se aiutato, misura la larghezza massima.";
+"calf_L_Descr" = "Seduto se da solo o in piedi se aiutato, misura la larghezza massima.";
+
+"tricipite_Descr" = "misurata verticalmente nel punto intermedio tra l'articolazione della spalla e del gomito (tra l'acromion e l'olecranon), con le braccia rilassate lungo i fianchi.";
+"sottoscapola_Descr" = "misurata diagonalmente (formando un angolo di 45); ad 1-2 cm sotto l'angolo inferiore della scapola.";
+"coscia_Descr" = "misurata verticalmente sulla linea mediana anteriore della coscia, a metà strada tra inferiormente il bordo superiore della rotula e superiormente l'inguine.";
+"addome_Descr" = "misurata orizzontalmente; 2 cm a destra e 1 cm sotto l'ombelico.";
+"petto_Descr" = "Misurata diagonalmente a metà distanza tra la linea ascellare anteriore e il capezzolo (uomo) o a 1/3 dalla distanza tra la linea ascellare anteriore e il capezzolo (donna).";
+"soprailliaca_Descr" = "misurata diagonalmente in linea con l'angolo formatosi tra la cresta iliaca e la linea ascellare anteriore immediatamente sopra alla cresta iliaca (formando un angolo di 30)";
+"bicipite_Descr" = "misurata verticalmente rispetto al braccio , sul picco del bicipite.";
+"ascella_Descr" = "misurata verticalmente sulla linea medioascellare (sotto il cavo ascellare) a livello del capezzolo.";
+
+
+"LOCALTricepsfold" = "Pliche Tricepite";
+"LOCALBicepsfold" = "Pliche Bicipite";
+"LOCALSubscapularfold" = "Pliche Subscapolare";
+"LOCALSuprailiacfold" = "Pliche Soprailiaca";
+"LOCALMidaxillaryfold" = "Pliche Ascellare";
+"LOCALAbdominalfold" = "Pliche Addominanale";
+"LOCALChestfold" = "Pliche Torace";
+"LOCALThighfold" = "Pliche Coscia";
+
+"LOCALOverlayBicepgirth" = "Overlay Bicipite Circ.";
+"LOCALOverlayChestgirth" = "Overlay Torace Circ";
+"LOCALOverlayWaistgirth" = "Overlay Vita Circ.";
+"LOCALOverlayThighgirth" = "Overlay Coscia Circ.";
+
+"LOCALOverlayWeight" = "Overlay Peso";
+
+"Good Job" = "Ben fatto";
+"Check Your Insight" = "Vai a Grafici";
+
+"No body weight availabe" = "Peso non disponibile";
+
+"You want use " = "Vuoi usare ";
+" Kg for calcultate body data?" = " Kg per calcolare i dati corporei?";
+"Body Weight " = "Peso ";
+
+"Body weight not available lean mass will be not calculated" = "Peso non disponibile la massa magra non sarà calcolata";
+
+
+"First Girth's date: " = "La data della prima circonferenza: ";
+"Last Girth's date: " = "La data dell'ultima circonferenza: ";
+"Are not in range with first Skinfold's date: " = "non sono in linea con la prima data della pliche: ";
+"last Skinfold's date: " = "La data dell'ultima circonferenza: ";
+
+"WARNING" = "ATTENZIONE";
+"Entry All Measurement" = "Inserisci tutte le misure";
+
+
+"INTROTXT"= "Tutti i dati forniti da Girth & Caliper sono intesi ad assistere l'utente a raggiungere la forma fisica richiesta. Tali dati sono solo una stima e non devono essere considerati un sostituto del parere medico. Per una valutazione della composizione corprea e sulla salute in generale rivolgersi ad un medico.";
+
+"LOCALmsg" = "Per cambiare lingua l'app deve essere riavviata";
+"LOCALTitle" = "L'App chiede il riavvio";
+"LOCALOK" = "Riavvia";
+"LOCALCancel" = "Annulla";

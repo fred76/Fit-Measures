@@ -21,6 +21,8 @@
 "LOCALThigh_L" = "Coscia_S";
 "LOCALCalf_R" = "Polpaccio_D";
 "LOCALCalf_L" = "Polpaccio_S";
+"LOCALBicep_R_Relax" = "Bicipite_D";
+"LOCALBicep_L_Relax" = "Bicipite_S";
 
 "LOCALChest" = "Torace";
 "LOCALTriceps" = "Tricipite";
@@ -53,7 +55,8 @@
 "thigh_L_Descr" = "In piedi, misura alla massima circonferenza.";
 "Calf_R_Descr" = "Seduto se da solo o in piedi se aiutato, misura la larghezza massima.";
 "calf_L_Descr" = "Seduto se da solo o in piedi se aiutato, misura la larghezza massima.";
-
+"bicep_R_Down_Descr" = "Misura la massima circonferenza con il braccio rilassato.";
+"bicep_L_Down_Descr" = "Misura la massima circonferenza con il braccio rilassato.";
 "tricipite_Descr" = "misurata verticalmente nel punto intermedio tra l'articolazione della spalla e del gomito (tra l'acromion e l'olecranon), con le braccia rilassate lungo i fianchi.";
 "sottoscapola_Descr" = "misurata diagonalmente (formando un angolo di 45); ad 1-2 cm sotto l'angolo inferiore della scapola.";
 "coscia_Descr" = "misurata verticalmente sulla linea mediana anteriore della coscia, a metà strada tra inferiormente il bordo superiore della rotula e superiormente l'inguine.";

@@ -74,6 +74,8 @@ class MeasureMainController: UIViewController, UICollectionViewDelegate, UIColle
                 ItemDef(title: loc("LOCALNeck"), value: returnString(d: m?.neck ?? 0), unit: UserDefaultsSettings.lenghtUnitSet, image: "Neck"),
                 ItemDef(title: loc("LOCALBicep_R"), value: returnString(d: m?.bicep_R ?? 0), unit: UserDefaultsSettings.lenghtUnitSet, image: "Bicep_R"),
                 ItemDef(title: loc("LOCALBicep_L"), value: returnString(d: m?.bicep_L ?? 0), unit: UserDefaultsSettings.lenghtUnitSet, image: "Bicep_L"),
+                ItemDef(title: loc("LOCALBicep_R_Relax"), value: returnString(d: m?.bicep_R_Relax ?? 0), unit: UserDefaultsSettings.lenghtUnitSet, image: "bicep_R_Relax"),
+                ItemDef(title: loc("LOCALBicep_L_Relax"), value: returnString(d: m?.bicep_L_Relax ?? 0), unit: UserDefaultsSettings.lenghtUnitSet, image: "bicep_L_Relax"),
                 ItemDef(title: loc("LOCALForearm_R"), value: returnString(d: m?.forearm_R ?? 0), unit: UserDefaultsSettings.lenghtUnitSet, image: "Forearm_R"),
                 ItemDef(title: loc("LOCALForearm_L"), value: returnString(d: m?.forearm_L ?? 0), unit: UserDefaultsSettings.lenghtUnitSet, image: "Forearm_L"),
                 ItemDef(title: loc("LOCALChest"), value: returnString(d: m?.chest ?? 0), unit: UserDefaultsSettings.lenghtUnitSet, image: "Chest"),
@@ -180,15 +182,17 @@ class MeasureMainController: UIViewController, UICollectionViewDelegate, UIColle
             customAlert.delegate = self
             setTabBarHidden(true)
             
-            
             let def = self.itemDef[indexPath.row]
-            bodyMeasurementPoint = BodyMeasurementPoints(rawValue: def.image)!
             
+            bodyMeasurementPoint = BodyMeasurementPoints(rawValue: def.image)!
+            print("bodyMeasurementPoint \(bodyMeasurementPoint)")
             switch bodyMeasurementPoint {
             case .weight : customAlert.messageLabel.text = loc("weight_Descr")
             case .neck : customAlert.messageLabel.text = loc("neck_Descr")
             case .bicep_R : customAlert.messageLabel.text = loc("bicep_R_Descr")
             case .bicep_L : customAlert.messageLabel.text = loc("bicep_L_Descr")
+            case .bicep_R_Relax : customAlert.messageLabel.text = loc("bicep_R_Down_Descr")
+            case .bicep_L_Relax : customAlert.messageLabel.text = loc("bicep_L_Down_Descr")
             case .Forearm_R : customAlert.messageLabel.text = loc("Forearm_R_Descr")
             case .forearm_L : customAlert.messageLabel.text = loc("forearm_L_Descr")
             case .wrist : customAlert.messageLabel.text = loc("wrist_Descr")

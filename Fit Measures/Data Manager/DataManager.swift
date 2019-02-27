@@ -160,21 +160,23 @@ class DataManager: NSObject {
         print("array \(array)")
         
         let addAttribute = NSEntityDescription.insertNewObject(forEntityName: "BodyMeasure", into: managedContext) as! BodyMeasure
-        addAttribute.weight = Double(array[0]) ?? 0; print("addAttribute.weight \(addAttribute.weight)")
-        addAttribute.bicep_R = Double(array[1]) ?? 0; print("addAttribute.weight \(addAttribute.bicep_R)")
-        addAttribute.bicep_L = Double(array[2]) ?? 0; print("addAttribute.weight \(addAttribute.bicep_L)")
-        addAttribute.calf_R = Double(array[3]) ?? 0; print("addAttribute.weight \(addAttribute.calf_R)")
-        addAttribute.calf_L = Double(array[4]) ?? 0; print("addAttribute.weight \(addAttribute.calf_L)")
-        addAttribute.chest = Double(array[5]) ?? 0; print("addAttribute.weight \(addAttribute.chest)")
-        addAttribute.forearm_R = Double(array[6]) ?? 0; print("addAttribute.weight \(addAttribute.forearm_R)")
-        addAttribute.forearm_L = Double(array[7]) ?? 0; print("addAttribute.weight \(addAttribute.forearm_L)")
-        addAttribute.hips = Double(array[8]) ?? 0; print("addAttribute.weight \(addAttribute.hips)")
-        addAttribute.neck = Double(array[9]) ?? 0; print("addAttribute.weight \(addAttribute.neck)")
-        addAttribute.thigh_R = Double(array[10]) ?? 0; print("addAttribute.weight \(addAttribute.thigh_R)")
-        addAttribute.thigh_L = Double(array[11]) ?? 0; print("addAttribute.weight \(addAttribute.thigh_L)")
-        addAttribute.waist = Double(array[12]) ?? 0; print("addAttribute.weight \(addAttribute.waist)")
-        addAttribute.wrist = Double(array[13]) ?? 0; print("addAttribute.weight \(addAttribute.wrist)")
-        let date = StaticClass.dateFromStringTransform(array[14])
+        addAttribute.weight = Double(array[0]) ?? 0
+        addAttribute.bicep_R = Double(array[1]) ?? 0
+        addAttribute.bicep_L = Double(array[2]) ?? 0
+        addAttribute.bicep_R_Relax = Double(array[3]) ?? 0
+        addAttribute.bicep_L_Relax = Double(array[4]) ?? 0
+        addAttribute.calf_R = Double(array[5]) ?? 0
+        addAttribute.calf_L = Double(array[6]) ?? 0
+        addAttribute.chest = Double(array[7]) ?? 0
+        addAttribute.forearm_R = Double(array[8]) ?? 0
+        addAttribute.forearm_L = Double(array[9]) ?? 0
+        addAttribute.hips = Double(array[10]) ?? 0
+        addAttribute.neck = Double(array[11]) ?? 0
+        addAttribute.thigh_R = Double(array[12]) ?? 0
+        addAttribute.thigh_L = Double(array[13]) ?? 0
+        addAttribute.waist = Double(array[14]) ?? 0
+        addAttribute.wrist = Double(array[15]) ?? 0
+        let date = StaticClass.dateFromStringTransform(array[16])
         addAttribute.dateOfEntry = date as NSDate
         HealthManager.addToHealthKit(DataToSave: .bodyMass, unitMeasure: HKQuantity(unit: HKUnit.gram(), doubleValue: (Double(array[0]) ?? 0)*1000), date: date as Date) {
             

@@ -63,12 +63,12 @@ extension InstructionController {
         let fileName = "Circumference.csv" 
         let path = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(fileName)
         //"weight,bicep_R,bicep_L,calf_R,calf_L,chest,forearm_R,forearm_L,hips,neck,thigh_R,thigh_L,waist,wrist,dateOfEntry\n"
-        var csvText = "weight,bicep_R,bicep_L,calf_R,calf_L,chest,forearm_R,forearm_L,hips,neck,thigh_R,thigh_L,waist,wrist,dateOfEntry\n"
+        var csvText = "weight,bicep_R,bicep_L,bicep_R_Relax,bicep_L_Relax,calf_R,calf_L,chest,forearm_R,forearm_L,hips,neck,thigh_R,thigh_L,waist,wrist,dateOfEntry\n"
         let med = DataManager.shared.bodyMeasurementExplode()
         var newLine : String = ""
         for m in med {
             
-            newLine = "\(m.weight),\(m.bicep_R),\(m.bicep_L),\(m.calf_R),\(m.calf_L),\(m.chest),\(m.forearm_R),\(m.forearm_L),\(m.hips),\(m.neck),\(m.thigh_R),\(m.thigh_L),\(m.waist),\(m.wrist),\(StaticClass.dateFormat(d: m.dateOfEntry!))\n"
+            newLine = "\(m.weight),\(m.bicep_R),\(m.bicep_L_Relax),\(m.bicep_R_Relax),\(m.bicep_L),\(m.calf_R),\(m.calf_L),\(m.chest),\(m.forearm_R),\(m.forearm_L),\(m.hips),\(m.neck),\(m.thigh_R),\(m.thigh_L),\(m.waist),\(m.wrist),\(StaticClass.dateFormat(d: m.dateOfEntry!))\n"
             
             csvText.append(newLine)
         }
@@ -178,9 +178,9 @@ extension InstructionController {
         let fileName = "GirthMeasure.csv"
         let path = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(fileName)
         
-        var csvText = "weight,bicep_R,bicep_L,calf_R,calf_L,chest,forearm_R,forearm_L,hips,neck,thigh_R,thigh_L,waist,wrist,dateOfEntry\n"
+        var csvText = "weight,bicep_R,bicep_L,bicep_R_Relax,bicep_L_Relax,calf_R,calf_L,chest,forearm_R,forearm_L,hips,neck,thigh_R,thigh_L,waist,wrist,dateOfEntry\n"
         
-        let newLine = "1.1,2.2,3.3,4.4,5.5,6.6,7.7,8.8,9.9,10.0,11.1,12.2,13.3,14.4,01/01/2018\n"
+        let newLine = "1.1,2.2,3.3,4.4,3.3,4.4,5.5,6.6,7.7,8.8,9.9,10.0,11.1,12.2,13.3,14.4,01/01/2018\n"
         
         csvText.append(newLine)
         

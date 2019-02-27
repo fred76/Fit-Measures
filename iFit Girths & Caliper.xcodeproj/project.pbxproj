@@ -10,6 +10,7 @@
 		9506885421CF90F3006AC1DB /* AppStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9506885321CF90F3006AC1DB /* AppStoreManager.swift */; };
 		9506885C21D01D9C006AC1DB /* measureRowValueDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9506885B21D01D9C006AC1DB /* measureRowValueDetails.swift */; };
 		95084E3721D4AAC200EF307A /* AllertViewIntro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95084E3621D4AAC200EF307A /* AllertViewIntro.swift */; };
+		95124FB72226969700D40C33 /* BodyMeasure+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95124FB62226969700D40C33 /* BodyMeasure+CoreDataProperties.swift */; };
 		95153BB721CC05DC0031FFB9 /* enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95153BB621CC05DC0031FFB9 /* enum.swift */; };
 		95269EDE21B0888500DBD758 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95269EDD21B0888500DBD758 /* DataManager.swift */; };
 		9533CA5D21E258CC00C397DE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9533CA5F21E258CC00C397DE /* Localizable.strings */; };
@@ -60,7 +61,6 @@
 		95E9B4DA21C8DA0E00C8A076 /* VirtualPlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E9B4D821C8DA0E00C8A076 /* VirtualPlane.swift */; };
 		95E9B4DC21C8DA1900C8A076 /* my.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 95E9B4DB21C8DA1900C8A076 /* my.scnassets */; };
 		95EB82F621E7B1C200AB639D /* BodyMeasure+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EB82EE21E7B1C200AB639D /* BodyMeasure+CoreDataClass.swift */; };
-		95EB82F721E7B1C200AB639D /* BodyMeasure+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EB82EF21E7B1C200AB639D /* BodyMeasure+CoreDataProperties.swift */; };
 		95EB82F821E7B1C200AB639D /* PicFullRes+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EB82F021E7B1C200AB639D /* PicFullRes+CoreDataClass.swift */; };
 		95EB82F921E7B1C200AB639D /* PicFullRes+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EB82F121E7B1C200AB639D /* PicFullRes+CoreDataProperties.swift */; };
 		95EB82FA21E7B1C200AB639D /* PlicheMeasure+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EB82F221E7B1C200AB639D /* PlicheMeasure+CoreDataClass.swift */; };
@@ -104,6 +104,7 @@
 		9506885321CF90F3006AC1DB /* AppStoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStoreManager.swift; sourceTree = "<group>"; };
 		9506885B21D01D9C006AC1DB /* measureRowValueDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = measureRowValueDetails.swift; sourceTree = "<group>"; };
 		95084E3621D4AAC200EF307A /* AllertViewIntro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllertViewIntro.swift; sourceTree = "<group>"; };
+		95124FB62226969700D40C33 /* BodyMeasure+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BodyMeasure+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		95153BB621CC05DC0031FFB9 /* enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enum.swift; sourceTree = "<group>"; };
 		95269EDD21B0888500DBD758 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		9533CA4C21E2126D00C397DE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
@@ -160,7 +161,6 @@
 		95E9B4D821C8DA0E00C8A076 /* VirtualPlane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirtualPlane.swift; sourceTree = "<group>"; };
 		95E9B4DB21C8DA1900C8A076 /* my.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = my.scnassets; sourceTree = "<group>"; };
 		95EB82EE21E7B1C200AB639D /* BodyMeasure+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BodyMeasure+CoreDataClass.swift"; sourceTree = "<group>"; };
-		95EB82EF21E7B1C200AB639D /* BodyMeasure+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BodyMeasure+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		95EB82F021E7B1C200AB639D /* PicFullRes+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PicFullRes+CoreDataClass.swift"; sourceTree = "<group>"; };
 		95EB82F121E7B1C200AB639D /* PicFullRes+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PicFullRes+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		95EB82F221E7B1C200AB639D /* PlicheMeasure+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlicheMeasure+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -198,8 +198,8 @@
 		95523AD221B12EF100761D1B /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				95124FB62226969700D40C33 /* BodyMeasure+CoreDataProperties.swift */,
 				95EB82EE21E7B1C200AB639D /* BodyMeasure+CoreDataClass.swift */,
-				95EB82EF21E7B1C200AB639D /* BodyMeasure+CoreDataProperties.swift */,
 				95EB82F021E7B1C200AB639D /* PicFullRes+CoreDataClass.swift */,
 				95EB82F121E7B1C200AB639D /* PicFullRes+CoreDataProperties.swift */,
 				95EB82F221E7B1C200AB639D /* PlicheMeasure+CoreDataClass.swift */,
@@ -521,6 +521,7 @@
 				95E9B4DA21C8DA0E00C8A076 /* VirtualPlane.swift in Sources */,
 				95523AAE21B1132800761D1B /* Model.xcdatamodeld in Sources */,
 				957BDA9721CCFDB000E2718F /* NavController.swift in Sources */,
+				95124FB72226969700D40C33 /* BodyMeasure+CoreDataProperties.swift in Sources */,
 				95946C9E21AD416600D534D0 /* AllertViewDataInsert.swift in Sources */,
 				95946C1321AB491300D534D0 /* InsightMainController.swift in Sources */,
 				95DB84B221ADF37600D13E6A /* AllertViewPlicoInsert.swift in Sources */,
@@ -536,7 +537,6 @@
 				95946C2421AC3C9100D534D0 /* MeasureCollectionViewCell.swift in Sources */,
 				95DB84AC21ADB1F300D13E6A /* PlicoMainControllerTable.swift in Sources */,
 				9542CD2421BAA2AE00D72B6A /* AllertViewPlicheInsertdWithGraph.swift in Sources */,
-				95EB82F721E7B1C200AB639D /* BodyMeasure+CoreDataProperties.swift in Sources */,
 				954927E321BE92C100F78FD8 /* RawDataTableview.swift in Sources */,
 				95EB82FB21E7B1C200AB639D /* PlicheMeasure+CoreDataProperties.swift in Sources */,
 				95DB84C621AEE25400D13E6A /* PrivacyController.swift in Sources */,

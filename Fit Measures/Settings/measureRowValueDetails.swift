@@ -81,6 +81,8 @@ class MeasureRowValueDetails: UIViewController, UITableViewDelegate, UITableView
                 ItemDef(title: "Chest", value: returnString(d: m.chest), unit: UserDefaultsSettings.lenghtUnitSet),
                 ItemDef(title: "Bicep_R", value: returnString(d: m.bicep_R), unit: UserDefaultsSettings.lenghtUnitSet),
                 ItemDef(title: "Bicep_L", value: returnString(d: m.bicep_L), unit: UserDefaultsSettings.lenghtUnitSet),
+                ItemDef(title: "Bicep_R_Relax", value: returnString(d: m.bicep_R_Relax), unit: UserDefaultsSettings.lenghtUnitSet),
+                ItemDef(title: "Bicep_L_Relax", value: returnString(d: m.bicep_L_Relax), unit: UserDefaultsSettings.lenghtUnitSet),
                 ItemDef(title: "Forearm_R", value: returnString(d: m.forearm_R), unit: UserDefaultsSettings.lenghtUnitSet),
                 ItemDef(title: "Forearm_L", value: returnString(d: m.forearm_L), unit: UserDefaultsSettings.lenghtUnitSet),
                 ItemDef(title: "Wrist", value: returnString(d: m.wrist), unit: UserDefaultsSettings.lenghtUnitSet),
@@ -120,6 +122,8 @@ class MeasureRowValueDetails: UIViewController, UITableViewDelegate, UITableView
             if def.title == "Chest" { m.chest = str.doubleValue ; def.value = str }
             if def.title == "Bicep_R" { m.bicep_R = str.doubleValue ; def.value = str }
             if def.title == "Bicep_L" { m.bicep_L = str.doubleValue ; def.value = str }
+            if def.title == "Bicep_R_Relax" { m.bicep_R_Relax = str.doubleValue ; def.value = str }
+            if def.title == "Bicep_L_Relax" { m.bicep_L_Relax = str.doubleValue ; def.value = str }
             if def.title == "Forearm_R" { m.forearm_R = str.doubleValue; def.value = str }
             if def.title == "Forearm_L" { m.forearm_L = str.doubleValue; def.value = str }
             if def.title == "Wrist" { m.wrist = str.doubleValue ; def.value = str }

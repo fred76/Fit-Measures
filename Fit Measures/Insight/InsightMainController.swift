@@ -39,9 +39,9 @@ class InsightMainController: UIViewController, UITableViewDelegate, UITableViewD
         lastMeasureTableView.dataSource = self
         plicheCollectionView.delegate = self
         plicheCollectionView.dataSource = self
-        measureTitle =  [loc("LOCALWeight"),loc("LOCALNeck"),loc("LOCALBicep_R"),loc("LOCALBicep_L"),loc("LOCALForearm_R"),loc("LOCALForearm_L"),loc("LOCALWrist"),loc("LOCALChest"),loc("LOCALWaist"),loc("LOCALHips"),loc("LOCALThigh_R"),loc("LOCALThigh_L"),loc("LOCALCalf_R"),loc("LOCALCalf_L")]
+        measureTitle =  [loc("LOCALWeight"),loc("LOCALNeck"),loc("LOCALBicep_R"),loc("LOCALBicep_L"),loc("LOCALBicep_R_Relax"),loc("LOCALBicep_L_Relax"),loc("LOCALForearm_R"),loc("LOCALForearm_L"),loc("LOCALWrist"),loc("LOCALChest"),loc("LOCALWaist"),loc("LOCALHips"),loc("LOCALThigh_R"),loc("LOCALThigh_L"),loc("LOCALCalf_R"),loc("LOCALCalf_L")]
         plicheTitle = [loc("LOCALPlicheSum"),loc("LOCALBodyDensity"), loc("LOCALbodyFat%"),loc("LOCALLeanBodyMass")]
-        imageArray = ["Weight","Neck","Bicep_L","Bicep_R","Forearm_L","Forearm_R","Wrist","Chest","Waist","Hips","Thigh_L","Thigh_R","Calf_L","Calf_R"]
+        imageArray = ["Weight","Neck","Bicep_L","Bicep_R","bicep_L_Relax","bicep_R_Relax","Forearm_L","Forearm_R","Wrist","Chest","Waist","Hips","Thigh_L","Thigh_R","Calf_L","Calf_R"]
         plicheArrayThumb =  ["Triceps_P","Biceps_P","Subscapular_P","Suprailiac_P","Midaxillary_P","Abdominal_P","Chest_P","Thigh_P"]
         bodyMeasurementIsAdded = DataManager.shared.bodyMeasurementExist()
         plicheMeasureIsAdded = DataManager.shared.plicheMeasurementExist()
@@ -203,16 +203,18 @@ class InsightMainController: UIViewController, UITableViewDelegate, UITableViewD
                     case 1 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "neck").value; controller.titleGraph = loc("LOCALNeck")
                     case 2 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "bicep_R").value; controller.titleGraph = loc("LOCALBicep_R")
                     case 3 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "bicep_L").value; controller.titleGraph = loc("LOCALBicep_L")
-                    case 4 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "forearm_R").value; controller.titleGraph = loc("LOCALForearm_R")
-                    case 5 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "forearm_L").value; controller.titleGraph = loc("LOCALForearm_L")
-                    case 6 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "wrist").value; controller.titleGraph = loc("LOCALWrist")
-                    case 7 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "chest").value; controller.titleGraph = loc("LOCALChest")
-                    case 8 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "waist").value; controller.titleGraph = loc("LOCALWaist")
-                    case 9 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "hips").value; controller.titleGraph = loc("LOCALHips")
-                    case 10 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "thigh_R").value; controller.titleGraph = loc("LOCALThigh_R")
-                    case 11 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "thigh_L").value; controller.titleGraph = loc("LOCALThigh_L")
-                    case 12 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "calf_R").value; controller.titleGraph = loc("LOCALCalf_R")
-                    case 13 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "calf_L").value; controller.titleGraph = loc("LOCALCalf_L")
+                    case 4 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "bicep_R_Relax").value; controller.titleGraph = loc("LOCALBicep_R_Relax")
+                    case 5 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "bicep_L_Relax").value; controller.titleGraph = loc("LOCALBicep_L_Relax")
+                    case 6 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "forearm_R").value; controller.titleGraph = loc("LOCALForearm_R")
+                    case 7 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "forearm_L").value; controller.titleGraph = loc("LOCALForearm_L")
+                    case 8 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "wrist").value; controller.titleGraph = loc("LOCALWrist")
+                    case 9 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "chest").value; controller.titleGraph = loc("LOCALChest")
+                    case 10 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "waist").value; controller.titleGraph = loc("LOCALWaist")
+                    case 11 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "hips").value; controller.titleGraph = loc("LOCALHips")
+                    case 12 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "thigh_R").value; controller.titleGraph = loc("LOCALThigh_R")
+                    case 13 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "thigh_L").value; controller.titleGraph = loc("LOCALThigh_L")
+                    case 14 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "calf_R").value; controller.titleGraph = loc("LOCALCalf_R")
+                    case 15 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "calf_L").value; controller.titleGraph = loc("LOCALCalf_L")
                         
                         
                     default : break

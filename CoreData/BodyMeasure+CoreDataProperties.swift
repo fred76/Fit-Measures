@@ -2,7 +2,7 @@
 //  BodyMeasure+CoreDataProperties.swift
 //  iFit Girths & Caliper
 //
-//  Created by Alberto Lunardini on 10/01/2019.
+//  Created by Alberto Lunardini on 27/02/2019.
 //  Copyright © 2019 Alberto Lunardini. All rights reserved.
 //
 //
@@ -32,5 +32,7 @@ extension BodyMeasure {
     @NSManaged public var waist: Double
     @NSManaged public var weight: Double
     @NSManaged public var wrist: Double
+    @NSManaged public var bicep_L_Relax: Double
+    @NSManaged public var bicep_R_Relax: Double
 
 }

@@ -21,6 +21,8 @@
 "LOCALThigh_L" = "Thigh_L";
 "LOCALCalf_R" = "Calf_R";
 "LOCALCalf_L" = "Calf_L";
+"LOCALBicep_R_Relax" = "Bicep_R";
+"LOCALBicep_L_Relax" = "Bicep_L";
 //Pliche
 "LOCALChest" = "Chest";
 "LOCALTriceps" = "Tricep";
@@ -53,7 +55,8 @@
 "thigh_L_Descr" = "Standing, measure at the largest girth, just below the butt.";
 "Calf_R_Descr" = "Seated if you are measuring yourself or standing if you have a partner, measure at its largest girth.";
 "calf_L_Descr" = "Seated if you are measuring yourself or standing if you have a partner, measure at its largest girth.";
-
+"bicep_R_Down_Descr" = "Measure at its largest girth, flexed with arm relaxed.";
+"bicep_L_Down_Descr" = "Measure at its largest girth, flexed with arm relaxed.";
 "tricipite_Descr" = "Vertical fold Posterior midline of the upper arm Halfway between the acromion (shoulder) and olecranon processes (elbow) Arm held freely to the side of the body.";
 "sottoscapola_Descr" = "Diagonal fold 1 to 2 cm below the inferior angle of the scapula.";
 "sottoscapola_Descr" = "Vertical fold Anterior midline of the thigh Midway between the proximal border of the patella (upper knee) and the inguinal crease (hip).";

@@ -45,6 +45,8 @@ enum BodyMeasurementPoints : String {
     case neck = "Neck"
     case bicep_L = "Bicep_L"
     case bicep_R = "Bicep_R"
+    case bicep_L_Relax = "bicep_L_Relax"
+    case bicep_R_Relax = "bicep_R_Relax"
     case forearm_L = "Forearm_L"
     case Forearm_R = "Forearm_R"
     case wrist = "Wrist"

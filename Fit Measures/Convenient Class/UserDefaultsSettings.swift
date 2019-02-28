@@ -17,6 +17,12 @@ class UserDefaultsSettings {
     private static let firstLunch = "firstLunch"
     private static let isAlreadyAppeared = "isAlreadyAppeared"
     private static let cloudSynch = "cloudSynch"
+    private static let appVersion = "appVersion"
+    
+    static var appVersionSet: String {
+        get { return UserDefaults.standard.string(forKey: appVersion)! }
+        set {UserDefaults.standard.set(newValue, forKey: appVersion)}
+    }
     
     static var cloudSynchSet: Bool {
         get { return UserDefaults.standard.bool(forKey: cloudSynch) }

@@ -27,15 +27,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CDEPersistentStoreEnsembl
         UINavigationBar.appearance().backgroundColor = .clear
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         UINavigationBar.appearance().isTranslucent = true
-        
-        
+        let appVersion = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as? String
+         
         // Use verbose logging for sync
-        CDESetCurrentLoggingLevel(CDELoggingLevel.verbose.rawValue)
+       // CDESetCurrentLoggingLevel(CDELoggingLevel.verbose.rawValue)
         
         
         setupCoreData()
         DataManager.shared.managedContext = managedObjectContext
         
+        if !UserDefaultsSettings.serchForKey(kUsernameKey: "appVersion"){
+            UserDefaultsSettings.appVersionSet = appVersion ?? "0"
+        }
         if !UserDefaultsSettings.serchForKey(kUsernameKey: "weightUnit"){
             UserDefaultsSettings.weightUnitSet = "Kg"
         }
@@ -107,7 +110,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CDEPersistentStoreEnsembl
     func applicationWillResignActive(_ application: UIApplication) { }
     
     func applicationDidEnterBackground(_ application: UIApplication) {
-        print("applicationDidEnterBackground")
         let taskIdentifier = UIApplication.shared.beginBackgroundTask(expirationHandler: nil)
         try! managedObjectContext.save()
         self.sync(iCloudIsOn: UserDefaultsSettings.cloudSynchSet) {
@@ -116,7 +118,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CDEPersistentStoreEnsembl
     }
     
     func applicationWillEnterForeground(_ application: UIApplication) {
-        print("applicationWillEnterForeground")
         self.sync(iCloudIsOn: UserDefaultsSettings.cloudSynchSet, nil)
     }
     
@@ -188,15 +189,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CDEPersistentStoreEnsembl
             return
         }
         if !ensemble.isLeeched {
-            print("rrrr \(ensemble.isLeeched)")
             ensemble.leechPersistentStore {
                 error in
                 completion?()
             }
         }
         else {
-            print("wwww \(ensemble.isLeeched)")
-            print("dddd \(ensemble.isMerging)")
             ensemble.merge {
                 error in
                 completion?()

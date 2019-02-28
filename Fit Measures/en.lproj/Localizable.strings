@@ -112,3 +112,5 @@
 "LOCALTitle" = "App restart required";
 "LOCALOK" = "Close now";
 "LOCALCancel" = "Cancel";
+"LOCiCLOUDTITLE" = "Girth & Caliper will save your data on iCloud";
+"LOCiCLOUDBODY" = "to disable the iCloud sync Open Settings > [User name] > iCloud > Girths & Caliper.";

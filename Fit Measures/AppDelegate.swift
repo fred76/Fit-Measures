@@ -64,7 +64,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CDEPersistentStoreEnsembl
                 switch accountStatus {
                 case .available:
                     DispatchQueue.main.async {
-                        DataManager.shared.showTopLevelAlert(title: "Girth & Caliper will save your data on iCloud ", body: "to disabel the icloud sharing Open Settings > [User name] > iCloud > Girths & Caliper.", alertActionDoIt: self.iClouYesSync())
+                        DataManager.shared.showTopLevelAlert(title: loc("LOCiCLOUDTITLE"), body: loc("LOCiCLOUDBODY")
+                            , alertActionDoIt: self.iClouYesSync())
                     }
                     print("iCloud Available")
                 case .noAccount:

@@ -2,7 +2,7 @@
 //  PlicheMeasure+CoreDataProperties.swift
 //  iFit Girths & Caliper
 //
-//  Created by Alberto Lunardini on 10/01/2019.
+//  Created by Alberto Lunardini on 28/02/2019.
 //  Copyright © 2019 Alberto Lunardini. All rights reserved.
 //
 //
@@ -33,5 +33,6 @@ extension PlicheMeasure {
     @NSManaged public var thigh: Double
     @NSManaged public var triceps: Double
     @NSManaged public var weight: Double
+    @NSManaged public var uniqueIdentifier: NSString?
 
 }

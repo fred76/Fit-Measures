@@ -8,26 +8,32 @@
 
 import UIKit
 import CoreData
-
+import Ensembles
+import CloudKit
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
+class AppDelegate: UIResponder, UIApplicationDelegate, CDEPersistentStoreEnsembleDelegate {
+    
     var window: UIWindow?
-
+    
     var managedObjectContext: NSManagedObjectContext!
     var storeDirectoryURL: URL {
         return try! FileManager.default.url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true) }
     
     var storeURL: URL {  return self.storeDirectoryURL.appendingPathComponent("store.sqlite") }
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
         UINavigationBar.appearance().shadowImage = UIImage()
         UINavigationBar.appearance().backgroundColor = .clear
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         UINavigationBar.appearance().isTranslucent = true
-
-        setupCoreData() 
+        
+        
+        // Use verbose logging for sync
+        CDESetCurrentLoggingLevel(CDELoggingLevel.verbose.rawValue)
+        
+        
+        setupCoreData()
         DataManager.shared.managedContext = managedObjectContext
         
         if !UserDefaultsSettings.serchForKey(kUsernameKey: "weightUnit"){
@@ -39,9 +45,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if !UserDefaultsSettings.serchForKey(kUsernameKey: "biologicalSex"){
             UserDefaultsSettings.biologicalSexSet = "Male"
         }
-//        if !UserDefaultsSettings.serchForKey(kUsernameKey: "age"){
-//            UserDefaultsSettings.ageSet = 0.0
-//        }
+        //        if !UserDefaultsSettings.serchForKey(kUsernameKey: "age"){
+        //            UserDefaultsSettings.ageSet = 0.0
+        //        }
+        
         if let wTB = ( self.window?.rootViewController as? UITabBarController ) {
             wTB.tabBar.tintColor = StaticClass.blueButton
             wTB.tabBar.barTintColor = UIColor.black
@@ -51,13 +58,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         authorizeHealthKit()
-       UserDefaultsSettings.isAlreadyAppearedSet = false
+        UserDefaultsSettings.isAlreadyAppearedSet = false
+        if !UserDefaultsSettings.cloudSynchSet {
+            CKContainer.default().accountStatus { (accountStatus, error) in
+                switch accountStatus {
+                case .available:
+                    DispatchQueue.main.async {
+                        DataManager.shared.showTopLevelAlert(title: "Girth & Caliper will save your data on iCloud ", body: "to disabel the icloud sharing Open Settings > [User name] > iCloud > Girths & Caliper.", alertActionDoIt: self.iClouYesSync())
+                    }
+                    print("iCloud Available")
+                case .noAccount:
+                    print("No iCloud account")
+                case .restricted:
+                    print("iCloud restricted")
+                case .couldNotDetermine:
+                    print("Unable to determine iCloud status")
+                }
+            }
+        } else {
+            self.setupEnsemble(iCloudIsOn: UserDefaultsSettings.cloudSynchSet)
+        }
         
-    
         return true
     }
+    
+    
+    
+    func iClouYesSync() -> UIAlertAction {
+        let enableiCloudSync = UIAlertAction(title: "OK", style: .default) { (action) in
+            UserDefaultsSettings.cloudSynchSet = true
+            self.setupEnsemble(iCloudIsOn: UserDefaultsSettings.cloudSynchSet)
+        }
+        return enableiCloudSync
+    }
     func application(_ application: UIApplication, shouldAllowExtensionPointIdentifier extensionPointIdentifier: UIApplication.ExtensionPointIdentifier) -> Bool {
-        if (extensionPointIdentifier == .keyboard) { 
+        if (extensionPointIdentifier == .keyboard) {
             return false
         }
         return true
@@ -67,13 +102,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
         return self.orientationLock
     }
-
+    
     func applicationWillResignActive(_ application: UIApplication) { }
-
-    func applicationDidEnterBackground(_ application: UIApplication) { }
-
-    func applicationWillEnterForeground(_ application: UIApplication) { }
-
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        print("applicationDidEnterBackground")
+        let taskIdentifier = UIApplication.shared.beginBackgroundTask(expirationHandler: nil)
+        try! managedObjectContext.save()
+        self.sync(iCloudIsOn: UserDefaultsSettings.cloudSynchSet) {
+            UIApplication.shared.endBackgroundTask(taskIdentifier)
+        }
+    }
+    
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        print("applicationWillEnterForeground")
+        self.sync(iCloudIsOn: UserDefaultsSettings.cloudSynchSet, nil)
+    }
+    
     func applicationDidBecomeActive(_ application: UIApplication) {
         if !UserDefaultsSettings.isAlreadyAppearedSet{
             if !UserDefaultsSettings.firstLunchSet {
@@ -83,10 +128,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
     }
-
+    
     func applicationWillTerminate(_ application: UIApplication) { }
     
-   
+    
     
     func setupCoreData() {
         let modelURL = Bundle.main.url(forResource: "Model", withExtension: "momd")
@@ -99,7 +144,78 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         managedObjectContext.persistentStoreCoordinator = coordinator
         managedObjectContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
     }
+    
+    // MARK: Notification Handlers
+    
+    @objc func localSaveOccurred(_ notif: Notification) {
+        self.sync(iCloudIsOn: UserDefaultsSettings.cloudSynchSet, nil)
+    }
+    
+    @objc func cloudDataDidDownload(_ notif: Notification) {
+        self.sync(iCloudIsOn: UserDefaultsSettings.cloudSynchSet, nil)
+    }
+    
+    // MARK: Ensembles
+    
+    func setupEnsemble(iCloudIsOn : Bool) {
+        if !iCloudIsOn {
+            return
+        }
+        // Setup Ensemble
+        let modelURL = Bundle.main.url(forResource: "Model", withExtension: "momd")
+        cloudFileSystem = CDEICloudFileSystem(ubiquityContainerIdentifier: nil)
+        ensemble = CDEPersistentStoreEnsemble(ensembleIdentifier: "GANDC", persistentStore: storeURL, managedObjectModelURL: modelURL!, cloudFileSystem: cloudFileSystem)
+        ensemble.delegate = self
+        
+        // Listen for local saves, and trigger merges
+        NotificationCenter.default.addObserver(self, selector:#selector(AppDelegate.localSaveOccurred(_:)), name:NSNotification.Name.CDEMonitoredManagedObjectContextDidSave, object:nil)
+        NotificationCenter.default.addObserver(self, selector:#selector(AppDelegate.cloudDataDidDownload(_:)), name:NSNotification.Name.CDEICloudFileSystemDidDownloadFiles, object:nil)
+        
+        //        // Pass context to controller
+        //        let controller = self.window?.rootViewController as! ViewController
+        //        controller.managedObjectContext = managedObjectContext
+        //
+        // Sync
+        self.sync(iCloudIsOn: UserDefaultsSettings.cloudSynchSet, nil)
+    }
+    
+    var cloudFileSystem: CDECloudFileSystem!
+    var ensemble: CDEPersistentStoreEnsemble!
+    
+    func sync(iCloudIsOn : Bool ,_ completion: (() -> Void)?) {
+        if !iCloudIsOn {
+            return
+        }
+        if !ensemble.isLeeched {
+            print("rrrr \(ensemble.isLeeched)")
+            ensemble.leechPersistentStore {
+                error in
+                completion?()
+            }
+        }
+        else {
+            print("wwww \(ensemble.isLeeched)")
+            print("dddd \(ensemble.isMerging)")
+            ensemble.merge {
+                error in
+                completion?()
+            }
+        }
+    }
+    
+    func persistentStoreEnsemble(_ ensemble: CDEPersistentStoreEnsemble, didSaveMergeChangesWith notification: Notification) {
+        managedObjectContext.performAndWait {
+            self.managedObjectContext.mergeChanges(fromContextDidSave: notification)
+        }
+    }
+    
+    func persistentStoreEnsemble(_ ensemble: CDEPersistentStoreEnsemble!, globalIdentifiersForManagedObjects objects: [Any]!) -> [Any]! {
+        let uniqueId = (objects as NSArray).value(forKeyPath: "uniqueIdentifier") as! [AnyObject]
+        print("uniqueId : \(uniqueId)")
+        return (objects as NSArray).value(forKeyPath: "uniqueIdentifier") as! [AnyObject]
+    }
 }
+
 
 struct AppUtility {
     

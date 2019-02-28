@@ -16,6 +16,12 @@ class UserDefaultsSettings {
     private static let biologicalSex = "biologicalSex"
     private static let firstLunch = "firstLunch"
     private static let isAlreadyAppeared = "isAlreadyAppeared"
+    private static let cloudSynch = "cloudSynch"
+    
+    static var cloudSynchSet: Bool {
+        get { return UserDefaults.standard.bool(forKey: cloudSynch) }
+        set {UserDefaults.standard.set(newValue, forKey: cloudSynch)}
+    }
     
     static var heightSet: Double {
         get { return UserDefaults.standard.double(forKey: height)}

@@ -37,6 +37,12 @@ struct StaticClass {
         return dateFormatter.date(from: dateAsString)!
     }
     
+    static var dateFormatterLongLong: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
+        return dateFormatter
+    }()
+    
     static func dateFormat(d:NSDate) -> String {
         
         

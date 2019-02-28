@@ -8,6 +8,5 @@
 
 #ifndef Header_h
 #define Header_h
-
-
-#endif /* Header_h */
+#import <Ensembles/Ensembles.h>
+#endif 

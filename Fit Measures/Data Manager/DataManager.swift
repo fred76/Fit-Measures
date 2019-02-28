@@ -28,6 +28,7 @@ class DataManager: NSObject {
     
     func getLastMeasureAvailable() -> BodyMeasure? {
         var measure : BodyMeasure?
+        
         let fetch = NSFetchRequest<BodyMeasure>(entityName: "BodyMeasure")
         let sortDate = NSSortDescriptor(key: "dateOfEntry", ascending: true)
         fetch.sortDescriptors = [sortDate]
@@ -43,6 +44,71 @@ class DataManager: NSObject {
         
         
         return measure
+    }
+    
+    func assignUniqueIdentifierToMeasure() {
+        
+        let fetch = NSFetchRequest<BodyMeasure>(entityName: "BodyMeasure")
+        do {
+            
+            let results = try managedContext.fetch(fetch)
+            for m in results {
+                if m.uniqueIdentifier?.length == 0 {
+                    m.uniqueIdentifier = uuid + StaticClass.dateFormatterLongLong.string(from: now) as NSString
+                }
+            }
+            save()
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+    }
+    func assignUniqueIdentifierToPliche() {
+        
+        let fetch = NSFetchRequest<PlicheMeasure>(entityName: "PlicheMeasure")
+        do {
+            
+            let results = try managedContext.fetch(fetch)
+            for m in results {
+                if m.uniqueIdentifier?.length == 0 {
+                    m.uniqueIdentifier = uuid + StaticClass.dateFormatterLongLong.string(from: now) as NSString
+                }
+            }
+            save()
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+    }
+    func assignUniqueIdentifierToPicFullRes() {
+        
+        let fetch = NSFetchRequest<PicFullRes>(entityName: "PicFullRes")
+        do {
+            
+            let results = try managedContext.fetch(fetch)
+            for m in results {
+                if m.uniqueIdentifier?.length == 0 {
+                    m.uniqueIdentifier = uuid + StaticClass.dateFormatterLongLong.string(from: now) as NSString
+                }
+            }
+            save()
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+    }
+    func assignUniqueIdentifierToThumb() {
+        
+        let fetch = NSFetchRequest<Thumbnail>(entityName: "Thumbnail")
+        do {
+            
+            let results = try managedContext.fetch(fetch)
+            for m in results {
+                if m.uniqueIdentifier?.length == 0 {
+                    m.uniqueIdentifier = uuid + StaticClass.dateFormatterLongLong.string(from: now) as NSString
+                }
+            }
+            save()
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
     }
     
     @discardableResult func bodyMeasurementForTodayIsAvailable() -> (Bool) {
@@ -126,7 +192,7 @@ class DataManager: NSObject {
             
         } catch let error as NSError {
             print("Could not fetch \(error), \(error.userInfo)")
-        } 
+        }
         return (measure!)
     }
     
@@ -147,17 +213,18 @@ class DataManager: NSObject {
     }
     
     // MARK: - Measure Add:
+    let uuid = UUID().uuidString
     
+    let now = Date()
     @discardableResult func bodyMeasureAddForCurrentDate(dateofEntry : Date?) -> BodyMeasure {
         
         let addAttribute = NSEntityDescription.insertNewObject(forEntityName: "BodyMeasure", into: managedContext) as! BodyMeasure
-        
+        addAttribute.uniqueIdentifier = uuid + StaticClass.dateFormatterLongLong.string(from: now) as NSString
         if let dateofEntry = dateofEntry { addAttribute.dateOfEntry = dateofEntry as NSDate }
         return addAttribute
     }
     
     func bodyMeasureAddFromCSV(array : [String]) {
-        print("array \(array)")
         
         let addAttribute = NSEntityDescription.insertNewObject(forEntityName: "BodyMeasure", into: managedContext) as! BodyMeasure
         addAttribute.weight = Double(array[0]) ?? 0
@@ -176,6 +243,7 @@ class DataManager: NSObject {
         addAttribute.thigh_L = Double(array[13]) ?? 0
         addAttribute.waist = Double(array[14]) ?? 0
         addAttribute.wrist = Double(array[15]) ?? 0
+        addAttribute.uniqueIdentifier = uuid + StaticClass.dateFormatterLongLong.string(from: now) as NSString
         let date = StaticClass.dateFromStringTransform(array[16])
         addAttribute.dateOfEntry = date as NSDate
         HealthManager.addToHealthKit(DataToSave: .bodyMass, unitMeasure: HKQuantity(unit: HKUnit.gram(), doubleValue: (Double(array[0]) ?? 0)*1000), date: date as Date) {
@@ -306,7 +374,7 @@ class DataManager: NSObject {
         var leanMass : Double = 0
         var dateToHK : Date!
         plicheValueEntry.weight = Double(array[0]) ?? 0
-
+        
         if array[10] == "jp7" {
             
             
@@ -328,13 +396,13 @@ class DataManager: NSObject {
                 let s = (0.00000055 * (sum*sum))
                 let a = (0.00028826 * Double(array[11])!)
                 bodyDensity = 1.112-(0.00043499 * sum) + s - a
-                    bodyFatPerc = ((4.95/bodyDensity) - 4.5) * 100
+                bodyFatPerc = ((4.95/bodyDensity) - 4.5) * 100
             } else {
                 let t =  (0.00012828 * Double(array[11])!)
                 bodyDensity = 1.097-(0.00046971 * sum) + (0.00000056 * (sum*sum)) - t
                 bodyFatPerc = ((4.95/bodyDensity) - 4.5) * 100
             }
-           
+            
         }
         if array[10] == "jp3m"{
             plicheValueEntry.chest = Double(array[3]) ?? 0
@@ -354,7 +422,7 @@ class DataManager: NSObject {
             bodyDensity = 1.10938-(0.0008267 * sum) + s - a
             bodyFatPerc = ((4.95/bodyDensity) - 4.5) * 100
             
-           
+            
         }
         if array[10] == "jp3w" {
             plicheValueEntry.thigh = Double(array[7]) ?? 0
@@ -380,7 +448,7 @@ class DataManager: NSObject {
             let s = Double(array[5]) ?? 0
             let date = StaticClass.dateFromStringTransform(array[9])
             dateToHK = date
-            plicheValueEntry.dateOfEntry = date as NSDate 
+            plicheValueEntry.dateOfEntry = date as NSDate
             let a = 0.001327 * t
             let b = 0.00131  * s
             bodyDensity = 1.1043-(a) - (b)
@@ -449,7 +517,7 @@ class DataManager: NSObject {
         plicheValueEntry.bodyFatPerc = bodyFatPerc
         plicheValueEntry.leanMass = lastWeight - ((lastWeight/100)*bodyFatPerc)
         leanMass = lastWeight - ((lastWeight/100)*bodyFatPerc)
-        
+        plicheValueEntry.uniqueIdentifier = uuid + StaticClass.dateFormatterLongLong.string(from: now) as NSString
         save()
         
         HealthManager.addToHealthKit(DataToSave: .bodyFatPercentage, unitMeasure: HKQuantity(unit: HKUnit.percent(), doubleValue: bodyFatPerc/100), date: dateToHK) {
@@ -476,6 +544,7 @@ class DataManager: NSObject {
         }
         else {
             plicheValueEntry = NSEntityDescription.insertNewObject(forEntityName: "PlicheMeasure", into: managedContext) as? PlicheMeasure
+            plicheValueEntry.uniqueIdentifier = uuid + StaticClass.dateFormatterLongLong.string(from: now) as NSString
             
         }
         
@@ -578,7 +647,7 @@ class DataManager: NSObject {
                 allertWithParameter(title: loc("WARNING"), message: loc("Entry All Measurement"), viecontroller: viewVontroller)
             }
         }
-        if plicheMethod == "Sloan - Men 2 point" { //D= 1,1043-0,001327 x pl.coscia – 0,00131 x pl.sottoscapolare 
+        if plicheMethod == "Sloan - Men 2 point" { //D= 1,1043-0,001327 x pl.coscia – 0,00131 x pl.sottoscapolare
             if let thigh = thigh, let subscapular = subscapular {
                 plicheValueEntry.thigh = thigh
                 plicheValueEntry.subscapular = subscapular
@@ -734,12 +803,12 @@ class DataManager: NSObject {
             
             //set image data of fullres
             fullRes.imageData = imageData
-            
+            fullRes.uniqueIdentifier = uuid + StaticClass.dateFormatterLongLong.string(from: now) as NSString
             //set image data of thumbnail
             thumbnail.imageData = thumbnailData
             thumbnail.id = date
             thumbnail.fullRes = fullRes
-            
+            thumbnail.uniqueIdentifier = uuid + StaticClass.dateFormatterLongLong.string(from: now) as NSString
             // save the new objects
             do {
                 try moc.save()
@@ -751,7 +820,15 @@ class DataManager: NSObject {
             moc.refreshAllObjects()
         }
     }
-    
+    func showTopLevelAlert(title : String, body : String, alertActionDoIt : UIAlertAction) {
+        let alertController = UIAlertController (title: title , message: body, preferredStyle: .alert)
+        alertController.addAction(alertActionDoIt)
+        let alertWindow = UIWindow(frame: UIScreen.main.bounds)
+        alertWindow.rootViewController = UIViewController()
+        alertWindow.windowLevel = UIWindow.Level.alert + 1;
+        alertWindow.makeKeyAndVisible()
+        alertWindow.rootViewController?.present(alertController, animated: true, completion: nil)
+    }
     func prepareImageForSaving(image:UIImage, closure: @escaping ()->()) {
         
         // use date as unique id
@@ -766,7 +843,7 @@ class DataManager: NSObject {
                 return
             }
             // scale image, I chose the size of the VC because it is easy
-            let thumbnaill = image 
+            let thumbnaill = image
             guard let thumbnailData  = thumbnaill.jpegData(compressionQuality: 0.7)  else {
                 // handle failed conversion
                 print("jpg error")

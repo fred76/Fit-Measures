@@ -10,8 +10,10 @@
 		9506885421CF90F3006AC1DB /* AppStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9506885321CF90F3006AC1DB /* AppStoreManager.swift */; };
 		9506885C21D01D9C006AC1DB /* measureRowValueDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9506885B21D01D9C006AC1DB /* measureRowValueDetails.swift */; };
 		95084E3721D4AAC200EF307A /* AllertViewIntro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95084E3621D4AAC200EF307A /* AllertViewIntro.swift */; };
-		95124FB72226969700D40C33 /* BodyMeasure+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95124FB62226969700D40C33 /* BodyMeasure+CoreDataProperties.swift */; };
 		95153BB721CC05DC0031FFB9 /* enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95153BB621CC05DC0031FFB9 /* enum.swift */; };
+		951AD5F92227D7BA009E046A /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951AD5F82227D7BA009E046A /* CloudKit.framework */; };
+		951AD60B2227D825009E046A /* Ensembles.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951AD60A2227D7E8009E046A /* Ensembles.framework */; };
+		951AD60C2227D825009E046A /* Ensembles.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 951AD60A2227D7E8009E046A /* Ensembles.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		95269EDE21B0888500DBD758 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95269EDD21B0888500DBD758 /* DataManager.swift */; };
 		9533CA5D21E258CC00C397DE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9533CA5F21E258CC00C397DE /* Localizable.strings */; };
 		9533CA6421E3337C00C397DE /* LanguageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9533CA6321E3337C00C397DE /* LanguageController.swift */; };
@@ -24,6 +26,10 @@
 		95523AAE21B1132800761D1B /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 95523AAC21B1132800761D1B /* Model.xcdatamodeld */; };
 		955592C621B6ECEF0059A83D /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955592C521B6ECEF0059A83D /* ChartViewController.swift */; };
 		955DBD5F21CBED8C00312E6E /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955DBD5E21CBED8C00312E6E /* Extension.swift */; };
+		95685D942227DA7200A2DF56 /* Thumbnail+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95685D902227DA7200A2DF56 /* Thumbnail+CoreDataProperties.swift */; };
+		95685D952227DA7200A2DF56 /* BodyMeasure+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95685D912227DA7200A2DF56 /* BodyMeasure+CoreDataProperties.swift */; };
+		95685D962227DA7200A2DF56 /* PlicheMeasure+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95685D922227DA7200A2DF56 /* PlicheMeasure+CoreDataProperties.swift */; };
+		95685D972227DA7200A2DF56 /* PicFullRes+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95685D932227DA7200A2DF56 /* PicFullRes+CoreDataProperties.swift */; };
 		956A870621C99EB4009291C1 /* Privacy.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 956A870521C99EB4009291C1 /* Privacy.rtf */; };
 		957BDA9721CCFDB000E2718F /* NavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957BDA9621CCFDB000E2718F /* NavController.swift */; };
 		957CC16021D59F9A00B0AFCF /* method.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 957CC15F21D59F9A00B0AFCF /* method.rtf */; };
@@ -62,14 +68,46 @@
 		95E9B4DC21C8DA1900C8A076 /* my.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 95E9B4DB21C8DA1900C8A076 /* my.scnassets */; };
 		95EB82F621E7B1C200AB639D /* BodyMeasure+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EB82EE21E7B1C200AB639D /* BodyMeasure+CoreDataClass.swift */; };
 		95EB82F821E7B1C200AB639D /* PicFullRes+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EB82F021E7B1C200AB639D /* PicFullRes+CoreDataClass.swift */; };
-		95EB82F921E7B1C200AB639D /* PicFullRes+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EB82F121E7B1C200AB639D /* PicFullRes+CoreDataProperties.swift */; };
 		95EB82FA21E7B1C200AB639D /* PlicheMeasure+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EB82F221E7B1C200AB639D /* PlicheMeasure+CoreDataClass.swift */; };
-		95EB82FB21E7B1C200AB639D /* PlicheMeasure+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EB82F321E7B1C200AB639D /* PlicheMeasure+CoreDataProperties.swift */; };
 		95EB82FC21E7B1C200AB639D /* Thumbnail+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EB82F421E7B1C200AB639D /* Thumbnail+CoreDataClass.swift */; };
-		95EB82FD21E7B1C200AB639D /* Thumbnail+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EB82F521E7B1C200AB639D /* Thumbnail+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		951AD6032227D7E8009E046A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 951AD5FA2227D7E8009E046A /* Ensembles iOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 07BF374517F184DD00C56F64;
+			remoteInfo = "Ensembles iOS";
+		};
+		951AD6052227D7E8009E046A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 951AD5FA2227D7E8009E046A /* Ensembles iOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 07571F0F1910EC02008479A9;
+			remoteInfo = "Ensembles Resources iOS";
+		};
+		951AD6072227D7E8009E046A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 951AD5FA2227D7E8009E046A /* Ensembles iOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 070D336118018A960054BA23;
+			remoteInfo = "Tests iOS";
+		};
+		951AD6092227D7E8009E046A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 951AD5FA2227D7E8009E046A /* Ensembles iOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 07F2D9B41D950FDB00EB9483;
+			remoteInfo = "Ensembles iOS Module";
+		};
+		951AD60D2227D825009E046A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 951AD5FA2227D7E8009E046A /* Ensembles iOS.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 07F2D9B31D950FDB00EB9483;
+			remoteInfo = "Ensembles iOS Module";
+		};
 		959B10D321CA74D600CF2E3F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 959B10CE21CA74D600CF2E3F /* Charts.xcodeproj */;
@@ -94,6 +132,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				959B10DE21CA751500CF2E3F /* Charts.framework in Embed Frameworks */,
+				951AD60C2227D825009E046A /* Ensembles.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -104,8 +143,9 @@
 		9506885321CF90F3006AC1DB /* AppStoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStoreManager.swift; sourceTree = "<group>"; };
 		9506885B21D01D9C006AC1DB /* measureRowValueDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = measureRowValueDetails.swift; sourceTree = "<group>"; };
 		95084E3621D4AAC200EF307A /* AllertViewIntro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllertViewIntro.swift; sourceTree = "<group>"; };
-		95124FB62226969700D40C33 /* BodyMeasure+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BodyMeasure+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		95153BB621CC05DC0031FFB9 /* enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enum.swift; sourceTree = "<group>"; };
+		951AD5F82227D7BA009E046A /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		951AD5FA2227D7E8009E046A /* Ensembles iOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Ensembles iOS.xcodeproj"; path = "Framework/Ensembles iOS.xcodeproj"; sourceTree = "<group>"; };
 		95269EDD21B0888500DBD758 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		9533CA4C21E2126D00C397DE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		9533CA4D21E2129200C397DE /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Main.strings; sourceTree = "<group>"; };
@@ -123,6 +163,10 @@
 		95523AAD21B1132800761D1B /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		955592C521B6ECEF0059A83D /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		955DBD5E21CBED8C00312E6E /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Extension.swift; path = "Fit Measures/Convenient Class/Extension.swift"; sourceTree = SOURCE_ROOT; };
+		95685D902227DA7200A2DF56 /* Thumbnail+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Thumbnail+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		95685D912227DA7200A2DF56 /* BodyMeasure+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BodyMeasure+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		95685D922227DA7200A2DF56 /* PlicheMeasure+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlicheMeasure+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		95685D932227DA7200A2DF56 /* PicFullRes+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PicFullRes+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		956A870521C99EB4009291C1 /* Privacy.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Privacy.rtf; sourceTree = "<group>"; };
 		957BDA9621CCFDB000E2718F /* NavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavController.swift; sourceTree = "<group>"; };
 		957CC15F21D59F9A00B0AFCF /* method.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = method.rtf; sourceTree = "<group>"; };
@@ -162,11 +206,8 @@
 		95E9B4DB21C8DA1900C8A076 /* my.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = my.scnassets; sourceTree = "<group>"; };
 		95EB82EE21E7B1C200AB639D /* BodyMeasure+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BodyMeasure+CoreDataClass.swift"; sourceTree = "<group>"; };
 		95EB82F021E7B1C200AB639D /* PicFullRes+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PicFullRes+CoreDataClass.swift"; sourceTree = "<group>"; };
-		95EB82F121E7B1C200AB639D /* PicFullRes+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PicFullRes+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		95EB82F221E7B1C200AB639D /* PlicheMeasure+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlicheMeasure+CoreDataClass.swift"; sourceTree = "<group>"; };
-		95EB82F321E7B1C200AB639D /* PlicheMeasure+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlicheMeasure+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		95EB82F421E7B1C200AB639D /* Thumbnail+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Thumbnail+CoreDataClass.swift"; sourceTree = "<group>"; };
-		95EB82F521E7B1C200AB639D /* Thumbnail+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Thumbnail+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +215,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				951AD5F92227D7BA009E046A /* CloudKit.framework in Frameworks */,
+				951AD60B2227D825009E046A /* Ensembles.framework in Frameworks */,
 				95ACDF4221C812DE003A77BD /* HealthKit.framework in Frameworks */,
 				959B10DD21CA751500CF2E3F /* Charts.framework in Frameworks */,
 			);
@@ -182,6 +225,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		951AD5FB2227D7E8009E046A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				951AD6042227D7E8009E046A /* libensembles.a */,
+				951AD6062227D7E8009E046A /* Ensembles.bundle */,
+				951AD6082227D7E8009E046A /* Tests iOS.xctest */,
+				951AD60A2227D7E8009E046A /* Ensembles.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		9534E9FE21D64F3300F5801E /* rtfFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,14 +252,14 @@
 		95523AD221B12EF100761D1B /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				95124FB62226969700D40C33 /* BodyMeasure+CoreDataProperties.swift */,
+				95685D902227DA7200A2DF56 /* Thumbnail+CoreDataProperties.swift */,
+				95685D912227DA7200A2DF56 /* BodyMeasure+CoreDataProperties.swift */,
+				95685D922227DA7200A2DF56 /* PlicheMeasure+CoreDataProperties.swift */,
+				95685D932227DA7200A2DF56 /* PicFullRes+CoreDataProperties.swift */,
 				95EB82EE21E7B1C200AB639D /* BodyMeasure+CoreDataClass.swift */,
 				95EB82F021E7B1C200AB639D /* PicFullRes+CoreDataClass.swift */,
-				95EB82F121E7B1C200AB639D /* PicFullRes+CoreDataProperties.swift */,
 				95EB82F221E7B1C200AB639D /* PlicheMeasure+CoreDataClass.swift */,
-				95EB82F321E7B1C200AB639D /* PlicheMeasure+CoreDataProperties.swift */,
 				95EB82F421E7B1C200AB639D /* Thumbnail+CoreDataClass.swift */,
-				95EB82F521E7B1C200AB639D /* Thumbnail+CoreDataProperties.swift */,
 				95523AAC21B1132800761D1B /* Model.xcdatamodeld */,
 			);
 			path = CoreData;
@@ -230,6 +284,7 @@
 		95946BD021AB458700D534D0 = {
 			isa = PBXGroup;
 			children = (
+				951AD5FA2227D7E8009E046A /* Ensembles iOS.xcodeproj */,
 				95523AD221B12EF100761D1B /* CoreData */,
 				95523A5921B0921700761D1B /* Header.h */,
 				959B10CE21CA74D600CF2E3F /* Charts.xcodeproj */,
@@ -303,6 +358,7 @@
 		95ACDF4021C812DE003A77BD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				951AD5F82227D7BA009E046A /* CloudKit.framework */,
 				95ACDF4121C812DE003A77BD /* HealthKit.framework */,
 			);
 			name = Frameworks;
@@ -388,6 +444,7 @@
 			);
 			dependencies = (
 				959B10E021CA751500CF2E3F /* PBXTargetDependency */,
+				951AD60E2227D825009E046A /* PBXTargetDependency */,
 			);
 			name = "iFit Girths & Caliper";
 			productName = "Fit Measures";
@@ -413,8 +470,11 @@
 							com.apple.Keychain = {
 								enabled = 0;
 							};
+							com.apple.Push = {
+								enabled = 1;
+							};
 							com.apple.iCloud = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
@@ -437,6 +497,10 @@
 					ProductGroup = 959B10CF21CA74D600CF2E3F /* Products */;
 					ProjectRef = 959B10CE21CA74D600CF2E3F /* Charts.xcodeproj */;
 				},
+				{
+					ProductGroup = 951AD5FB2227D7E8009E046A /* Products */;
+					ProjectRef = 951AD5FA2227D7E8009E046A /* Ensembles iOS.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -446,6 +510,34 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		951AD6042227D7E8009E046A /* libensembles.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libensembles.a;
+			remoteRef = 951AD6032227D7E8009E046A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		951AD6062227D7E8009E046A /* Ensembles.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = Ensembles.bundle;
+			remoteRef = 951AD6052227D7E8009E046A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		951AD6082227D7E8009E046A /* Tests iOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Tests iOS.xctest";
+			remoteRef = 951AD6072227D7E8009E046A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		951AD60A2227D7E8009E046A /* Ensembles.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Ensembles.framework;
+			remoteRef = 951AD6092227D7E8009E046A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		959B10D421CA74D600CF2E3F /* Charts.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -513,32 +605,31 @@
 				95EB82F821E7B1C200AB639D /* PicFullRes+CoreDataClass.swift in Sources */,
 				95EB82FA21E7B1C200AB639D /* PlicheMeasure+CoreDataClass.swift in Sources */,
 				95DB84D621B0074700D13E6A /* CameraViewController.swift in Sources */,
+				95685D972227DA7200A2DF56 /* PicFullRes+CoreDataProperties.swift in Sources */,
 				95A1F89B21B43ADF005B6CC5 /* lastMeasureCell.swift in Sources */,
 				955DBD5F21CBED8C00312E6E /* Extension.swift in Sources */,
-				95EB82FD21E7B1C200AB639D /* Thumbnail+CoreDataProperties.swift in Sources */,
 				95946C0F21AB48EC00D534D0 /* MeasureMainController.swift in Sources */,
 				95946C0D21AB478700D534D0 /* CameraMainController.swift in Sources */,
 				95E9B4DA21C8DA0E00C8A076 /* VirtualPlane.swift in Sources */,
 				95523AAE21B1132800761D1B /* Model.xcdatamodeld in Sources */,
 				957BDA9721CCFDB000E2718F /* NavController.swift in Sources */,
-				95124FB72226969700D40C33 /* BodyMeasure+CoreDataProperties.swift in Sources */,
 				95946C9E21AD416600D534D0 /* AllertViewDataInsert.swift in Sources */,
 				95946C1321AB491300D534D0 /* InsightMainController.swift in Sources */,
 				95DB84B221ADF37600D13E6A /* AllertViewPlicoInsert.swift in Sources */,
-				95EB82F921E7B1C200AB639D /* PicFullRes+CoreDataProperties.swift in Sources */,
 				954927E521BE92DA00F78FD8 /* RawDataCell.swift in Sources */,
 				95A05D9521D24A450033B0AB /* PlicheRawValuDetails.swift in Sources */,
 				9506885C21D01D9C006AC1DB /* measureRowValueDetails.swift in Sources */,
 				95153BB721CC05DC0031FFB9 /* enum.swift in Sources */,
 				95ACDF3F21C7AAAC003A77BD /* HealthManager.swift in Sources */,
 				95DB84B021ADF02F00D13E6A /* PlicheMetCollectionViewCell.swift in Sources */,
+				95685D952227DA7200A2DF56 /* BodyMeasure+CoreDataProperties.swift in Sources */,
 				95269EDE21B0888500DBD758 /* DataManager.swift in Sources */,
 				9506885421CF90F3006AC1DB /* AppStoreManager.swift in Sources */,
 				95946C2421AC3C9100D534D0 /* MeasureCollectionViewCell.swift in Sources */,
 				95DB84AC21ADB1F300D13E6A /* PlicoMainControllerTable.swift in Sources */,
 				9542CD2421BAA2AE00D72B6A /* AllertViewPlicheInsertdWithGraph.swift in Sources */,
+				95685D962227DA7200A2DF56 /* PlicheMeasure+CoreDataProperties.swift in Sources */,
 				954927E321BE92C100F78FD8 /* RawDataTableview.swift in Sources */,
-				95EB82FB21E7B1C200AB639D /* PlicheMeasure+CoreDataProperties.swift in Sources */,
 				95DB84C621AEE25400D13E6A /* PrivacyController.swift in Sources */,
 				95DB84CB21AFF73D00D13E6A /* PicturesCell.swift in Sources */,
 				954927ED21BEF01600F78FD8 /* InstructionController.swift in Sources */,
@@ -546,6 +637,7 @@
 				95DB84B721AECA6600D13E6A /* SettingsMainTableViewController.swift in Sources */,
 				9541A9E621B1974D004AA622 /* UserDefaultsSettings.swift in Sources */,
 				95DB84AE21ADE98800D13E6A /* PlicheMoethodController.swift in Sources */,
+				95685D942227DA7200A2DF56 /* Thumbnail+CoreDataProperties.swift in Sources */,
 				9596BBDB21C3899100244C41 /* PicFullResController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -553,6 +645,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		951AD60E2227D825009E046A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Ensembles iOS Module";
+			targetProxy = 951AD60D2227D825009E046A /* PBXContainerItemProxy */;
+		};
 		959B10E021CA751500CF2E3F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Charts;

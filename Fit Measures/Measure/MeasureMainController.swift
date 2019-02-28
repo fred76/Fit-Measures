@@ -40,7 +40,10 @@ class MeasureMainController: UIViewController, UICollectionViewDelegate, UIColle
         self.measureCollctionView.dataSource = self 
         unitMeasurLenght = " " + UserDefaultsSettings.lenghtUnitSet
         unitMeasurWeight = " " + UserDefaultsSettings.weightUnitSet
-        
+        DataManager.shared.assignUniqueIdentifierToMeasure()
+        DataManager.shared.assignUniqueIdentifierToPliche()
+        DataManager.shared.assignUniqueIdentifierToPicFullRes()
+        DataManager.shared.assignUniqueIdentifierToThumb()
         updateHealthInfo {
             
         }

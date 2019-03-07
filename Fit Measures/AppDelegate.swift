@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CDEPersistentStoreEnsembl
         let appVersion = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as? String
          
         // Use verbose logging for sync
-       // CDESetCurrentLoggingLevel(CDELoggingLevel.verbose.rawValue)
+       CDESetCurrentLoggingLevel(CDELoggingLevel.verbose.rawValue)
         
         
         setupCoreData()

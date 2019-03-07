@@ -79,7 +79,7 @@ class DataManager: NSObject {
         }
     }
     func assignUniqueIdentifierToPicFullRes() {
-        
+        print("asdfghj")
         let fetch = NSFetchRequest<PicFullRes>(entityName: "PicFullRes")
         do {
             
@@ -95,7 +95,7 @@ class DataManager: NSObject {
         }
     }
     func assignUniqueIdentifierToThumb() {
-        
+        print("123456")
         let fetch = NSFetchRequest<Thumbnail>(entityName: "Thumbnail")
         do {
             
@@ -788,27 +788,29 @@ class DataManager: NSObject {
         save()
     }
     func saveImage(imageData:NSData, thumbnailData:NSData, date: Double) {
-        saveQueue.sync {
-            
+      saveQueue.sync {
+            print("aa")
             // create new objects in moc
             guard let moc = self.managedContext else {
                 return
             }
-            
+            print("bb")
             guard let fullRes = NSEntityDescription.insertNewObject(forEntityName: "PicFullRes", into: moc) as? PicFullRes, let thumbnail = NSEntityDescription.insertNewObject(forEntityName: "Thumbnail", into: moc) as? Thumbnail else {
                 // handle failed new object in moc
                 print("moc error")
                 return
             }
-            
+            print("cc")
             //set image data of fullres
             fullRes.imageData = imageData
             fullRes.uniqueIdentifier = uuid + StaticClass.dateFormatterLongLong.string(from: now) as NSString
+            print("dd")
             //set image data of thumbnail
             thumbnail.imageData = thumbnailData
             thumbnail.id = date
             thumbnail.fullRes = fullRes
-            thumbnail.uniqueIdentifier = uuid + StaticClass.dateFormatterLongLong.string(from: now) as NSString
+            thumbnail.uniqueIdentifier = uuid + StaticClass.dateFormatterLongLong.string(from: now) + "thumbnail" as NSString
+            print("ee")
             // save the new objects
             do {
                 try moc.save()
@@ -820,15 +822,8 @@ class DataManager: NSObject {
             moc.refreshAllObjects()
         }
     }
-    func showTopLevelAlert(title : String, body : String, alertActionDoIt : UIAlertAction) {
-        let alertController = UIAlertController (title: title , message: body, preferredStyle: .alert)
-        alertController.addAction(alertActionDoIt)
-        let alertWindow = UIWindow(frame: UIScreen.main.bounds)
-        alertWindow.rootViewController = UIViewController()
-        alertWindow.windowLevel = UIWindow.Level.alert + 1;
-        alertWindow.makeKeyAndVisible()
-        alertWindow.rootViewController?.present(alertController, animated: true, completion: nil)
-    }
+    
+   
     func prepareImageForSaving(image:UIImage, closure: @escaping ()->()) {
         
         // use date as unique id
@@ -857,6 +852,17 @@ class DataManager: NSObject {
         closure()
     }
     
+    
+    
+    func showTopLevelAlert(title : String, body : String, alertActionDoIt : UIAlertAction) {
+        let alertController = UIAlertController (title: title , message: body, preferredStyle: .alert)
+        alertController.addAction(alertActionDoIt)
+        let alertWindow = UIWindow(frame: UIScreen.main.bounds)
+        alertWindow.rootViewController = UIViewController()
+        alertWindow.windowLevel = UIWindow.Level.alert + 1;
+        alertWindow.makeKeyAndVisible()
+        alertWindow.rootViewController?.present(alertController, animated: true, completion: nil)
+    }
 }
 
 

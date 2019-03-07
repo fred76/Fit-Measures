@@ -110,3 +110,5 @@
 "LOCALTitle" = "L'App chiede il riavvio";
 "LOCALOK" = "Riavvia";
 "LOCALCancel" = "Annulla";
+"LOCiCLOUDTITLE" = "Girth & Caliper salverà i dat su iCloud";
+"LOCiCLOUDBODY" = "per disabilitare iCloud Apri Impostazioni > [Nome utente] > iCloud > Girths & Caliper.";

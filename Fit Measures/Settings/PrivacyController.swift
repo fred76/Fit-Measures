@@ -16,7 +16,7 @@ class PrivacyController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad() 
         if let rtfPath = Bundle.main.url(forResource: textString!, withExtension: "rtf") {
-            print("textString \(rtfPath)")
+        
             do {
                 let attributedStringWithRtf: NSAttributedString = try NSAttributedString(url: rtfPath, options: [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.rtf], documentAttributes: nil)
                 self.Text.attributedText = attributedStringWithRtf

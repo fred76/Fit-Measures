@@ -1,17 +1,14 @@
 //
-//  AllertViewDataInsert.swift
-//  Fit Measures
+//  PurchaseInfoController.swift
+//  iFit Girths & Caliper
 //
-//  Created by Alberto Lunardini on 27/11/2018.
-//  Copyright © 2018 Alberto Lunardini. All rights reserved.
+//  Created by Alberto Lunardini on 25/03/2019.
+//  Copyright © 2019 Alberto Lunardini. All rights reserved.
 //
-protocol CustomAlertViewDelegate : class {
-    func okButtonTapped(selectedOption: String, textFieldValue: String)
-    func cancelButtonTapped()
-}
+
 import UIKit
 
-class AllertViewDataInsert: UIViewController {
+class PurchaseInfoController: UIViewController {
     @IBOutlet weak var messageLabel: UITextView!
     @IBOutlet weak var alertTextField: UITextField!
     @IBOutlet weak var alertView: CustomViewDoubleColor!
@@ -19,7 +16,7 @@ class AllertViewDataInsert: UIViewController {
     @IBOutlet weak var okButton: UIButton!
     @IBOutlet var yConstraint: NSLayoutConstraint!
     
-    var showPurchaseInfo : Bool!
+    
     var delegate: CustomAlertViewDelegate?
     var selectedOption = "First"
     // BackGround Color
@@ -32,8 +29,6 @@ class AllertViewDataInsert: UIViewController {
         if UIDevice.current.userInterfaceIdiom == .pad {
             yConstraint.constant = 0
         }
-       
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,10 +37,6 @@ class AllertViewDataInsert: UIViewController {
         animateView()
         cancelButton.addBorder(color: alertViewGrayColor, width: 1)
         okButton.addBorder(color: alertViewGrayColor, width: 1)
-        if !UserDefaults.standard.bool(forKey: "fred76.com.ifit.girths") && showPurchaseInfo {
-            messageLabel.text = "Suca"
-            alertTextField.isHidden = true
-        } 
         
     }
     

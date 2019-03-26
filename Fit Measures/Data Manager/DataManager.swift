@@ -9,8 +9,9 @@
 import UIKit
 import CoreData
 import HealthKit
+import StoreKit
 
-class DataManager: NSObject {
+class DataManager: NSObject, SKRequestDelegate {
     
     var bodyMeasure : BodyMeasure!
     var plicheMeasure : PlicheMeasure!
@@ -79,7 +80,7 @@ class DataManager: NSObject {
         }
     }
     func assignUniqueIdentifierToPicFullRes() {
-        print("asdfghj")
+        
         let fetch = NSFetchRequest<PicFullRes>(entityName: "PicFullRes")
         do {
             
@@ -95,7 +96,6 @@ class DataManager: NSObject {
         }
     }
     func assignUniqueIdentifierToThumb() {
-        print("123456")
         let fetch = NSFetchRequest<Thumbnail>(entityName: "Thumbnail")
         do {
             
@@ -249,7 +249,7 @@ class DataManager: NSObject {
         HealthManager.addToHealthKit(DataToSave: .bodyMass, unitMeasure: HKQuantity(unit: HKUnit.gram(), doubleValue: (Double(array[0]) ?? 0)*1000), date: date as Date) {
             
         }
-        HealthManager.addToHealthKit(DataToSave: .waistCircumference, unitMeasure: HKQuantity(unit: HKUnit.meter(), doubleValue: (Double(array[8]) ?? 0)/100), date: date as Date) {
+        HealthManager.addToHealthKit(DataToSave: .waistCircumference, unitMeasure: HKQuantity(unit: HKUnit.meter(), doubleValue: (Double(array[14]) ?? 0)/100), date: date as Date) {
             
         }
         save()
@@ -781,36 +781,34 @@ class DataManager: NSObject {
     
     
     let convertQueue = DispatchQueue(label: "convertQueue", attributes: .concurrent)
+    
     let saveQueue = DispatchQueue(label: "saveQueue", attributes: .concurrent)
     
     func deletPic(t: PicFullRes){
         managedContext.delete(t)
         save()
     }
+    
     func saveImage(imageData:NSData, thumbnailData:NSData, date: Double) {
       saveQueue.sync {
-            print("aa")
             // create new objects in moc
             guard let moc = self.managedContext else {
                 return
             }
-            print("bb")
             guard let fullRes = NSEntityDescription.insertNewObject(forEntityName: "PicFullRes", into: moc) as? PicFullRes, let thumbnail = NSEntityDescription.insertNewObject(forEntityName: "Thumbnail", into: moc) as? Thumbnail else {
                 // handle failed new object in moc
                 print("moc error")
                 return
             }
-            print("cc")
             //set image data of fullres
             fullRes.imageData = imageData
             fullRes.uniqueIdentifier = uuid + StaticClass.dateFormatterLongLong.string(from: now) as NSString
-            print("dd")
             //set image data of thumbnail
             thumbnail.imageData = thumbnailData
             thumbnail.id = date
             thumbnail.fullRes = fullRes
             thumbnail.uniqueIdentifier = uuid + StaticClass.dateFormatterLongLong.string(from: now) + "thumbnail" as NSString
-            print("ee")
+        
             // save the new objects
             do {
                 try moc.save()
@@ -823,7 +821,6 @@ class DataManager: NSObject {
         }
     }
     
-   
     func prepareImageForSaving(image:UIImage, closure: @escaping ()->()) {
         
         // use date as unique id
@@ -852,8 +849,6 @@ class DataManager: NSObject {
         closure()
     }
     
-    
-    
     func showTopLevelAlert(title : String, body : String, alertActionDoIt : UIAlertAction) {
         let alertController = UIAlertController (title: title , message: body, preferredStyle: .alert)
         alertController.addAction(alertActionDoIt)
@@ -863,6 +858,117 @@ class DataManager: NSObject {
         alertWindow.makeKeyAndVisible()
         alertWindow.rootViewController?.present(alertController, animated: true, completion: nil)
     }
+    
+    // MARK: - original_application_version:
+    
+    private let productionStoreURL = URL(string: "https://buy.itunes.apple.com/verifyReceipt")
+    
+    private let sandboxStoreURL = URL(string: "https://sandbox.itunes.apple.com/verifyReceipt")
+    
+    let receiptURL = Bundle.main.appStoreReceiptURL
+    
+    func loadReceipt()  {
+        print("com.ifit.girths \(UserDefaults.standard.bool(forKey: "fred76.com.ifit.girths"))")
+        print("com.ifit.skinFolds \(UserDefaults.standard.bool(forKey: "fred76.com.ifit.skinFolds"))")
+        print("com.ifit.bundle \(UserDefaults.standard.bool(forKey: "fred76.com.ifit.bundle"))")
+        if UserDefaults.standard.bool(forKey: "fred76.com.ifit.girths") || UserDefaults.standard.bool(forKey: "fred76.com.ifit.skinFolds") || UserDefaults.standard.bool(forKey: "fred76.com.ifit.bundle") {
+            return
+        }
+        guard let receiptURL = receiptURL else {print("NO URL"); return }
+        do {
+            let receipt = try Data(contentsOf: receiptURL)
+            verifyIfPurchasedBeforeFreemium(productionStoreURL!, receipt)
+        } catch {
+            let appReceiptRefreshRequest = SKReceiptRefreshRequest(receiptProperties: nil)
+            appReceiptRefreshRequest.delegate = self
+            appReceiptRefreshRequest.start()
+        }
+        
+    }
+    
+    private func verifyIfPurchasedBeforeFreemium(_ storeURL: URL, _ receipt: Data) {
+        do {
+            let requestContents:Dictionary = ["receipt-data": receipt.base64EncodedString()]
+            let requestData = try JSONSerialization.data(withJSONObject: requestContents, options: [])
+            var storeRequest = URLRequest(url: storeURL)
+            storeRequest.httpMethod = "POST"
+            storeRequest.httpBody = requestData
+            
+            URLSession.shared.dataTask(with: storeRequest) { (data, response, error) in
+                DispatchQueue.main.async {
+                    if data != nil {
+                        do {
+                            let jsonResponse = try JSONSerialization.jsonObject(with: data!, options: []) as! [String: Any?]
+                            
+                            if let statusCode = jsonResponse["status"] as? Int {
+                                if statusCode == 21007 {
+                                    print("Switching to test against sandbox")
+                                    self.verifyIfPurchasedBeforeFreemium(self.sandboxStoreURL!, receipt)
+                                }
+                            }
+                            if let receiptResponse = jsonResponse["receipt"] as? [String: Any?],
+                                let original_application_version = receiptResponse["original_application_version"] as? String {
+                                
+                                //                                let dateFormatter = DateFormatter()
+                                //                                dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss VV"
+                                //                                let dateObject = dateFormatter.date(from: original_purchase_date)
+                                //
+                                //                                let n = Date()
+                                
+                                if original_application_version.doubleValue < 3.0 { 
+                                    UserDefaults.standard.set(true, forKey: "fred76.com.ifit.girths")
+                                    UserDefaults.standard.set(true, forKey: "fred76.com.ifit.skinFolds")
+                                    UserDefaults.standard.set(true, forKey: "fred76.com.ifit.bundle")
+                                }
+                                
+                            }
+                        } catch {
+                            print("Error: " + error.localizedDescription)
+                        }
+                    }
+                }
+                
+                }.resume()
+        } catch {
+            print("Error: " + error.localizedDescription)
+        }
+    }
+    func requestDidFinish(_ request: SKRequest) {
+        print("Refresh")
+        // a fresh receipt should now be present at the url
+        do {
+            let receipt = try Data(contentsOf: receiptURL!) //force unwrap is safe here, control can't land here if receiptURL is nil
+            verifyIfPurchasedBeforeFreemium(productionStoreURL!, receipt)
+        } catch {
+            // still no receipt, possible but unlikely to occur since this is the "success" delegate method
+        }
+    }
+    
+    func request(_ request: SKRequest, didFailWithError error: Error) {
+        print("app receipt refresh request did fail with error: \(error)")
+        // for some clues see here: https://samritchie.net/2015/01/29/the-operation-couldnt-be-completed-sserrordomain-error-100/
+    }
+    private func isPaidVersionNumber(_ originalVersion: String) -> Bool {
+        let pattern:String = "^\\d+\\.\\d+"
+        do {
+            let regex = try NSRegularExpression(pattern: pattern, options: [])
+            let results = regex.matches(in: originalVersion, options: [], range: NSMakeRange(0, originalVersion.count))
+            
+            let original = results.map {
+                Double(originalVersion[Range($0.range, in: originalVersion)!])
+            }
+            
+            if original.count > 0, original[0]! < 3 {
+                print("App purchased prior to Freemium model")
+                return true
+            }
+        } catch {
+            print("Paid Version RegEx Error.")
+        }
+        return false
+    }
+    
+   
 }
 
 

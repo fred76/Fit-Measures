@@ -22,9 +22,10 @@ class PlicoMainControllerTable: UITableViewController {
     @IBOutlet var durnin: CustomViewDoubleColor!
     var check = UIImageView()
     var layerTriangle = CAShapeLayer()
+    var identitifier3site : String = ""
+    var identitifier7site : String = ""
     
-    
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) { 
         tableView.reloadData()
     }
     
@@ -95,6 +96,7 @@ class PlicoMainControllerTable: UITableViewController {
     @IBOutlet weak var labelTwoJP: UILabel!
     @IBOutlet weak var labelThreeJP: UILabel!
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
         if indexPath.row == 2 {
             if UserDefaultsSettings.biologicalSexSet == "Male" {
             labelOne.text = loc("LOCALThigh")
@@ -119,10 +121,10 @@ class PlicoMainControllerTable: UITableViewController {
     
     
     
+     
     // MARK: - Navigation jackson_7 durnin Sloan
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // controlliamo il nome del segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) { 
         if segue.identifier == "jackson_3" {
                 let plicoMethodSelected = segue.destination as! PlicheMoethodController
             if UserDefaultsSettings.biologicalSexSet == "Male" {
@@ -130,14 +132,13 @@ class PlicoMainControllerTable: UITableViewController {
             } else {
                 plicoMethodSelected.plicheMethod = .jackson_3_Woman
             }
-            
         }
        
-        
         if segue.identifier == "jackson_7" {
             let plicoMethodSelected = segue.destination as! PlicheMoethodController
             plicoMethodSelected.plicheMethod = .jackson_7
         }
+   
         if segue.identifier == "Sloan" {
             let plicoMethodSelected = segue.destination as! PlicheMoethodController
             if UserDefaultsSettings.biologicalSexSet == "Male" {
@@ -145,8 +146,8 @@ class PlicoMainControllerTable: UITableViewController {
             } else {
                 plicoMethodSelected.plicheMethod = .sloanWoman
             }
-            
         }
+        
         if segue.identifier == "durnin" {
             let plicoMethodSelected = segue.destination as! PlicheMoethodController
             plicoMethodSelected.plicheMethod = .DurninMan

@@ -9,7 +9,8 @@
 import UIKit
 import MessageUI
 import HealthKit
-class SettingsMainTableViewController: UITableViewController, UITextFieldDelegate, MFMailComposeViewControllerDelegate{
+import StoreKit
+class SettingsMainTableViewController: UITableViewController, UITextFieldDelegate, MFMailComposeViewControllerDelegate, SKRequestDelegate{
     
     @IBOutlet weak var ageTextField: UITextField!
     @IBOutlet var heightTextField: UITextField!
@@ -24,12 +25,12 @@ class SettingsMainTableViewController: UITableViewController, UITextFieldDelegat
         super.viewDidLoad()
         ageTextField.delegate = self
         heightTextField.delegate = self
-       ageIcon.isHidden = true
-       heightIcon.isHidden = true
-       sexIcon.isHidden = true 
-
+        ageIcon.isHidden = true
+        heightIcon.isHidden = true
+        sexIcon.isHidden = true
+        
     }
-  
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -38,6 +39,20 @@ class SettingsMainTableViewController: UITableViewController, UITextFieldDelegat
             self.updateLabelIfHKnotAvailable()
         }
     }
+    
+//    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//        if indexPath.section == 4 {
+//            if indexPath.row == 0 {
+//                cell.textLabel?.text = orPuerc ?? "orPuerc"
+//            } else {
+//                cell.textLabel?.text = applVer ?? "applVer"
+//            }
+//        }
+//    }
+    
+    
+    
+    
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated) 
@@ -151,7 +166,7 @@ class SettingsMainTableViewController: UITableViewController, UITextFieldDelegat
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 5
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -161,7 +176,13 @@ class SettingsMainTableViewController: UITableViewController, UITextFieldDelegat
         if section == 1 {
             return 3
         }
-        return 6
+        if section == 2 {
+            return 1
+        }
+        if section == 3 {
+            return 6
+        }
+        return 2
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -174,8 +195,8 @@ class SettingsMainTableViewController: UITableViewController, UITextFieldDelegat
             }
             
         }
-       
-        if indexPath.section == 2 {
+        
+        if indexPath.section == 3 {
             if indexPath.row == 0 {
                 writeReview()
             }
@@ -218,7 +239,7 @@ class SettingsMainTableViewController: UITableViewController, UITextFieldDelegat
     }
     
     // MARK: - Navigation
-   
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -319,7 +340,7 @@ extension SettingsMainTableViewController {
                 self.heightTextField.text = heightFormatter.string(fromMeters: height)
                 self.heightIcon.isHidden = false
             } else {
-               self.heightTextField.isEnabled = true
+                self.heightTextField.isEnabled = true
             }
         }
     }
@@ -336,7 +357,7 @@ extension SettingsMainTableViewController {
                 UserDefaultsSettings.ageSet = Double(age)
                 ageTextField.text = String(age)
                 ageIcon.isHidden = false
-               
+                
             } else {
                 ageTextField.isEnabled = true
             }
@@ -346,12 +367,12 @@ extension SettingsMainTableViewController {
                 {
                     biologicalSexSwitch.isEnabled = true
                 } else {
-                UserDefaultsSettings.biologicalSexSet = biologicalSex.stringRepresentation
-                biologicalSexSwitch.isEnabled = false
-                
-                sexIcon.isHidden = false
+                    UserDefaultsSettings.biologicalSexSet = biologicalSex.stringRepresentation
+                    biologicalSexSwitch.isEnabled = false
+                    
+                    sexIcon.isHidden = false
                 }
-               
+                
             }
             
         } catch let error {

@@ -40,6 +40,14 @@
             HKHealthStore().requestAuthorization(toShare: shareSet,
                                                  read: read) { (success, error) in
                                                     completion(success, error)
+//                                                    if (success) {
+//                                                        print("OK DATO PERMESSO")
+//                                                    } else {
+//                                                        print("NO PERMESSO")
+//                                                        if let e = error {
+//                                                            print(e)
+//                                                        }
+//                                                    }
             }
             
             

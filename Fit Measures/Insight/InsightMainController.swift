@@ -39,9 +39,17 @@ class InsightMainController: UIViewController, UITableViewDelegate, UITableViewD
         lastMeasureTableView.dataSource = self
         plicheCollectionView.delegate = self
         plicheCollectionView.dataSource = self
-        measureTitle =  [loc("LOCALWeight"),loc("LOCALNeck"),loc("LOCALBicep_R"),loc("LOCALBicep_L"),loc("LOCALBicep_R_Relax"),loc("LOCALBicep_L_Relax"),loc("LOCALForearm_R"),loc("LOCALForearm_L"),loc("LOCALWrist"),loc("LOCALChest"),loc("LOCALWaist"),loc("LOCALHips"),loc("LOCALThigh_R"),loc("LOCALThigh_L"),loc("LOCALCalf_R"),loc("LOCALCalf_L")]
+        if UserDefaults.standard.bool(forKey: "fred76.com.ifit.girths") {
+            measureTitle =  [loc("LOCALWeight"),loc("LOCALNeck"),loc("LOCALBicep_L"),loc("LOCALBicep_R_Relax"),loc("LOCALForearm_L"),loc("LOCALWrist"),loc("LOCALWaist"),loc("LOCALHips"),loc("LOCALThigh_L"),loc("LOCALCalf_R")]
+            imageArray = ["Weight","Neck","Bicep_L","bicep_R_Relax","Forearm_L","Wrist","Waist","Hips","Thigh_L","Calf_R"]
+        } else {
+            measureTitle =  [loc("LOCALWeight"),loc("LOCALNeck"),loc("LOCALBicep_R"),loc("LOCALBicep_L"),loc("LOCALBicep_R_Relax"),loc("LOCALBicep_L_Relax"),loc("LOCALForearm_R"),loc("LOCALForearm_L"),loc("LOCALWrist"),loc("LOCALChest"),loc("LOCALWaist"),loc("LOCALHips"),loc("LOCALThigh_R"),loc("LOCALThigh_L"),loc("LOCALCalf_R"),loc("LOCALCalf_L")]
+            imageArray = ["Weight","Neck","Bicep_L","Bicep_R","bicep_L_Relax","bicep_R_Relax","Forearm_L","Forearm_R","Wrist","Chest","Waist","Hips","Thigh_L","Thigh_R","Calf_L","Calf_R"]
+        }
+        
+       
         plicheTitle = [loc("LOCALPlicheSum"),loc("LOCALBodyDensity"), loc("LOCALbodyFat%"),loc("LOCALLeanBodyMass")]
-        imageArray = ["Weight","Neck","Bicep_L","Bicep_R","bicep_L_Relax","bicep_R_Relax","Forearm_L","Forearm_R","Wrist","Chest","Waist","Hips","Thigh_L","Thigh_R","Calf_L","Calf_R"]
+        
         plicheArrayThumb =  ["Triceps_P","Biceps_P","Subscapular_P","Suprailiac_P","Midaxillary_P","Abdominal_P","Chest_P","Thigh_P"]
         bodyMeasurementIsAdded = DataManager.shared.bodyMeasurementExist()
         plicheMeasureIsAdded = DataManager.shared.plicheMeasurementExist()
@@ -118,6 +126,7 @@ class InsightMainController: UIViewController, UITableViewDelegate, UITableViewD
         
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+       
         return 72
         
     }
@@ -166,8 +175,6 @@ class InsightMainController: UIViewController, UITableViewDelegate, UITableViewD
             cell.imageCell.image = UIImage(named: imageArray[indexPath.row])
             cell.methodLabel.isHidden = true
             cell.valueLabel.text = String(Items.sharedInstance.measureArray[indexPath.row])
-            
-            
         } else {
             cell.nameLabel.text = plicheTitle[indexPath.row]
             cell.imageCell.image = UIImage(named: "Caliper")

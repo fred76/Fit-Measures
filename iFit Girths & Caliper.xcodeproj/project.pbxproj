@@ -10,6 +10,7 @@
 		9506885421CF90F3006AC1DB /* AppStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9506885321CF90F3006AC1DB /* AppStoreManager.swift */; };
 		9506885C21D01D9C006AC1DB /* measureRowValueDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9506885B21D01D9C006AC1DB /* measureRowValueDetails.swift */; };
 		95084E3721D4AAC200EF307A /* AllertViewIntro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95084E3621D4AAC200EF307A /* AllertViewIntro.swift */; };
+		950D787122497ACB00542CD7 /* PurchaseInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950D787022497ACB00542CD7 /* PurchaseInfoController.swift */; };
 		95153BB721CC05DC0031FFB9 /* enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95153BB621CC05DC0031FFB9 /* enum.swift */; };
 		951AD5F92227D7BA009E046A /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951AD5F82227D7BA009E046A /* CloudKit.framework */; };
 		951AD60B2227D825009E046A /* Ensembles.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951AD60A2227D7E8009E046A /* Ensembles.framework */; };
@@ -51,6 +52,10 @@
 		95A1F89B21B43ADF005B6CC5 /* lastMeasureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A1F89A21B43ADF005B6CC5 /* lastMeasureCell.swift */; };
 		95ACDF3F21C7AAAC003A77BD /* HealthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ACDF3E21C7AAAB003A77BD /* HealthManager.swift */; };
 		95ACDF4221C812DE003A77BD /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95ACDF4121C812DE003A77BD /* HealthKit.framework */; };
+		95C6AE2F224141C5000C48C6 /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6AE2E224141C5000C48C6 /* IAPHelper.swift */; };
+		95C6AE3122414224000C48C6 /* GandCProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6AE3022414224000C48C6 /* GandCProducts.swift */; };
+		95C6AE35224146E7000C48C6 /* ShoppingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6AE34224146E7000C48C6 /* ShoppingController.swift */; };
+		95C6AE37224148FD000C48C6 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6AE36224148FD000C48C6 /* ProductCell.swift */; };
 		95D64C8A21E3778A0071532C /* methodIta.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 95D64C8921E3778A0071532C /* methodIta.rtf */; };
 		95D64C8E21E4939C0071532C /* Istruzioni_Ita.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 95D64C8D21E4939C0071532C /* Istruzioni_Ita.rtf */; };
 		95D64C9021E499D80071532C /* CameraUse_it.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 95D64C8F21E499D80071532C /* CameraUse_it.rtf */; };
@@ -143,6 +148,7 @@
 		9506885321CF90F3006AC1DB /* AppStoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStoreManager.swift; sourceTree = "<group>"; };
 		9506885B21D01D9C006AC1DB /* measureRowValueDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = measureRowValueDetails.swift; sourceTree = "<group>"; };
 		95084E3621D4AAC200EF307A /* AllertViewIntro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllertViewIntro.swift; sourceTree = "<group>"; };
+		950D787022497ACB00542CD7 /* PurchaseInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseInfoController.swift; sourceTree = "<group>"; };
 		95153BB621CC05DC0031FFB9 /* enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enum.swift; sourceTree = "<group>"; };
 		951AD5F82227D7BA009E046A /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		951AD5FA2227D7E8009E046A /* Ensembles iOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Ensembles iOS.xcodeproj"; path = "Framework/Ensembles iOS.xcodeproj"; sourceTree = "<group>"; };
@@ -189,6 +195,10 @@
 		95A1F89A21B43ADF005B6CC5 /* lastMeasureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lastMeasureCell.swift; sourceTree = "<group>"; };
 		95ACDF3E21C7AAAB003A77BD /* HealthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthManager.swift; sourceTree = "<group>"; };
 		95ACDF4121C812DE003A77BD /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		95C6AE2E224141C5000C48C6 /* IAPHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
+		95C6AE3022414224000C48C6 /* GandCProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GandCProducts.swift; sourceTree = "<group>"; };
+		95C6AE34224146E7000C48C6 /* ShoppingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingController.swift; sourceTree = "<group>"; };
+		95C6AE36224148FD000C48C6 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		95D64C8921E3778A0071532C /* methodIta.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = methodIta.rtf; sourceTree = "<group>"; };
 		95D64C8D21E4939C0071532C /* Istruzioni_Ita.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Istruzioni_Ita.rtf; sourceTree = "<group>"; };
 		95D64C8F21E499D80071532C /* CameraUse_it.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = CameraUse_it.rtf; sourceTree = "<group>"; };
@@ -307,7 +317,10 @@
 			children = (
 				95D64C8B21E480830071532C /* Data Manager */,
 				95946BDC21AB458700D534D0 /* AppDelegate.swift */,
+				95C6AE34224146E7000C48C6 /* ShoppingController.swift */,
+				95C6AE36224148FD000C48C6 /* ProductCell.swift */,
 				95946BE221AB458700D534D0 /* Main.storyboard */,
+				950D787022497ACB00542CD7 /* PurchaseInfoController.swift */,
 				9533CA5F21E258CC00C397DE /* Localizable.strings */,
 				95946BE721AB458800D534D0 /* LaunchScreen.storyboard */,
 				95946BE521AB458800D534D0 /* Assets.xcassets */,
@@ -370,6 +383,8 @@
 				95ACDF3E21C7AAAB003A77BD /* HealthManager.swift */,
 				95269EDD21B0888500DBD758 /* DataManager.swift */,
 				9506885321CF90F3006AC1DB /* AppStoreManager.swift */,
+				95C6AE2E224141C5000C48C6 /* IAPHelper.swift */,
+				95C6AE3022414224000C48C6 /* GandCProducts.swift */,
 			);
 			path = "Data Manager";
 			sourceTree = "<group>";
@@ -597,17 +612,20 @@
 			files = (
 				95084E3721D4AAC200EF307A /* AllertViewIntro.swift in Sources */,
 				95EB82F621E7B1C200AB639D /* BodyMeasure+CoreDataClass.swift in Sources */,
+				950D787122497ACB00542CD7 /* PurchaseInfoController.swift in Sources */,
 				9533CA6421E3337C00C397DE /* LanguageController.swift in Sources */,
 				95946BDD21AB458700D534D0 /* AppDelegate.swift in Sources */,
 				95EB82FC21E7B1C200AB639D /* Thumbnail+CoreDataClass.swift in Sources */,
 				95DB84AA21ADA84D00D13E6A /* StaticClass.swift in Sources */,
 				955592C621B6ECEF0059A83D /* ChartViewController.swift in Sources */,
 				95EB82F821E7B1C200AB639D /* PicFullRes+CoreDataClass.swift in Sources */,
+				95C6AE35224146E7000C48C6 /* ShoppingController.swift in Sources */,
 				95EB82FA21E7B1C200AB639D /* PlicheMeasure+CoreDataClass.swift in Sources */,
 				95DB84D621B0074700D13E6A /* CameraViewController.swift in Sources */,
 				95685D972227DA7200A2DF56 /* PicFullRes+CoreDataProperties.swift in Sources */,
 				95A1F89B21B43ADF005B6CC5 /* lastMeasureCell.swift in Sources */,
 				955DBD5F21CBED8C00312E6E /* Extension.swift in Sources */,
+				95C6AE2F224141C5000C48C6 /* IAPHelper.swift in Sources */,
 				95946C0F21AB48EC00D534D0 /* MeasureMainController.swift in Sources */,
 				95946C0D21AB478700D534D0 /* CameraMainController.swift in Sources */,
 				95E9B4DA21C8DA0E00C8A076 /* VirtualPlane.swift in Sources */,
@@ -615,6 +633,7 @@
 				957BDA9721CCFDB000E2718F /* NavController.swift in Sources */,
 				95946C9E21AD416600D534D0 /* AllertViewDataInsert.swift in Sources */,
 				95946C1321AB491300D534D0 /* InsightMainController.swift in Sources */,
+				95C6AE3122414224000C48C6 /* GandCProducts.swift in Sources */,
 				95DB84B221ADF37600D13E6A /* AllertViewPlicoInsert.swift in Sources */,
 				954927E521BE92DA00F78FD8 /* RawDataCell.swift in Sources */,
 				95A05D9521D24A450033B0AB /* PlicheRawValuDetails.swift in Sources */,
@@ -637,6 +656,7 @@
 				95DB84B721AECA6600D13E6A /* SettingsMainTableViewController.swift in Sources */,
 				9541A9E621B1974D004AA622 /* UserDefaultsSettings.swift in Sources */,
 				95DB84AE21ADE98800D13E6A /* PlicheMoethodController.swift in Sources */,
+				95C6AE37224148FD000C48C6 /* ProductCell.swift in Sources */,
 				95685D942227DA7200A2DF56 /* Thumbnail+CoreDataProperties.swift in Sources */,
 				9596BBDB21C3899100244C41 /* PicFullResController.swift in Sources */,
 			);

@@ -10,8 +10,9 @@ import UIKit
 import CoreData
 import Ensembles
 import CloudKit
+import StoreKit
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, CDEPersistentStoreEnsembleDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, CDEPersistentStoreEnsembleDelegate{
     
     var window: UIWindow?
     
@@ -30,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CDEPersistentStoreEnsembl
         let appVersion = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as? String
          
         // Use verbose logging for sync
-       CDESetCurrentLoggingLevel(CDELoggingLevel.verbose.rawValue)
+//       CDESetCurrentLoggingLevel(CDELoggingLevel.verbose.rawValue)
         
         
         setupCoreData()
@@ -83,26 +84,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CDEPersistentStoreEnsembl
             self.setupEnsemble(iCloudIsOn: UserDefaultsSettings.cloudSynchSet)
         }
         
+        DataManager.shared.loadReceipt()
         return true
+        
     }
-    
-    
-    
-    func iClouYesSync() -> UIAlertAction {
-        let enableiCloudSync = UIAlertAction(title: "OK", style: .default) { (action) in
-            UserDefaultsSettings.cloudSynchSet = true
-            self.setupEnsemble(iCloudIsOn: UserDefaultsSettings.cloudSynchSet)
-        }
-        return enableiCloudSync
-    }
-    func application(_ application: UIApplication, shouldAllowExtensionPointIdentifier extensionPointIdentifier: UIApplication.ExtensionPointIdentifier) -> Bool {
-        if (extensionPointIdentifier == .keyboard) {
-            return false
-        }
-        return true
-    }
-    var orientationLock = UIInterfaceOrientationMask.all
-    
+   
     func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
         return self.orientationLock
     }
@@ -122,6 +108,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CDEPersistentStoreEnsembl
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
+       
         if !UserDefaultsSettings.isAlreadyAppearedSet{
             if !UserDefaultsSettings.firstLunchSet {
                 let customAlert = self.window?.rootViewController?.storyboard?.instantiateViewController(withIdentifier: "AllertIntroID") as! AllertViewIntro
@@ -134,6 +121,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CDEPersistentStoreEnsembl
     func applicationWillTerminate(_ application: UIApplication) { }
     
     
+    
+    func iClouYesSync() -> UIAlertAction {
+        let enableiCloudSync = UIAlertAction(title: "OK", style: .default) { (action) in
+            UserDefaultsSettings.cloudSynchSet = true
+            self.setupEnsemble(iCloudIsOn: UserDefaultsSettings.cloudSynchSet)
+        }
+        return enableiCloudSync
+    }
+    
+    func application(_ application: UIApplication, shouldAllowExtensionPointIdentifier extensionPointIdentifier: UIApplication.ExtensionPointIdentifier) -> Bool {
+        if (extensionPointIdentifier == .keyboard) {
+            return false
+        }
+        return true
+    }
+    
+    var orientationLock = UIInterfaceOrientationMask.all
     
     func setupCoreData() {
         let modelURL = Bundle.main.url(forResource: "Model", withExtension: "momd")
@@ -182,6 +186,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CDEPersistentStoreEnsembl
     }
     
     var cloudFileSystem: CDECloudFileSystem!
+    
     var ensemble: CDEPersistentStoreEnsemble!
     
     func sync(iCloudIsOn : Bool ,_ completion: (() -> Void)?) {
@@ -209,8 +214,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CDEPersistentStoreEnsembl
     }
     
     func persistentStoreEnsemble(_ ensemble: CDEPersistentStoreEnsemble!, globalIdentifiersForManagedObjects objects: [Any]!) -> [Any]! {
-        let uniqueId = (objects as NSArray).value(forKeyPath: "uniqueIdentifier") as! [AnyObject]
-        print("uniqueId : \(uniqueId)")
+       // let uniqueId = (objects as NSArray).value(forKeyPath: "uniqueIdentifier") as! [AnyObject]
+        
         return (objects as NSArray).value(forKeyPath: "uniqueIdentifier") as! [AnyObject]
     }
 }

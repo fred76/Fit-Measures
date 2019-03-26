@@ -108,8 +108,7 @@ extension InstructionController {
     
     func exportPlicheAsCsv(){
         
-        let fileName = "Skin Fold.csv"
-        print("fileName : \(fileName) \n")
+        let fileName = "Skin Fold.csv" 
         let path = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(fileName)
         //"weight,abdominal,biceps,chest,midaxillary,subscapular,suprailiac,thigh,triceps,dateOfEntry,method,age\n"
         var csvText = "weight,abdominal,biceps,chest,midaxillary,subscapular,suprailiac,thigh,triceps,dateOfEntry,method,skin_fold_sum,bodyFatPercentage,body_density,lean_mass\n"

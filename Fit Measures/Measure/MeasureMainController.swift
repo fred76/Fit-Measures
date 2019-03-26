@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import HealthKit
+import StoreKit
 protocol AlertViewDelegate {
     func alertSending(sender: UIAlertController)
 }
@@ -19,7 +20,7 @@ private struct ItemDef {
     let image :String
 }
 
-class MeasureMainController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIPopoverPresentationControllerDelegate {
+class MeasureMainController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIPopoverPresentationControllerDelegate, SKRequestDelegate {
     private var itemDef : [ItemDef]!
     
     private let userHealthProfile = UserHealthProfile()
@@ -31,8 +32,7 @@ class MeasureMainController: UIViewController, UICollectionViewDelegate, UIColle
     var bodyMeasureSelected: BodyMeasure!
     var plicheMeasure: PlicheMeasure?
     var isAdded : Bool! = false
-    
-    
+    var girths : Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
         bodyMeasureSelected = DataManager.shared.getLastMeasureAvailable()
@@ -47,8 +47,9 @@ class MeasureMainController: UIViewController, UICollectionViewDelegate, UIColle
         updateHealthInfo {
             
         }
-        readItemDeaf () 
-    } 
+        readItemDeaf ()
+        
+    }
     override func viewWillDisappear(_ animated: Bool) {
         Items.sharedInstance.updateMaesure()
         Items.sharedInstance.updatePliche()
@@ -61,9 +62,15 @@ class MeasureMainController: UIViewController, UICollectionViewDelegate, UIColle
         measureCollctionView.reloadData()
         self.navigationItem.rightBarButtonItem?.isEnabled = false
         isAdded = DataManager.shared.bodyMeasurementForTodayIsAvailable()
+        
         readItemDeaf ()
-
+        UserDefaults.standard.set(false, forKey: "fred76.com.ifit.girths")
     }
+    
+    
+    
+    
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
         
@@ -71,32 +78,32 @@ class MeasureMainController: UIViewController, UICollectionViewDelegate, UIColle
     
     func readItemDeaf (){
         bodyMeasureSelected = DataManager.shared.getLastMeasureAvailable()
-            let m = bodyMeasureSelected
-            itemDef=[  
-                ItemDef(title: loc("LOCALWeight"), value: returnString(d: m?.weight ?? 0) , unit: UserDefaultsSettings.weightUnitSet, image: "Weight"),
-                ItemDef(title: loc("LOCALNeck"), value: returnString(d: m?.neck ?? 0), unit: UserDefaultsSettings.lenghtUnitSet, image: "Neck"),
-                ItemDef(title: loc("LOCALBicep_R"), value: returnString(d: m?.bicep_R ?? 0), unit: UserDefaultsSettings.lenghtUnitSet, image: "Bicep_R"),
-                ItemDef(title: loc("LOCALBicep_L"), value: returnString(d: m?.bicep_L ?? 0), unit: UserDefaultsSettings.lenghtUnitSet, image: "Bicep_L"),
-                ItemDef(title: loc("LOCALBicep_R_Relax"), value: returnString(d: m?.bicep_R_Relax ?? 0), unit: UserDefaultsSettings.lenghtUnitSet, image: "bicep_R_Relax"),
-                ItemDef(title: loc("LOCALBicep_L_Relax"), value: returnString(d: m?.bicep_L_Relax ?? 0), unit: UserDefaultsSettings.lenghtUnitSet, image: "bicep_L_Relax"),
-                ItemDef(title: loc("LOCALForearm_R"), value: returnString(d: m?.forearm_R ?? 0), unit: UserDefaultsSettings.lenghtUnitSet, image: "Forearm_R"),
-                ItemDef(title: loc("LOCALForearm_L"), value: returnString(d: m?.forearm_L ?? 0), unit: UserDefaultsSettings.lenghtUnitSet, image: "Forearm_L"),
-                ItemDef(title: loc("LOCALChest"), value: returnString(d: m?.chest ?? 0), unit: UserDefaultsSettings.lenghtUnitSet, image: "Chest"),
-                ItemDef(title: loc("LOCALWrist"), value: returnString(d: m?.wrist ?? 0), unit: UserDefaultsSettings.lenghtUnitSet, image: "Wrist"),
-                ItemDef(title: loc("LOCALWaist"), value: returnString(d: m?.waist ?? 0), unit: UserDefaultsSettings.lenghtUnitSet, image: "Waist"),
-                ItemDef(title: loc("LOCALHips"), value: returnString(d: m?.hips ?? 0), unit: UserDefaultsSettings.lenghtUnitSet, image: "Hips"),
-                ItemDef(title: loc("LOCALThigh_R"), value: returnString(d: m?.thigh_R ?? 0), unit: UserDefaultsSettings.lenghtUnitSet, image: "Thigh_R"),
-                ItemDef(title: loc("LOCALThigh_L"), value: returnString(d: m?.thigh_L ?? 0), unit: UserDefaultsSettings.lenghtUnitSet, image: "Thigh_L"),
-                ItemDef(title: loc("LOCALCalf_R"), value: returnString(d: m?.calf_R ?? 0), unit: UserDefaultsSettings.lenghtUnitSet, image: "Calf_R"),
-                ItemDef(title: loc("LOCALCalf_L"), value: returnString(d: m?.calf_L ?? 0), unit: UserDefaultsSettings.lenghtUnitSet, image: "Calf_L")
-            ]
-            
-        }
-        func returnString(d:Double)->String{
-            return String(format: "%.1f", d)
-        }
+        let m = bodyMeasureSelected
+        itemDef=[
+            ItemDef(title: loc("LOCALWeight"), value: returnString(d: m?.weight ?? 0) , unit: UserDefaultsSettings.weightUnitSet, image: "Weight"),
+            ItemDef(title: loc("LOCALNeck"), value: returnString(d: m?.neck ?? 0), unit: UserDefaultsSettings.lenghtUnitSet, image: "Neck"),
+            ItemDef(title: loc("LOCALBicep_R"), value: returnString(d: m?.bicep_R ?? 0), unit: UserDefaultsSettings.lenghtUnitSet, image: "Bicep_R"),
+            ItemDef(title: loc("LOCALBicep_L"), value: returnString(d: m?.bicep_L ?? 0), unit: UserDefaultsSettings.lenghtUnitSet, image: "Bicep_L"),
+            ItemDef(title: loc("LOCALBicep_R_Relax"), value: returnString(d: m?.bicep_R_Relax ?? 0), unit: UserDefaultsSettings.lenghtUnitSet, image: "bicep_R_Relax"),
+            ItemDef(title: loc("LOCALBicep_L_Relax"), value: returnString(d: m?.bicep_L_Relax ?? 0), unit: UserDefaultsSettings.lenghtUnitSet, image: "bicep_L_Relax"),
+            ItemDef(title: loc("LOCALForearm_R"), value: returnString(d: m?.forearm_R ?? 0), unit: UserDefaultsSettings.lenghtUnitSet, image: "Forearm_R"),
+            ItemDef(title: loc("LOCALForearm_L"), value: returnString(d: m?.forearm_L ?? 0), unit: UserDefaultsSettings.lenghtUnitSet, image: "Forearm_L"),
+            ItemDef(title: loc("LOCALChest"), value: returnString(d: m?.chest ?? 0), unit: UserDefaultsSettings.lenghtUnitSet, image: "Chest"),
+            ItemDef(title: loc("LOCALWrist"), value: returnString(d: m?.wrist ?? 0), unit: UserDefaultsSettings.lenghtUnitSet, image: "Wrist"),
+            ItemDef(title: loc("LOCALWaist"), value: returnString(d: m?.waist ?? 0), unit: UserDefaultsSettings.lenghtUnitSet, image: "Waist"),
+            ItemDef(title: loc("LOCALHips"), value: returnString(d: m?.hips ?? 0), unit: UserDefaultsSettings.lenghtUnitSet, image: "Hips"),
+            ItemDef(title: loc("LOCALThigh_R"), value: returnString(d: m?.thigh_R ?? 0), unit: UserDefaultsSettings.lenghtUnitSet, image: "Thigh_R"),
+            ItemDef(title: loc("LOCALThigh_L"), value: returnString(d: m?.thigh_L ?? 0), unit: UserDefaultsSettings.lenghtUnitSet, image: "Thigh_L"),
+            ItemDef(title: loc("LOCALCalf_R"), value: returnString(d: m?.calf_R ?? 0), unit: UserDefaultsSettings.lenghtUnitSet, image: "Calf_R"),
+            ItemDef(title: loc("LOCALCalf_L"), value: returnString(d: m?.calf_L ?? 0), unit: UserDefaultsSettings.lenghtUnitSet, image: "Calf_L")
+        ]
         
-        
+    }
+    func returnString(d:Double)->String{
+        return String(format: "%.1f", d)
+    }
+    
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if UIDevice.current.userInterfaceIdiom == .pad {
             let yourWidth = (collectionView.bounds.width/3.0)-10
@@ -130,13 +137,13 @@ class MeasureMainController: UIViewController, UICollectionViewDelegate, UIColle
         cell.imageContent.image = UIImage(named: def.image)
         cell.nameLabel.text = def.title
         if isAdded {
-            cell.measureLabel.text = StaticClass.removeZero(label: cell.measureLabel, value: def.value, constr: cell.nameLabelCenterPosition, unit: def.unit) 
-           
+            cell.measureLabel.text = StaticClass.removeZero(label: cell.measureLabel, value: def.value, constr: cell.nameLabelCenterPosition, unit: def.unit)
+            
             cell.measureLabel.isHidden = false
             if cell.measureLabel.isTruncatedu {
                 cell.nameLabel.font = UIFont.systemFont(ofSize: 13)
                 cell.nameLabel.adjustsFontSizeToFitWidth = true
-                 cell.measureLabel.adjustsFontSizeToFitWidth = true
+                cell.measureLabel.adjustsFontSizeToFitWidth = true
             }
             return cell
         }
@@ -155,11 +162,13 @@ class MeasureMainController: UIViewController, UICollectionViewDelegate, UIColle
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 5
     }
+     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if let cell = collectionView.cellForItem(at: indexPath) as? MeasureCollectionViewCell {
             indexPathSelected = indexPath
+            
             let customAlert = self.storyboard?.instantiateViewController(withIdentifier: "CustomAlertID") as! AllertViewDataInsert
             
             if UIDevice.current.userInterfaceIdiom == .pad {
@@ -188,29 +197,30 @@ class MeasureMainController: UIViewController, UICollectionViewDelegate, UIColle
             let def = self.itemDef[indexPath.row]
             
             bodyMeasurementPoint = BodyMeasurementPoints(rawValue: def.image)!
-            print("bodyMeasurementPoint \(bodyMeasurementPoint)")
             switch bodyMeasurementPoint {
-            case .weight : customAlert.messageLabel.text = loc("weight_Descr")
-            case .neck : customAlert.messageLabel.text = loc("neck_Descr")
-            case .bicep_R : customAlert.messageLabel.text = loc("bicep_R_Descr")
-            case .bicep_L : customAlert.messageLabel.text = loc("bicep_L_Descr")
-            case .bicep_R_Relax : customAlert.messageLabel.text = loc("bicep_R_Down_Descr")
-            case .bicep_L_Relax : customAlert.messageLabel.text = loc("bicep_L_Down_Descr")
-            case .Forearm_R : customAlert.messageLabel.text = loc("Forearm_R_Descr")
-            case .forearm_L : customAlert.messageLabel.text = loc("forearm_L_Descr")
-            case .wrist : customAlert.messageLabel.text = loc("wrist_Descr")
-            case .chest : customAlert.messageLabel.text = loc("chest_Descr")
-            case .waist : customAlert.messageLabel.text = loc("waist_Descr")
-            case .hips : customAlert.messageLabel.text = loc("hips_Descr")
-            case .Thigh_R : customAlert.messageLabel.text = loc("Thigh_R_Descr")
-            case .thigh_L : customAlert.messageLabel.text = loc("thigh_L_Descr")
-            case .Calf_R : customAlert.messageLabel.text = loc("Calf_R_Descr")
-            case .calf_L : customAlert.messageLabel.text = loc("calf_L_Descr")
+            case .weight : customAlert.messageLabel.text = loc("weight_Descr"); customAlert.showPurchaseInfo = false
+            case .neck : customAlert.messageLabel.text = loc("neck_Descr"); customAlert.showPurchaseInfo = false
+            case .bicep_R : customAlert.messageLabel.text = loc("bicep_R_Descr"); customAlert.showPurchaseInfo = true
+            case .bicep_L : customAlert.messageLabel.text = loc("bicep_L_Descr"); customAlert.showPurchaseInfo = false
+            case .bicep_R_Relax : customAlert.messageLabel.text = loc("bicep_R_Down_Descr"); customAlert.showPurchaseInfo = false
+            case .bicep_L_Relax : customAlert.messageLabel.text = loc("bicep_L_Down_Descr"); customAlert.showPurchaseInfo = true
+            case .Forearm_R : customAlert.messageLabel.text = loc("Forearm_R_Descr"); customAlert.showPurchaseInfo = false
+            case .forearm_L : customAlert.messageLabel.text = loc("forearm_L_Descr"); customAlert.showPurchaseInfo = true
+            case .wrist : customAlert.messageLabel.text = loc("wrist_Descr"); customAlert.showPurchaseInfo = false
+            case .chest : customAlert.messageLabel.text = loc("chest_Descr"); customAlert.showPurchaseInfo = false
+            case .waist : customAlert.messageLabel.text = loc("waist_Descr"); customAlert.showPurchaseInfo = true
+            case .hips : customAlert.messageLabel.text = loc("hips_Descr"); customAlert.showPurchaseInfo = true
+            case .Thigh_R : customAlert.messageLabel.text = loc("Thigh_R_Descr"); customAlert.showPurchaseInfo = true
+            case .thigh_L : customAlert.messageLabel.text = loc("thigh_L_Descr"); customAlert.showPurchaseInfo = false
+            case .Calf_R : customAlert.messageLabel.text = loc("Calf_R_Descr"); customAlert.showPurchaseInfo = false
+            case .calf_L : customAlert.messageLabel.text = loc("calf_L_Descr"); customAlert.showPurchaseInfo = true
                 
             }
         }
         
+        
     }
+    
     
     func popoverPresentationControllerDidDismissPopover(_ popoverPresentationController: UIPopoverPresentationController) {
         setTabBarHidden(false)
@@ -244,12 +254,11 @@ extension MeasureMainController : CustomAlertViewDelegate {
                 DataManager.shared.save()
                 def.value = textFieldValue
                 cell.measureLabel.text = text
-               // cell.measureLabel.adjustsFontSizeToFitWidth = true
+                // cell.measureLabel.adjustsFontSizeToFitWidth = true
                 readItemDeaf()
                 
-                if indexPathSelected.row == 8 {
-                    HealthManager.addToHealthKit(DataToSave: .waistCircumference, unitMeasure: HKQuantity(unit: HKUnit.meter(), doubleValue: textFieldValue.doubleValue/100), date: StaticClass.getDate()) {
-                        
+                if indexPathSelected.row == 10 {
+                    HealthManager.addToHealthKit(DataToSave: .waistCircumference, unitMeasure: HKQuantity(unit: HKUnit.meter(), doubleValue: textFieldValue.doubleValue/100), date: StaticClass.getDate()) { 
                     }
                 }
                 
@@ -257,7 +266,7 @@ extension MeasureMainController : CustomAlertViewDelegate {
                     HealthManager.addToHealthKit(DataToSave: .bodyMass, unitMeasure: HKQuantity(unit: HKUnit.gram(), doubleValue: textFieldValue.doubleValue*1000), date: StaticClass.getDate()) {
                     }
                 }
-               // measureCollctionView.reloadItems(at: [indexPathSelected])
+                // measureCollctionView.reloadItems(at: [indexPathSelected])
                 
                 if cell.measureLabel.isTruncatedu {
                     cell.nameLabel.font = UIFont.systemFont(ofSize: 13)
@@ -370,3 +379,6 @@ extension StringProtocol {
         return String(first).capitalized + dropFirst()
     }
 }
+
+
+

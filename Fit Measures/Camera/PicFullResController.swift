@@ -49,7 +49,7 @@ class PicFullResController: UIViewController {
     }
     @objc func sharePic (){
         
-        let vc = UIActivityViewController(activityItems: [image], applicationActivities: [])
+        let vc = UIActivityViewController(activityItems: [image!], applicationActivities: [])
         vc.excludedActivityTypes = [
 //            UIActivity.ActivityType.assignToContact,
 //            UIActivity.ActivityType.saveToCameraRoll,

@@ -240,6 +240,7 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
             case .authorized: return
             case .denied :return
             case .restricted:return
+            default: break
             }
             
         case .aReality :
@@ -260,10 +261,10 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
                                                     
                                                 }
                 })
-            case .authorized: return
-            case .denied :return
-            case .restricted:return
-                
+            case .authorized: print("D"); return
+            case .denied : print("D"); return
+            case .restricted: print("D"); return
+            default: print("D"); return
             }
         default : break
         }

@@ -78,6 +78,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CDEPersistentStoreEnsembl
                     print("iCloud restricted")
                 case .couldNotDetermine:
                     print("Unable to determine iCloud status")
+               @unknown default: print("Error")
                 }
             }
         } else {

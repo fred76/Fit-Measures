@@ -138,6 +138,7 @@ extension RawDataTableview: NSFetchedResultsControllerDelegate {
             rawMeasureTabe.insertRows(at: [newIndexPath!], with: .fade)
         case .delete:
             rawMeasureTabe.deleteRows(at: [indexPath!], with: .fade)
+        @unknown default: print("Error")
         }
     }
     
@@ -276,6 +277,7 @@ extension RawDataTableviewPliche: NSFetchedResultsControllerDelegate {
             plicheTableView.insertRows(at: [newIndexPath!], with: .fade)
         case .delete:
             plicheTableView.deleteRows(at: [indexPath!], with: .fade)
+        @unknown default: print("Error")
         }
     }
     

@@ -85,7 +85,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CDEPersistentStoreEnsembl
             self.setupEnsemble(iCloudIsOn: UserDefaultsSettings.cloudSynchSet)
         }
         
-        //DataManager.shared.loadReceipt() 
+        DataManager.shared.loadReceipt() 
         #warning("Remove Bool for test in-App - Enable loadReceipt")
 //        let testInApp = false
 //        UserDefaults.standard.set(testInApp, forKey: "fred76.com.ifit.girths")

@@ -915,7 +915,7 @@ class DataManager: NSObject, SKRequestDelegate {
                                 //
                                 //                                let n = Date()
                                 
-                                if original_application_version.doubleValue < 0 {
+                                if original_application_version.doubleValue < 3 {
                                     UserDefaults.standard.set(true, forKey: "fred76.com.ifit.girths")
                                     UserDefaults.standard.set(true, forKey: "fred76.com.ifit.skinFolds")
                                     UserDefaults.standard.set(true, forKey: "fred76.com.ifit.bundle")

@@ -342,8 +342,8 @@
 			children = (
 				95084E3621D4AAC200EF307A /* AllertViewIntro.swift */,
 				95946C9D21AD416600D534D0 /* AllertViewDataInsert.swift */,
-				9542CD2321BAA2AE00D72B6A /* AllertViewPlicheInsertdWithGraph.swift */,
 				95DB84B121ADF37600D13E6A /* AllertViewPlicoInsert.swift */,
+				9542CD2321BAA2AE00D72B6A /* AllertViewPlicheInsertdWithGraph.swift */,
 				95946C1E21ABCD0300D534D0 /* CustomViewDoubleColor.swift */,
 				957BDA9621CCFDB000E2718F /* NavController.swift */,
 			);

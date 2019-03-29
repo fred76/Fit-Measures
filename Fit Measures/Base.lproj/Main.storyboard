@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -1693,12 +1693,23 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's go shopping to save Jackson &amp; Polloc data" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zMp-6l-tvM">
+                                        <rect key="frame" x="16" y="614" width="279" height="30"/>
+                                        <color key="backgroundColor" red="0.26663362979888916" green="0.26668566465377808" blue="0.26663035154342651" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="IGS-K3-JRl"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="wzp-bd-1k8" firstAttribute="top" secondItem="4fh-NS-VvE" secondAttribute="bottom" constant="8" id="147-SZ-14R"/>
                                     <constraint firstItem="4fh-NS-VvE" firstAttribute="leading" secondItem="9wi-j9-pyP" secondAttribute="leading" constant="8" id="1d9-59-nZE"/>
                                     <constraint firstItem="9wi-j9-pyP" firstAttribute="trailing" secondItem="f8v-DA-eRM" secondAttribute="trailing" constant="8" id="3PR-sy-uPm"/>
+                                    <constraint firstItem="zMp-6l-tvM" firstAttribute="centerX" secondItem="9wi-j9-pyP" secondAttribute="centerX" id="4Dh-Cb-Kv7"/>
                                     <constraint firstItem="EWP-tx-BCW" firstAttribute="top" secondItem="dVF-7z-9ze" secondAttribute="bottom" constant="8" id="4Wk-FB-0fL"/>
                                     <constraint firstItem="ECE-GF-VZM" firstAttribute="leading" secondItem="9wi-j9-pyP" secondAttribute="leading" constant="16" id="6Cq-uV-ZH4"/>
                                     <constraint firstItem="wzp-bd-1k8" firstAttribute="leading" secondItem="9wi-j9-pyP" secondAttribute="leading" constant="8" id="7MD-El-T7L"/>
@@ -1714,7 +1725,9 @@
                                     <constraint firstItem="XIC-gN-Gtw" firstAttribute="top" secondItem="9wi-j9-pyP" secondAttribute="top" constant="40" id="SXH-xh-JrT"/>
                                     <constraint firstItem="9wi-j9-pyP" firstAttribute="trailing" secondItem="EWP-tx-BCW" secondAttribute="trailing" constant="8" id="SvG-7e-p6T"/>
                                     <constraint firstAttribute="trailing" secondItem="8ht-5c-Xvz" secondAttribute="trailing" constant="8" id="TU9-ma-zo5"/>
+                                    <constraint firstItem="9wi-j9-pyP" firstAttribute="trailing" secondItem="zMp-6l-tvM" secondAttribute="trailing" priority="750" constant="16" id="U90-QC-ghI"/>
                                     <constraint firstItem="4fh-NS-VvE" firstAttribute="top" secondItem="XIC-gN-Gtw" secondAttribute="bottom" constant="8" id="VK3-mW-I8J"/>
+                                    <constraint firstItem="zMp-6l-tvM" firstAttribute="leading" secondItem="9wi-j9-pyP" secondAttribute="leading" priority="750" constant="16" id="WYw-Am-224"/>
                                     <constraint firstItem="9wi-j9-pyP" firstAttribute="trailing" secondItem="GaH-NX-LQN" secondAttribute="trailing" constant="8" id="WcR-xl-ywN"/>
                                     <constraint firstItem="9wi-j9-pyP" firstAttribute="trailing" secondItem="ECE-GF-VZM" secondAttribute="trailing" constant="16" id="bfF-v4-oiR"/>
                                     <constraint firstItem="EWP-tx-BCW" firstAttribute="leading" secondItem="9wi-j9-pyP" secondAttribute="leading" constant="8" id="fb0-P4-PuJ"/>
@@ -1725,6 +1738,7 @@
                                     <constraint firstItem="9wi-j9-pyP" firstAttribute="trailing" secondItem="9Jw-PK-lhp" secondAttribute="trailing" constant="8" id="v2Q-Pb-KHb"/>
                                     <constraint firstItem="dVF-7z-9ze" firstAttribute="height" secondItem="EWP-tx-BCW" secondAttribute="height" id="vI0-v9-C3p"/>
                                     <constraint firstItem="9Jw-PK-lhp" firstAttribute="leading" secondItem="XIC-gN-Gtw" secondAttribute="trailing" constant="116.66666666666666" id="wd8-El-Ky0"/>
+                                    <constraint firstItem="8ht-5c-Xvz" firstAttribute="top" secondItem="zMp-6l-tvM" secondAttribute="bottom" constant="4" id="xFv-h3-7BY"/>
                                 </constraints>
                                 <viewLayoutGuide key="safeArea" id="9wi-j9-pyP"/>
                             </view>
@@ -1745,6 +1759,7 @@
                         <outlet property="denidtyLabel" destination="GaH-NX-LQN" id="Kbl-02-v47"/>
                         <outlet property="fatLabel" destination="f8v-DA-eRM" id="SH5-OK-KSb"/>
                         <outlet property="methodLabel" destination="ECE-GF-VZM" id="BOc-eS-Wxa"/>
+                        <outlet property="notPurchasedLabel" destination="zMp-6l-tvM" id="8HK-hR-zKK"/>
                         <outlet property="okButton" destination="8ht-5c-Xvz" id="Bhc-hq-o2o"/>
                         <outlet property="pieChartView" destination="EWP-tx-BCW" id="loj-Jn-BUb"/>
                         <outlet property="weightLabel" destination="9Jw-PK-lhp" id="v0V-aH-AoN"/>

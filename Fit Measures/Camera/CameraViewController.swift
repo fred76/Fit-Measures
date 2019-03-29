@@ -30,7 +30,6 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     @IBOutlet var buttonAR: UIBarButtonItem!
     @IBOutlet var buttonSelfie: UIBarButtonItem!
     
-    
     // Planes: every plane is identified by a UUID.
     var planes = [UUID: VirtualPlane]() {
         didSet {
@@ -131,6 +130,7 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     }
     
     @IBAction func picturesWithDummy(_ sender: Any) {
+        if UserDefaults.standard.bool(forKey: "fred76.com.ifit.girths") || UserDefaults.standard.bool(forKey: "fred76.com.ifit.skinFolds"){
         intitalView.removeFromSuperview()
         if userPictureMode == .selfie {
             closeLivePreview()
@@ -146,6 +146,9 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         sceneView.layer.addSublayer(imageLayer)
         buttonAR.isEnabled = false
         buttonSelfie.isEnabled = true
+        } else {
+            DataManager.shared.allertWithParameter(title: loc("LOCARTITLE"), message: loc("LOCARBODY"), viecontroller: self)
+        }
     }
     @IBAction func picturesSelfie(_ sender: Any) {
         

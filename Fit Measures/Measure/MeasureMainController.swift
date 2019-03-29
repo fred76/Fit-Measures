@@ -63,8 +63,7 @@ class MeasureMainController: UIViewController, UICollectionViewDelegate, UIColle
         self.navigationItem.rightBarButtonItem?.isEnabled = false
         isAdded = DataManager.shared.bodyMeasurementForTodayIsAvailable()
         
-        readItemDeaf ()
-        UserDefaults.standard.set(false, forKey: "fred76.com.ifit.girths")
+        readItemDeaf () 
     }
     
     
@@ -204,12 +203,12 @@ class MeasureMainController: UIViewController, UICollectionViewDelegate, UIColle
             case .bicep_L : customAlert.messageLabel.text = loc("bicep_L_Descr"); customAlert.showPurchaseInfo = false
             case .bicep_R_Relax : customAlert.messageLabel.text = loc("bicep_R_Down_Descr"); customAlert.showPurchaseInfo = false
             case .bicep_L_Relax : customAlert.messageLabel.text = loc("bicep_L_Down_Descr"); customAlert.showPurchaseInfo = true
-            case .Forearm_R : customAlert.messageLabel.text = loc("Forearm_R_Descr"); customAlert.showPurchaseInfo = false
-            case .forearm_L : customAlert.messageLabel.text = loc("forearm_L_Descr"); customAlert.showPurchaseInfo = true
+            case .Forearm_R : customAlert.messageLabel.text = loc("Forearm_R_Descr"); customAlert.showPurchaseInfo = true
+            case .forearm_L : customAlert.messageLabel.text = loc("forearm_L_Descr"); customAlert.showPurchaseInfo = false
             case .wrist : customAlert.messageLabel.text = loc("wrist_Descr"); customAlert.showPurchaseInfo = false
-            case .chest : customAlert.messageLabel.text = loc("chest_Descr"); customAlert.showPurchaseInfo = false
-            case .waist : customAlert.messageLabel.text = loc("waist_Descr"); customAlert.showPurchaseInfo = true
-            case .hips : customAlert.messageLabel.text = loc("hips_Descr"); customAlert.showPurchaseInfo = true
+            case .chest : customAlert.messageLabel.text = loc("chest_Descr"); customAlert.showPurchaseInfo = true
+            case .waist : customAlert.messageLabel.text = loc("waist_Descr"); customAlert.showPurchaseInfo = false
+            case .hips : customAlert.messageLabel.text = loc("hips_Descr"); customAlert.showPurchaseInfo = false
             case .Thigh_R : customAlert.messageLabel.text = loc("Thigh_R_Descr"); customAlert.showPurchaseInfo = true
             case .thigh_L : customAlert.messageLabel.text = loc("thigh_L_Descr"); customAlert.showPurchaseInfo = false
             case .Calf_R : customAlert.messageLabel.text = loc("Calf_R_Descr"); customAlert.showPurchaseInfo = false

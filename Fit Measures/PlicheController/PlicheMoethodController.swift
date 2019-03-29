@@ -97,9 +97,7 @@ class PlicheMoethodController: UIViewController , UICollectionViewDelegate, UICo
     func plicheGraph(){
         let customAlert = self.storyboard?.instantiateViewController(withIdentifier: "CustomAlertPieChartPreviewID") as! AllertViewPlicheInsertdWithGraph
         customAlert.delegatePieChart = self
-        customAlert.plichePoint.removeAll()
-        
-        
+        customAlert.plichePoint.removeAll() 
         customAlert.plichePoint.append(contentsOf: nameArray)
         let (_, bodyDensity,bodyFatPerc,leanMass,fatMass, lastWeight) = DataManager.shared.plicheAddedByUser(abdominal: abdominal, biceps: biceps, chest: chest,  midaxillary: midaxillary, subscapular: subscapular, suprailiac: suprailiac, thigh: thigh, triceps: triceps, viewVontroller: self, plicheMethod: plicheMethod.rawValue)
         customAlert.weightArray.append(leanMass)
@@ -109,6 +107,7 @@ class PlicheMoethodController: UIViewController , UICollectionViewDelegate, UICo
         customAlert.bodyFatPerc = bodyFatPerc
         customAlert.dictPlicheValue = dictPlicheValue
         customAlert.method = plicheMethod.rawValue
+        customAlert.plicheMethod = plicheMethod
         self.present(customAlert, animated: true, completion: nil)
     }
     
@@ -147,9 +146,6 @@ class PlicheMoethodController: UIViewController , UICollectionViewDelegate, UICo
                 ItemDef(title: loc("LOCALSuprailiac"), value: returnString(d: m?.suprailiac ?? 0) , unit: "mm", image: "Suprailiac"),
                 ItemDef(title: loc("LOCALThigh"), value: returnString(d: m?.thigh ?? 0) , unit: "mm", image: "Thigh")
             ]
-            
-            
-            
         case .jackson_3_Man:
             itemDef=[
                 ItemDef(title: loc("LOCALChest"), value: returnString(d: m?.chest ?? 0) , unit: "mm", image: "Chest"),
@@ -162,7 +158,6 @@ class PlicheMoethodController: UIViewController , UICollectionViewDelegate, UICo
                 ItemDef(title: loc("LOCALSuprailiac"), value: returnString(d: m?.suprailiac ?? 0) , unit: "mm", image: "Suprailiac"),
                 ItemDef(title: loc("LOCALThigh"), value: returnString(d: m?.thigh ?? 0) , unit: "mm", image: "Thigh")
             ]
-            
         case .sloanMen:
             itemDef=[
                 ItemDef(title: loc("LOCALSubscapular"), value: returnString(d: m?.subscapular ?? 0) , unit: "mm", image: "Subscapular"),
@@ -255,14 +250,14 @@ class PlicheMoethodController: UIViewController , UICollectionViewDelegate, UICo
             bodyPlichePoint = BodyPlichePoints(rawValue: point)!
             
             switch bodyPlichePoint {
-            case .tricipite : customAlert.messageLabel.text = loc("tricipite_Descr")
-            case .sottoscapola : customAlert.messageLabel.text = loc("sottoscapola_Descr")
-            case .coscia : customAlert.messageLabel.text = loc("coscia_Descr")
-            case .addome : customAlert.messageLabel.text = loc("addome_Descr")
-            case .petto : customAlert.messageLabel.text = loc("petto_Descr")
-            case .soprailliaca : customAlert.messageLabel.text = loc("soprailliaca_Descr")
-            case .bicipite : customAlert.messageLabel.text = loc("bicipite_Descr")
-            case .ascella : customAlert.messageLabel.text = loc("ascella_Descr")
+            case .tricipite : customAlert.messageLabel.text = loc("tricipite_Descr"); customAlert.showPurchaseInfo = true; customAlert.plicheMethod = plicheMethod
+            case .sottoscapola : customAlert.messageLabel.text = loc("sottoscapola_Descr"); customAlert.showPurchaseInfo = true; customAlert.plicheMethod = plicheMethod
+            case .coscia : customAlert.messageLabel.text = loc("coscia_Descr"); customAlert.showPurchaseInfo = true; customAlert.plicheMethod = plicheMethod
+            case .addome : customAlert.messageLabel.text = loc("addome_Descr"); customAlert.showPurchaseInfo = true; customAlert.plicheMethod = plicheMethod
+            case .petto : customAlert.messageLabel.text = loc("petto_Descr"); customAlert.showPurchaseInfo = true; customAlert.plicheMethod = plicheMethod
+            case .soprailliaca : customAlert.messageLabel.text = loc("soprailliaca_Descr"); customAlert.showPurchaseInfo = true; customAlert.plicheMethod = plicheMethod
+            case .bicipite : customAlert.messageLabel.text = loc("bicipite_Descr"); customAlert.showPurchaseInfo = true; customAlert.plicheMethod = plicheMethod
+            case .ascella : customAlert.messageLabel.text = loc("ascella_Descr"); customAlert.showPurchaseInfo = true; customAlert.plicheMethod = plicheMethod
                 
             }
             

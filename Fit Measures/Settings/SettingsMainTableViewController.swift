@@ -55,7 +55,9 @@ class SettingsMainTableViewController: UITableViewController, UITextFieldDelegat
     
     
     override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated) 
+        super.viewWillDisappear(animated)
+        Items.sharedInstance.updateMaesure()
+        Items.sharedInstance.updatePliche()
         self.navigationController?.isNavigationBarHidden = false
     }
     

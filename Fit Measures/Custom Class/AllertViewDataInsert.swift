@@ -43,7 +43,7 @@ class AllertViewDataInsert: UIViewController {
         cancelButton.addBorder(color: alertViewGrayColor, width: 1)
         okButton.addBorder(color: alertViewGrayColor, width: 1)
         if !UserDefaults.standard.bool(forKey: "fred76.com.ifit.girths") && showPurchaseInfo {
-            messageLabel.text = "Suca"
+            messageLabel.text = loc("LOCGIRTHSHOP")
             alertTextField.isHidden = true
         } 
         

@@ -68,6 +68,7 @@ extension IAPHelper {
         return SKPaymentQueue.canMakePayments()  }
     
     public func restorePurchases() {
+        SKPaymentQueue.default().restoreCompletedTransactions()
     }
 }
 extension IAPHelper: SKProductsRequestDelegate {
@@ -148,6 +149,14 @@ extension IAPHelper: SKPaymentTransactionObserver {
     private func deliverPurchaseNotificationFor(identifier: String?) {
         guard let identifier = identifier else { return }
         
+        if identifier == "fred76.com.ifit.bundle" {
+           purchasedProductIdentifiers.insert("fred76.com.ifit.girths")
+           purchasedProductIdentifiers.insert("fred76.com.ifit.skinFolds")
+            UserDefaults.standard.set(true, forKey: "fred76.com.ifit.girths")
+            UserDefaults.standard.set(true, forKey: "fred76.com.ifit.skinFolds")
+            NotificationCenter.default.post(name: .IAPHelperPurchaseNotification, object: "fred76.com.ifit.girths")
+            NotificationCenter.default.post(name: .IAPHelperPurchaseNotification, object: "fred76.com.ifit.skinFolds")
+        }
         purchasedProductIdentifiers.insert(identifier)
         UserDefaults.standard.set(true, forKey: identifier)
         NotificationCenter.default.post(name: .IAPHelperPurchaseNotification, object: identifier)

@@ -21,8 +21,8 @@ class AllertViewPlicoInsert: UIViewController {
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var okButton: UIButton!
     @IBOutlet var yConstraint: NSLayoutConstraint!
-    
-    
+    var showPurchaseInfo : Bool!
+    var plicheMethod = PlicheMethods.jackson_7//
     var delegate: CustomAlertViewDelegateThreeTextField?
     
     var selectedOption = "First"
@@ -44,8 +44,21 @@ class AllertViewPlicoInsert: UIViewController {
         animateView()
         cancelButton.addBorder(color: alertViewGrayColor, width: 1)  
         okButton.addBorder(color: alertViewGrayColor, width: 1)
+        switch plicheMethod {
+        case .jackson_7:purchaseCheck()
+        case .jackson_3_Man:purchaseCheck()
+        case .jackson_3_Woman:purchaseCheck()
+        default :break
+        }
+        
     }
-    
+    func purchaseCheck(){
+        if !UserDefaults.standard.bool(forKey: "fred76.com.ifit.skinFolds") && showPurchaseInfo {
+            messageLabel.text = loc("LOCSKINFOLDSHOP")
+            alertTextField_2.isHidden = true
+            alertTextField_3.isHidden = true
+        }
+    }
     func setupView() {
         alertView.layer.cornerRadius = 15
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.4)

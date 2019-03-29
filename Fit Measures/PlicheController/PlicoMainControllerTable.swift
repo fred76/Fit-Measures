@@ -31,17 +31,23 @@ class PlicoMainControllerTable: UITableViewController {
     
     override func viewDidLayoutSubviews() {
         if DataManager.shared.plicheMeasurementExist() {
+          
             let m = DataManager.shared.plicheFetchAllDateAndSort(with: "sum").method.last
             
             layerTriangle.removeFromSuperlayer()
             check.removeFromSuperview()
             
             if m == "jackson & Polloc 7 point" {
-                AddChecker(v: jackso7)
+                if UserDefaults.standard.bool(forKey: "fred76.com.ifit.skinFolds") {
+                     AddChecker(v: jackso7)
+                }
+               
             }
             
             if m == "jackson & Polloc 3 point Man" || m == "jackson & Polloc 3 point Woman"{
+                if UserDefaults.standard.bool(forKey: "fred76.com.ifit.skinFolds") {
                 AddChecker(v: jackson3)
+                }
             }
             if m == "Sloan - Men 2 point" || m == "Sloan - Woman 2 point"{
                 AddChecker(v: sloan)

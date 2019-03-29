@@ -111,4 +111,10 @@
 "LOCALOK" = "Riavvia";
 "LOCALCancel" = "Annulla";
 "LOCiCLOUDTITLE" = "Girth & Caliper salverà i dat su iCloud";
+
 "LOCiCLOUDBODY" = "per disabilitare iCloud Apri Impostazioni > [Nome utente] > iCloud > Girths & Caliper.";
+ 
+"LOCGIRTHSHOP" = "Fai shopping per sbloccare tutte le circonferenze, sbloccare le foto con l'AR e rimuovere i banner";
+"LOCSKINFOLDSHOP" = "Fai shopping per sbloccare Jackson & Polloc, sbloccare le foto con l'AR e rimuovere i banner";
+"LOCARTITLE" = "Fai shopping";
+"LOCARBODY" = "Per sbloccare le foto con l'AR basta comprare il pacchetto circonferenze oppure il pacchetto Pliche";

@@ -205,7 +205,7 @@ class Items {
         
         if let getLastMeasureAvailable = DataManager.shared.getLastMeasureAvailable() {
           Items.sharedInstance.measureArray.removeAll()
-          if  UserDefaults.standard.bool(forKey: "fred76.com.ifit.girths") {
+          if  !UserDefaults.standard.bool(forKey: "fred76.com.ifit.girths") {
             Items.sharedInstance.measureArray.append(getLastMeasureAvailable.weight)
             Items.sharedInstance.measureArray.append(getLastMeasureAvailable.neck)
             Items.sharedInstance.measureArray.append(getLastMeasureAvailable.bicep_L)
@@ -217,6 +217,22 @@ class Items {
             Items.sharedInstance.measureArray.append(getLastMeasureAvailable.thigh_L)
             Items.sharedInstance.measureArray.append(getLastMeasureAvailable.calf_R)
          
+//            Items.sharedInstance.measureArray.append(getLastMeasureAvailable.weight)
+//            Items.sharedInstance.measureArray.append(getLastMeasureAvailable.neck)
+//            Items.sharedInstance.measureArray.append(getLastMeasureAvailable.bicep_R)
+//            Items.sharedInstance.measureArray.append(getLastMeasureAvailable.bicep_L)
+//            Items.sharedInstance.measureArray.append(getLastMeasureAvailable.bicep_R_Relax)
+//            Items.sharedInstance.measureArray.append(getLastMeasureAvailable.bicep_L_Relax)
+//            Items.sharedInstance.measureArray.append(getLastMeasureAvailable.forearm_R)
+//            Items.sharedInstance.measureArray.append(getLastMeasureAvailable.forearm_L)
+//            Items.sharedInstance.measureArray.append(getLastMeasureAvailable.wrist)
+//            Items.sharedInstance.measureArray.append(getLastMeasureAvailable.chest)
+//            Items.sharedInstance.measureArray.append(getLastMeasureAvailable.waist)
+//            Items.sharedInstance.measureArray.append(getLastMeasureAvailable.hips)
+//            Items.sharedInstance.measureArray.append(getLastMeasureAvailable.thigh_R)
+//            Items.sharedInstance.measureArray.append(getLastMeasureAvailable.thigh_L)
+//            Items.sharedInstance.measureArray.append(getLastMeasureAvailable.calf_R)
+//            Items.sharedInstance.measureArray.append(getLastMeasureAvailable.calf_L)
           } else {
             Items.sharedInstance.measureArray.append(getLastMeasureAvailable.weight)
             Items.sharedInstance.measureArray.append(getLastMeasureAvailable.neck)

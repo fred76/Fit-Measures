@@ -22,14 +22,15 @@ class AllertViewPlicheInsertdWithGraph: UIViewController, ChartViewDelegate {
     @IBOutlet var weightLabel: UILabel!
     @IBOutlet var denidtyLabel: UILabel!
     @IBOutlet var fatLabel: UILabel!
+    @IBOutlet var notPurchasedLabel: UILabel!
     
     var bodyDensity : Double!
     var bodyWeight : Double!
     var bodyFatPerc : Double!
     var method : String!
     
-    var weightArray : [Double] = []
-    
+    var weightArray : [Double] = [] 
+    var plicheMethod = PlicheMethods.jackson_7//
     var delegatePieChart: CustomAlertViewMassGraphDelegate?
     var selectedOption = "First"
     let alertViewGrayColor = StaticClass.alertViewHeaderColor
@@ -48,7 +49,10 @@ class AllertViewPlicheInsertdWithGraph: UIViewController, ChartViewDelegate {
         plichePoint.insert("", at: 0)
         setupPieChart()
         setupBarChart()
-        
+        notPurchasedLabel.layer.cornerRadius = 5
+        notPurchasedLabel.layer.borderWidth = 2
+        notPurchasedLabel.layer.borderColor = UIColor.white.cgColor
+        showHideNotPurchaseLabel()
     }
     
     
@@ -217,13 +221,39 @@ class AllertViewPlicheInsertdWithGraph: UIViewController, ChartViewDelegate {
         })
     }
     
+    func showHideNotPurchaseLabel(){
+        if !UserDefaults.standard.bool(forKey: "fred76.com.ifit.skinFolds") {
+            switch plicheMethod {
+            case .jackson_7:notPurchasedLabel.isHidden = false
+            case .jackson_3_Man:notPurchasedLabel.isHidden = false
+            case .jackson_3_Woman:notPurchasedLabel.isHidden = false
+            case .sloanMen:notPurchasedLabel.isHidden = true
+            case .sloanWoman:notPurchasedLabel.isHidden = true
+            case .DurninMan:notPurchasedLabel.isHidden = true
+           
+            }
+        } else {
+            notPurchasedLabel.isHidden = true
+        }
+    }
+    
 //    @IBAction func onTapCancelButton(_ sender: Any) {
 //        delegatePieChart?.takeMeasureAgain()
 //        self.dismiss(animated: true, completion: nil)
 //    }
     
     @IBAction func onTapOkButton(_ sender: Any) {
-        delegatePieChart?.okAcceptMesure()
+        if !UserDefaults.standard.bool(forKey: "fred76.com.ifit.skinFolds") {
+            switch plicheMethod {
+            case .sloanMen:delegatePieChart?.okAcceptMesure()
+            case .sloanWoman:delegatePieChart?.okAcceptMesure()
+            case .DurninMan:delegatePieChart?.okAcceptMesure()
+            default:break
+            }
+        } else {
+            delegatePieChart?.okAcceptMesure()
+        }
+        
         self.dismiss(animated: true, completion: nil)
     }
     

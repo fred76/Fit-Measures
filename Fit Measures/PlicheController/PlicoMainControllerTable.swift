@@ -6,18 +6,34 @@
 //  Copyright © 2018 Alberto Lunardini. All rights reserved.
 //
 
-import UIKit 
+import UIKit
 
-class PlicoMainControllerTable: UITableViewController {
+import GoogleMobileAds
 
+class PlicoMainControllerTable: UITableViewController,GADInterstitialDelegate {
+    var interstitial: GADInterstitial!
+    var showInterstitial : Bool = false
     override func viewDidLoad() {
         super.viewDidLoad() 
-      
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+        
+        interstitial = createAndLoadInterstitial()
+        showInterstitial = true
     }
-
+    func createAndLoadInterstitial() -> GADInterstitial {
+        let interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+        interstitial.delegate = self
+        interstitial.load(GADRequest())
+        return interstitial
+    }
+    
+    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
+        showInterstitial = true
+        interstitial = createAndLoadInterstitial()
+    }
     @IBOutlet var jackso7: CustomViewDoubleColor!
     @IBOutlet var jackson3: CustomViewDoubleColor!
-   // @IBOutlet var jackson4: CustomViewDoubleColor!
+    // @IBOutlet var jackson4: CustomViewDoubleColor!
     @IBOutlet var sloan: CustomViewDoubleColor!
     @IBOutlet var durnin: CustomViewDoubleColor!
     var check = UIImageView()
@@ -27,11 +43,19 @@ class PlicoMainControllerTable: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) { 
         tableView.reloadData()
+        
     }
     
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if showInterstitial {
+            return true
+        } else {
+            return false
+        }
+    }
     override func viewDidLayoutSubviews() {
         if DataManager.shared.plicheMeasurementExist() {
-          
+            
             let m = DataManager.shared.plicheFetchAllDateAndSort(with: "sum").method.last
             
             layerTriangle.removeFromSuperlayer()
@@ -39,14 +63,14 @@ class PlicoMainControllerTable: UITableViewController {
             
             if m == "jackson & Polloc 7 point" {
                 if UserDefaults.standard.bool(forKey: "fred76.com.ifit.skinFolds") {
-                     AddChecker(v: jackso7)
+                    AddChecker(v: jackso7)
                 }
-               
+                
             }
             
             if m == "jackson & Polloc 3 point Man" || m == "jackson & Polloc 3 point Woman"{
                 if UserDefaults.standard.bool(forKey: "fred76.com.ifit.skinFolds") {
-                AddChecker(v: jackson3)
+                    AddChecker(v: jackson3)
                 }
             }
             if m == "Sloan - Men 2 point" || m == "Sloan - Woman 2 point"{
@@ -81,32 +105,33 @@ class PlicoMainControllerTable: UITableViewController {
         return .lightContent
     }
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       
+        
         return 4
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 108
     }
-   
+    
     @IBOutlet weak var labelOne: UILabel!
     @IBOutlet weak var labelTwo: UILabel!
     
     @IBOutlet weak var labelOneJP: UILabel!
     @IBOutlet weak var labelTwoJP: UILabel!
     @IBOutlet weak var labelThreeJP: UILabel!
+    
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
         if indexPath.row == 2 {
             if UserDefaultsSettings.biologicalSexSet == "Male" {
-            labelOne.text = loc("LOCALThigh")
-            labelTwo.text = loc("LOCALSubscapular")
+                labelOne.text = loc("LOCALThigh")
+                labelTwo.text = loc("LOCALSubscapular")
             } else {
                 labelOne.text = loc("LOCALSuprailiac")
                 labelTwo.text = loc("LOCALTriceps")
@@ -127,28 +152,44 @@ class PlicoMainControllerTable: UITableViewController {
     
     
     
-     
+    
     // MARK: - Navigation jackson_7 durnin Sloan
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) { 
         if segue.identifier == "jackson_3" {
-                let plicoMethodSelected = segue.destination as! PlicheMoethodController
+            if UserDefaults.standard.bool(forKey: "fred76.com.ifit.girths") || UserDefaults.standard.bool(forKey: "fred76.com.ifit.skinFolds") { print("something purchased") } else {
+                if interstitial.isReady {
+                interstitial.present(fromRootViewController: self)
+            } else {
+                print("Ad wasn't ready")
+            }
+
+            }
+            let plicoMethodSelected = segue.destination as! PlicheMoethodController
             if UserDefaultsSettings.biologicalSexSet == "Male" {
                 plicoMethodSelected.plicheMethod = .jackson_3_Man
             } else {
                 plicoMethodSelected.plicheMethod = .jackson_3_Woman
             }
         }
-       
+        
         if segue.identifier == "jackson_7" {
+            if UserDefaults.standard.bool(forKey: "fred76.com.ifit.girths") || UserDefaults.standard.bool(forKey: "fred76.com.ifit.skinFolds") { print("something purchased") } else {
+                if interstitial.isReady {
+                    interstitial.present(fromRootViewController: self)
+                } else {
+                    print("Ad wasn't ready")
+                }
+                
+            }
             let plicoMethodSelected = segue.destination as! PlicheMoethodController
             plicoMethodSelected.plicheMethod = .jackson_7
         }
-   
+        
         if segue.identifier == "Sloan" {
             let plicoMethodSelected = segue.destination as! PlicheMoethodController
             if UserDefaultsSettings.biologicalSexSet == "Male" {
-              plicoMethodSelected.plicheMethod = .sloanMen
+                plicoMethodSelected.plicheMethod = .sloanMen
             } else {
                 plicoMethodSelected.plicheMethod = .sloanWoman
             }
@@ -160,5 +201,5 @@ class PlicoMainControllerTable: UITableViewController {
         }
         
     }
-
+    
 }

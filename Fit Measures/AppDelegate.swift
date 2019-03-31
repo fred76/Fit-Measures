@@ -87,11 +87,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CDEPersistentStoreEnsembl
         
         DataManager.shared.loadReceipt() 
         #warning("Remove Bool for test in-App - Enable loadReceipt")
-//        let testInApp = false
-//        UserDefaults.standard.set(testInApp, forKey: "fred76.com.ifit.girths")
-//        UserDefaults.standard.set(testInApp, forKey: "fred76.com.ifit.skinFolds")
+      let testInApp = false
+       UserDefaults.standard.set(testInApp, forKey: "fred76.com.ifit.girths")
+       UserDefaults.standard.set(testInApp, forKey: "fred76.com.ifit.skinFolds")
 //        UserDefaults.standard.set(testInApp, forKey: "fred76.com.ifit.bundle")
-        
+        DataManager.shared.AddMobs()
         return true
         
     }

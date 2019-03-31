@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import HealthKit
 import StoreKit
+import GoogleMobileAds
 
 class DataManager: NSObject, SKRequestDelegate {
     
@@ -858,6 +859,12 @@ class DataManager: NSObject, SKRequestDelegate {
         alertWindow.makeKeyAndVisible()
         alertWindow.rootViewController?.present(alertController, animated: true, completion: nil)
     }
+    // MARK: - Add-Mobs:
+    
+    func AddMobs() {
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
+    }
+
     
     // MARK: - original_application_version:
     

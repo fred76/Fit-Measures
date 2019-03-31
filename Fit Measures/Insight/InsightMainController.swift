@@ -7,11 +7,11 @@
 //
 
 import UIKit
-
-class InsightMainController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
+import GoogleMobileAds
+class InsightMainController: UIViewController, UITableViewDelegate, UITableViewDataSource,GADInterstitialDelegate {
+    var interstitial: GADInterstitial!
+    var showInterstitial : Bool = false
     @IBOutlet var noInsigth: UIView!
-    
     @IBOutlet weak var lastMeasureTableView: UITableView!
     @IBOutlet var bottomConstraint: NSLayoutConstraint!
     
@@ -45,6 +45,7 @@ class InsightMainController: UIViewController, UITableViewDelegate, UITableViewD
         } else {
             measureTitle =  [loc("LOCALWeight"),loc("LOCALNeck"),loc("LOCALBicep_R"),loc("LOCALBicep_L"),loc("LOCALBicep_R_Relax"),loc("LOCALBicep_L_Relax"),loc("LOCALForearm_R"),loc("LOCALForearm_L"),loc("LOCALWrist"),loc("LOCALChest"),loc("LOCALWaist"),loc("LOCALHips"),loc("LOCALThigh_R"),loc("LOCALThigh_L"),loc("LOCALCalf_R"),loc("LOCALCalf_L")]
             imageArray = ["Weight","Neck","Bicep_L","Bicep_R","bicep_L_Relax","bicep_R_Relax","Forearm_L","Forearm_R","Wrist","Chest","Waist","Hips","Thigh_L","Thigh_R","Calf_L","Calf_R"]
+            
         }
         
        
@@ -65,6 +66,29 @@ class InsightMainController: UIViewController, UITableViewDelegate, UITableViewD
         
         
         AppStoreReviewManager.requestReviewIfAppropriate()
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+        
+        interstitial = createAndLoadInterstitial()
+        showInterstitial = true
+        //create a new button
+        let button = UIButton(type: .custom)
+        //set image for button
+        button.setImage(UIImage(named: "Gallery.png"), for: .normal)
+        //add function for button
+        button.addTarget(self, action: #selector(fbButtonPressed), for: .touchUpInside)
+        //set frame
+        button.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+        
+        let barButton = UIBarButtonItem(customView: button)
+        
+        //assign button to navigationbar
+        self.navigationItem.rightBarButtonItem = barButton
+    }
+    
+    //This method will call when you press button.
+    @objc func fbButtonPressed() {
+        
+        print("Share to fb")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -98,9 +122,25 @@ class InsightMainController: UIViewController, UITableViewDelegate, UITableViewD
         return .lightContent
     }
     
+    func createAndLoadInterstitial() -> GADInterstitial {
+        let interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+        interstitial.delegate = self
+        interstitial.load(GADRequest())
+        return interstitial
+    }
     
+    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
+        showInterstitial = true
+        interstitial = createAndLoadInterstitial()
+    }
     
-    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if showInterstitial {
+            return true
+        } else {
+            return false
+        }
+    }
     // MARK: - Table view data source
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -173,8 +213,7 @@ class InsightMainController: UIViewController, UITableViewDelegate, UITableViewD
         if indexPath.section == 0 {
             cell.nameLabel.text = measureTitle[indexPath.row]
             cell.imageCell.image = UIImage(named: imageArray[indexPath.row])
-            cell.methodLabel.isHidden = true
-            print("measure \(Items.sharedInstance.measureArray.count)")
+            cell.methodLabel.isHidden = true 
             cell.valueLabel.text = String(Items.sharedInstance.measureArray[indexPath.row])
         } else {
             cell.nameLabel.text = plicheTitle[indexPath.row]
@@ -201,11 +240,19 @@ class InsightMainController: UIViewController, UITableViewDelegate, UITableViewD
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+       
         if segue.identifier == "ToChartFromTable"{
             if let indexPath = lastMeasureTableView.indexPathForSelectedRow {
                 let controller = segue.destination as! ChartViewController
                 
                 if indexPath.section == 0 {
+                    if UserDefaults.standard.bool(forKey: "fred76.com.ifit.girths") || UserDefaults.standard.bool(forKey: "fred76.com.ifit.skinFolds") {
+                        
+                        print("something purchased") } else {
+                       if indexPath.row == StaticClass.randomIndexpath(upperLimit: 14) {
+                        if interstitial.isReady { interstitial.present(fromRootViewController: self) }
+                        else { print("Ad wasn't ready") }
+                        } }
                     switch indexPath.row {
                     case 0 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "weight").value; controller.titleGraph = loc("LOCALWeight");controller.weightButtonisHidden = true
                     case 1 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "neck").value; controller.titleGraph = loc("LOCALNeck")
@@ -232,6 +279,13 @@ class InsightMainController: UIViewController, UITableViewDelegate, UITableViewD
                     controller.dateArrayOverlay = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "weight").date
                 } else if indexPath.section == 1 {
                     
+                    if UserDefaults.standard.bool(forKey: "fred76.com.ifit.girths") || UserDefaults.standard.bool(forKey: "fred76.com.ifit.skinFolds") {
+                        
+                        print("something purchased") } else {
+                    if indexPath.row == StaticClass.randomIndexpath(upperLimit: 3) {
+                        if interstitial.isReady { interstitial.present(fromRootViewController: self) }
+                        else { print("Ad wasn't ready") }
+                    }}
                     switch indexPath.row {
                     case 0 : controller.userMeasurement = DataManager.shared.plicheFetchAllDateAndSort(with: "sum").value; controller.titleGraph = loc("LOCALPlicheSum")
                     case 1 : controller.userMeasurement = DataManager.shared.plicheFetchAllDateAndSort(with: "bodyDensity").value; controller.titleGraph = loc("LOCALBodyDensity")
@@ -254,6 +308,12 @@ class InsightMainController: UIViewController, UITableViewDelegate, UITableViewD
             if let controller = segue.destination as? ChartViewController{
                 let cell = sender as! plicheCollectionViewThumbCell
                 let indexPath = plicheCollectionView.indexPath(for: cell)
+                if UserDefaults.standard.bool(forKey: "fred76.com.ifit.girths") || UserDefaults.standard.bool(forKey: "fred76.com.ifit.skinFolds") { 
+                    print("something purchased") } else {
+                    if indexPath!.row == StaticClass.randomIndexpath(upperLimit: 6) {
+                    if interstitial.isReady { interstitial.present(fromRootViewController: self) }
+                    else { print("Ad wasn't ready") }
+                }}
                 switch indexPath?.row {
                 case 0 :
                     controller.userMeasurement = DataManager.shared.plicheFetchAllDateAndSort(with: "triceps").value

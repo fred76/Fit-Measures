@@ -15,6 +15,11 @@
 		951AD5F92227D7BA009E046A /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951AD5F82227D7BA009E046A /* CloudKit.framework */; };
 		951AD60B2227D825009E046A /* Ensembles.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951AD60A2227D7E8009E046A /* Ensembles.framework */; };
 		951AD60C2227D825009E046A /* Ensembles.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 951AD60A2227D7E8009E046A /* Ensembles.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9521B9F0224E0CE000E9A7A5 /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9521B9E8224E0CDE00E9A7A5 /* GoogleUtilities.framework */; };
+		9521B9F1224E0CE000E9A7A5 /* GoogleAppMeasurement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9521B9ED224E0CDE00E9A7A5 /* GoogleAppMeasurement.framework */; };
+		9521B9F2224E0CE000E9A7A5 /* nanopb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9521B9EE224E0CDE00E9A7A5 /* nanopb.framework */; };
+		9521B9F3224E0CE000E9A7A5 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9521B9EF224E0CE000E9A7A5 /* GoogleMobileAds.framework */; };
+		9521B9F7225017FA00E9A7A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9521B9F6225017FA00E9A7A5 /* Assets.xcassets */; };
 		95269EDE21B0888500DBD758 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95269EDD21B0888500DBD758 /* DataManager.swift */; };
 		9533CA5D21E258CC00C397DE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9533CA5F21E258CC00C397DE /* Localizable.strings */; };
 		9533CA6421E3337C00C397DE /* LanguageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9533CA6321E3337C00C397DE /* LanguageController.swift */; };
@@ -36,7 +41,6 @@
 		957CC16021D59F9A00B0AFCF /* method.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 957CC15F21D59F9A00B0AFCF /* method.rtf */; };
 		95946BDD21AB458700D534D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95946BDC21AB458700D534D0 /* AppDelegate.swift */; };
 		95946BE421AB458700D534D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95946BE221AB458700D534D0 /* Main.storyboard */; };
-		95946BE621AB458800D534D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95946BE521AB458800D534D0 /* Assets.xcassets */; };
 		95946BE921AB458800D534D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95946BE721AB458800D534D0 /* LaunchScreen.storyboard */; };
 		95946C0D21AB478700D534D0 /* CameraMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95946C0C21AB478700D534D0 /* CameraMainController.swift */; };
 		95946C0F21AB48EC00D534D0 /* MeasureMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95946C0E21AB48EC00D534D0 /* MeasureMainController.swift */; };
@@ -152,6 +156,11 @@
 		95153BB621CC05DC0031FFB9 /* enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enum.swift; sourceTree = "<group>"; };
 		951AD5F82227D7BA009E046A /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		951AD5FA2227D7E8009E046A /* Ensembles iOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Ensembles iOS.xcodeproj"; path = "Framework/Ensembles iOS.xcodeproj"; sourceTree = "<group>"; };
+		9521B9E8224E0CDE00E9A7A5 /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleUtilities.framework; sourceTree = "<group>"; };
+		9521B9ED224E0CDE00E9A7A5 /* GoogleAppMeasurement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleAppMeasurement.framework; sourceTree = "<group>"; };
+		9521B9EE224E0CDE00E9A7A5 /* nanopb.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = nanopb.framework; sourceTree = "<group>"; };
+		9521B9EF224E0CE000E9A7A5 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
+		9521B9F6225017FA00E9A7A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95269EDD21B0888500DBD758 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		9533CA4C21E2126D00C397DE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		9533CA4D21E2129200C397DE /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Main.strings; sourceTree = "<group>"; };
@@ -179,7 +188,6 @@
 		95946BD921AB458700D534D0 /* iFit Girths & Caliper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iFit Girths & Caliper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95946BDC21AB458700D534D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95946BE321AB458700D534D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		95946BE521AB458800D534D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95946BE821AB458800D534D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		95946BEA21AB458800D534D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95946C0C21AB478700D534D0 /* CameraMainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraMainController.swift; sourceTree = "<group>"; };
@@ -227,7 +235,11 @@
 			files = (
 				951AD5F92227D7BA009E046A /* CloudKit.framework in Frameworks */,
 				951AD60B2227D825009E046A /* Ensembles.framework in Frameworks */,
+				9521B9F3224E0CE000E9A7A5 /* GoogleMobileAds.framework in Frameworks */,
+				9521B9F1224E0CE000E9A7A5 /* GoogleAppMeasurement.framework in Frameworks */,
+				9521B9F2224E0CE000E9A7A5 /* nanopb.framework in Frameworks */,
 				95ACDF4221C812DE003A77BD /* HealthKit.framework in Frameworks */,
+				9521B9F0224E0CE000E9A7A5 /* GoogleUtilities.framework in Frameworks */,
 				959B10DD21CA751500CF2E3F /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -315,6 +327,7 @@
 		95946BDB21AB458700D534D0 /* Fit Measures */ = {
 			isa = PBXGroup;
 			children = (
+				9521B9F6225017FA00E9A7A5 /* Assets.xcassets */,
 				95D64C8B21E480830071532C /* Data Manager */,
 				95946BDC21AB458700D534D0 /* AppDelegate.swift */,
 				95C6AE34224146E7000C48C6 /* ShoppingController.swift */,
@@ -323,7 +336,6 @@
 				950D787022497ACB00542CD7 /* PurchaseInfoController.swift */,
 				9533CA5F21E258CC00C397DE /* Localizable.strings */,
 				95946BE721AB458800D534D0 /* LaunchScreen.storyboard */,
-				95946BE521AB458800D534D0 /* Assets.xcassets */,
 				954927F121BEFE3200F78FD8 /* Fit Measures.entitlements */,
 				95946BEA21AB458800D534D0 /* Info.plist */,
 				95DB84D321B006ED00D13E6A /* Measure */,
@@ -371,6 +383,10 @@
 		95ACDF4021C812DE003A77BD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9521B9ED224E0CDE00E9A7A5 /* GoogleAppMeasurement.framework */,
+				9521B9EF224E0CE000E9A7A5 /* GoogleMobileAds.framework */,
+				9521B9E8224E0CDE00E9A7A5 /* GoogleUtilities.framework */,
+				9521B9EE224E0CDE00E9A7A5 /* nanopb.framework */,
 				951AD5F82227D7BA009E046A /* CloudKit.framework */,
 				95ACDF4121C812DE003A77BD /* HealthKit.framework */,
 			);
@@ -569,11 +585,11 @@
 			files = (
 				95946BE921AB458800D534D0 /* LaunchScreen.storyboard in Resources */,
 				95D64C8E21E4939C0071532C /* Istruzioni_Ita.rtf in Resources */,
-				95946BE621AB458800D534D0 /* Assets.xcassets in Resources */,
 				95D64C8A21E3778A0071532C /* methodIta.rtf in Resources */,
 				95946BE421AB458700D534D0 /* Main.storyboard in Resources */,
 				956A870621C99EB4009291C1 /* Privacy.rtf in Resources */,
 				9596BBD921C3815C00244C41 /* CameraUse.rtf in Resources */,
+				9521B9F7225017FA00E9A7A5 /* Assets.xcassets in Resources */,
 				9533CA5D21E258CC00C397DE /* Localizable.strings in Resources */,
 				954927EB21BEEFC900F78FD8 /* Istruzioni.rtf in Resources */,
 				957CC16021D59F9A00B0AFCF /* method.rtf in Resources */,
@@ -840,10 +856,12 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Fit Measures/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = fred76.com.ifit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -866,10 +884,12 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Fit Measures/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = fred76.com.ifit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

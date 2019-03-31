@@ -115,7 +115,12 @@ struct StaticClass {
         
         return t
     }
-    
+    static func randomIndexpath(upperLimit: Int) -> Int{
+        let indexpathCount = UInt32(upperLimit)
+        let unsignedRandomNumber = arc4random_uniform(indexpathCount)
+        let randomNumber = Int(unsignedRandomNumber)
+        return randomNumber
+    }
    
 //    static func showTopLevelAlert(v : UIViewController) {
 //        

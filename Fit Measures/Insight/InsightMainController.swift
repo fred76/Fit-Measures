@@ -70,25 +70,24 @@ class InsightMainController: UIViewController, UITableViewDelegate, UITableViewD
         
         interstitial = createAndLoadInterstitial()
         showInterstitial = true
-        //create a new button
-        let button = UIButton(type: .custom)
-        //set image for button
-        button.setImage(UIImage(named: "Gallery.png"), for: .normal)
-        //add function for button
-        button.addTarget(self, action: #selector(fbButtonPressed), for: .touchUpInside)
-        //set frame
-        button.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
-        
-        let barButton = UIBarButtonItem(customView: button)
-        
-        //assign button to navigationbar
-        self.navigationItem.rightBarButtonItem = barButton
-    }
-    
-    //This method will call when you press button.
-    @objc func fbButtonPressed() {
-        
-        print("Share to fb")
+//        //create a new button
+//        let button = UIButton(type: .custom)
+//        //set image for button
+//        button.setImage(UIImage(named: "Gallery.png"), for: .normal)
+//        //add function for button
+//        button.addTarget(self, action: #selector(fbButtonPressed), for: .touchUpInside)
+//        //set frame
+//        button.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+//        
+//        let barButton = UIBarButtonItem(customView: button)
+//        
+//        //assign button to navigationbar
+//        self.navigationItem.rightBarButtonItem = barButton
+//    }
+//    
+//    //This method will call when you press button.
+//    @objc func fbButtonPressed() {
+//        performSegue(withIdentifier: "ShowPhotoGallery", sender: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {

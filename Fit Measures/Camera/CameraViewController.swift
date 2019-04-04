@@ -63,6 +63,8 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         if (ARConfiguration.isSupported) {
+            self.navigationController?.toolbar.isTranslucent = false
+            self.navigationController?.toolbar.barTintColor = UIColor.clear
             if UserDefaultsSettings.serchForKey(kUsernameKey: "height") {
                 multipiler = CGFloat(UserDefaultsSettings.heightSet/100)
                 print(UserDefaultsSettings.heightSet)
@@ -70,13 +72,13 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
                 multipiler = 1.7
             }
             shootButton.isHidden = true
-            hidesBottomBarWhenPushed = true
+//            hidesBottomBarWhenPushed = true
             self.navigationController?.isToolbarHidden = false
             
         } else {
             intitalView.removeFromSuperview()
             shootButton.isHidden = false
-            hidesBottomBarWhenPushed = true
+//            hidesBottomBarWhenPushed = true
             self.navigationController?.isToolbarHidden = true
             
             userPictureMode = .selfie
@@ -89,11 +91,13 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         super.viewDidAppear(animated)
     }
     override func viewWillAppear(_ animated: Bool) {
+        
+        self.navigationController?.isToolbarHidden = false
         image.image = randomFactImage()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+        super.viewWillDisappear(animated) 
         sceneView.session.pause()
         self.currentCaffeineStatus = .temporarilyUnavailable
         if let cap = self.captureSession { 
@@ -120,14 +124,14 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         return UIImage(named: factsImagesArray[randomNumber])!
     }
     
-    override var hidesBottomBarWhenPushed: Bool {
-        get {
-            return navigationController?.topViewController == self
-        }
-        set {
-            super.hidesBottomBarWhenPushed = newValue
-        }
-    }
+//    override var hidesBottomBarWhenPushed: Bool {
+//        get {
+//            return navigationController?.topViewController == self
+//        }
+//        set {
+//            super.hidesBottomBarWhenPushed = newValue
+//        }
+//    }
     
     @IBAction func picturesWithDummy(_ sender: Any) {
         if UserDefaults.standard.bool(forKey: "fred76.com.ifit.girths") || UserDefaults.standard.bool(forKey: "fred76.com.ifit.skinFolds"){
@@ -166,6 +170,7 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     }
     
     @IBAction func didTakePhoto(_ sender: Any) {
+        
         startTimer()
     }
     

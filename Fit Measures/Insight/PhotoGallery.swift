@@ -9,13 +9,37 @@
 import UIKit
 import AVFoundation
 import CoreData
-
-class CameraMainController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, HideTabBarDelegate {
+import PhotosUI
+class PhotoGallery: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, HideTabBarDelegate {
     func hide() {
         picturesCollection.reloadData()
     }
-    
-    
+    #warning(" Mettere nel DM ")
+    func checkPermission() {
+        let photoAuthorizationStatus = PHPhotoLibrary.authorizationStatus()
+        switch photoAuthorizationStatus {
+        case .authorized:
+            print("Access is granted by user")
+        case .notDetermined:
+            PHPhotoLibrary.requestAuthorization({
+                (newStatus) in
+                print("status is \(newStatus)")
+                if newStatus ==  PHAuthorizationStatus.authorized {
+                    /* do stuff here */
+                    print("success")
+                }
+            })
+            print("It is not determined until now")
+        case .restricted:
+            // same same
+            print("User do not have access to photo album.")
+        case .denied:
+            // same same
+            print("User has denied the permission.")
+       default:
+            break
+        }
+    }
     @IBOutlet var takeButton: UIButton!
     @IBOutlet var BackImage: UIView!
     @IBOutlet var cameraInstruction: UITextView!
@@ -31,6 +55,7 @@ class CameraMainController: UIViewController, UICollectionViewDelegate, UICollec
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        checkPermission()
         picturesCollection.delegate = self
         picturesCollection.dataSource = self
         do {
@@ -50,7 +75,7 @@ class CameraMainController: UIViewController, UICollectionViewDelegate, UICollec
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.isToolbarHidden = true
+//        self.navigationController?.isToolbarHidden = true
         let p = picturesFetchedResultsController.fetchedObjects
         if p?.count == 0{
             picturesCollection.backgroundView = BackImage
@@ -79,8 +104,24 @@ class CameraMainController: UIViewController, UICollectionViewDelegate, UICollec
         
         return fetchedResultsController
     }()
-    @IBAction func openCamera(_ sender: Any) {
+    
+    var imagePicker = UIImagePickerController()
+    
+    
+    
+    @IBAction func openCamera(_ sender: UIButton) {
+        
+         openGallary()
     }
+    
+    func openGallary()
+    {
+        imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
+        imagePicker.allowsEditing = false
+        imagePicker.delegate = self
+        self.present(imagePicker, animated: true, completion: nil)
+    }
+    
     func configure(cell: UICollectionViewCell, for indexPath: IndexPath) {
         
         guard let cell = cell as? PicturesCell else {
@@ -157,7 +198,7 @@ class CameraMainController: UIViewController, UICollectionViewDelegate, UICollec
     }
 }
 
-extension CameraMainController: NSFetchedResultsControllerDelegate {
+extension PhotoGallery: NSFetchedResultsControllerDelegate {
     
     func controllerWillChangeContent(_ controller:
         NSFetchedResultsController<NSFetchRequestResult>) {}
@@ -288,4 +329,25 @@ extension CameraMainController: NSFetchedResultsControllerDelegate {
             }
         }
     }
+}
+
+//MARK: - UIImagePickerControllerDelegate
+
+extension PhotoGallery:  UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let selectedImage = info[.originalImage] as? UIImage else {
+            fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
+        }
+        DataManager.shared.prepareImageForSaving(image: selectedImage) {
+            self.picturesCollection.reloadData()
+            
+        }
+        picker.dismiss(animated: true, completion: nil)
+    }
+        func imagePickerControllerDidCancel(_ picker: UIImagePickerController) { 
+                    picker.isNavigationBarHidden = false
+                    self.dismiss(animated: true, completion: nil)
+                }
+    
 }

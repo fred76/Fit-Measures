@@ -13,33 +13,7 @@ import PhotosUI
 class PhotoGallery: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, HideTabBarDelegate {
     func hide() {
         picturesCollection.reloadData()
-    }
-    #warning(" Mettere nel DM ")
-    func checkPermission() {
-        let photoAuthorizationStatus = PHPhotoLibrary.authorizationStatus()
-        switch photoAuthorizationStatus {
-        case .authorized:
-            print("Access is granted by user")
-        case .notDetermined:
-            PHPhotoLibrary.requestAuthorization({
-                (newStatus) in
-                print("status is \(newStatus)")
-                if newStatus ==  PHAuthorizationStatus.authorized {
-                    /* do stuff here */
-                    print("success")
-                }
-            })
-            print("It is not determined until now")
-        case .restricted:
-            // same same
-            print("User do not have access to photo album.")
-        case .denied:
-            // same same
-            print("User has denied the permission.")
-       default:
-            break
-        }
-    }
+    } 
     @IBOutlet var takeButton: UIButton!
     @IBOutlet var BackImage: UIView!
     @IBOutlet var cameraInstruction: UITextView!
@@ -55,7 +29,7 @@ class PhotoGallery: UIViewController, UICollectionViewDelegate, UICollectionView
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        checkPermission()
+        DataManager.shared.checkPermission()
         picturesCollection.delegate = self
         picturesCollection.dataSource = self
         do {

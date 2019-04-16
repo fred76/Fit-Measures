@@ -33,7 +33,9 @@ class SettingsMainTableViewController: UITableViewController, UITextFieldDelegat
     
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+        super.viewWillAppear(animated) 
+        self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.9685102105, green: 0.9686148763, blue: 0.9725942016, alpha: 1)
+        self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.isNavigationBarHidden = true
         updateHealthInfo {
             self.updateLabelIfHKnotAvailable()

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18B75" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.98" systemVersion="18D109" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="BodyMeasure" representedClassName=".BodyMeasure" syncable="YES">
         <attribute name="bicep_L" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="bicep_L_Relax" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
@@ -44,6 +44,23 @@
         <attribute name="uniqueIdentifier" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="weight" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
+    <entity name="Supplement" representedClassName=".Supplement" syncable="YES">
+        <attribute name="brand" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="carbohydrates" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dailyDose" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dateWhenSupplementWillEnd" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="daysAnWeek" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fatValue" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="ingredientList" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="labels" optional="YES" attributeType="Transformable" customClassName="[String]" syncable="YES"/>
+        <attribute name="productName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="proteinsValue" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="quantity" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="quantityAddedByUser" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="shouldRemind" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="uniqueIdentifier" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Thumbnail" representedClassName=".Thumbnail" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Double" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="imageData" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
@@ -55,5 +72,6 @@
         <element name="PicFullRes" positionX="-50.61328125" positionY="314.7265625" width="119.8359375" height="90"/>
         <element name="PlicheMeasure" positionX="-80.75390625" positionY="-251.14453125" width="128" height="300"/>
         <element name="Thumbnail" positionX="-63.01953125" positionY="148.5234375" width="128" height="105"/>
+        <element name="Supplement" positionX="-171" positionY="-108" width="128" height="270"/>
     </elements>
 </model>

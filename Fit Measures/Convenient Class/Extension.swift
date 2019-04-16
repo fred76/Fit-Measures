@@ -111,8 +111,43 @@ enum FilterType : String {
     case Tonal = "CIPhotoEffectTonal"
     case Transfer =  "CIPhotoEffectTransfer"
 }
-
-
+// MARK: - extension UIStackView
+extension UIStackView {
+    func removeAllArrangedSubviews() {
+        let removedSubviews = arrangedSubviews.reduce([]) { (allSubviews, subview) -> [UIView] in
+            self.removeArrangedSubview(subview)
+            return allSubviews + [subview]
+        }
+        // Deactivate all constraints
+        NSLayoutConstraint.deactivate(removedSubviews.flatMap({ $0.constraints }))
+        // Remove the views from self
+        removedSubviews.forEach({ $0.removeFromSuperview() })
+    }
+}
+// MARK: - extension UIView
+ 
+extension UIView {
+    
+    func roundTop(radius:CGFloat = 16.0){
+        self.clipsToBounds = true
+        self.layer.cornerRadius = radius
+        if #available(iOS 11.0, *) {
+            self.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        } else {
+            // Fallback on earlier versions
+        }
+    }
+    
+    func roundBottom(radius:CGFloat = 16.0){
+        self.clipsToBounds = true
+        self.layer.cornerRadius = radius
+        if #available(iOS 11.0, *) {
+            self.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+        } else {
+            // Fallback on earlier versions
+        }
+    }
+}
 
 // MARK: - extension UILabel
 extension UILabel {
@@ -161,7 +196,16 @@ extension String {
         return NSLocalizedString(self, tableName: nil, bundle: Bundle.main, value: "", comment: "")
     }
 }
-
+extension String {
+    
+    func CGFloatValue() -> CGFloat? {
+        guard let doubleValue = Double(self) else { 
+            return nil
+        }
+        
+        return CGFloat(doubleValue)
+    }
+}
 extension String {
     var floatValue: Float {
         let nf = NumberFormatter()
@@ -191,6 +235,8 @@ extension String {
         return 0
     }
 }
+
+
 
 // MARK: - extension ChartXAxisFormatter
 extension ChartXAxisFormatter: IAxisValueFormatter {
@@ -228,24 +274,7 @@ class Items {
             Items.sharedInstance.measureArray.append(getLastMeasureAvailable.waist)
             Items.sharedInstance.measureArray.append(getLastMeasureAvailable.hips)
             Items.sharedInstance.measureArray.append(getLastMeasureAvailable.thigh_L)
-            Items.sharedInstance.measureArray.append(getLastMeasureAvailable.calf_R)
-         
-//            Items.sharedInstance.measureArray.append(getLastMeasureAvailable.weight)
-//            Items.sharedInstance.measureArray.append(getLastMeasureAvailable.neck)
-//            Items.sharedInstance.measureArray.append(getLastMeasureAvailable.bicep_R)
-//            Items.sharedInstance.measureArray.append(getLastMeasureAvailable.bicep_L)
-//            Items.sharedInstance.measureArray.append(getLastMeasureAvailable.bicep_R_Relax)
-//            Items.sharedInstance.measureArray.append(getLastMeasureAvailable.bicep_L_Relax)
-//            Items.sharedInstance.measureArray.append(getLastMeasureAvailable.forearm_R)
-//            Items.sharedInstance.measureArray.append(getLastMeasureAvailable.forearm_L)
-//            Items.sharedInstance.measureArray.append(getLastMeasureAvailable.wrist)
-//            Items.sharedInstance.measureArray.append(getLastMeasureAvailable.chest)
-//            Items.sharedInstance.measureArray.append(getLastMeasureAvailable.waist)
-//            Items.sharedInstance.measureArray.append(getLastMeasureAvailable.hips)
-//            Items.sharedInstance.measureArray.append(getLastMeasureAvailable.thigh_R)
-//            Items.sharedInstance.measureArray.append(getLastMeasureAvailable.thigh_L)
-//            Items.sharedInstance.measureArray.append(getLastMeasureAvailable.calf_R)
-//            Items.sharedInstance.measureArray.append(getLastMeasureAvailable.calf_L)
+            Items.sharedInstance.measureArray.append(getLastMeasureAvailable.calf_R) 
           } else {
             Items.sharedInstance.measureArray.append(getLastMeasureAvailable.weight)
             Items.sharedInstance.measureArray.append(getLastMeasureAvailable.neck)

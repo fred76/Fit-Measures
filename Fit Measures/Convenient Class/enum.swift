@@ -30,6 +30,19 @@ enum BodyPlichePoints : String {
     
 }
 
+enum Supplementlabels : String {
+   case Vegetarian = "vegetarian"
+   case Gluten_free = "gluten free"
+   case No_GMOs = "no gmos"
+   case No_artificial_preservatives = "no artificial preservatives"
+   case No_added_sugar = "no added sugar"
+   case No_lactose = "no lactose"
+   case Organic = "organic"
+   case EU_Organic = "EU Organic"
+   case Vegan = "vegan"
+    
+}
+
 enum PlicheMethods : String {
     case jackson_7 = "jackson & Polloc 7 point"
    // case jackson_4 = "jackson & Polloc 4 point"

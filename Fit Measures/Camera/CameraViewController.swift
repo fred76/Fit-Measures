@@ -30,7 +30,6 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     @IBOutlet var buttonAR: UIBarButtonItem!
     @IBOutlet var buttonSelfie: UIBarButtonItem!
     
-    // Planes: every plane is identified by a UUID.
     var planes = [UUID: VirtualPlane]() {
         didSet {
             if planes.count > 0 {
@@ -72,13 +71,11 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
                 multipiler = 1.7
             }
             shootButton.isHidden = true
-//            hidesBottomBarWhenPushed = true
             self.navigationController?.isToolbarHidden = false
             
         } else {
             intitalView.removeFromSuperview()
             shootButton.isHidden = false
-//            hidesBottomBarWhenPushed = true
             self.navigationController?.isToolbarHidden = true
             
             userPictureMode = .selfie
@@ -103,8 +100,16 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         if let cap = self.captureSession { 
             cap.stopRunning()
         }
-        
-        
+        if userPictureMode == .selfie {
+            closeLivePreview()
+        }
+        if userPictureMode == .aReality {
+            willDisappearAReality()
+        }
+        intitalView.alpha = 1
+        userPictureMode = .undefined
+        buttonAR.isEnabled = true
+        buttonSelfie.isEnabled = true
     }
     
     let factsImagesArray = [
@@ -124,18 +129,9 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         return UIImage(named: factsImagesArray[randomNumber])!
     }
     
-//    override var hidesBottomBarWhenPushed: Bool {
-//        get {
-//            return navigationController?.topViewController == self
-//        }
-//        set {
-//            super.hidesBottomBarWhenPushed = newValue
-//        }
-//    }
-    
     @IBAction func picturesWithDummy(_ sender: Any) {
-        if UserDefaults.standard.bool(forKey: "fred76.com.ifit.girths") || UserDefaults.standard.bool(forKey: "fred76.com.ifit.skinFolds"){
-        intitalView.removeFromSuperview()
+        if  DataManager.shared.purchasedGirthsAndSkinfilds() {
+        intitalView.alpha = 0
         if userPictureMode == .selfie {
             closeLivePreview()
         }
@@ -156,7 +152,7 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     }
     @IBAction func picturesSelfie(_ sender: Any) {
         
-        intitalView.removeFromSuperview()
+        intitalView.alpha = 0
         if userPictureMode == .aReality {
             willDisappearAReality()
         }
@@ -432,12 +428,9 @@ extension CameraViewController: ARSCNViewDelegate {
         }
         
         let touchPoint = touch.location(in: sceneView)
-        //print("Touch happened at point: \(touchPoint)")
         if let plane = virtualPlaneProperlySet(touchPoint: touchPoint) {
-            //print("Plane touched: \(plane)")
             addCoffeeToPlane(plane: plane, atPoint: touchPoint)
-        } else {
-            //print("No plane was reached!")
+        } else { 
         }
     }
     

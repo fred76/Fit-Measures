@@ -34,7 +34,6 @@ class InsightMainController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         lastMeasureTableView.delegate = self
         lastMeasureTableView.dataSource = self
         plicheCollectionView.delegate = self
@@ -91,6 +90,7 @@ class InsightMainController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated) 
         measureArray = Items.sharedInstance.measureArray
         plicheArray = Items.sharedInstance.plicheArray
         plicheMethod = Items.sharedInstance.method
@@ -245,7 +245,7 @@ class InsightMainController: UIViewController, UITableViewDelegate, UITableViewD
                 let controller = segue.destination as! ChartViewController
                 
                 if indexPath.section == 0 {
-                    if UserDefaults.standard.bool(forKey: "fred76.com.ifit.girths") || UserDefaults.standard.bool(forKey: "fred76.com.ifit.skinFolds") {
+                    if  DataManager.shared.purchasedGirthsAndSkinfilds() {
                         
                         print("something purchased") } else {
                        if indexPath.row == StaticClass.randomIndexpath(upperLimit: 14) {
@@ -278,13 +278,15 @@ class InsightMainController: UIViewController, UITableViewDelegate, UITableViewD
                     controller.dateArrayOverlay = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "weight").date
                 } else if indexPath.section == 1 {
                     
-                    if UserDefaults.standard.bool(forKey: "fred76.com.ifit.girths") || UserDefaults.standard.bool(forKey: "fred76.com.ifit.skinFolds") {
+                    if  DataManager.shared.purchasedGirthsAndSkinfilds() {
                         
                         print("something purchased") } else {
                     if indexPath.row == StaticClass.randomIndexpath(upperLimit: 3) {
                         if interstitial.isReady { interstitial.present(fromRootViewController: self) }
                         else { print("Ad wasn't ready") }
-                    }}
+                    }
+                        
+                    }
                     switch indexPath.row {
                     case 0 : controller.userMeasurement = DataManager.shared.plicheFetchAllDateAndSort(with: "sum").value; controller.titleGraph = loc("LOCALPlicheSum")
                     case 1 : controller.userMeasurement = DataManager.shared.plicheFetchAllDateAndSort(with: "bodyDensity").value; controller.titleGraph = loc("LOCALBodyDensity")
@@ -307,7 +309,7 @@ class InsightMainController: UIViewController, UITableViewDelegate, UITableViewD
             if let controller = segue.destination as? ChartViewController{
                 let cell = sender as! plicheCollectionViewThumbCell
                 let indexPath = plicheCollectionView.indexPath(for: cell)
-                if UserDefaults.standard.bool(forKey: "fred76.com.ifit.girths") || UserDefaults.standard.bool(forKey: "fred76.com.ifit.skinFolds") { 
+                if  DataManager.shared.purchasedGirthsAndSkinfilds() { 
                     print("something purchased") } else {
                     if indexPath!.row == StaticClass.randomIndexpath(upperLimit: 6) {
                     if interstitial.isReady { interstitial.present(fromRootViewController: self) }
@@ -412,9 +414,7 @@ extension InsightMainController: UICollectionViewDelegate, UICollectionViewDataS
         cell.thumbImage.layer.borderColor = UIColor.white.cgColor
         cell.thumbImage.layer.borderWidth = 1
         cell.contentView.backgroundColor = StaticClass.alertViewBackgroundColor
-        let toTrim = CharacterSet(charactersIn: "_P")
-        
-        
+        let toTrim = CharacterSet(charactersIn: "_P") 
         let trimmed = plicheArrayThumb[indexPath.item].trimmingCharacters(in: toTrim)
         let localTrimmed = loc("LOCAL"+trimmed)
         cell.thumbLabel.text = localTrimmed

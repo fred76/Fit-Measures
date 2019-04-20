@@ -23,7 +23,7 @@ class PicFullResController: UIViewController {
         hidesBottomBarWhenPushed = true
         
         self.navigationController?.isToolbarHidden = false
-        
+        self.navigationController?.toolbar.barTintColor = #colorLiteral(red: 0.1176293567, green: 0.1176572666, blue: 0.1176275685, alpha: 1)
         var items = [UIBarButtonItem]()
         
         items.append( UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil) )
@@ -32,6 +32,14 @@ class PicFullResController: UIViewController {
         items.append( UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(sharePic)) )
         items.append( UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil) )
         self.toolbarItems = items
+        
+    }
+    
+   
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        self.navigationController?.navigationBar.barTintColor = .black
     }
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent

@@ -26,6 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CDEPersistentStoreEnsembl
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         navBarAppereance()
         tabBarAppereance()
+        setupUnitMeasure()
         setupCoreData() 
         DataManager.shared.managedContext = managedObjectContext
         authorizeHealthKit()

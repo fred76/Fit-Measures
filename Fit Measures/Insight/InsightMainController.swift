@@ -14,6 +14,8 @@ class InsightMainController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet var noInsigth: UIView!
     @IBOutlet weak var lastMeasureTableView: UITableView!
     @IBOutlet var bottomConstraint: NSLayoutConstraint!
+    @IBOutlet var plicheCollectionView: UICollectionView! 
+    var parentNavigationController : UINavigationController?
     
     var measureTitle : [String] = []
     var plicheTitle : [String] = []
@@ -28,12 +30,11 @@ class InsightMainController: UIViewController, UITableViewDelegate, UITableViewD
     var bodyMeasurementIsAdded : Bool = false
     var plicheMeasureIsAdded : Bool = false
     
-    @IBOutlet var plicheCollectionView: UICollectionView!
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         lastMeasureTableView.delegate = self
         lastMeasureTableView.dataSource = self
         plicheCollectionView.delegate = self
@@ -62,46 +63,17 @@ class InsightMainController: UIViewController, UITableViewDelegate, UITableViewD
         unitMeasurLenght = " " + UserDefaultsSettings.lenghtUnitSet
         unitMeasurWeight = " " + UserDefaultsSettings.weightUnitSet
         
-        
-        
-        AppStoreReviewManager.requestReviewIfAppropriate()
-        interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
-        
-        interstitial = createAndLoadInterstitial()
-        showInterstitial = true
-//        //create a new button
-//        let button = UIButton(type: .custom)
-//        //set image for button
-//        button.setImage(UIImage(named: "Gallery.png"), for: .normal)
-//        //add function for button
-//        button.addTarget(self, action: #selector(fbButtonPressed), for: .touchUpInside)
-//        //set frame
-//        button.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
-//        
-//        let barButton = UIBarButtonItem(customView: button)
-//        
-//        //assign button to navigationbar
-//        self.navigationItem.rightBarButtonItem = barButton
-//    }
-//    
-//    //This method will call when you press button.
-//    @objc func fbButtonPressed() {
-//        performSegue(withIdentifier: "ShowPhotoGallery", sender: self)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated) 
         measureArray = Items.sharedInstance.measureArray
         plicheArray = Items.sharedInstance.plicheArray
         plicheMethod = Items.sharedInstance.method
         bodyMeasurementIsAdded = DataManager.shared.bodyMeasurementExist()
         plicheMeasureIsAdded = DataManager.shared.plicheMeasurementExist()
         if !bodyMeasurementIsAdded && !plicheMeasureIsAdded{
-          
+            
             lastMeasureTableView.backgroundView = noInsigth
         } else {
             
-            lastMeasureTableView.backgroundView = nil
+             lastMeasureTableView.backgroundView = nil
         }
         
         if !bodyMeasurementIsAdded || !plicheMeasureIsAdded{
@@ -114,6 +86,42 @@ class InsightMainController: UIViewController, UITableViewDelegate, UITableViewD
         
         
         lastMeasureTableView.reloadData()
+        
+        AppStoreReviewManager.requestReviewIfAppropriate()
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+        
+        interstitial = createAndLoadInterstitial()
+        showInterstitial = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        measureArray = Items.sharedInstance.measureArray
+        plicheArray = Items.sharedInstance.plicheArray
+        plicheMethod = Items.sharedInstance.method
+        bodyMeasurementIsAdded = DataManager.shared.bodyMeasurementExist()
+        plicheMeasureIsAdded = DataManager.shared.plicheMeasurementExist()
+
+        lastMeasureTableView.reloadData()
+        if !bodyMeasurementIsAdded && !plicheMeasureIsAdded{
+
+            lastMeasureTableView.backgroundView = noInsigth
+        } else {
+
+            lastMeasureTableView.backgroundView = nil
+        }
+
+        if !bodyMeasurementIsAdded || !plicheMeasureIsAdded{
+            plicheCollectionView.isHidden = true
+            bottomConstraint.constant = -108
+        } else if bodyMeasurementIsAdded && plicheMeasureIsAdded{
+            plicheCollectionView.isHidden = false
+            bottomConstraint.constant = 8
+        }
+
+
+        lastMeasureTableView.reloadData()
+        parentNavigationController?.navigationBar.barTintColor = .black
     }
     
     
@@ -142,8 +150,7 @@ class InsightMainController: UIViewController, UITableViewDelegate, UITableViewD
     }
     // MARK: - Table view data source
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        
+    func numberOfSections(in tableView: UITableView) -> Int { 
         return 2
     }
     
@@ -172,7 +179,7 @@ class InsightMainController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 40))
-        headerView.backgroundColor = .black
+        headerView.backgroundColor = #colorLiteral(red: 0.1176293567, green: 0.1176572666, blue: 0.1176275685, alpha: 1)
         let label = UILabel()
         let labelDate = UILabel() 
         label.textColor = StaticClass.blueHeader
@@ -215,6 +222,7 @@ class InsightMainController: UIViewController, UITableViewDelegate, UITableViewD
             cell.methodLabel.isHidden = true 
             cell.valueLabel.text = String(Items.sharedInstance.measureArray[indexPath.row])
         } else {
+            
             cell.nameLabel.text = plicheTitle[indexPath.row]
             cell.imageCell.image = UIImage(named: "Caliper")
             cell.methodLabel.isHidden = false
@@ -237,7 +245,6 @@ class InsightMainController: UIViewController, UITableViewDelegate, UITableViewD
         return cell
     }
     
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
        
         if segue.identifier == "ToChartFromTable"{
@@ -246,33 +253,49 @@ class InsightMainController: UIViewController, UITableViewDelegate, UITableViewD
                 
                 if indexPath.section == 0 {
                     if  DataManager.shared.purchasedGirthsAndSkinfilds() {
-                        
+                        switch indexPath.row {
+                        case 0 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "weight").value; controller.titleGraph = loc("LOCALWeight");controller.weightButtonisHidden = true
+                        case 1 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "neck").value; controller.titleGraph = loc("LOCALNeck")
+                        case 2 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "bicep_R").value; controller.titleGraph = loc("LOCALBicep_R")
+                        case 3 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "bicep_L").value; controller.titleGraph = loc("LOCALBicep_L")
+                        case 4 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "bicep_R_Relax").value; controller.titleGraph = loc("LOCALBicep_R_Relax")
+                        case 5 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "bicep_L_Relax").value; controller.titleGraph = loc("LOCALBicep_L_Relax")
+                        case 6 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "forearm_R").value; controller.titleGraph = loc("LOCALForearm_R")
+                        case 7 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "forearm_L").value; controller.titleGraph = loc("LOCALForearm_L")
+                        case 8 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "wrist").value; controller.titleGraph = loc("LOCALWrist")
+                        case 9 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "chest").value; controller.titleGraph = loc("LOCALChest")
+                        case 10 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "waist").value; controller.titleGraph = loc("LOCALWaist")
+                        case 11 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "hips").value; controller.titleGraph = loc("LOCALHips")
+                        case 12 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "thigh_R").value; controller.titleGraph = loc("LOCALThigh_R")
+                        case 13 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "thigh_L").value; controller.titleGraph = loc("LOCALThigh_L")
+                        case 14 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "calf_R").value; controller.titleGraph = loc("LOCALCalf_R")
+                        case 15 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "calf_L").value; controller.titleGraph = loc("LOCALCalf_L")
+                            
+                            
+                        default : break
+                        }
                         print("something purchased") } else {
-                       if indexPath.row == StaticClass.randomIndexpath(upperLimit: 14) {
+                        switch indexPath.row {
+                        case 0 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "weight").value; controller.titleGraph = loc("LOCALWeight");controller.weightButtonisHidden = true
+                        case 1 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "neck").value; controller.titleGraph = loc("LOCALNeck")
+                        case 2 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "bicep_L").value; controller.titleGraph = loc("LOCALBicep_L")
+                        case 3 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "bicep_R_Relax").value; controller.titleGraph = loc("LOCALBicep_R_Relax")
+                        case 4 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "forearm_L").value; controller.titleGraph = loc("LOCALForearm_L")
+                        case 5 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "wrist").value; controller.titleGraph = loc("LOCALWrist")
+                        case 6 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "waist").value; controller.titleGraph = loc("LOCALWaist")
+                        case 7 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "hips").value; controller.titleGraph = loc("LOCALHips")
+                        case 8 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "thigh_L").value; controller.titleGraph = loc("LOCALThigh_L")
+                        case 9 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "calf_R").value; controller.titleGraph = loc("LOCALCalf_R")
+                            
+                        default : break
+                        }
+                       if indexPath.row == StaticClass.randomIndexpath(upperLimit: 8) {
                         if interstitial.isReady { interstitial.present(fromRootViewController: self) }
                         else { print("Ad wasn't ready") }
-                        } }
-                    switch indexPath.row {
-                    case 0 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "weight").value; controller.titleGraph = loc("LOCALWeight");controller.weightButtonisHidden = true
-                    case 1 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "neck").value; controller.titleGraph = loc("LOCALNeck")
-                    case 2 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "bicep_R").value; controller.titleGraph = loc("LOCALBicep_R")
-                    case 3 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "bicep_L").value; controller.titleGraph = loc("LOCALBicep_L")
-                    case 4 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "bicep_R_Relax").value; controller.titleGraph = loc("LOCALBicep_R_Relax")
-                    case 5 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "bicep_L_Relax").value; controller.titleGraph = loc("LOCALBicep_L_Relax")
-                    case 6 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "forearm_R").value; controller.titleGraph = loc("LOCALForearm_R")
-                    case 7 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "forearm_L").value; controller.titleGraph = loc("LOCALForearm_L")
-                    case 8 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "wrist").value; controller.titleGraph = loc("LOCALWrist")
-                    case 9 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "chest").value; controller.titleGraph = loc("LOCALChest")
-                    case 10 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "waist").value; controller.titleGraph = loc("LOCALWaist")
-                    case 11 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "hips").value; controller.titleGraph = loc("LOCALHips")
-                    case 12 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "thigh_R").value; controller.titleGraph = loc("LOCALThigh_R")
-                    case 13 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "thigh_L").value; controller.titleGraph = loc("LOCALThigh_L")
-                    case 14 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "calf_R").value; controller.titleGraph = loc("LOCALCalf_R")
-                    case 15 : controller.userMeasurement = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "calf_L").value; controller.titleGraph = loc("LOCALCalf_L")
+                        }
                         
-                        
-                    default : break
                     }
+                    
                     controller.dateArray = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "calf_L").date
                     controller.overlayGraph = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "weight").value
                     controller.dateArrayOverlay = DataManager.shared.bodyMeasurementFetchAllDateAndSort(with: "weight").date

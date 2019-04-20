@@ -122,6 +122,13 @@ struct StaticClass {
         return randomNumber
     }
    
+    
+    @discardableResult static func didLoadView(v: UIViewController)->UIView? {
+        guard let view = v.view else {
+            return nil
+        } 
+        return view
+    }
 //    static func showTopLevelAlert(v : UIViewController) {
 //        
 //        let alertWindow = UIWindow(frame: UIScreen.main.bounds)

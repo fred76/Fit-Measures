@@ -17,6 +17,8 @@ class PhotoGallery: UIViewController, UICollectionViewDelegate, UICollectionView
     @IBOutlet var takeButton: UIButton!
     @IBOutlet var BackImage: UIView!
     @IBOutlet var cameraInstruction: UITextView!
+    
+    var parentNavigationController : UINavigationController?
     var textString : String!
     var blockOperations: [BlockOperation] = []
     var shouldReloadCollectionView : Bool! = true
@@ -49,7 +51,7 @@ class PhotoGallery: UIViewController, UICollectionViewDelegate, UICollectionView
     }
     
     override func viewWillAppear(_ animated: Bool) {
-//        self.navigationController?.isToolbarHidden = true
+    self.navigationController?.isToolbarHidden = true
         let p = picturesFetchedResultsController.fetchedObjects
         if p?.count == 0{
             picturesCollection.backgroundView = BackImage
@@ -59,6 +61,8 @@ class PhotoGallery: UIViewController, UICollectionViewDelegate, UICollectionView
         takeButton.layer.cornerRadius = 25
         takeButton.layer.borderColor = UIColor.white.cgColor
         takeButton.layer.borderWidth = 1
+        
+        parentNavigationController?.navigationBar.barTintColor = .black
     }
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -93,6 +97,10 @@ class PhotoGallery: UIViewController, UICollectionViewDelegate, UICollectionView
         imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
         imagePicker.allowsEditing = false
         imagePicker.delegate = self
+        imagePicker.providesPresentationContextTransitionStyle = true
+        imagePicker.definesPresentationContext = true
+        imagePicker.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        imagePicker.modalTransitionStyle = UIModalTransitionStyle.coverVertical
         self.present(imagePicker, animated: true, completion: nil)
     }
     
@@ -113,7 +121,7 @@ class PhotoGallery: UIViewController, UICollectionViewDelegate, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let yourWidth = (collectionView.bounds.width/2.0)-10
+        let yourWidth = (collectionView.bounds.width/3.0)-10
         
         let yourHeight = yourWidth
         
@@ -148,28 +156,26 @@ class PhotoGallery: UIViewController, UICollectionViewDelegate, UICollectionView
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 5
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if let cell = sender as? PicturesCell,
-            let indexPath = self.picturesCollection.indexPath(for: cell) {
-            if segue.identifier == "ShowPic" {
-                let controller = segue.destination as! PicFullResController
-                controller.delegate = self
-                
-                let measreData2 = picturesFetchedResultsController.object(at: indexPath)
-                if let thumbnailData = measreData2.fullRes {
-                    if let t = thumbnailData.imageData{
-                        let image = UIImage(data: t as Data)
-                        controller.image = image
-                        
-                        controller.thumb = thumbnailData
-                        
-                    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+            let storyboardInsight = UIStoryboard(name: "InsightStoryboard", bundle: nil)
+            let controller : PicFullResController = (storyboardInsight.instantiateViewController(withIdentifier: "PicFullResController") as! PicFullResController)
+            
+            controller.delegate = self
+            
+            let measreData2 = picturesFetchedResultsController.object(at: indexPath)
+            if let thumbnailData = measreData2.fullRes {
+                if let t = thumbnailData.imageData{
+                    let image = UIImage(data: t as Data)
+                    controller.image = image
+                    
+                    controller.thumb = thumbnailData
+                    
                 }
             }
-            
-        }
+       parentNavigationController!.pushViewController(controller, animated: true)
+       
     }
+ 
 }
 
 extension PhotoGallery: NSFetchedResultsControllerDelegate {
@@ -314,7 +320,8 @@ extension PhotoGallery:  UIImagePickerControllerDelegate, UINavigationController
             fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
         }
         DataManager.shared.prepareImageForSaving(image: selectedImage) {
-            self.picturesCollection.reloadData()
+            self.picturesCollection.reloadData() 
+            self.picturesCollection.backgroundView = nil
             
         }
         picker.dismiss(animated: true, completion: nil)
@@ -322,6 +329,7 @@ extension PhotoGallery:  UIImagePickerControllerDelegate, UINavigationController
         func imagePickerControllerDidCancel(_ picker: UIImagePickerController) { 
                     picker.isNavigationBarHidden = false
                     self.dismiss(animated: true, completion: nil)
+            self.picturesCollection.reloadData()
                 }
     
 }

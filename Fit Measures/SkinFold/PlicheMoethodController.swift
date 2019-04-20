@@ -8,6 +8,8 @@
 
 import UIKit
 import CoreData
+import GoogleMobileAds
+
 private struct ItemDef {
     let title: String
     var value: String
@@ -16,7 +18,7 @@ private struct ItemDef {
 }
 
 
-class PlicheMoethodController: UIViewController , UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIPopoverPresentationControllerDelegate {
+class PlicheMoethodController: UIViewController , UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIPopoverPresentationControllerDelegate,GADInterstitialDelegate {
     
     private var itemDef : [ItemDef]!
     @IBOutlet weak var measureCollctionView: UICollectionView!
@@ -44,24 +46,13 @@ class PlicheMoethodController: UIViewController , UICollectionViewDelegate, UICo
     var Method: String!
     var arrayofPlicheToPass : [Double] = []
     var dictPlicheValue : [String:Double] = [:]
+    var interstitial: GADInterstitial!
+    var showInterstitial : Bool = false
     @IBOutlet var weightLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let weightAvailable = DataManager.shared.getLastMeasureAvailable() {
-            if weightAvailable.weight < 30 {
-                weightLabel.text = loc("No body weight availabe")
-                let text1 = loc("Noitce")
-                let text2 = loc("You want use ")
-                let text3 = loc(" Kg for calcultate body data?")
-                DataManager.shared.allertWithParameter(title: "\(text1)", message:"\(text2)\(weightAvailable.weight)\(text3)" , viecontroller: self)
-        } else {
-            weightLabel.text = loc("Body Weight ") + String(weightAvailable.weight) + " Kg"
-        }
-        } else {
-            weightLabel.text = loc("No body weight availabe")
-            DataManager.shared.allertWithParameter(title: loc("Noitce"), message: loc("Body weight not available lean mass will be not calculated"), viecontroller: self)
-        }
+        
         self.measureCollctionView.delegate = self
         self.measureCollctionView.dataSource = self
         
@@ -81,24 +72,73 @@ class PlicheMoethodController: UIViewController , UICollectionViewDelegate, UICo
         }
         
         
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+        
+        interstitial = createAndLoadInterstitial()
+        showInterstitial = true
+    }
+    func createAndLoadInterstitial() -> GADInterstitial {
+        let interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+        interstitial.delegate = self
+        interstitial.load(GADRequest())
+        return interstitial
+    }
+    
+    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
+        showInterstitial = true
+        interstitial = createAndLoadInterstitial()
     }
     
     
     
     override func viewWillAppear(_ animated: Bool) {
-        measureCollctionView.reloadData() 
+        
+        if plicheMethod == .jackson_3_Man || plicheMethod == .jackson_7 {
+            if  DataManager.shared.purchasedGirthsAndSkinfilds() { print("something purchased") } else {
+                if interstitial.isReady {
+                    interstitial.present(fromRootViewController: self)
+                } else {
+                    print("Ad wasn't ready")
+                }
+                
+            }
+           
+        }
         isAddedPliche = DataManager.shared.plicheForTodayIsVavailable()
         self.navigationItem.rightBarButtonItem?.isEnabled = false
         dictPlicheValue.removeAll() 
         subscapular=nil 
-        readItemDef()
+        readItemDef() 
+        measureCollctionView.reloadData()
+        bodyWeightWarning()
     } 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
+    
+    func bodyWeightWarning(){
+        if let weightAvailable = DataManager.shared.getLastMeasureAvailable() {
+            if weightAvailable.weight < 30 {
+                weightLabel.text = loc("No body weight availabe")
+                let text1 = loc("Noitce")
+                let text2 = loc("You want use ")
+                let text3 = loc(" Kg for calcultate body data?")
+                DataManager.shared.allertWithParameter(title: "\(text1)", message:"\(text2)\(weightAvailable.weight)\(text3)" , viecontroller: self)
+            } else {
+                weightLabel.text = loc("Body Weight ") + String(weightAvailable.weight) + " Kg"
+            }
+        } else {
+            weightLabel.text = loc("No body weight availabe")
+            DataManager.shared.allertWithParameter(title: loc("Noitce"), message: loc("Body weight not available lean mass will be not calculated"), viecontroller: self)
+        }
+    }
     func plicheGraph(){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let customAlert = storyboard.instantiateViewController(withIdentifier: "CustomAlertPieChartPreviewID") as! AllertViewSkinFoldInsertWithGraph
+        customAlert.providesPresentationContextTransitionStyle = true
+        customAlert.definesPresentationContext = true
+        customAlert.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        customAlert.modalTransitionStyle = UIModalTransitionStyle.crossDissolve 
         customAlert.delegatePieChart = self
         customAlert.plichePoint.removeAll() 
         customAlert.plichePoint.append(contentsOf: nameArray)
@@ -393,6 +433,12 @@ extension PlicheMoethodController : AllertViewSkinFoldInsertWithGraphDelegate {
             
         case .sloanWoman :
             DataManager.shared.save()
+            Items.sharedInstance.updatePliche()
+            
+        case .jackson_3_Man :
+            Items.sharedInstance.updatePliche()
+            
+        case .jackson_7 :
             Items.sharedInstance.updatePliche()
             
         default: break

@@ -320,7 +320,7 @@ extension SupplementDetailsController: UIPickerViewDelegate, UIPickerViewDataSou
             transfomLbsInOz = packQunatityDoubel * 16
             week = transfomLbsInOz/(dailyQunatityDoubel*weekQunatityDoubel)
         }
-        let days = week * 7
+        let days = week * 7 
         return days
     }
     

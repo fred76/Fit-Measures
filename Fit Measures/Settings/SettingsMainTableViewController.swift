@@ -36,23 +36,13 @@ class SettingsMainTableViewController: UITableViewController, UITextFieldDelegat
         super.viewWillAppear(animated) 
         self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.9685102105, green: 0.9686148763, blue: 0.9725942016, alpha: 1)
         self.navigationController?.navigationBar.isTranslucent = false
-        self.navigationController?.isNavigationBarHidden = true
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
         updateHealthInfo {
             self.updateLabelIfHKnotAvailable()
         }
     }
     
-//    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//        if indexPath.section == 4 {
-//            if indexPath.row == 0 {
-//                cell.textLabel?.text = orPuerc ?? "orPuerc"
-//            } else {
-//                cell.textLabel?.text = applVer ?? "applVer"
-//            }
-//        }
-//    }
-    
-    
+ 
     
     
     

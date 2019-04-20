@@ -12,6 +12,9 @@ import CoreData
 import UserNotifications
 class UserSupplementListAndScan: UIViewController, AVCaptureMetadataOutputObjectsDelegate, UISearchBarDelegate {
     
+    @IBOutlet var placeholderView: UIView!
+    
+    @IBOutlet var placeholderImage: UIImageView!
     @IBOutlet var myProductCollectionView: UITableView!
     @IBOutlet var searchProduct: UISearchBar!
     @IBOutlet var barCodeButton: UIButton!
@@ -35,6 +38,10 @@ class UserSupplementListAndScan: UIViewController, AVCaptureMetadataOutputObject
         return fetchedResultsController
     }()
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         myProductCollectionView.delegate = self
@@ -51,12 +58,35 @@ class UserSupplementListAndScan: UIViewController, AVCaptureMetadataOutputObject
      }
     
     override func viewWillDisappear(_ animated: Bool) {
+       
         if let s = self.scanner {
             s.previewAdded.removeFromSuperlayer()
         }
     }
     
+    let factsImagesArray = [
+        "1A",
+        "2A",
+        "3A",
+        "4A",
+        "5A"
+    ]
+    func randomFactImage() -> UIImage {
+        let unsignedArrayCount = UInt32(factsImagesArray.count)
+        let unsignedRandomNumber = arc4random_uniform(unsignedArrayCount)
+        let randomNumber = Int(unsignedRandomNumber)
+        return UIImage(named: factsImagesArray[randomNumber])!
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
+        let p = supplementFetchedResultsController.fetchedObjects
+        if p?.count == 0{
+            myProductCollectionView.backgroundView = placeholderView
+            
+            placeholderImage.image = randomFactImage()
+        } else {
+            myProductCollectionView.backgroundView = nil
+        } 
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.barTintColor = .black // colorLiteral(red: 0.9685102105, green: 0.9686148763, blue: 0.9725942016, alpha: 1)
         searchProduct.text = ""
@@ -64,7 +94,7 @@ class UserSupplementListAndScan: UIViewController, AVCaptureMetadataOutputObject
     }
     
     @IBAction func code(_ sender: Any) {
-        //handleCode(code: "0000396818888888")
+//        handleCode(code: "000039681")
                         self.scanner = ScannerHelper(withViewController: self, view: self.view, codeOutputHandler: self.handleCode(code:))
                         if let scanner = self.scanner { scanner.requestCaptureSessioStartRunning() }
     }

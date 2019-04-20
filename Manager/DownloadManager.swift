@@ -25,13 +25,12 @@ class DownloadManager: NSObject {
                 print("ERRORE:")
                 print(er.localizedDescription)
             }
-            guard let ilJson = response.result.value else {
-                print("JSON Nil")
+            guard let ilJson = response.result.value else { 
                 return
             }
             
             guard let json = JSON(ilJson)["products"].array else {return }
-            
+            print(json)
             let totale = json.count
             for i in 0..<totale {
                 
@@ -108,12 +107,11 @@ class DownloadManager: NSObject {
             }
             
             guard let ilJson = response.result.value else {
-                print("JSON Nil")
                 return
             }
             
             if let jsonProduct = JSON(ilJson)["product"].dictionary {
-            
+            print(jsonProduct)
             if let productName = jsonProduct["product_name"]?.string {
                 self.productDetail.productName = productName
             }

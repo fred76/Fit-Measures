@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lan-5s-WtA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -12,7 +12,7 @@
         <!--Skin Folds-->
         <scene sceneID="Rzn-AY-Rrq">
             <objects>
-                <tableViewController id="aXb-td-Fyt" customClass="PlicoMainControllerTable" customModule="iFit_Girths___Caliper" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="PlicoMainControllerTable" id="aXb-td-Fyt" customClass="PlicoMainControllerTable" customModule="iFit_Girths___Caliper" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="16B-av-1bK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -143,9 +143,6 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <connections>
-                                            <segue destination="6Tr-5N-YjC" kind="show" identifier="jackson_7" id="2MG-c7-n7c"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="108" id="DZ7-if-5hS">
                                         <rect key="frame" x="0.0" y="108" width="414" height="108"/>
@@ -246,9 +243,6 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <connections>
-                                            <segue destination="6Tr-5N-YjC" kind="show" identifier="jackson_3" id="70d-LL-NzN"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="108" id="0ZG-vL-JYd">
                                         <rect key="frame" x="0.0" y="216" width="414" height="108"/>
@@ -341,9 +335,6 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <connections>
-                                            <segue destination="6Tr-5N-YjC" kind="show" identifier="Sloan" id="0M7-1n-kYf"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="108" id="qR8-ua-biN">
                                         <rect key="frame" x="0.0" y="324" width="414" height="108"/>
@@ -448,9 +439,6 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <connections>
-                                            <segue destination="6Tr-5N-YjC" kind="show" identifier="durnin" id="GQB-GZ-PQ1"/>
-                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -475,18 +463,18 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D8y-Cg-NR6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="174" y="44"/>
+            <point key="canvasLocation" x="1992.753623188406" y="43.526785714285715"/>
         </scene>
         <!--Pliche Moethod Controller-->
         <scene sceneID="c0o-qV-vnT">
             <objects>
-                <viewController id="6Tr-5N-YjC" customClass="PlicheMoethodController" customModule="iFit_Girths___Caliper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PlicheMoethodController" id="6Tr-5N-YjC" customClass="PlicheMoethodController" customModule="iFit_Girths___Caliper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zfE-Ub-j7S">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="T2Z-Wp-HOy">
-                                <rect key="frame" x="16" y="118" width="382" height="736"/>
+                                <rect key="frame" x="16" y="74" width="382" height="780"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zRq-gP-ZAX">
                                     <size key="itemSize" width="210" height="200"/>
@@ -560,7 +548,7 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last weight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q3U-Bb-9gc">
-                                <rect key="frame" x="340.5" y="88" width="65.5" height="21"/>
+                                <rect key="frame" x="340.5" y="44" width="65.5" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="z9q-DB-xW4"/>
                                 </constraints>
@@ -581,6 +569,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Yv4-eo-eaD"/>
                     </view>
+                    <navigationItem key="navigationItem" id="pEt-2Y-VTr"/>
                     <connections>
                         <outlet property="measureCollctionView" destination="T2Z-Wp-HOy" id="w6H-sY-VNz"/>
                         <outlet property="weightLabel" destination="Q3U-Bb-9gc" id="MdF-Xh-Pmj"/>
@@ -588,34 +577,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Imu-De-zhL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="173.59999999999999" y="796.55172413793105"/>
-        </scene>
-        <!--Caliper-->
-        <scene sceneID="KVD-8x-Wnk">
-            <objects>
-                <navigationController storyboardIdentifier="GirthsNC" automaticallyAdjustsScrollViewInsets="NO" id="lan-5s-WtA" customClass="NavController" customModule="iFit_Girths___Caliper" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Caliper" image="CaliperSelected-1" landscapeImage="CaliperSelected-1" largeContentSizeImage="CaliperSelected-1" id="Zc9-ur-6lr"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HKk-aM-GP2">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="aXb-td-Fyt" kind="relationship" relationship="rootViewController" id="rga-j0-Ojv"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="v0K-JX-i27" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-551" y="44"/>
+            <point key="canvasLocation" x="1082.608695652174" y="796.20535714285711"/>
         </scene>
     </scenes>
     <resources>
         <image name="Caliper" width="158" height="158"/>
-        <image name="CaliperSelected-1" width="22" height="22"/>
         <image name="Thigh_P" width="149" height="224"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="GQB-GZ-PQ1"/>
-    </inferredMetricsTieBreakers>
 </document>

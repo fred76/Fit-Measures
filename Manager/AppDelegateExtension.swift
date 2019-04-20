@@ -60,4 +60,16 @@ extension AppDelegate {
             }
         }
     }
+    
+    func setupUnitMeasure(){
+        if !UserDefaultsSettings.serchForKey(kUsernameKey: "weightUnit"){
+            UserDefaultsSettings.weightUnitSet = "Kg"
+        }
+        if !UserDefaultsSettings.serchForKey(kUsernameKey: "lenghtUnit"){
+            UserDefaultsSettings.lenghtUnitSet = "cm"
+        }
+        if !UserDefaultsSettings.serchForKey(kUsernameKey: "biologicalSex"){
+            UserDefaultsSettings.biologicalSexSet = "Male"
+        }
+    }
 }

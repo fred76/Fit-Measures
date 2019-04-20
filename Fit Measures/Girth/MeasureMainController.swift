@@ -61,7 +61,7 @@ class MeasureMainController: UIViewController, UICollectionViewDelegate, UIColle
     override func viewWillAppear(_ animated: Bool) {
         #warning("stampa la cartella")
         print("Documents Directory: ", FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last ?? "Not Found!") 
-        measureCollctionView.reloadData()
+//        measureCollctionView.reloadData()
         self.navigationItem.rightBarButtonItem?.isEnabled = false
         isAdded = DataManager.shared.bodyMeasurementForTodayIsAvailable()
         readItemDeaf ()
@@ -74,6 +74,8 @@ class MeasureMainController: UIViewController, UICollectionViewDelegate, UIColle
             bannerView.rootViewController = self
             bannerView.load(GADRequest())
             bannerView.delegate = self}
+        
+        measureCollctionView.reloadData()
     }
     
     func addBannerViewToView(_ bannerView: GADBannerView) {

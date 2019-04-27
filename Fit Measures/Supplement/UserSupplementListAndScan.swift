@@ -97,7 +97,15 @@ class UserSupplementListAndScan: UIViewController, AVCaptureMetadataOutputObject
 //        handleCode(code: "000039681")
                         self.scanner = ScannerHelper(withViewController: self, view: self.view, codeOutputHandler: self.handleCode(code:))
                         if let scanner = self.scanner { scanner.requestCaptureSessioStartRunning() }
+        
+     
+        
     }
+    
+  
+    
+ 
+ 
     
     // MARK: - Search Bar
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {

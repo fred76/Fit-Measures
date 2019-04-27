@@ -65,12 +65,12 @@ class MeasureMainController: UIViewController, UICollectionViewDelegate, UIColle
         self.navigationItem.rightBarButtonItem?.isEnabled = false
         isAdded = DataManager.shared.bodyMeasurementForTodayIsAvailable()
         readItemDeaf ()
-        
+        //ca-app-pub-9833367902957453~1306670365
         if  UserDefaults.standard.bool(forKey: "fred76.com.ifit.girths") {
             print("something purchased")} else {
             bannerView = GADBannerView(adSize: kGADAdSizeBanner)
             addBannerViewToView(bannerView)
-            bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+            bannerView.adUnitID = StaticClass.adMobString 
             bannerView.rootViewController = self
             bannerView.load(GADRequest())
             bannerView.delegate = self}

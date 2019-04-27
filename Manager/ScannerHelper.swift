@@ -14,7 +14,7 @@ class ScannerHelper : NSObject {
     private var captureSession : AVCaptureSession?
     private var codeOutputHandler : (_ code: String) -> Void
     var previewAdded = AVCaptureVideoPreviewLayer()
-    
+    var button : UIButton!
     private func createCaptureSession() -> AVCaptureSession? {
         let captureSession = AVCaptureSession()
         
@@ -80,8 +80,22 @@ class ScannerHelper : NSObject {
             self.captureSession = captureSession
             let previewLayer = self.createPreviewLayer(withCaptureSession: captureSession, view: view)
             view.layer.addSublayer(previewLayer)
+            let height = viewController.tabBarController?.tabBar.frame.size.height
+            button = UIButton(frame: CGRect(x: (view.frame.width/2)-50, y: view.frame.height-height!-70, width: 100, height: 60))
+            button.backgroundColor = StaticClass.alertViewBackgroundColor
+            button.layer.borderWidth = 1
+            button.layer.borderColor = UIColor.white.cgColor
+            button.layer.cornerRadius = 15
+            button.setTitle(loc("X Close"), for: .normal)
+            button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+            
+            view.addSubview(button)
         
         }
+    }
+    @objc func buttonAction(sender: UIButton!) {
+        previewAdded.removeFromSuperlayer()
+        button.removeFromSuperview()
     }
     
     func requestCaptureSessioStartRunning(){

@@ -14,7 +14,7 @@ class fit_UITests: XCTestCase {
     func testExample() {
         let app = XCUIApplication()
         setupSnapshot(app)
-        app.launch()
+        app.launch() 
         Snapshot.setLanguage(app)
         sShotGirths(app: app)
         sShotPlicheAndGraph(app: app)

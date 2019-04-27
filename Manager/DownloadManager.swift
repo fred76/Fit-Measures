@@ -110,8 +110,7 @@ class DownloadManager: NSObject {
                 return
             }
             
-            if let jsonProduct = JSON(ilJson)["product"].dictionary {
-            print(jsonProduct)
+            if let jsonProduct = JSON(ilJson)["product"].dictionary { 
             if let productName = jsonProduct["product_name"]?.string {
                 self.productDetail.productName = productName
             }

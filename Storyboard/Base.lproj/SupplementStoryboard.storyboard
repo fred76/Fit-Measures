@@ -12,7 +12,7 @@
         <!--Supplement-->
         <scene sceneID="WkA-xw-1NB">
             <objects>
-                <viewController title="Supplement" id="RSO-7A-Yzd" customClass="UserSupplementListAndScan" customModule="fit_UITests" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Supplement" id="RSO-7A-Yzd" customClass="UserSupplementListAndScan" customModule="iFit_Girths___Caliper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Mr-dL-Lus">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,14 +22,14 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CellSupplement" rowHeight="200" id="OeC-gH-ruR" customClass="SelectedProductCell" customModule="fit_UITests" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CellSupplement" rowHeight="200" id="OeC-gH-ruR" customClass="SelectedProductCell" customModule="iFit_Girths___Caliper" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OeC-gH-ruR" id="thz-Hc-AjO">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g5s-6d-jDN" customClass="CustomViewDoubleColor" customModule="fit_UITests" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g5s-6d-jDN" customClass="CustomViewDoubleColor" customModule="iFit_Girths___Caliper" customModuleProvider="target">
                                                     <rect key="frame" x="20" y="11" width="374" height="178"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NoP-B2-Z5m">
@@ -41,7 +41,7 @@
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZSq-tY-I3M" customClass="CirclePieView" customModule="fit_UITests" customModuleProvider="target">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZSq-tY-I3M" customClass="CirclePieView" customModule="iFit_Girths___Caliper" customModuleProvider="target">
                                                             <rect key="frame" x="8" y="40" width="63" height="63"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
@@ -275,7 +275,7 @@
         <!--Supplement Details Controller-->
         <scene sceneID="fyn-za-kse">
             <objects>
-                <tableViewController id="I9m-p3-ql1" customClass="SupplementDetailsController" customModule="fit_UITests" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="I9m-p3-ql1" customClass="SupplementDetailsController" customModule="iFit_Girths___Caliper" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="CYa-YT-9je">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -371,7 +371,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Ay-Nq-KMH">
                                                     <rect key="frame" x="8" y="0.0" width="398" height="63"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z3T-YC-ZTd" customClass="CirclePieView" customModule="fit_UITests" customModuleProvider="target">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z3T-YC-ZTd" customClass="CirclePieView" customModule="iFit_Girths___Caliper" customModuleProvider="target">
                                                             <rect key="frame" x="8" y="4" width="55" height="55"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 gr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="buJ-av-D4R">
@@ -831,7 +831,7 @@
         <!--Supplement Searched By Name-->
         <scene sceneID="iD4-cD-MP6">
             <objects>
-                <tableViewController id="yAq-qd-zlL" customClass="SupplementSearchedByName" customModule="fit_UITests" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="yAq-qd-zlL" customClass="SupplementSearchedByName" customModule="iFit_Girths___Caliper" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ebv-D4-ccY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -841,7 +841,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xXe-ju-iQP">
-                                    <rect key="frame" x="155" y="-59" width="104" height="30"/>
+                                    <rect key="frame" x="155" y="-81" width="104" height="30"/>
                                     <state key="normal" title="Search More ..."/>
                                     <connections>
                                         <action selector="more:" destination="yAq-qd-zlL" eventType="touchUpInside" id="ayJ-NX-vuC"/>
@@ -850,12 +850,12 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="xXe-ju-iQP" firstAttribute="centerY" secondItem="Gn3-CD-0Ge" secondAttribute="centerY" constant="-66" id="t3T-Pf-XqP"/>
+                                <constraint firstItem="xXe-ju-iQP" firstAttribute="centerY" secondItem="Gn3-CD-0Ge" secondAttribute="centerY" constant="-88" id="t3T-Pf-XqP"/>
                                 <constraint firstItem="xXe-ju-iQP" firstAttribute="centerX" secondItem="Gn3-CD-0Ge" secondAttribute="centerX" id="yOf-At-p2z"/>
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductSearched" rowHeight="60" id="l7u-cN-qhz" customClass="ProductCellForSearched" customModule="fit_UITests" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductSearched" rowHeight="60" id="l7u-cN-qhz" customClass="ProductCellForSearched" customModule="iFit_Girths___Caliper" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="l7u-cN-qhz" id="LRU-sZ-Isz">
@@ -930,7 +930,7 @@
         <!--Supplemet Inserted Manually Controller-->
         <scene sceneID="Cxt-54-VrI">
             <objects>
-                <tableViewController id="rtA-xa-JFn" customClass="SupplemetInsertedManuallyController" customModule="fit_UITests" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="rtA-xa-JFn" customClass="SupplemetInsertedManuallyController" customModule="iFit_Girths___Caliper" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Fng-wt-8gY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -18,6 +18,7 @@ struct StaticClass {
     static let blueLean : UIColor = #colorLiteral(red: 0.04933099449, green: 0.6540151238, blue: 0.9243635535, alpha: 1)
     static let blueButton : UIColor = #colorLiteral(red: 0.06274509804, green: 0.662745098, blue: 0.9333333333, alpha: 1) 
     static let redFat : UIColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
+    static let adMobString : String = "ca-app-pub-3940256099942544/2934735716" //My String "ca-app-pub-9833367902957453~1306670365"
     
     static var dateFormatterMediumYY: DateFormatter = {
         let dateFormatter = DateFormatter()
@@ -134,4 +135,6 @@ struct StaticClass {
  
 public func loc(_ localizedKey:String) -> String {
     return NSLocalizedString(localizedKey, comment: "")
+    
+    
 }

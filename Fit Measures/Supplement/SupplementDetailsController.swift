@@ -468,7 +468,7 @@ extension SupplementDetailsController {
         if let productSearched = productSearched {
         let now = Date()
         productSearched.uniqueIdentifier = DataManager.shared.uuid + StaticClass.dateFormatterLongLong.string(from: now) as NSString 
-            if DataManager.shared.supplementCount(maxCount : 1,message: "buy", viecontroller: self) {
+            if DataManager.shared.supplementCount(maxCount : 1,message: loc("buy"), viecontroller: self) {
                 return
             }
             

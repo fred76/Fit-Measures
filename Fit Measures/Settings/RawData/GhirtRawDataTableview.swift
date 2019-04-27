@@ -56,7 +56,9 @@ class GhirtRawDataTableview: UIViewController, UITableViewDelegate, UITableViewD
         rawMeasureTabe.backgroundView = nil
         let measreData = measureFetchedResultsController.object(at: indexPath)
         cell.titleLabel.text = "Measure"
-        cell.dateLabel.text = StaticClass.dateFormat(d: (measreData.dateOfEntry)!)
+        if let data = measreData.dateOfEntry {
+            cell.dateLabel.text = StaticClass.dateFormat(d: data)
+        } 
         
        
     }

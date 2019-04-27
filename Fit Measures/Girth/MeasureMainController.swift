@@ -66,7 +66,7 @@ class MeasureMainController: UIViewController, UICollectionViewDelegate, UIColle
         isAdded = DataManager.shared.bodyMeasurementForTodayIsAvailable()
         readItemDeaf ()
         
-        if !DataManager.shared.purchasedGirthsAndSkinfilds() {
+        if  UserDefaults.standard.bool(forKey: "fred76.com.ifit.girths") {
             print("something purchased")} else {
             bannerView = GADBannerView(adSize: kGADAdSizeBanner)
             addBannerViewToView(bannerView)
@@ -286,7 +286,7 @@ extension MeasureMainController : AllertViewGirthInsertDelegate {
                 }
                 
                 cell.measureLabel.isHidden = false
-                let key = def.image.firstLowercased
+                let key = def.image.firstLowercased 
                 bodyMeasureSelected.setValue(textFieldValue.doubleValue, forKey: key)
                 DataManager.shared.save()
                 def.value = textFieldValue

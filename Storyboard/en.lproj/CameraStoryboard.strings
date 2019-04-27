@@ -1,0 +1,21 @@
+
+/* Class = "UILabel"; text = "or"; ObjectID = "4An-uX-0KT"; */
+"4An-uX-0KT.text" = "or";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "BkQ-7W-Gi3"; */
+"BkQ-7W-Gi3.title" = "Item";
+
+/* Class = "UILabel"; text = "Selfie : "; ObjectID = "aQA-rM-eC9"; */
+"aQA-rM-eC9.text" = "Selfie : ";
+
+/* Class = "UITabBarItem"; title = "Photos"; ObjectID = "eaf-3C-xlS"; */
+"eaf-3C-xlS.title" = "Photos";
+
+/* Class = "UILabel"; text = "7"; ObjectID = "ikP-La-rMj"; */
+"ikP-La-rMj.text" = "7";
+
+/* Class = "UILabel"; text = "Augmented reality : "; ObjectID = "jC5-4r-b97"; */
+"jC5-4r-b97.text" = "Augmented reality : ";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "m1e-ZC-SFy"; */
+"m1e-ZC-SFy.title" = "Item";

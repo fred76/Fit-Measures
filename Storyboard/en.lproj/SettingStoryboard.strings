@@ -1,0 +1,162 @@
+
+/* Class = "UILabel"; text = "Let's Go Shopping"; ObjectID = "1Ut-Pp-2zJ"; */
+"1Ut-Pp-2zJ.text" = "Let's Go Shopping";
+
+/* Class = "UILabel"; text = "🇮🇹"; ObjectID = "27K-S1-C0G"; */
+"27K-S1-C0G.text" = "🇮🇹";
+
+/* Class = "UILabel"; text = "Subtitle"; ObjectID = "50f-ZT-WvQ"; */
+"50f-ZT-WvQ.text" = "Subtitle";
+
+/* Class = "UILabel"; text = "Contact Support"; ObjectID = "6tj-f0-BDE"; */
+"6tj-f0-BDE.text" = "Contact Support";
+
+/* Class = "UILabel"; text = "Biological Sex"; ObjectID = "8LJ-jA-igI"; */
+"8LJ-jA-igI.text" = "Biological Sex";
+
+/* Class = "UILabel"; text = "Weight"; ObjectID = "A0N-za-AJN"; */
+"A0N-za-AJN.text" = "Weight";
+
+/* Class = "UILabel"; text = "Credits"; ObjectID = "AnH-0p-8t3"; */
+"AnH-0p-8t3.text" = "Credits";
+
+/* Class = "UISegmentedControl"; CkO-9B-83b.segmentTitles[0] = "Male"; ObjectID = "CkO-9B-83b"; */
+"CkO-9B-83b.segmentTitles[0]" = "Male";
+
+/* Class = "UISegmentedControl"; CkO-9B-83b.segmentTitles[1] = "Female"; ObjectID = "CkO-9B-83b"; */
+"CkO-9B-83b.segmentTitles[1]" = "Female";
+
+/* Class = "UITableViewSection"; headerTitle = "PURCHASE FETURES"; ObjectID = "D3r-3p-nz4"; */
+"D3r-3p-nz4.headerTitle" = "PURCHASE FETURES";
+
+/* Class = "UIButton"; normalTitle = "Skin Fold Template "; ObjectID = "Ek7-zu-56I"; */
+"Ek7-zu-56I.normalTitle" = "Skin Fold Template ";
+
+/* Class = "UILabel"; text = "Privacy"; ObjectID = "ExJ-mq-Y2T"; */
+"ExJ-mq-Y2T.text" = "Privacy";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "H1s-Nu-VWQ"; */
+"H1s-Nu-VWQ.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Export Griths"; ObjectID = "K4e-dt-0rA"; */
+"K4e-dt-0rA.normalTitle" = "Export Griths";
+
+/* Class = "UILabel"; text = "Weight Unit"; ObjectID = "K8g-Ho-r8k"; */
+"K8g-Ho-r8k.text" = "Weight Unit";
+
+/* Class = "UILabel"; text = "Edit this data will compromise  the calculated value"; ObjectID = "Kif-8B-iOB"; */
+"Kif-8B-iOB.text" = "Edit this data will compromise  the calculated value";
+
+/* Class = "UILabel"; text = "Raw Data Skin Fold"; ObjectID = "LS0-Nt-cL8"; */
+"LS0-Nt-cL8.text" = "Raw Data Skin Fold";
+
+/* Class = "UILabel"; text = "12/12/11"; ObjectID = "MuG-Ea-i45"; */
+"MuG-Ea-i45.text" = "12/12/11";
+
+/* Class = "UITableViewSection"; headerTitle = "Data Management"; ObjectID = "NF8-aL-BZd"; */
+"NF8-aL-BZd.headerTitle" = "Data Management";
+
+/* Class = "UILabel"; text = "Languages"; ObjectID = "Nbc-NB-nhi"; */
+"Nbc-NB-nhi.text" = "Languages";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "PgW-rK-ah4"; */
+"PgW-rK-ah4.text" = "Title";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "QL7-jr-KUf"; */
+"QL7-jr-KUf.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Import Griths"; ObjectID = "Tm9-bV-9O2"; */
+"Tm9-bV-9O2.normalTitle" = "Import Griths";
+
+/* Class = "UIViewController"; title = "Privacy"; ObjectID = "Ud4-cK-PR7"; */
+"Ud4-cK-PR7.title" = "Privacy";
+
+/* Class = "UIButton"; normalTitle = "Import Skin Fold"; ObjectID = "W1k-mI-4g3"; */
+"W1k-mI-4g3.normalTitle" = "Import Skin Fold";
+
+/* Class = "UILabel"; text = "🇬🇧"; ObjectID = "WbU-y2-3jz"; */
+"WbU-y2-3jz.text" = "🇬🇧";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "XJz-Ct-l1N"; */
+"XJz-Ct-l1N.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ZZx-8q-IVz"; */
+"ZZx-8q-IVz.text" = "Label";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "aOu-mY-nQQ"; */
+"aOu-mY-nQQ.text" = "Title";
+
+/* Class = "UILabel"; text = "Raw Data Body Measurements"; ObjectID = "aWT-jw-B5K"; */
+"aWT-jw-B5K.text" = "Raw Data Body Measurements";
+
+/* Class = "UILabel"; text = "Rate G&C on App Store"; ObjectID = "adh-ei-YhP"; */
+"adh-ei-YhP.text" = "Rate G&C on App Store";
+
+/* Class = "UILabel"; text = "Share G&C"; ObjectID = "cD7-wU-Grs"; */
+"cD7-wU-Grs.text" = "Share G&C";
+
+/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "cHY-vb-5GW"; */
+"cHY-vb-5GW.title" = "Settings";
+
+/* Class = "UILabel"; text = "Italiano"; ObjectID = "cXU-Dk-aWs"; */
+"cXU-Dk-aWs.text" = "Italiano";
+
+/* Class = "UISegmentedControl"; eWS-xV-bm2.segmentTitles[0] = "IS"; ObjectID = "eWS-xV-bm2"; */
+"eWS-xV-bm2.segmentTitles[0]" = "IS";
+
+/* Class = "UISegmentedControl"; eWS-xV-bm2.segmentTitles[1] = "IU"; ObjectID = "eWS-xV-bm2"; */
+"eWS-xV-bm2.segmentTitles[1]" = "IU";
+
+/* Class = "UIButton"; normalTitle = "Griths Template "; ObjectID = "fh4-zK-b8l"; */
+"fh4-zK-b8l.normalTitle" = "Griths Template ";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "fxg-UB-WUW"; */
+"fxg-UB-WUW.text" = "Title";
+
+/* Class = "UISegmentedControl"; hVe-XR-AxD.segmentTitles[0] = "IS"; ObjectID = "hVe-XR-AxD"; */
+"hVe-XR-AxD.segmentTitles[0]" = "IS";
+
+/* Class = "UISegmentedControl"; hVe-XR-AxD.segmentTitles[1] = "IU"; ObjectID = "hVe-XR-AxD"; */
+"hVe-XR-AxD.segmentTitles[1]" = "IU";
+
+/* Class = "UITableViewSection"; headerTitle = "ABOUT FIT MEASURE"; ObjectID = "iSg-6l-13X"; */
+"iSg-6l-13X.headerTitle" = "ABOUT FIT MEASURE";
+
+/* Class = "UILabel"; text = "Managing External Data"; ObjectID = "kYS-e3-abr"; */
+"kYS-e3-abr.text" = "Managing External Data";
+
+/* Class = "UITextView"; text = " ddddddd"; ObjectID = "kfn-54-VLt"; */
+"kfn-54-VLt.text" = " ddddddd";
+
+/* Class = "UILabel"; text = "Age"; ObjectID = "lzq-yh-F4v"; */
+"lzq-yh-F4v.text" = "Age";
+
+/* Class = "UITabBarItem"; title = "Settings"; ObjectID = "n56-5G-QRw"; */
+"n56-5G-QRw.title" = "Settings";
+
+/* Class = "UITableViewSection"; headerTitle = "PROFILE"; ObjectID = "nye-rC-UHM"; */
+"nye-rC-UHM.headerTitle" = "PROFILE";
+
+/* Class = "UILabel"; text = "Lenght Unit"; ObjectID = "pm8-JF-qPW"; */
+"pm8-JF-qPW.text" = "Lenght Unit";
+
+/* Class = "UIButton"; normalTitle = "Export Skin Fold"; ObjectID = "uYJ-aJ-n65"; */
+"uYJ-aJ-n65.normalTitle" = "Export Skin Fold";
+
+/* Class = "UILabel"; text = "Method & Use"; ObjectID = "uo1-vx-bac"; */
+"uo1-vx-bac.text" = "Method & Use";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "xOT-sN-bti"; */
+"xOT-sN-bti.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "yab-Ob-HYu"; */
+"yab-Ob-HYu.text" = "Label";
+
+/* Class = "UITableViewSection"; headerTitle = "DEBUG"; ObjectID = "zEY-rE-E62"; */
+"zEY-rE-E62.headerTitle" = "DEBUG";
+
+/* Class = "UILabel"; text = "Height (cm)"; ObjectID = "zd4-9Z-43J"; */
+"zd4-9Z-43J.text" = "Height (cm)";
+
+/* Class = "UILabel"; text = "English"; ObjectID = "zvn-6x-4d8"; */
+"zvn-6x-4d8.text" = "English";

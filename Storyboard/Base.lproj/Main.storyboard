@@ -101,6 +101,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D2n-zP-9ba">
                                         <rect key="frame" x="124" y="212" width="108" height="30"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="girthOK"/>
                                         <state key="normal" title="Ok"/>
                                         <connections>
                                             <action selector="onTapOkButton:" destination="ND7-Jm-G96" eventType="touchUpInside" id="KCG-OU-Jkx"/>
@@ -108,6 +109,7 @@
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mesaure" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d6l-xu-PkF">
                                         <rect key="frame" x="8" y="150" width="224" height="30"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="girthsWeight"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="lrm-1a-4XN"/>
                                         </constraints>
@@ -193,6 +195,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rhj-De-lbU">
                                         <rect key="frame" x="124" y="288" width="108" height="30"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="skinFoldOK"/>
                                         <state key="normal" title="Ok"/>
                                         <connections>
                                             <action selector="onTapOkButton:" destination="ND7-Jm-G96" eventType="touchUpInside" id="IdM-h2-Izc"/>
@@ -201,6 +204,7 @@
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Skin fold 3 in mm" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="acn-Au-EZd">
                                         <rect key="frame" x="8" y="226" width="224" height="30"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="skinFold3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="8hy-dM-edN"/>
                                         </constraints>
@@ -225,6 +229,7 @@
                                     </textView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Skin fold 2 in mm" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fQ7-1r-Gv5">
                                         <rect key="frame" x="8" y="188" width="224" height="30"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="skinFold2"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="hNO-nC-pvs"/>
                                         </constraints>
@@ -234,6 +239,7 @@
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Skin fold 1 in mm" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aU4-N9-BMv">
                                         <rect key="frame" x="8" y="150" width="224" height="30"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="skinFold1"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="rAh-4J-3Em"/>
                                         </constraints>
@@ -304,6 +310,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ht-5c-Xvz">
                                         <rect key="frame" x="8" y="732" width="334" height="30"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="graphOK"/>
                                         <state key="normal" title="Ok"/>
                                         <connections>
                                             <action selector="onTapOkButton:" destination="8xe-sa-kGj" eventType="touchUpInside" id="YwC-P1-lvh"/>

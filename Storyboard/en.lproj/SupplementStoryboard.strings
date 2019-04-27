@@ -1,0 +1,168 @@
+
+/* Class = "UITextField"; placeholder = "Insert"; ObjectID = "2HR-ZX-rVH"; */
+"2HR-ZX-rVH.placeholder" = "Insert";
+
+/* Class = "UILabel"; text = "Scort will End"; ObjectID = "2hu-2y-typ"; */
+"2hu-2y-typ.text" = "Scort will End";
+
+/* Class = "UILabel"; text = "Proteine"; ObjectID = "339-t8-6ne"; */
+"339-t8-6ne.text" = "Proteins";
+
+/* Class = "UILabel"; text = "30 g"; ObjectID = "3DQ-Yj-nEg"; */
+"3DQ-Yj-nEg.text" = "30 g";
+
+/* Class = "UISearchBar"; placeholder = "Search Products"; ObjectID = "3Xw-dC-Ejk"; */
+"3Xw-dC-Ejk.placeholder" = "Search Products";
+
+/* Class = "UILabel"; text = "Carboidrati"; ObjectID = "4pa-BW-lnO"; */
+"4pa-BW-lnO.text" = "Carbohydrates";
+
+/* Class = "UILabel"; text = "Days a Week"; ObjectID = "7YH-ff-dzZ"; */
+"7YH-ff-dzZ.text" = "Days a Week";
+
+/* Class = "UITextField"; placeholder = "Insert"; ObjectID = "9BO-Sz-aFQ"; */
+"9BO-Sz-aFQ.placeholder" = "Insert";
+
+/* Class = "UILabel"; text = "Brand"; ObjectID = "9Vj-3O-m3P"; */
+"9Vj-3O-m3P.text" = "Brand";
+
+/* Class = "UILabel"; text = "Package Quantity"; ObjectID = "ATA-DE-PbS"; */
+"ATA-DE-PbS.text" = "Package Quantity";
+
+/* Class = "UILabel"; text = "30 g"; ObjectID = "BYh-wf-T0l"; */
+"BYh-wf-T0l.text" = "30 g";
+
+/* Class = "UILabel"; text = "Ingredients"; ObjectID = "COF-Eg-04u"; */
+"COF-Eg-04u.text" = "Ingredients";
+
+/* Class = "UILabel"; text = "100"; ObjectID = "E5K-Yv-VOs"; */
+"E5K-Yv-VOs.text" = "100";
+
+/* Class = "UILabel"; text = "11/02/76"; ObjectID = "EfP-xn-4tm"; */
+"EfP-xn-4tm.text" = "11/02/76";
+
+/* Class = "UILabel"; text = "11/02/1976"; ObjectID = "GzQ-vP-7Wz"; */
+"GzQ-vP-7Wz.text" = "11/02/1976";
+
+/* Class = "UILabel"; text = "Stock will End"; ObjectID = "IbK-Ts-xz5"; */
+"IbK-Ts-xz5.text" = "Stock will End";
+
+/* Class = "UILabel"; text = "Proteine"; ObjectID = "Ibm-Rj-aY4"; */
+"Ibm-Rj-aY4.text" = "Proteins";
+
+/* Class = "UILabel"; text = "Quantity"; ObjectID = "Jkm-ZQ-BFS"; */
+"Jkm-ZQ-BFS.text" = "Quantity";
+
+/* Class = "UILabel"; text = "Proteine"; ObjectID = "LTc-L1-CFz"; */
+"LTc-L1-CFz.text" = "Proteins";
+
+/* Class = "UITextField"; placeholder = "Supplement Brand"; ObjectID = "Lla-Gk-ig0"; */
+"Lla-Gk-ig0.placeholder" = "Supplement Brand";
+
+/* Class = "UILabel"; text = "50"; ObjectID = "Lzv-8B-0Hp"; */
+"Lzv-8B-0Hp.text" = "50";
+
+/* Class = "UILabel"; text = "30"; ObjectID = "Mos-hH-OsE"; */
+"Mos-hH-OsE.text" = "30";
+
+/* Class = "UILabel"; text = "50"; ObjectID = "NGt-Dl-hbt"; */
+"NGt-Dl-hbt.text" = "50";
+
+/* Class = "UITextField"; placeholder = "Insert"; ObjectID = "Ngf-st-yxB"; */
+"Ngf-st-yxB.placeholder" = "Insert";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "NoP-B2-Z5m"; */
+"NoP-B2-Z5m.text" = "Label";
+
+/* Class = "UIViewController"; title = "Supplement"; ObjectID = "RSO-7A-Yzd"; */
+"RSO-7A-Yzd.title" = "Supplement";
+
+/* Class = "UILabel"; text = "Daily Quantity"; ObjectID = "TdT-29-cCL"; */
+"TdT-29-cCL.text" = "Daily Quantity";
+
+/* Class = "UITextField"; placeholder = "Insert"; ObjectID = "WTD-od-IQK"; */
+"WTD-od-IQK.placeholder" = "Insert";
+
+/* Class = "UILabel"; text = "100"; ObjectID = "XX4-BF-Qhv"; */
+"XX4-BF-Qhv.text" = "100";
+
+/* Class = "UILabel"; text = "Grassi"; ObjectID = "Xz6-of-11V"; */
+"Xz6-of-11V.text" = "Fats";
+
+/* Class = "UITabBarItem"; title = "Supplements"; ObjectID = "YCA-OF-KmQ"; */
+"YCA-OF-KmQ.title" = "Supplements";
+
+/* Class = "UILabel"; text = "Package Quantity"; ObjectID = "YO4-j7-SHm"; */
+"YO4-j7-SHm.text" = "Package Quantity";
+
+/* Class = "UILabel"; text = "11/02/1976"; ObjectID = "aCD-Nw-e9I"; */
+"aCD-Nw-e9I.text" = "11/02/1976";
+
+/* Class = "UILabel"; text = "100 gr"; ObjectID = "buJ-av-D4R"; */
+"buJ-av-D4R.text" = "100 gr";
+
+/* Class = "UINavigationItem"; title = "Supplement"; ObjectID = "fbi-W5-dy0"; */
+"fbi-W5-dy0.title" = "Supplement";
+
+/* Class = "UITextField"; placeholder = "Insert"; ObjectID = "gLt-4g-BSj"; */
+"gLt-4g-BSj.placeholder" = "Insert";
+
+/* Class = "UILabel"; text = "30"; ObjectID = "hp1-CJ-DO6"; */
+"hp1-CJ-DO6.text" = "30";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "ht1-or-cBD"; */
+"ht1-or-cBD.text" = "Name";
+
+/* Class = "UILabel"; text = "Daily Quantity"; ObjectID = "iX9-if-ffU"; */
+"iX9-if-ffU.text" = "Daily Quantity";
+
+/* Class = "UITextField"; placeholder = "Insert"; ObjectID = "ixU-IX-3ez"; */
+"ixU-IX-3ez.placeholder" = "Insert";
+
+/* Class = "UILabel"; text = "Stock will End"; ObjectID = "k7h-pB-iav"; */
+"k7h-pB-iav.text" = "Stock will End";
+
+/* Class = "UILabel"; text = "Daily Quantity"; ObjectID = "kMd-Z3-fV8"; */
+"kMd-Z3-fV8.text" = "Daily Quantity";
+
+/* Class = "UILabel"; text = "Remeber me to buy"; ObjectID = "l2H-8P-g9X"; */
+"l2H-8P-g9X.text" = "Remeber me to buy";
+
+/* Class = "UILabel"; text = "Carboidrati"; ObjectID = "lXE-wZ-0S0"; */
+"lXE-wZ-0S0.text" = "Carbohydrates";
+
+/* Class = "UILabel"; text = "Days a Week"; ObjectID = "mOv-Jh-b9e"; */
+"mOv-Jh-b9e.text" = "Days a Week";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "oNk-bs-2EX"; */
+"oNk-bs-2EX.text" = "Name";
+
+/* Class = "UILabel"; text = "Days a Week"; ObjectID = "og3-W5-zeR"; */
+"og3-W5-zeR.text" = "Days a Week";
+
+/* Class = "UILabel"; text = "Grassi"; ObjectID = "t5v-eG-r8x"; */
+"t5v-eG-r8x.text" = "Fats";
+
+/* Class = "UITextField"; placeholder = "Supplement Name"; ObjectID = "tk5-FY-ABR"; */
+"tk5-FY-ABR.placeholder" = "Supplement Name";
+
+/* Class = "UILabel"; text = "Brand"; ObjectID = "wfR-Vy-alL"; */
+"wfR-Vy-alL.text" = "Brand";
+
+/* Class = "UILabel"; text = "Quantity"; ObjectID = "xVH-m5-3Qv"; */
+"xVH-m5-3Qv.text" = "Quantity";
+
+/* Class = "UIButton"; normalTitle = "Search More ..."; ObjectID = "xXe-ju-iQP"; */
+"xXe-ju-iQP.normalTitle" = "Search More ...";
+
+/* Class = "UILabel"; text = "Remeber me to buy"; ObjectID = "y1S-pF-5Ij"; */
+"y1S-pF-5Ij.text" = "Remeber me to buy";
+
+/* Class = "UILabel"; text = "Carboidrati"; ObjectID = "yIj-F5-DNt"; */
+"yIj-F5-DNt.text" = "Carbohydrates";
+
+/* Class = "UILabel"; text = "Grassi"; ObjectID = "yVA-Aa-o4J"; */
+"yVA-Aa-o4J.text" = "Fats";
+
+/* Class = "UINavigationController"; title = "Supplements"; ObjectID = "zcX-uU-7XM"; */
+"zcX-uU-7XM.title" = "Supplements";

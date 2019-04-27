@@ -6,7 +6,7 @@
   Copyright © 2019 Alberto Lunardini. All rights reserved.
 */
 
-// Circ
+//  MeasureMainController.swift
 "LOCALWeight" = "Weight";
 "LOCALNeck" = "Neck";
 "LOCALBicep_R" = "Bicep_R";
@@ -118,3 +118,17 @@
 "LOCSKINFOLDSHOP" = "Let's go shopping to unlock Jackson & Polloc, enable photo with AR and remove banner";
 "LOCARTITLE" = "Let's go shopping";
 "LOCARBODY" = "To unlock photos with AR just buy girths package or skin folds Packacge";
+
+"Days" = "Days";
+"1 day before" = "1 day before";
+"2 day before" = "2 day before";
+"3 day before" = "3 day before";
+"ACTION_IMAGE_TITLE" = "Image";
+"ACTION_IMAGE_TEXT" = "Add Image";
+"BUTTON_LIBRARY" = "Import Photo";
+"BUTTON_SHOOT" = "Shoot Photo";
+"BUTTON_CANCEL" = "Cancel";
+"Remember me to buy: " = "Remember me to buy: ";
+"This Product" = "This Product";
+"Insert all data" = "Insert all data";
+"Is time to by again:" = "Is time to by again:";

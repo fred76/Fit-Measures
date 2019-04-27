@@ -129,22 +129,7 @@ struct StaticClass {
         } 
         return view
     }
-//    static func showTopLevelAlert(v : UIViewController) {
-//        
-//        let alertWindow = UIWindow(frame: UIScreen.main.bounds)
-//        
-//        alertWindow.rootViewController = UIViewController()
-//        alertWindow.windowLevel = UIWindow.Level.alert + 1;
-//        alertWindow.makeKeyAndVisible()
-//        
-//        
-//        let customAlert = v.storyboard?.instantiateViewController(withIdentifier: "AllertIntroID") as! AllertViewIntro
-//        
-//        
-//        
-//        alertWindow.rootViewController?.present(customAlert, animated: true, completion: nil)
-//    }
-    
+ 
 }
  
 public func loc(_ localizedKey:String) -> String {

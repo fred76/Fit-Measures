@@ -1,0 +1,12 @@
+/* Privacy - Health Share Usage Description */
+"NSHealthShareUsageDescription" = "Salva i dati in Salute";
+
+/* Privacy - Health Update Usage Description */
+"NSHealthUpdateUsageDescription" = "Leggi le tue info da Salute";
+
+/* Privacy - Photo Library Additions Usage Description */
+"NSPhotoLibraryAddUsageDescription" = "Salva i grafici in Foto";
+
+/* Privacy - Photo Library Usage Description */
+"NSPhotoLibraryUsageDescription" = "L'app richiede l'accesso a Foto";
+

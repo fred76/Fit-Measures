@@ -142,6 +142,14 @@ class PlicheMoethodController: UIViewController , UICollectionViewDelegate, UICo
         customAlert.delegatePieChart = self
         customAlert.plichePoint.removeAll() 
         customAlert.plichePoint.append(contentsOf: nameArray)
+        #warning("delete in production")
+        triceps = 8; suprailiac = 9; thigh = 12 ;  chest = 7; subscapular = 6; midaxillary = 11
+        dictPlicheValue[loc("LOCALTriceps")] = 8
+        dictPlicheValue[loc("LOCALChest")] = 7
+        dictPlicheValue[loc("LOCALMidaxillary")] = 11
+        dictPlicheValue[loc("LOCALSubscapular")] = 6
+        dictPlicheValue[loc("LOCALSuprailiac")] = 9
+        dictPlicheValue[loc("LOCALThigh")] = 12 
         let (_, bodyDensity,bodyFatPerc,leanMass,fatMass, lastWeight) = DataManager.shared.plicheAddedByUser(abdominal: abdominal, biceps: biceps, chest: chest,  midaxillary: midaxillary, subscapular: subscapular, suprailiac: suprailiac, thigh: thigh, triceps: triceps, viewVontroller: self, plicheMethod: plicheMethod.rawValue)
         customAlert.weightArray.append(leanMass)
         customAlert.weightArray.append(fatMass)
@@ -340,9 +348,10 @@ extension PlicheMoethodController : AllertViewSkinFoldInsertDelegate {
         
             readItemDef()
         
-        
+        #warning("delete in production")
+        triceps = 8; suprailiac = 9; thigh = 12 ;  chest = 7; subscapular = 6; midaxillary = 11
         switch plicheMethod {
-            
+           
         case .jackson_7 :
             if triceps != nil && suprailiac != nil && thigh != nil && abdominal != nil && chest != nil && subscapular != nil && midaxillary != nil {
                 plicheGraph()
@@ -439,7 +448,8 @@ extension PlicheMoethodController : AllertViewSkinFoldInsertWithGraphDelegate {
             Items.sharedInstance.updatePliche()
             
         case .jackson_7 :
-            Items.sharedInstance.updatePliche()
+            
+           Items.sharedInstance.updatePliche()
             
         default: break
             

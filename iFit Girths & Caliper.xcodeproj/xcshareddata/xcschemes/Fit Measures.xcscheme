@@ -20,6 +20,20 @@
                ReferencedContainer = "container:iFit Girths &amp; Caliper.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "95095328226D8C7E002E89DB"
+               BuildableName = "fit UITests.xctest"
+               BlueprintName = "fit UITests"
+               ReferencedContainer = "container:iFit Girths &amp; Caliper.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -45,6 +59,16 @@
                BlueprintIdentifier = "95946BF921AB458800D534D0"
                BuildableName = "Fit MeasuresUITests.xctest"
                BlueprintName = "Fit MeasuresUITests"
+               ReferencedContainer = "container:iFit Girths &amp; Caliper.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "95095328226D8C7E002E89DB"
+               BuildableName = "fit UITests.xctest"
+               BlueprintName = "fit UITests"
                ReferencedContainer = "container:iFit Girths &amp; Caliper.xcodeproj">
             </BuildableReference>
          </TestableReference>

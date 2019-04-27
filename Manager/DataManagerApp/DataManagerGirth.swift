@@ -102,9 +102,10 @@ extension DataManager {
             
             for data in results  {
                 
-                let value = data.value(forKey: "dateOfEntry") as! NSDate
-                
-                dateArray.append(value)
+                if let v = data.value(forKey: "dateOfEntry") {
+                   let vNSDate = v as! NSDate
+                    dateArray.append(vNSDate)
+                } 
             }
             for data in results  {
                 let value = data.value(forKey: attributeToFetch) as! Double

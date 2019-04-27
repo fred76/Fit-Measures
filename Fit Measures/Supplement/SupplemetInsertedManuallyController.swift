@@ -68,16 +68,19 @@ class SupplemetInsertedManuallyController: UITableViewController {
         
     }
     
-    @IBAction func reminder(_ sender: Any) {
+    @IBAction func reminder(_ sender: UISwitch) {
+        if sender.isOn {
+            allertWithParameter(title: loc("Remember me to buy: "), message:  loc("This Product"), viecontroller: self)
+        }
     }
     
     func allertWithParameter(title: String,message: String, viecontroller : UIViewController){
         let allertWeight = UIAlertController(title: title,
                                              message: message,
                                              preferredStyle: .alert)
-        allertWeight.addAction(UIAlertAction(title: "1 day before", style: .default, handler: oneDay(alert:)))
-        allertWeight.addAction(UIAlertAction(title: "2 day before", style: .default, handler: twoDay(alert:)))
-        allertWeight.addAction(UIAlertAction(title: "3 day before", style: .default, handler: threeDay(alert:)))
+        allertWeight.addAction(UIAlertAction(title: loc("1 day before"), style: .default, handler: oneDay(alert:)))
+        allertWeight.addAction(UIAlertAction(title: loc("2 day before"), style: .default, handler: twoDay(alert:)))
+        allertWeight.addAction(UIAlertAction(title: loc("3 day before"), style: .default, handler: threeDay(alert:)))
         allertWeight.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
         viecontroller.present(allertWeight, animated: true, completion: nil)
     }
@@ -275,7 +278,7 @@ extension SupplemetInsertedManuallyController: UIPickerViewDelegate, UIPickerVie
         } else if dailyText.isFirstResponder {
             return String(row+1)
         } else {
-            return String(row+1) + " " + "Days"
+            return String(row+1) + " " + loc("Days")
         }
     }
     
@@ -307,8 +310,8 @@ extension SupplemetInsertedManuallyController: UIPickerViewDelegate, UIPickerVie
             setUnitCorrectFromPckg()
         } else {
             weekQunatityDoubel = Double(row+1)
-            weekText.text = String(row+1) + " " + "Days"
-            weeklyQty = String(row+1) + " " + "Days"
+            weekText.text = String(row+1) + " " + loc("Days")
+            weeklyQty = String(row+1) + " " + loc("Days")
         }
         if !dailyDose.isEmpty && !pckgQ.isEmpty && !weeklyQty.isEmpty {
             completedPckg.text = endDate()
@@ -369,7 +372,7 @@ extension SupplemetInsertedManuallyController: UITextFieldDelegate {
         
         let flex = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         
-        let saveAge = UIBarButtonItem(title: "Done",
+        let saveAge = UIBarButtonItem(title: loc("Done"),
                                       style: .done,
                                       target: textField,
                                       action: #selector(resignFirstResponder))

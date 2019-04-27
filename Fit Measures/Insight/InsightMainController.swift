@@ -186,19 +186,20 @@ class InsightMainController: UIViewController, UITableViewDelegate, UITableViewD
         labelDate.textColor = StaticClass.blueHeader
         labelDate.textAlignment = .right
         labelDate.textAlignment = .right
+        
         if section == 0 && bodyMeasurementIsAdded{
             label.frame = CGRect.init(x: 5, y: 5, width: headerView.frame.width/2, height: headerView.frame.height-10)
             label.text = "Last Girths"
             labelDate.frame = CGRect.init(x: headerView.frame.width/2, y: 5, width: headerView.frame.width/2, height: headerView.frame.height-10)
             labelDate.text = StaticClass.dateFormat(d: DataManager.shared.getLastMeasureAvailable()!.dateOfEntry!)
-           
+           label.accessibilityIdentifier = "headerGirths"
             headerView.addSubview(labelDate)
             headerView.addSubview(label)
             return headerView
         }
         if plicheMeasureIsAdded {
             
-            
+            headerView.accessibilityIdentifier = "headerPliche"
             label.frame = CGRect.init(x: 5, y: 5, width: headerView.frame.width/2, height: headerView.frame.height-10)
             label.text = "Last Skin Folds Results"
             labelDate.frame = CGRect.init(x: headerView.frame.width/2, y: 5, width: headerView.frame.width/2, height: headerView.frame.height-10)

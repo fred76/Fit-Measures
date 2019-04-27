@@ -98,17 +98,24 @@ extension DataManager {
         do {
             let results = try managedContext.fetch(fetchRequest)
             
-            for data in results  {
-                let value = data.value(forKey: "dateOfEntry") as! NSDate
-                dateArray.append(value)
+            for data in results  { 
+                if let v = data.value(forKey: "dateOfEntry") {
+                    let vNSDate = v as! NSDate
+                    dateArray.append(vNSDate)
+                }
             }
             for data in results  {
-                let value = data.value(forKey: attributeToFetch) as! Double
-                ValueArray.append(value)
+                if let v = data.value(forKey: attributeToFetch) {
+                   let vDouble = v as! Double
+                    ValueArray.append(vDouble)
+                }
             }
             for data in results  {
-                let value = data.value(forKey: "method") as! String
-                MethodArray.append(value)
+                if let v = data.value(forKey: "method") {
+                    let vString = v as! String
+                    MethodArray.append(vString)
+                }
+                
             }
         } catch let error as NSError {
             print("Could not fetch \(error), \(error.userInfo)")

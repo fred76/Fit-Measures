@@ -474,6 +474,7 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="era-du-EXS">
                                         <rect key="frame" x="325" y="1" width="49" height="30"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="overlayBtn"/>
                                         <state key="normal" title="Weight"/>
                                         <connections>
                                             <action selector="togleWeight:" destination="1Av-df-Kjf" eventType="touchUpInside" id="sxg-9I-LYf"/>

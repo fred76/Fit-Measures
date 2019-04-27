@@ -1,0 +1,48 @@
+/* Class = "UILabel"; text = "Front"; ObjectID = "1QV-Lu-F2d"; */
+"1QV-Lu-F2d.text" = "Fornte";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "2Ro-Xg-Ubc"; */
+"2Ro-Xg-Ubc.text" = "Label";
+
+/* Class = "UILabel"; text = "Back"; ObjectID = "5Vv-61-R6E"; */
+"5Vv-61-R6E.text" = "Dietro";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium "; ObjectID = "9Gb-qg-qGu"; */
+"9Gb-qg-qGu.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium ";
+
+/* Class = "UIButton"; normalTitle = "Import Pictures"; ObjectID = "35C-6H-w4I"; */
+"35C-6H-w4I.normalTitle" = "Importa Foto";
+
+/* Class = "UIButton"; normalTitle = "Weight"; ObjectID = "era-du-EXS"; */
+"era-du-EXS.normalTitle" = "Peso";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "h5l-5V-64s"; */
+"h5l-5V-64s.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "Pictures"; ObjectID = "lP3-vn-Pf7"; */
+"lP3-vn-Pf7.title" = "Galleria Foto";
+
+/* Class = "UINavigationItem"; title = "Insight"; ObjectID = "mgU-ft-krD"; */
+"mgU-ft-krD.title" = "Insight";
+
+/* Class = "UILabel"; text = "Side"; ObjectID = "nma-83-6a6"; */
+"nma-83-6a6.text" = "Lato";
+
+/* Class = "UILabel"; text = "29/11/18 1000"; ObjectID = "nzi-Ab-wmc"; */
+"nzi-Ab-wmc.text" = "29/11/18 1000";
+
+/* Class = "UILabel"; text = "Nothing to do here"; ObjectID = "ozb-f1-jST"; */
+"ozb-f1-jST.text" = "Niente da verere qua";
+
+/* Class = "UILabel"; text = "Jackson & Polloc"; ObjectID = "rnF-ie-46g"; */
+"rnF-ie-46g.text" = "Jackson & Polloc";
+
+/* Class = "UILabel"; text = "Skin fold against relative girth over the time"; ObjectID = "TSb-JR-VzV"; */
+"TSb-JR-VzV.text" = "Skin fold against relative girth over the time";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "v8e-H2-40y"; */
+"v8e-H2-40y.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "yQA-4g-Vea"; */
+"yQA-4g-Vea.text" = "Label";
+

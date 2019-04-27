@@ -33,7 +33,7 @@ class ProductSearched: NSObject {
         if shouldRemind && dueDate > Date() {
             
             let content = UNMutableNotificationContent()
-            content.title = "Is time to by again::"
+            content.title = "Is time to by again:"
             content.body = productName
             content.sound = UNNotificationSound.default 
             let calendar = Calendar(identifier: .gregorian)

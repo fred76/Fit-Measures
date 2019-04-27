@@ -56,8 +56,9 @@ class SkinFoldsRawDataTableview: UIViewController,UITableViewDelegate,UITableVie
         plicheTableView.backgroundView = nil
         let measreData = measureFetchedResultsController.object(at: indexPath)
         cell.titleLabel.text = measreData.method
-        
-        cell.dateLabel.text = StaticClass.dateFormat(d: (measreData.dateOfEntry)!)
+        if let data = measreData.dateOfEntry {
+            cell.dateLabel.text = StaticClass.dateFormat(d: data)
+        }  
         
         
     }

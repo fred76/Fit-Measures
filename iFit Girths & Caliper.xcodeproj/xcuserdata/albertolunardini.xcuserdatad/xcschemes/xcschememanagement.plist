@@ -9,9 +9,19 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>fit UITests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>95095328226D8C7E002E89DB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>95946BD821AB458700D534D0</key>
 		<dict>
 			<key>primary</key>

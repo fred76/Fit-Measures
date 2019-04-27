@@ -57,4 +57,4 @@ enum AppStoreReviewManager {
         defaults.set(0, forKey: .reviewWorthyActionCount)
         defaults.set(currentVersion, forKey: .lastReviewRequestAppVersion)
     }
-}
+}  

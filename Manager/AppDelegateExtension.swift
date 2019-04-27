@@ -26,6 +26,7 @@ extension AppDelegate {
         if !UserDefaultsSettings.serchForKey(kUsernameKey: "age"){
             wTB.selectedIndex = 4
         }
+        
     }
     }
     func alertAboutiCloud(){

@@ -444,6 +444,8 @@
 		07F2DA121D95141900EB9483 /* Ensembles.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = Ensembles.modulemap; path = General/Ensembles.modulemap; sourceTree = "<group>"; };
 		34700E9D188B225700FD00B1 /* CDEAvailabilityMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDEAvailabilityMacros.h; sourceTree = "<group>"; };
 		95153C4E21CC28B60031FFB9 /* Ensembles iOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Ensembles iOS.xcodeproj"; path = "../../../../Misure Revisione 2 Ensembe.nosync/Fit Measures/Ensembles iOS.xcodeproj"; sourceTree = "<group>"; };
+		959FDEB8227428BB00D1BE60 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		959FDEB9227428BB00D1BE60 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1010,6 +1012,7 @@
 			knownRegions = (
 				en,
 				Base,
+				it,
 			);
 			mainGroup = 07BF373C17F184DD00C56F64;
 			productRefGroup = 07BF374617F184DD00C56F64 /* Products */;
@@ -1291,6 +1294,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				070D339418018AAD0054BA23 /* en */,
+				959FDEB9227428BB00D1BE60 /* it */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -1299,6 +1303,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				07571F161910EC02008479A9 /* en */,
+				959FDEB8227428BB00D1BE60 /* it */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

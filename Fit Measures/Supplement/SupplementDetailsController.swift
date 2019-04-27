@@ -89,7 +89,7 @@ class SupplementDetailsController: UITableViewController {
     
     @IBAction func rememberMeSwitch(_ sender: UISwitch) {
         if sender.isOn {
-            allertWithParameter(title: "Remember me to buy: ", message: ("\(productSearched?.productName ?? "This Product")"), viecontroller: self)
+            allertWithParameter(title: loc("Remember me to buy: "), message: ("\(productSearched?.productName ?? loc("This Product"))"), viecontroller: self)
         }
     }
     
@@ -97,10 +97,10 @@ class SupplementDetailsController: UITableViewController {
         let allertWeight = UIAlertController(title: title,
                                              message: message,
                                              preferredStyle: .alert)
-        allertWeight.addAction(UIAlertAction(title: "1 day before", style: .default, handler: oneDay(alert:)))
-        allertWeight.addAction(UIAlertAction(title: "2 day before", style: .default, handler: twoDay(alert:)))
-        allertWeight.addAction(UIAlertAction(title: "3 day before", style: .default, handler: threeDay(alert:)))
-        allertWeight.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+        allertWeight.addAction(UIAlertAction(title: loc("1 day before"), style: .default, handler: oneDay(alert:)))
+        allertWeight.addAction(UIAlertAction(title: loc("2 day before"), style: .default, handler: twoDay(alert:)))
+        allertWeight.addAction(UIAlertAction(title: loc("3 day before"), style: .default, handler: threeDay(alert:)))
+        allertWeight.addAction(UIAlertAction(title: loc("BUTTON_CANCEL"), style: .default, handler: nil))
         viecontroller.present(allertWeight, animated: true, completion: nil)
     }
     
@@ -350,10 +350,11 @@ extension SupplementDetailsController: UITextFieldDelegate {
         
         let flex = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         
-        let saveAge = UIBarButtonItem(title: "Done",
+        let saveAge = UIBarButtonItem(title: loc("Done"),
                                       style: .done,
                                       target: textField,
                                       action: #selector(resignFirstResponder))
+        saveAge.accessibilityIdentifier = "DoneKeyboard"
         
         keyboardToolbar.setItems([flex, saveAge], animated: false)
         

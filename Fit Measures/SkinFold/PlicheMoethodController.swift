@@ -74,6 +74,7 @@ class PlicheMoethodController: UIViewController , UICollectionViewDelegate, UICo
         
         interstitial = createAndLoadInterstitial()
         showInterstitial = true
+        
     }
     func createAndLoadInterstitial() -> GADInterstitial {
         let interstitial = GADInterstitial(adUnitID: StaticClass.GandCInterstitialProduction)
@@ -87,21 +88,25 @@ class PlicheMoethodController: UIViewController , UICollectionViewDelegate, UICo
         interstitial = createAndLoadInterstitial()
     }
     
-    
+    func showInterstitialWhenSelect(){
+        let randomBool = Bool.random()
+       print("randomBool \(randomBool)")
+        if randomBool{
+            if plicheMethod == .jackson_3_Man || plicheMethod == .jackson_7 {
+                if  DataManager.shared.purchasedGirthsAndSkinfilds() { print("something purchased") } else {
+                    if interstitial.isReady {
+                        interstitial.present(fromRootViewController: self)
+                    } else {
+                        print("Ad wasn't ready")
+                    }
+                    
+                }
+            }
+        }
+    }
     
     override func viewWillAppear(_ animated: Bool) {
-        
-        if plicheMethod == .jackson_3_Man || plicheMethod == .jackson_7 {
-            if  DataManager.shared.purchasedGirthsAndSkinfilds() { print("something purchased") } else {
-                if interstitial.isReady {
-                    interstitial.present(fromRootViewController: self)
-                } else {
-                    print("Ad wasn't ready")
-                }
-                
-            }
-           
-        }
+        showInterstitialWhenSelect()
         isAddedPliche = DataManager.shared.plicheForTodayIsVavailable()
         self.navigationItem.rightBarButtonItem?.isEnabled = false
         dictPlicheValue.removeAll() 

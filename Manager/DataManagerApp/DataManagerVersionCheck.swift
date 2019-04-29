@@ -14,13 +14,16 @@ extension DataManager {
         print("com.ifit.skinFolds \(UserDefaults.standard.bool(forKey: "fred76.com.ifit.skinFolds"))")
         print("com.ifit.bundle \(UserDefaults.standard.bool(forKey: "fred76.com.ifit.bundle"))")
         if UserDefaults.standard.bool(forKey: "fred76.com.ifit.girths") || UserDefaults.standard.bool(forKey: "fred76.com.ifit.skinFolds") || UserDefaults.standard.bool(forKey: "fred76.com.ifit.bundle") {
+            print("RETURN AAA")
             return
         }
         guard let receiptURL = receiptURL else {print("NO URL"); return }
         do {
+             print(" AAA")
             let receipt = try Data(contentsOf: receiptURL)
             verifyIfPurchasedBeforeFreemium(productionStoreURL!, receipt)
         } catch {
+             print("BBBB")
             let appReceiptRefreshRequest = SKReceiptRefreshRequest(receiptProperties: nil)
             appReceiptRefreshRequest.delegate = self
             appReceiptRefreshRequest.start()
@@ -29,19 +32,22 @@ extension DataManager {
     }
     
     private func verifyIfPurchasedBeforeFreemium(_ storeURL: URL, _ receipt: Data) {
+         print("BBB")
         do {
+            print("1")
             let requestContents:Dictionary = ["receipt-data": receipt.base64EncodedString()]
             let requestData = try JSONSerialization.data(withJSONObject: requestContents, options: [])
             var storeRequest = URLRequest(url: storeURL)
             storeRequest.httpMethod = "POST"
             storeRequest.httpBody = requestData
-            
+            print("2")
             URLSession.shared.dataTask(with: storeRequest) { (data, response, error) in
                 DispatchQueue.main.async {
                     if data != nil {
                         do {
+                            print(3)
                             let jsonResponse = try JSONSerialization.jsonObject(with: data!, options: []) as! [String: Any?]
-                            
+                            print("4")
                             if let statusCode = jsonResponse["status"] as? Int {
                                 if statusCode == 21007 {
                                     print("Switching to test against sandbox")
@@ -56,8 +62,8 @@ extension DataManager {
                                 //                                let dateObject = dateFormatter.date(from: original_purchase_date)
                                 //
                                 //                                let n = Date()
-                                
-                                if (original_application_version.doubleValue) < 3 {
+                                print("original_application_version \(original_application_version)")
+                                if (original_application_version.doubleValue + 0) < 3 {
                                     UserDefaults.standard.set(true, forKey: "fred76.com.ifit.girths")
                                     UserDefaults.standard.set(true, forKey: "fred76.com.ifit.skinFolds")
                                     UserDefaults.standard.set(true, forKey: "fred76.com.ifit.bundle") 

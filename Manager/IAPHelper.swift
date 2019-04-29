@@ -150,13 +150,18 @@ extension IAPHelper: SKPaymentTransactionObserver {
     private func deliverPurchaseNotificationFor(identifier: String?) {
         guard let identifier = identifier else { return }
         
-        if identifier == "fred76.com.ifit.bundle" { 
+        if identifier == "fred76.com.ifit.bundle" {
+            print("ENTRO")
+            
+            print("AAAAAA \(UserDefaults.standard.bool(forKey: "fred76.com.ifit.bundle"))")
            purchasedProductIdentifiers.insert("fred76.com.ifit.girths")
            purchasedProductIdentifiers.insert("fred76.com.ifit.skinFolds")
             purchasedProductIdentifiers.insert("fred76.com.ifit.supplement")
+            UserDefaults.standard.set(true, forKey: "fred76.com.ifit.bundle")
             UserDefaults.standard.set(true, forKey: "fred76.com.ifit.girths")
             UserDefaults.standard.set(true, forKey: "fred76.com.ifit.skinFolds")
             UserDefaults.standard.set(true, forKey: "fred76.com.ifit.supplement")
+            NotificationCenter.default.post(name: .IAPHelperPurchaseNotification, object: "fred76.com.ifit.bundle")
             NotificationCenter.default.post(name: .IAPHelperPurchaseNotification, object: "fred76.com.ifit.girths")
             NotificationCenter.default.post(name: .IAPHelperPurchaseNotification, object: "fred76.com.ifit.skinFolds")
             NotificationCenter.default.post(name: .IAPHelperPurchaseNotification, object: "fred76.com.ifit.supplement")

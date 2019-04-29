@@ -70,13 +70,13 @@ class PlicheMoethodController: UIViewController , UICollectionViewDelegate, UICo
         case .sloanWoman : nameArray = ["Suprailiac","Triceps"]
             
         } 
-        interstitial = GADInterstitial(adUnitID: StaticClass.adMobString)
+        interstitial = GADInterstitial(adUnitID: StaticClass.GandCInterstitialProduction)
         
         interstitial = createAndLoadInterstitial()
         showInterstitial = true
     }
     func createAndLoadInterstitial() -> GADInterstitial {
-        let interstitial = GADInterstitial(adUnitID: StaticClass.adMobString)
+        let interstitial = GADInterstitial(adUnitID: StaticClass.GandCInterstitialProduction)
         interstitial.delegate = self
         interstitial.load(GADRequest())
         return interstitial

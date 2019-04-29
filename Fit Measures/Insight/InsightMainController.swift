@@ -130,7 +130,7 @@ class InsightMainController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func createAndLoadInterstitial() -> GADInterstitial {
-        let interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+        let interstitial = GADInterstitial(adUnitID: StaticClass.GandCInterstitialProduction)
         interstitial.delegate = self
         interstitial.load(GADRequest())
         return interstitial

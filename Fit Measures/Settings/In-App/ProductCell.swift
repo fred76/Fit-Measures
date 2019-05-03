@@ -10,6 +10,14 @@ import UIKit
 import StoreKit
 
 class ProductCell: UITableViewCell {
+    
+    @IBOutlet var buttonView: UIView!
+    @IBOutlet var imageProduct: UIImageView!
+    @IBOutlet var nameLabel: UILabel!
+    
+    @IBOutlet var descriptionLabel: UILabel!
+    
+    @IBOutlet var priceLabel: UILabel!
     static let priceFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
         
@@ -20,45 +28,68 @@ class ProductCell: UITableViewCell {
     }()
     
     
-    
     var product: SKProduct? {
         didSet {
             guard let product = product else { return }
-            
-            textLabel?.text = product.localizedTitle
-            
-            if GandCProducts.store.isProductPurchased(product.productIdentifier) {
-                accessoryType = .checkmark
-                accessoryView = nil
-                detailTextLabel?.text = ""
+            buttonView.layer.borderColor = UIColor.white.cgColor
+            buttonView.layer.borderWidth = 2
+            buttonView.layer.cornerRadius = 6
+            nameLabel.text = product.localizedTitle
+            descriptionLabel.text = product.localizedDescription
+            if IAPHelper.shared.isProductPurchased(product.productIdentifier) {
+                buttonView.addSubview(checkMark())
+                priceLabel.text = ""
             } else if IAPHelper.canMakePayments() {
                 ProductCell.priceFormatter.locale = product.priceLocale
-                detailTextLabel?.text = ProductCell.priceFormatter.string(from: product.price)
+                priceLabel.text = ProductCell.priceFormatter.string(from: product.price)
+                buttonView.addSubview(newBuyButton())
                 
-                accessoryType = .none
-                accessoryView = self.newBuyButton()
             } else {
-                detailTextLabel?.text = "Not available"
+                priceLabel.text = "Not available"
             }
         }
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        print("qwertyuio")
+    }
+    
     override func prepareForReuse() {
         super.prepareForReuse()
+        nameLabel.text = ""
+        descriptionLabel.text = ""
+        priceLabel.text = ""
         
-        textLabel?.text = ""
-        detailTextLabel?.text = ""
-        accessoryView = nil
     }
     
     var buyButtonHandler: ((_ product: SKProduct) -> Void)?
     
+    func checkMark() -> UIImageView {
+        let v = UIImageView()
+        
+        v.frame = CGRect(x: 25, y: 15, width: self.buttonView.bounds.size.width-50, height: self.buttonView.bounds.size.height-30)
+        
+        
+        v.image = UIImage(named: "Check")
+        v.contentMode = .scaleAspectFit
+        
+        return v
+    }
+    
     func newBuyButton() -> UIButton {
         let button = UIButton(type: .system)
         button.setTitleColor(tintColor, for: .normal)
-        button.setTitle("Buy", for: .normal)
+        button.setTitle("Buy now", for: .normal)
+        
+        button.frame = CGRect(x: 0, y: 0, width: self.buttonView.bounds.size.width, height: self.buttonView.bounds.size.height)
+        button.layer.borderColor = UIColor.white.cgColor
+        button.layer.borderWidth = 2
+        button.layer.cornerRadius = 6
+        
+        button.backgroundColor = .green
         button.addTarget(self, action: #selector(ProductCell.buyButtonTapped(_:)), for: .touchUpInside)
-        button.sizeToFit()
         
         return button
     }
@@ -67,3 +98,4 @@ class ProductCell: UITableViewCell {
         buyButtonHandler?(product!)
     }
 }
+

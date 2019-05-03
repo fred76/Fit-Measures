@@ -24,10 +24,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CDEPersistentStoreEnsembl
     var storeURL: URL {  return self.storeDirectoryURL.appendingPathComponent("store.sqlite") }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        IAPHelper.shared.getProductes(productIds: GandCProducts.productIdentifiers) 
         navBarAppereance()
         tabBarAppereance()
         setupUnitMeasure()
-        setupCoreData() 
+        setupCoreData()
         DataManager.shared.managedContext = managedObjectContext
         authorizeHealthKit()
         alertAboutiCloud()

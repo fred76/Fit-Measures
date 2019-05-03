@@ -15,11 +15,19 @@ extension Notification.Name {
 }
 
 open class IAPHelper: NSObject  {
-    private let productIdentifiers: Set<ProductIdentifier>
+    private var productIdentifiers: Set<ProductIdentifier>!
     private var purchasedProductIdentifiers: Set<ProductIdentifier> = []
     private var productsRequest: SKProductsRequest?
     private var productsRequestCompletionHandler: ProductsRequestCompletionHandler?
-    public init(productIds: Set<ProductIdentifier>) {
+    static let shared = IAPHelper()
+    
+    private override init() {
+        super.init()
+        SKPaymentQueue.default().add(self)
+        print("INIT")
+    }
+    func getProductes(productIds: Set<ProductIdentifier>) {
+        print("HHHHHHH")
         productIdentifiers = productIds
         for productIdentifier in productIds {
             let purchased = UserDefaults.standard.bool(forKey: productIdentifier)
@@ -32,10 +40,10 @@ open class IAPHelper: NSObject  {
             } else {
                 print("Not purchased: \(productIdentifier)")
             }
-        }
-        super.init()
-        SKPaymentQueue.default().add(self)
+        } 
     }
+    
+    
 }
 
 // MARK: - StoreKit API
@@ -95,8 +103,7 @@ extension IAPHelper: SKProductsRequestDelegate {
 }
 extension IAPHelper: SKPaymentTransactionObserver {
     
-    public func paymentQueue(_ queue: SKPaymentQueue,
-                             updatedTransactions transactions: [SKPaymentTransaction]) {
+    public func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
         for transaction in transactions {
             switch transaction.transactionState {
             case .purchased:
@@ -119,6 +126,7 @@ extension IAPHelper: SKPaymentTransactionObserver {
     }
     
     public func paymentQueue(_ queue: SKPaymentQueue, shouldAddStorePayment payment: SKPayment, for product: SKProduct) -> Bool {
+        
         return true
     }
     
@@ -170,4 +178,6 @@ extension IAPHelper: SKPaymentTransactionObserver {
         UserDefaults.standard.set(true, forKey: identifier)
         NotificationCenter.default.post(name: .IAPHelperPurchaseNotification, object: identifier)
     }
+    
+   
 }

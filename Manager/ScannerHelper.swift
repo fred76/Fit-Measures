@@ -15,6 +15,7 @@ class ScannerHelper : NSObject {
     private var codeOutputHandler : (_ code: String) -> Void
     var previewAdded = AVCaptureVideoPreviewLayer()
     var button : UIButton!
+    var overlayView = UIImageView()
     private func createCaptureSession() -> AVCaptureSession? {
         let captureSession = AVCaptureSession()
         
@@ -90,12 +91,18 @@ class ScannerHelper : NSObject {
             button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
             
             view.addSubview(button)
+            
+            overlayView.frame = view.frame
+            overlayView.image = UIImage(named: "Scanner_Overlay")
+            overlayView.contentMode = .scaleAspectFit
+            view.addSubview(overlayView)
         
         }
     }
     @objc func buttonAction(sender: UIButton!) {
         previewAdded.removeFromSuperlayer()
         button.removeFromSuperview()
+        overlayView.removeFromSuperview()
     }
     
     func requestCaptureSessioStartRunning(){

@@ -20,6 +20,7 @@ class SettingsMainTableViewController: UITableViewController, UITextFieldDelegat
     @IBOutlet var ageIcon: UIImageView!
     @IBOutlet var heightIcon: UIImageView!
     @IBOutlet var sexIcon: UIImageView!
+    var parentNavigationController : UINavigationController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,18 +34,19 @@ class SettingsMainTableViewController: UITableViewController, UITextFieldDelegat
     
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated) 
-        self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.9685102105, green: 0.9686148763, blue: 0.9725942016, alpha: 1)
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1176293567, green: 0.1176572666, blue: 0.1176275685, alpha: 1)
         self.navigationController?.navigationBar.isTranslucent = false
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         updateHealthInfo {
             self.updateLabelIfHKnotAvailable()
         }
     }
     
- 
-    
-    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -160,7 +162,7 @@ class SettingsMainTableViewController: UITableViewController, UITextFieldDelegat
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 5
+        return 3
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -169,14 +171,8 @@ class SettingsMainTableViewController: UITableViewController, UITextFieldDelegat
         }
         if section == 1 {
             return 3
-        }
-        if section == 2 {
-            return 1
-        }
-        if section == 3 {
-            return 6
-        }
-        return 2
+        } 
+        return 6
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

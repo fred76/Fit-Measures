@@ -15,6 +15,9 @@ class ShoppingController: UITableViewController {
     
     var products: [SKProduct] = []
     
+    var imageArray = ["Bundle_cric", "Girth_Circ","SkinFold_circ", "supple_circ"]
+    
+    var parentNavigationController : UINavigationController?
 //    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
 //        if identifier == showDetailSegueIdentifier {
 //            guard let indexPath = tableView.indexPathForSelectedRow else {
@@ -50,7 +53,7 @@ class ShoppingController: UITableViewController {
         
         refreshControl = UIRefreshControl()
         refreshControl?.addTarget(self, action: #selector(ShoppingController.reload), for: .valueChanged)
-        
+        reload()
         let restoreButton = UIBarButtonItem(title: "Restore",
                                             style: .plain,
                                             target: self,
@@ -72,7 +75,7 @@ class ShoppingController: UITableViewController {
         products = [] 
         tableView.reloadData()
         
-        GandCProducts.store.requestProducts{ [weak self] success, products in
+        IAPHelper.shared.requestProducts{ [weak self] success, products in
             guard let self = self else { return }
             if success {
                 self.products = products! 
@@ -84,7 +87,7 @@ class ShoppingController: UITableViewController {
     }
     
     @objc func restoreTapped(_ sender: AnyObject) {
-        GandCProducts.store.restorePurchases()
+        IAPHelper.shared.restorePurchases()
     }
     
     @objc func handlePurchaseNotification(_ notification: Notification) {
@@ -103,6 +106,10 @@ class ShoppingController: UITableViewController {
 
 extension ShoppingController {
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 160
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return products.count
     }
@@ -113,8 +120,9 @@ extension ShoppingController {
         let product = products[indexPath.row]
         
         cell.product = product
+        cell.imageProduct.image = UIImage(named: imageArray[indexPath.row])
         cell.buyButtonHandler = { product in
-            GandCProducts.store.buyProduct(product)
+            IAPHelper.shared.buyProduct(product)
         }
         
         return cell

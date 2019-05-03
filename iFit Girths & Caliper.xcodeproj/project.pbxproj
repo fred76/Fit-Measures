@@ -74,6 +74,7 @@
 		954927E521BE92DA00F78FD8 /* RawDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954927E421BE92DA00F78FD8 /* RawDataCell.swift */; };
 		954927EB21BEEFC900F78FD8 /* Istruzioni.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 954927EA21BEEFC900F78FD8 /* Istruzioni.rtf */; };
 		954927ED21BEF01600F78FD8 /* InstructionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954927EC21BEF01600F78FD8 /* InstructionController.swift */; };
+		954C4BB1227B7BFF00CDC706 /* PageMenuSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954C4BB0227B7BFF00CDC706 /* PageMenuSettings.swift */; };
 		95523AAE21B1132800761D1B /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 95523AAC21B1132800761D1B /* Model.xcdatamodeld */; };
 		955592C621B6ECEF0059A83D /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955592C521B6ECEF0059A83D /* ChartViewController.swift */; };
 		955DBD5F21CBED8C00312E6E /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955DBD5E21CBED8C00312E6E /* Extension.swift */; };
@@ -119,6 +120,7 @@
 		95D97A21226492E9002A4515 /* SupplemetInsertedManuallyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D97A20226492E9002A4515 /* SupplemetInsertedManuallyController.swift */; };
 		95D97A27226493B0002A4515 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D97A26226493B0002A4515 /* CameraManager.swift */; };
 		95D97A2922663B07002A4515 /* AppDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D97A2822663B07002A4515 /* AppDelegateExtension.swift */; };
+		95D98AAF22798F9B005919D0 /* ExtensionAppDelegateInAppPurchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D98AAE22798F9B005919D0 /* ExtensionAppDelegateInAppPurchase.swift */; };
 		95DB84AA21ADA84D00D13E6A /* StaticClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DB84A921ADA84D00D13E6A /* StaticClass.swift */; };
 		95DB84AC21ADB1F300D13E6A /* PlicoMainControllerTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DB84AB21ADB1F300D13E6A /* PlicoMainControllerTable.swift */; };
 		95DB84AE21ADE98800D13E6A /* PlicheMoethodController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DB84AD21ADE98800D13E6A /* PlicheMoethodController.swift */; };
@@ -285,6 +287,7 @@
 		954927EA21BEEFC900F78FD8 /* Istruzioni.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Istruzioni.rtf; sourceTree = "<group>"; };
 		954927EC21BEF01600F78FD8 /* InstructionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionController.swift; sourceTree = "<group>"; };
 		954927F121BEFE3200F78FD8 /* Fit Measures.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Fit Measures.entitlements"; sourceTree = "<group>"; };
+		954C4BB0227B7BFF00CDC706 /* PageMenuSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageMenuSettings.swift; sourceTree = "<group>"; };
 		95523A5921B0921700761D1B /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		95523AAD21B1132800761D1B /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		955592C521B6ECEF0059A83D /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
@@ -348,6 +351,7 @@
 		95D97A20226492E9002A4515 /* SupplemetInsertedManuallyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplemetInsertedManuallyController.swift; sourceTree = "<group>"; };
 		95D97A26226493B0002A4515 /* CameraManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
 		95D97A2822663B07002A4515 /* AppDelegateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateExtension.swift; sourceTree = "<group>"; };
+		95D98AAE22798F9B005919D0 /* ExtensionAppDelegateInAppPurchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionAppDelegateInAppPurchase.swift; sourceTree = "<group>"; };
 		95DB84A921ADA84D00D13E6A /* StaticClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticClass.swift; sourceTree = "<group>"; };
 		95DB84AB21ADB1F300D13E6A /* PlicoMainControllerTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlicoMainControllerTable.swift; sourceTree = "<group>"; };
 		95DB84AD21ADE98800D13E6A /* PlicheMoethodController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlicheMoethodController.swift; sourceTree = "<group>"; };
@@ -626,8 +630,8 @@
 				95DB84D221B006C900D13E6A /* SkinFold */,
 				95DB84D421B0070C00D13E6A /* Camera */,
 				95A1F89721B43AAD005B6CC5 /* Insight */,
-				9552EF2021BE923B00D12001 /* Settings */,
 				9533863922569269009DBECB /* Supplement */,
+				9552EF2021BE923B00D12001 /* Settings */,
 				95DB84A821ADA82600D13E6A /* Convenient Class */,
 				95946C1821AB4C7E00D534D0 /* Custom Class */,
 				9533863222568F54009DBECB /* Library */,
@@ -646,6 +650,7 @@
 				957BDA9621CCFDB000E2718F /* NavController.swift */,
 				952B464B22684C350005FD5B /* PageMenuBodyMeasurment.swift */,
 				952B464F2268D95F0005FD5B /* PageMenuInsight.swift */,
+				954C4BB0227B7BFF00CDC706 /* PageMenuSettings.swift */,
 			);
 			path = "Custom Class";
 			sourceTree = "<group>";
@@ -691,10 +696,11 @@
 				95D97A26226493B0002A4515 /* CameraManager.swift */,
 				9506885321CF90F3006AC1DB /* AppStoreManager.swift */,
 				95F21A672254BC4900049520 /* ScannerHelper.swift */,
-				95C6AE2E224141C5000C48C6 /* IAPHelper.swift */,
 				95ACDF3E21C7AAAB003A77BD /* HealthManager.swift */,
+				95C6AE2E224141C5000C48C6 /* IAPHelper.swift */,
 				95C6AE3022414224000C48C6 /* GandCProducts.swift */,
 				95D97A2822663B07002A4515 /* AppDelegateExtension.swift */,
+				95D98AAE22798F9B005919D0 /* ExtensionAppDelegateInAppPurchase.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -994,6 +1000,7 @@
 				952B464922684B710005FD5B /* CAPSPageMenuConfiguration.swift in Sources */,
 				95A1F89B21B43ADF005B6CC5 /* lastMeasureCell.swift in Sources */,
 				955DBD5F21CBED8C00312E6E /* Extension.swift in Sources */,
+				954C4BB1227B7BFF00CDC706 /* PageMenuSettings.swift in Sources */,
 				95C6AE2F224141C5000C48C6 /* IAPHelper.swift in Sources */,
 				953386212255DA9C009DBECB /* SupplementSearchedByName.swift in Sources */,
 				95946C0F21AB48EC00D534D0 /* MeasureMainController.swift in Sources */,
@@ -1039,6 +1046,7 @@
 				954927E321BE92C100F78FD8 /* GhirtRawDataTableview.swift in Sources */,
 				950B717E226460C800596167 /* CirclePieView.swift in Sources */,
 				95DB84C621AEE25400D13E6A /* PrivacyController.swift in Sources */,
+				95D98AAF22798F9B005919D0 /* ExtensionAppDelegateInAppPurchase.swift in Sources */,
 				952B464822684B710005FD5B /* CAPSPageMenu+UIScrollViewDelegate.swift in Sources */,
 				9521B9F922538F9700E9A7A5 /* DataManagerGirth.swift in Sources */,
 				95DB84CB21AFF73D00D13E6A /* PicturesCell.swift in Sources */,

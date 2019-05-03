@@ -222,8 +222,7 @@ class InsightMainController: UIViewController, UITableViewDelegate, UITableViewD
             cell.imageCell.image = UIImage(named: imageArray[indexPath.row])
             cell.methodLabel.isHidden = true 
             cell.valueLabel.text = String(Items.sharedInstance.measureArray[indexPath.row])
-        } else {
-            
+        } else { 
             cell.nameLabel.text = plicheTitle[indexPath.row]
             cell.imageCell.image = UIImage(named: "Caliper")
             cell.methodLabel.isHidden = false

@@ -301,7 +301,6 @@
 		957CC15F21D59F9A00B0AFCF /* method.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = method.rtf; sourceTree = "<group>"; };
 		95946BD921AB458700D534D0 /* iFit Girths & Caliper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iFit Girths & Caliper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95946BDC21AB458700D534D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		95946BEA21AB458800D534D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95946C0C21AB478700D534D0 /* PhotoGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGallery.swift; sourceTree = "<group>"; };
 		95946C0E21AB48EC00D534D0 /* MeasureMainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureMainController.swift; sourceTree = "<group>"; };
 		95946C1221AB491300D534D0 /* InsightMainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightMainController.swift; sourceTree = "<group>"; };
@@ -373,6 +372,8 @@
 		95ECB4F7227485CC00791A10 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		95F21A672254BC4900049520 /* ScannerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerHelper.swift; sourceTree = "<group>"; };
 		95F21A6D2254C55C00049520 /* UserSupplementListAndScan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSupplementListAndScan.swift; sourceTree = "<group>"; };
+		95F9796F227C831100E6E08E /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = it; path = it.lproj/Info.plist; sourceTree = "<group>"; };
+		95F97971227C831E00E6E08E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -623,7 +624,7 @@
 			children = (
 				9521B9F6225017FA00E9A7A5 /* Assets.xcassets */,
 				95523A5921B0921700761D1B /* Header.h */,
-				95946BEA21AB458800D534D0 /* Info.plist */,
+				95F97970227C831100E6E08E /* Info.plist */,
 				959FDF30227445CF00D1BE60 /* InfoPlist.strings */,
 				954927F121BEFE3200F78FD8 /* Fit Measures.entitlements */,
 				95DB84D321B006ED00D13E6A /* Girth */,
@@ -1191,6 +1192,15 @@
 				959FDF31227445CF00D1BE60 /* it */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		95F97970227C831100E6E08E /* Info.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				95F9796F227C831100E6E08E /* it */,
+				95F97971227C831E00E6E08E /* en */,
+			);
+			name = Info.plist;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

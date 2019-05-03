@@ -38,8 +38,7 @@ class PageMenuSettings : UIViewController {
         
         controllerArray.append(controllerInsight)
         let controllerPhoto : ShoppingController = (storyboardInsight.instantiateViewController(withIdentifier: "Shopping") as! ShoppingController)
-        controllerPhoto.parentNavigationController = self.navigationController
-        
+        controllerPhoto.parentNavigationController = self.navigationController 
         controllerPhoto.title = "Shopping 🛒"
         controllerArray.append(controllerPhoto)
         

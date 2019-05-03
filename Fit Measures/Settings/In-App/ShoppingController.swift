@@ -12,8 +12,10 @@ import StoreKit
 class ShoppingController: UITableViewController {
     
     let showDetailSegueIdentifier = "showDetail"
+    @IBOutlet var buttonView: UIView!
     
     var products: [SKProduct] = []
+    
     
     var imageArray = ["Bundle_cric", "Girth_Circ","SkinFold_circ", "supple_circ"]
     
@@ -54,12 +56,11 @@ class ShoppingController: UITableViewController {
         refreshControl = UIRefreshControl()
         refreshControl?.addTarget(self, action: #selector(ShoppingController.reload), for: .valueChanged)
         reload()
-        let restoreButton = UIBarButtonItem(title: "Restore",
-                                            style: .plain,
-                                            target: self,
-                                            action: #selector(ShoppingController.restoreTapped(_:)))
-        navigationItem.rightBarButtonItem = restoreButton
+        buttonView.layer.cornerRadius = 6
+        buttonView.layer.borderWidth = 2
+        buttonView.layer.borderColor = UIColor.white.cgColor
         
+        buttonView.backgroundColor = .clear
         NotificationCenter.default.addObserver(self, selector: #selector(ShoppingController.handlePurchaseNotification(_:)),
                                                name: .IAPHelperPurchaseNotification,
                                                object: nil)
@@ -86,9 +87,11 @@ class ShoppingController: UITableViewController {
         }
     }
     
-    @objc func restoreTapped(_ sender: AnyObject) {
+    @IBAction func restorePurchase(_ sender: Any) {
         IAPHelper.shared.restorePurchases()
     }
+    
+    
     
     @objc func handlePurchaseNotification(_ notification: Notification) {
         guard

@@ -17,9 +17,9 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>3.2</string>
+	<string>3.3</string>
 	<key>CFBundleVersion</key>
-	<string>3.2</string>
+	<string>3.3</string>
 	<key>GADApplicationIdentifier</key>
 	<string>ca-app-pub-9833367902957453~1306670365</string>
 	<key>LSApplicationCategoryType</key>
@@ -27,15 +27,15 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>For Monitoring Your Progress</string>
+	<string>This lets you to shoot photos to your body in order to evaluate your progress</string>
 	<key>NSHealthShareUsageDescription</key>
-	<string>Share your data with Healt App</string>
+	<string>This lets you to share your data with Healt App</string>
 	<key>NSHealthUpdateUsageDescription</key>
-	<string>Read your data from Healt App</string>
+	<string>This lets you to read your data from Healt App</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Save Charts in Camera roll</string>
+	<string>This lets you to save charts in Photos</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>The App Require Acces to your Photos</string>
+	<string>This lets you to chose which photos you want to add to G&amp;C photo gallery</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

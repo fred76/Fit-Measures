@@ -74,7 +74,7 @@ extension DataManager {
         
         do {
             let arrayOfEntitySearched = try managedContext.fetch(fetchRequest)
-            if arrayOfEntitySearched.count >= maxCount && !UserDefaults.standard.bool(forKey: "fred76.com.ifit.supplement"){
+            if arrayOfEntitySearched.count >= maxCount && !UserDefaults.standard.bool(forKey: "fred76.com.ifit.supplement.unlock"){
                 maxLimit = true
                 allertWithParameter(title: loc("LOCARTITLE"), message: message, viecontroller: viecontroller)
             } else {

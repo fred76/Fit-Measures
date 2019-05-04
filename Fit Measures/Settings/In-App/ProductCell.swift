@@ -36,6 +36,8 @@ class ProductCell: UITableViewCell {
             buttonView.layer.cornerRadius = 6
             nameLabel.text = product.localizedTitle
             descriptionLabel.text = product.localizedDescription
+            print("product.localizedTitle \(product.localizedTitle)")
+            print("product.localizedDescription \(product.localizedDescription)")
             if IAPHelper.shared.isProductPurchased(product.productIdentifier) {
                 buttonView.addSubview(checkMark())
                 priceLabel.text = ""

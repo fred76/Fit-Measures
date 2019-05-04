@@ -42,7 +42,7 @@ class AllertViewGirthInsert: UIViewController {
         animateView()
         cancelButton.addBorder(color: alertViewGrayColor, width: 1)
         okButton.addBorder(color: alertViewGrayColor, width: 1)
-        if !UserDefaults.standard.bool(forKey: "fred76.com.ifit.girths") && showPurchaseInfo {
+        if !UserDefaults.standard.bool(forKey: "fred76.com.ifit.girths.unlock") && showPurchaseInfo {
             messageLabel.text = loc("LOCGIRTHSHOP")
             alertTextField.isHidden = true
         } 

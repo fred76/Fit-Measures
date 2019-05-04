@@ -62,14 +62,14 @@ class PlicoMainControllerTable: UITableViewController,GADInterstitialDelegate {
             check.removeFromSuperview()
             
             if m == "jackson & Polloc 7 point" {
-                if UserDefaults.standard.bool(forKey: "fred76.com.ifit.skinFolds") {
+                if UserDefaults.standard.bool(forKey: "fred76.com.ifit.skinFolds.unlock") {
                     AddChecker(v: jackso7)
                 }
                 
             }
             
             if m == "jackson & Polloc 3 point Man" || m == "jackson & Polloc 3 point Woman"{
-                if UserDefaults.standard.bool(forKey: "fred76.com.ifit.skinFolds") {
+                if UserDefaults.standard.bool(forKey: "fred76.com.ifit.skinFolds.unlock") {
                     AddChecker(v: jackson3)
                 }
             }

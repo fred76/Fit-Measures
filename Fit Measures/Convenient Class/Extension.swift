@@ -264,7 +264,7 @@ class Items {
         
         if let getLastMeasureAvailable = DataManager.shared.getLastMeasureAvailable() {
           Items.sharedInstance.measureArray.removeAll()
-          if  !UserDefaults.standard.bool(forKey: "fred76.com.ifit.girths") {
+          if  !UserDefaults.standard.bool(forKey: "fred76.com.ifit.girths.unlock") {
             Items.sharedInstance.measureArray.append(getLastMeasureAvailable.weight)
             Items.sharedInstance.measureArray.append(getLastMeasureAvailable.neck)
             Items.sharedInstance.measureArray.append(getLastMeasureAvailable.bicep_L)

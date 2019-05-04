@@ -158,21 +158,21 @@ extension IAPHelper: SKPaymentTransactionObserver {
     private func deliverPurchaseNotificationFor(identifier: String?) {
         guard let identifier = identifier else { return }
         
-        if identifier == "fred76.com.ifit.bundle" {
+        if identifier == "fred76.com.ifit.bundle.unlock" {
             print("ENTRO")
             
-            print("AAAAAA \(UserDefaults.standard.bool(forKey: "fred76.com.ifit.bundle"))")
-           purchasedProductIdentifiers.insert("fred76.com.ifit.girths")
-           purchasedProductIdentifiers.insert("fred76.com.ifit.skinFolds")
-            purchasedProductIdentifiers.insert("fred76.com.ifit.supplement")
-            UserDefaults.standard.set(true, forKey: "fred76.com.ifit.bundle")
-            UserDefaults.standard.set(true, forKey: "fred76.com.ifit.girths")
-            UserDefaults.standard.set(true, forKey: "fred76.com.ifit.skinFolds")
-            UserDefaults.standard.set(true, forKey: "fred76.com.ifit.supplement")
-            NotificationCenter.default.post(name: .IAPHelperPurchaseNotification, object: "fred76.com.ifit.bundle")
-            NotificationCenter.default.post(name: .IAPHelperPurchaseNotification, object: "fred76.com.ifit.girths")
-            NotificationCenter.default.post(name: .IAPHelperPurchaseNotification, object: "fred76.com.ifit.skinFolds")
-            NotificationCenter.default.post(name: .IAPHelperPurchaseNotification, object: "fred76.com.ifit.supplement")
+            print("AAAAAA \(UserDefaults.standard.bool(forKey: "fred76.com.ifit.bundle.unlock"))")
+           purchasedProductIdentifiers.insert("fred76.com.ifit.girths.unlock")
+           purchasedProductIdentifiers.insert("fred76.com.ifit.skinFolds.unlock")
+            purchasedProductIdentifiers.insert("fred76.com.ifit.supplement.unlock")
+            UserDefaults.standard.set(true, forKey: "fred76.com.ifit.bundle.unlock")
+            UserDefaults.standard.set(true, forKey: "fred76.com.ifit.girths.unlock")
+            UserDefaults.standard.set(true, forKey: "fred76.com.ifit.skinFolds.unlock")
+            UserDefaults.standard.set(true, forKey: "fred76.com.ifit.supplement.unlock")
+            NotificationCenter.default.post(name: .IAPHelperPurchaseNotification, object: "fred76.com.ifit.bundle.unlock")
+            NotificationCenter.default.post(name: .IAPHelperPurchaseNotification, object: "fred76.com.ifit.girths.unlock")
+            NotificationCenter.default.post(name: .IAPHelperPurchaseNotification, object: "fred76.com.ifit.skinFolds.unlock")
+            NotificationCenter.default.post(name: .IAPHelperPurchaseNotification, object: "fred76.com.ifit.supplement.unlock")
         }
         purchasedProductIdentifiers.insert(identifier)
         UserDefaults.standard.set(true, forKey: identifier)

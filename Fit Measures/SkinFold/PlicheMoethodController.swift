@@ -433,7 +433,7 @@ extension PlicheMoethodController : AllertViewSkinFoldInsertWithGraphDelegate {
         midaxillary = nil
         biceps = nil
         
-        if !UserDefaults.standard.bool(forKey: "fred76.com.ifit.skinFolds") { 
+        if !UserDefaults.standard.bool(forKey: "fred76.com.ifit.skinFolds.unlock") { 
         switch plicheMethod {
         case .sloanMen :
             DataManager.shared.save()

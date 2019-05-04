@@ -53,7 +53,7 @@ class AllertViewSkinFoldInsert: UIViewController {
         
     }
     func purchaseCheck(){
-        if !UserDefaults.standard.bool(forKey: "fred76.com.ifit.skinFolds") && showPurchaseInfo {
+        if !UserDefaults.standard.bool(forKey: "fred76.com.ifit.skinFolds.unlock") && showPurchaseInfo {
             messageLabel.text = loc("LOCSKINFOLDSHOP")
             alertTextField_2.isHidden = true
             alertTextField_3.isHidden = true

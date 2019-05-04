@@ -114,6 +114,7 @@ extension ShoppingController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("products.count \(products.count)")
         return products.count
     }
     

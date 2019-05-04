@@ -81,7 +81,7 @@ class PageMenuBodyMeasurment: UIViewController {
             .menuHeight(40.0),
             .menuItemWidthBasedOnTitleTextWidth(true),
             .centerMenuItems(true),
-            .enableHorizontalBounce(true),
+            .enableHorizontalBounce(false),
             .addBottomMenuHairline(true),
             .titleTextSizeBasedOnMenuItemWidth(true),
             .scrollAnimationDurationOnMenuItemTap(500)

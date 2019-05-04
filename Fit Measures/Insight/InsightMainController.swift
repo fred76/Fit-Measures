@@ -39,7 +39,7 @@ class InsightMainController: UIViewController, UITableViewDelegate, UITableViewD
         lastMeasureTableView.dataSource = self
         plicheCollectionView.delegate = self
         plicheCollectionView.dataSource = self
-        if !UserDefaults.standard.bool(forKey: "fred76.com.ifit.girths") {
+        if !UserDefaults.standard.bool(forKey: "fred76.com.ifit.girths.unlock") {
             measureTitle =  [loc("LOCALWeight"),loc("LOCALNeck"),loc("LOCALBicep_L"),loc("LOCALBicep_R_Relax"),loc("LOCALForearm_L"),loc("LOCALWrist"),loc("LOCALWaist"),loc("LOCALHips"),loc("LOCALThigh_L"),loc("LOCALCalf_R")]
             imageArray = ["Weight","Neck","Bicep_L","bicep_R_Relax","Forearm_L","Wrist","Waist","Hips","Thigh_L","Calf_R"]
         } else {

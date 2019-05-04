@@ -10,10 +10,10 @@ import Foundation
 import StoreKit
 extension DataManager {
     func loadReceipt()  {
-        print("com.ifit.girths \(UserDefaults.standard.bool(forKey: "fred76.com.ifit.girths"))")
-        print("com.ifit.skinFolds \(UserDefaults.standard.bool(forKey: "fred76.com.ifit.skinFolds"))")
-        print("com.ifit.bundle \(UserDefaults.standard.bool(forKey: "fred76.com.ifit.bundle"))")
-        if UserDefaults.standard.bool(forKey: "fred76.com.ifit.girths") || UserDefaults.standard.bool(forKey: "fred76.com.ifit.skinFolds") || UserDefaults.standard.bool(forKey: "fred76.com.ifit.bundle") {
+        print("com.ifit.girths \(UserDefaults.standard.bool(forKey: "fred76.com.ifit.girths.unlock"))")
+        print("com.ifit.skinFolds \(UserDefaults.standard.bool(forKey: "fred76.com.ifit.skinFolds.unlock"))")
+        print("com.ifit.bundle \(UserDefaults.standard.bool(forKey: "fred76.com.ifit.bundle.unlock"))")
+        if UserDefaults.standard.bool(forKey: "fred76.com.ifit.girths.unlock") || UserDefaults.standard.bool(forKey: "fred76.com.ifit.skinFolds.unlock") || UserDefaults.standard.bool(forKey: "fred76.com.ifit.bundle.unlock") {
             print("RETURN AAA")
             return
         }
@@ -64,9 +64,9 @@ extension DataManager {
                                 //                                let n = Date()
                                 print("original_application_version \(original_application_version)")
                                 if (original_application_version.doubleValue + 0) < 3 {
-                                    UserDefaults.standard.set(true, forKey: "fred76.com.ifit.girths")
-                                    UserDefaults.standard.set(true, forKey: "fred76.com.ifit.skinFolds")
-                                    UserDefaults.standard.set(true, forKey: "fred76.com.ifit.bundle") 
+                                    UserDefaults.standard.set(true, forKey: "fred76.com.ifit.girths.unlock")
+                                    UserDefaults.standard.set(true, forKey: "fred76.com.ifit.skinFolds.unlock")
+                                    UserDefaults.standard.set(true, forKey: "fred76.com.ifit.bundle.unlock") 
                                 }
                             }
                         } catch {
@@ -117,7 +117,7 @@ extension DataManager {
     
     func purchasedGirthsAndSkinfilds() -> Bool{
         var purchased : Bool = false
-        if UserDefaults.standard.bool(forKey: "fred76.com.ifit.girths") || UserDefaults.standard.bool(forKey: "fred76.com.ifit.skinFolds") { 
+        if UserDefaults.standard.bool(forKey: "fred76.com.ifit.girths.unlock") || UserDefaults.standard.bool(forKey: "fred76.com.ifit.skinFolds.unlock") { 
             purchased = true
         }
         return purchased

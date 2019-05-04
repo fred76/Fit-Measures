@@ -587,17 +587,29 @@
                     <view key="view" contentMode="scaleToFill" id="R57-Bd-ZXm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DAM-Jh-omz">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="DAM-Jh-omz" firstAttribute="top" secondItem="2gY-kb-RJf" secondAttribute="top" id="YJb-k8-CKf"/>
+                            <constraint firstItem="DAM-Jh-omz" firstAttribute="leading" secondItem="2gY-kb-RJf" secondAttribute="leading" id="Ykg-dI-YIL"/>
+                            <constraint firstItem="2gY-kb-RJf" firstAttribute="trailing" secondItem="DAM-Jh-omz" secondAttribute="trailing" id="w9a-kv-HYE"/>
+                            <constraint firstItem="2gY-kb-RJf" firstAttribute="bottom" secondItem="DAM-Jh-omz" secondAttribute="bottom" id="yZh-Rd-c05"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="2gY-kb-RJf"/>
                     </view>
                     <navigationItem key="navigationItem" id="I8j-g7-8jN"/>
                     <connections>
-                        <outlet property="contentView" destination="R57-Bd-ZXm" id="uNp-mw-yda"/>
+                        <outlet property="contentView" destination="DAM-Jh-omz" id="Caf-ZZ-4GJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kbi-SD-Zay" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3673.913043478261" y="420.53571428571428"/>
+            <point key="canvasLocation" x="3694" y="421"/>
         </scene>
         <!--Insight-->
         <scene sceneID="TNv-fL-Q1z">
@@ -630,12 +642,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="AFY-qF-H5T" kind="relationship" relationship="rootViewController" id="wIB-Pb-BvY"/>
+                        <segue destination="AFY-qF-H5T" kind="relationship" relationship="rootViewController" id="wU3-mh-TeV"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uXh-Y3-1NF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2763.768115942029" y="420.53571428571428"/>
+            <point key="canvasLocation" x="2701" y="421"/>
         </scene>
     </scenes>
     <resources>

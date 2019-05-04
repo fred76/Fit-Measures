@@ -206,7 +206,7 @@ class AllertViewSkinFoldInsertWithGraph: UIViewController, ChartViewDelegate {
     }
     
     func showHideNotPurchaseLabel(){
-        if !UserDefaults.standard.bool(forKey: "fred76.com.ifit.skinFolds") {
+        if !UserDefaults.standard.bool(forKey: "fred76.com.ifit.skinFolds.unlock") {
             switch plicheMethod {
             case .jackson_7:notPurchasedLabel.isHidden = false
             case .jackson_3_Man:notPurchasedLabel.isHidden = false

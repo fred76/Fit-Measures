@@ -61,6 +61,8 @@ class UserSupplementListAndScan: UIViewController, AVCaptureMetadataOutputObject
        
         if let s = self.scanner {
             s.previewAdded.removeFromSuperlayer()
+            s.button.removeFromSuperview()
+            s.overlayView.removeFromSuperview()
         }
     }
     

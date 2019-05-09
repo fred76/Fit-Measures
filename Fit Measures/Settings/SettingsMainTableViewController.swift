@@ -186,7 +186,7 @@ class SettingsMainTableViewController: UITableViewController, UITextFieldDelegat
             
         }
         
-        if indexPath.section == 3 {
+        if indexPath.section == 2 {
             if indexPath.row == 0 {
                 writeReview()
             }

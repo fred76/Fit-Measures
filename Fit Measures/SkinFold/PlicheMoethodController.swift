@@ -52,7 +52,6 @@ class PlicheMoethodController: UIViewController , UICollectionViewDelegate, UICo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.measureCollctionView.delegate = self
         self.measureCollctionView.dataSource = self
         
@@ -92,7 +91,7 @@ class PlicheMoethodController: UIViewController , UICollectionViewDelegate, UICo
         let randomBool = Bool.random()
        print("randomBool \(randomBool)")
         if randomBool{
-            if plicheMethod == .jackson_3_Man || plicheMethod == .jackson_7 {
+            
                 if  DataManager.shared.purchasedGirthsAndSkinfilds() { print("something purchased") } else {
                     if interstitial.isReady {
                         interstitial.present(fromRootViewController: self)
@@ -101,7 +100,6 @@ class PlicheMoethodController: UIViewController , UICollectionViewDelegate, UICo
                     }
                     
                 }
-            }
         }
     }
     
@@ -438,30 +436,40 @@ extension PlicheMoethodController : AllertViewSkinFoldInsertWithGraphDelegate {
         case .sloanMen :
             DataManager.shared.save()
             Items.sharedInstance.updatePliche()
+            FirebaseManager.shared.trackLogEvent(type: "Pliche method not purcased", id: plicheMethod.rawValue.self)
             
         case .DurninMan :
+            FirebaseManager.shared.trackLogEvent(type: "Pliche method not purcased", id: plicheMethod.rawValue.self)
             DataManager.shared.save()
             Items.sharedInstance.updatePliche()
             
         case .sloanWoman :
+            FirebaseManager.shared.trackLogEvent(type: "Pliche method not purcased", id: plicheMethod.rawValue.self)
             DataManager.shared.save()
             Items.sharedInstance.updatePliche()
             
         case .jackson_3_Man :
+            FirebaseManager.shared.trackLogEvent(type: "Pliche method not purcased", id: plicheMethod.rawValue.self)
+            Items.sharedInstance.updatePliche()
+            
+        case .jackson_3_Woman :
+            FirebaseManager.shared.trackLogEvent(type: "Pliche method not purcased", id: plicheMethod.rawValue.self)
             Items.sharedInstance.updatePliche()
             
         case .jackson_7 :
-            
+            FirebaseManager.shared.trackLogEvent(type: "Pliche method not purcased", id: plicheMethod.rawValue.self)
            Items.sharedInstance.updatePliche()
             
-        default: break
             
         }
             
         } else {
+            FirebaseManager.shared.trackLogEvent(type: "Pliche method purcased", id: plicheMethod.rawValue.self)
             DataManager.shared.save()
             Items.sharedInstance.updatePliche()
         }
+        
+        
         
     } 
 }

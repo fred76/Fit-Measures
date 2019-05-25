@@ -42,17 +42,43 @@ class InstructionController: UIViewController, UIPopoverPresentationControllerDe
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func exportGrith(_ sender: Any) { exportGirthTemplateAsCSV() }
+    @IBAction func exportGrith(_ sender: Any) { exportGirthTemplateAsCSV()
+        FirebaseManager.shared.trackLogEvent(type: "export template", id: "export girths template")
+    }
     
-    @IBAction func exportPliche(_ sender: Any) { exportPlicheTemplateAsCSV() }
+    @IBAction func exportPliche(_ sender: Any) { exportPlicheTemplateAsCSV()
+        FirebaseManager.shared.trackLogEvent(type: "export template", id: "export skinFolds template")
+    }
     
-    @IBAction func importGirth(_ sender: Any) { importGirthFromCsv() }
+    @IBAction func importGirth(_ sender: Any) { 
+        
+        if !UserDefaults.standard.bool(forKey: "fred76.com.ifit.girths.unlock") {
+            DataManager.shared.allertWithParameter(title: loc("LOCARTITLE"), message: loc("LOCimportGirthsBODY"), viecontroller: self)
+            FirebaseManager.shared.trackLogEvent(type: "Import girths denied" , id: "girths NOT Purchased")
+        }  else {
+            FirebaseManager.shared.trackLogEvent(type: "Import girths " , id: "girths Purchased")
+            importGirthFromCsv()
+        }
+    }
     
-    @IBAction func importPliche(_ sender: Any) { importPlicheFromCsv() }
+    @IBAction func importPliche(_ sender: Any) {
+        if !UserDefaults.standard.bool(forKey: "fred76.com.ifit.skinFolds.unlock") {
+            FirebaseManager.shared.trackLogEvent(type: "Import skinFolds" , id: "skinFolds NOT Purchased")
+            DataManager.shared.allertWithParameter(title: loc("LOCARTITLE"), message: loc("LOCimportskinFoldsBODY"), viecontroller: self)
+        } else {
+            FirebaseManager.shared.trackLogEvent(type: "Import skinFolds" , id: "skinFolds Purchased")
+            importPlicheFromCsv()
+        }
+        
+    }
     
-    @IBAction func exportMyGirth(_ sender: Any) { exportGirthAsCSV() }
+    @IBAction func exportMyGirth(_ sender: Any) { exportGirthAsCSV()
+        FirebaseManager.shared.trackLogEvent(type: "export girths", id: "export girths")
+    }
     
-    @IBAction func exportMyPliche(_ sender: Any) { exportPlicheAsCsv()  }
+    @IBAction func exportMyPliche(_ sender: Any) { exportPlicheAsCsv()
+        FirebaseManager.shared.trackLogEvent(type: "export skinFolds", id: "export skinFolds")
+    }
     
 }
 

@@ -60,6 +60,8 @@ class MeasureMainController: UIViewController, UICollectionViewDelegate, UIColle
     
     override func viewWillAppear(_ animated: Bool) {
         #warning("stampa la cartella")
+       
+        
         print("Documents Directory: ", FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last ?? "Not Found!") 
 //        measureCollctionView.reloadData()
         self.navigationItem.rightBarButtonItem?.isEnabled = false
@@ -266,7 +268,7 @@ class MeasureMainController: UIViewController, UICollectionViewDelegate, UIColle
 
 extension MeasureMainController : AllertViewGirthInsertDelegate {
     func okButtonTapped(selectedOption: String, textFieldValue: String) {
-        
+        FirebaseManager.shared.trackLogEvent(type: "Girths", id: bodyMeasurementPoint.rawValue.self)
         if let cell = measureCollctionView.cellForItem(at: indexPathSelected) as? MeasureCollectionViewCell {
             setTabBarHidden(false)
             if textFieldValue.isEmpty == false {

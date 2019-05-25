@@ -271,6 +271,7 @@ extension UserSupplementListAndScan : UITableViewDataSource, UITableViewDelegate
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let sectionInfo = supplementFetchedResultsController.sections?[section] else {
             return 0 }
+        FirebaseManager.shared.trackLogEvent(type: "Supplement Saved:", id: "supplement count\(sectionInfo.numberOfObjects)")
         return sectionInfo.numberOfObjects
     }
     

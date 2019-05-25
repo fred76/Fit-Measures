@@ -306,3 +306,15 @@
 "buy" = "Per aggiungere altri integratori";
 
 "X Close" = "✕ Chiudi";
+
+"GDPRPRETEXT" = "Aiuta Girths & Caliper a migliorare i propri servizi inviando automaticamente i dati di diagnosi ed uso. Tali dati possono includere includere dettagli riguardo alle specifiche hardware e del sistema operativo , statistiche sulle prestazioni. Nessuna delle informazioni raccolte ti identifica personalmente. Età, sesso e località sono slavate per fascia di età e regione demografica. Sul tuo dispositivo iOS, puoi verificare questo tipo di informazioni in Impostazioni > Girths & Caliper  > Dati analisi.";
+"gdprAlertTXT" = "Privacy";
+"gdprAlertBody" = "Permetti la raccolta di dati statistici";
+"gdprOK" = "Ok share data";
+"gdprNotOK" = "Not share data";
+"gdprOK" = "Ok condividi dati";
+"gdprNotOK" = "Non condividere dati";
+"HELTHTXT" = "Girths & Caliper desidera accedere ed aggiornare i tuoi dati sanitari";
+"LOCimportGirthsBODY" = "Per importare le Circonferenze compra il pacchetto o sblocca tutte le funzioni";
+"LOCimportskinFoldsBODY" = "Per importare le Pliche compra il pacchetto o sblocca tutte le funzioni";
+"Next" = "Prosegui";

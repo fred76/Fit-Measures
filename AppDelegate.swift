@@ -11,7 +11,8 @@ import CoreData
 import Ensembles
 import CloudKit
 import StoreKit
-import UserNotifications
+import UserNotifications 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CDEPersistentStoreEnsembleDelegate, UNUserNotificationCenterDelegate{
     
@@ -29,11 +30,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CDEPersistentStoreEnsembl
         tabBarAppereance()
         setupUnitMeasure()
         setupCoreData()
-        DataManager.shared.managedContext = managedObjectContext
-        authorizeHealthKit()
+        DataManager.shared.managedContext = managedObjectContext 
         alertAboutiCloud()
         DataManager.shared.loadReceipt()
         DataManager.shared.AddMobs()
+        ConsentManager.shared.showIntro()
         //       CDESetCurrentLoggingLevel(CDELoggingLevel.verbose.rawValue)
         let center = UNUserNotificationCenter.current()
         center.delegate = self
@@ -72,10 +73,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CDEPersistentStoreEnsembl
     
     func applicationWillEnterForeground(_ application: UIApplication) {
         self.sync(iCloudIsOn: UserDefaultsSettings.cloudSynchSet, nil)
+        FirebaseManager.shared.analyticsCollectionPermision(set: UserDefaultsSettings.GDPRStatusSet)
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
-        showInitialAlert()
+        
+        //showInitialAlert()
     }
     
     func applicationWillTerminate(_ application: UIApplication) { }
@@ -194,23 +197,4 @@ struct AppUtility {
     
 }
 
-extension AppDelegate {
-    private func authorizeHealthKit() {
-        HealthManager.authorizeHealthKit { (authorized, error) in
-            guard authorized else {
-                
-                let baseMessage = "HealthKit Authorization Failed"
-                
-                if let error = error {
-                    print("\(baseMessage). Reason: \(error.localizedDescription)")
-                } else {
-                    print(baseMessage)
-                }
-                
-                return
-            }
-            print("HealthKit Successfully Authorized.")
-        }
-        
-    }
-}
+

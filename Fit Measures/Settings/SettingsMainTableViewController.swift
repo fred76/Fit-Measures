@@ -10,6 +10,7 @@ import UIKit
 import MessageUI
 import HealthKit
 import StoreKit
+ 
 class SettingsMainTableViewController: UITableViewController, UITextFieldDelegate, MFMailComposeViewControllerDelegate, SKRequestDelegate{
     
     @IBOutlet weak var ageTextField: UITextField!
@@ -122,6 +123,7 @@ class SettingsMainTableViewController: UITableViewController, UITextFieldDelegat
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField == ageTextField {
             UserDefaultsSettings.ageSet = textField.text?.doubleValue ?? 10.0
+            
         }
         if textField == heightTextField{
             UserDefaultsSettings.heightSet = textField.text?.doubleValue ?? 10.0
@@ -193,7 +195,7 @@ class SettingsMainTableViewController: UITableViewController, UITextFieldDelegat
             if indexPath.row == 1 {
                 share()
             }
-            if indexPath.row == 2 {
+            if indexPath.row == 2 { 
                 sendEmail()
             }
             
@@ -246,18 +248,20 @@ class SettingsMainTableViewController: UITableViewController, UITextFieldDelegat
                     privacyController?.textString = "methodIta"
                 }
             }
+            FirebaseManager.shared.trackLogEvent(type: "privacyController", id: "privacyController Method")
             privacyController?.title = "Method"
             
         }
         if segue.identifier == "Privacy"{
             privacyController?.textString = "Privacy"
             privacyController?.title = "Privacy"
-            
+            FirebaseManager.shared.trackLogEvent(type: "privacyController", id: "privacyController Privacy")
         }
         
         if segue.identifier == "Credits"  {
             privacyController?.textString = "Credit"
             privacyController?.title = "Credits"
+            FirebaseManager.shared.trackLogEvent(type: "privacyController", id: "Credits")
         }
         
         

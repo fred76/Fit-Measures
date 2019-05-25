@@ -61,6 +61,23 @@ class DownloadManager: NSObject {
                 }
                 
                 if let jsonNutriments = json[i]["nutriments"].dictionary {
+                    
+                    if let productProtein = jsonNutriments["proteins_value"]?.double {
+                        productDetail.proteinsValue = "\(productProtein)"
+                    }
+                    
+                    if let productCarbohydrates = jsonNutriments["carbohydrates_value"]?.double {
+                        productDetail.carbohydrates = "\(productCarbohydrates)"
+                    }
+                    
+                    if let productFat = jsonNutriments["fat_value"]?.double {
+                        productDetail.fatValue = "\(productFat)"
+                    }
+                    
+                    if let productProtein = jsonNutriments["proteins_value"]?.string {
+                        productDetail.proteinsValue = productProtein
+                    }
+                    
                     if let productCarbohydrates = jsonNutriments["carbohydrates_value"]?.string {
                         productDetail.carbohydrates = productCarbohydrates
                     }
@@ -69,9 +86,7 @@ class DownloadManager: NSObject {
                         productDetail.fatValue = productFat
                     }
                     
-                    if let productProtein = jsonNutriments["proteins_value"]?.string {
-                        productDetail.proteinsValue = productProtein
-                    }
+                    
                 }
                 
                
@@ -128,7 +143,19 @@ class DownloadManager: NSObject {
             }
             
             if let jsonNutriments = jsonProduct["nutriments"]?.dictionary {
-               
+                
+                if let productCarbohydrates = jsonNutriments["carbohydrates_value"]?.double {
+                    self.productDetail.carbohydrates = "\(productCarbohydrates)"
+                }
+                
+                if let productFat = jsonNutriments["fat_value"]?.double {
+                    self.productDetail.fatValue = "\(productFat)"
+                }
+                
+                if let productProtein = jsonNutriments["proteins_value"]?.string {
+                    self.productDetail.proteinsValue = productProtein
+                }
+                
                 if let productCarbohydrates = jsonNutriments["carbohydrates_value"]?.string {
                     self.productDetail.carbohydrates = productCarbohydrates
                 }

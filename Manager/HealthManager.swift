@@ -16,6 +16,8 @@
             return
         }
         
+        
+        
         if HKHealthStore.isHealthDataAvailable() {
             guard //WRITE
                 let bodyFatPercentage = HKSampleType.quantityType(forIdentifier: .bodyFatPercentage),

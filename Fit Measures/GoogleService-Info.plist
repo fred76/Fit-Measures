@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>254749501235-drodrrd4ma7gto96jciou7u7gs8bhqr4.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.254749501235-drodrrd4ma7gto96jciou7u7gs8bhqr4</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDmgzYOjp2joeJZG9VG5iP1enoLjm54ktE</string>
+	<key>GCM_SENDER_ID</key>
+	<string>254749501235</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>fred76.com.ifit</string>
+	<key>PROJECT_ID</key>
+	<string>girthscaliper</string>
+	<key>STORAGE_BUCKET</key>
+	<string>girthscaliper.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:254749501235:ios:99a7d4a537fbaea3</string>
+	<key>DATABASE_URL</key>
+	<string>https://girthscaliper.firebaseio.com</string>
+	<key>ADMOB_APP_ID</key>
+	<string>ca-app-pub-9833367902957453~1306670365</string>
+</dict>
+</plist>

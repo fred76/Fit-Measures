@@ -18,6 +18,14 @@ class UserDefaultsSettings {
     private static let isAlreadyAppeared = "isAlreadyAppeared"
     private static let cloudSynch = "cloudSynch"
     private static let appVersion = "appVersion"
+    private static let healthKitStatus = "healthKitStatus"
+    private static let GDPRStatus = "GDPRStatus"
+    
+    static var GDPRStatusSet: Bool {
+        get { return UserDefaults.standard.bool(forKey: GDPRStatus) }
+        set {UserDefaults.standard.set(newValue, forKey: GDPRStatus)}
+    }
+    
     
     static var appVersionSet: String {
         get { return UserDefaults.standard.string(forKey: appVersion)! }

@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import CloudKit
+import HealthKit
 extension AppDelegate {
     func navBarAppereance() {
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
@@ -19,18 +20,17 @@ extension AppDelegate {
     }
     
     func tabBarAppereance() {
-    if let wTB = ( self.window?.rootViewController as? UITabBarController ) {
-        wTB.tabBar.tintColor = StaticClass.blueButton
-        wTB.tabBar.barTintColor = UIColor.black
-        wTB.tabBar.isTranslucent = true
-        if !UserDefaultsSettings.serchForKey(kUsernameKey: "age"){
-            wTB.selectedIndex = 4
+        if let wTB = ( self.window?.rootViewController as? MyTabbarController ) {
+            wTB.tabBar.tintColor = StaticClass.blueButton
+            wTB.tabBar.barTintColor = UIColor.black
+            wTB.tabBar.isTranslucent = true
+            if !UserDefaultsSettings.serchForKey(kUsernameKey: "age"){
+                wTB.selectedIndex = 4
+            }
+            
         }
-        
-    }
     }
     func alertAboutiCloud(){
-        UserDefaultsSettings.isAlreadyAppearedSet = false
         if !UserDefaultsSettings.cloudSynchSet {
             CKContainer.default().accountStatus { (accountStatus, error) in
                 switch accountStatus {
@@ -49,19 +49,11 @@ extension AppDelegate {
                 @unknown default: print("Error")
                 }
             }
-        } else {
+        } else { 
             self.setupEnsemble(iCloudIsOn: UserDefaultsSettings.cloudSynchSet)
-        }
-    }
-    func showInitialAlert(){
-        if !UserDefaultsSettings.isAlreadyAppearedSet{
-            if !UserDefaultsSettings.firstLunchSet {
-                let customAlert = self.window?.rootViewController?.storyboard?.instantiateViewController(withIdentifier: "AllertIntroID") as! AllertViewIntro
-                self.window?.rootViewController!.present(customAlert, animated: true, completion: nil)
             }
         }
-    }
-    
+  
     func setupUnitMeasure(){
         if !UserDefaultsSettings.serchForKey(kUsernameKey: "weightUnit"){
             UserDefaultsSettings.weightUnitSet = "Kg"
@@ -73,4 +65,7 @@ extension AppDelegate {
             UserDefaultsSettings.biologicalSexSet = "Male"
         }
     }
+    
 }
+
+

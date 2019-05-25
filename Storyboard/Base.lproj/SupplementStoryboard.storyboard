@@ -841,7 +841,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xXe-ju-iQP">
-                                    <rect key="frame" x="155" y="-81" width="104" height="30"/>
+                                    <rect key="frame" x="155" y="7" width="104" height="30"/>
                                     <state key="normal" title="Search More ..."/>
                                     <connections>
                                         <action selector="more:" destination="yAq-qd-zlL" eventType="touchUpInside" id="ayJ-NX-vuC"/>
@@ -850,7 +850,7 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="xXe-ju-iQP" firstAttribute="centerY" secondItem="Gn3-CD-0Ge" secondAttribute="centerY" constant="-88" id="t3T-Pf-XqP"/>
+                                <constraint firstItem="xXe-ju-iQP" firstAttribute="centerY" secondItem="Gn3-CD-0Ge" secondAttribute="centerY" id="t3T-Pf-XqP"/>
                                 <constraint firstItem="xXe-ju-iQP" firstAttribute="centerX" secondItem="Gn3-CD-0Ge" secondAttribute="centerX" id="yOf-At-p2z"/>
                             </constraints>
                         </view>

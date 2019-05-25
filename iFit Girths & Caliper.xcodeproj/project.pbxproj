@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		662E9C91229551CD00CB745C /* ConsentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662E9C90229551CD00CB745C /* ConsentManager.swift */; };
+		667DF401228FF193005176FF /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 667DF3FC228FF193005176FF /* AdSupport.framework */; };
+		667DF42622913DE1005176FF /* PageMenuIntro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667DF42522913DE1005176FF /* PageMenuIntro.swift */; };
+		667DF4292291440E005176FF /* HealthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667DF4282291440E005176FF /* HealthController.swift */; };
+		667DF42B2291443B005176FF /* GDPRController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667DF42A2291443B005176FF /* GDPRController.swift */; };
+		667DF42D22916394005176FF /* MyTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667DF42C22916394005176FF /* MyTabbarController.swift */; };
+		667DF42F2291CC52005176FF /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 667DF42E2291CC52005176FF /* Settings.bundle */; };
+		66F91584228D3AF400AC0D54 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F91583228D3AF400AC0D54 /* FirebaseManager.swift */; };
 		9506885421CF90F3006AC1DB /* AppStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9506885321CF90F3006AC1DB /* AppStoreManager.swift */; };
 		9506885C21D01D9C006AC1DB /* measureRowValueDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9506885B21D01D9C006AC1DB /* measureRowValueDetails.swift */; };
 		95084E3721D4AAC200EF307A /* AllertViewIntro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95084E3621D4AAC200EF307A /* AllertViewIntro.swift */; };
@@ -120,7 +128,6 @@
 		95D97A21226492E9002A4515 /* SupplemetInsertedManuallyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D97A20226492E9002A4515 /* SupplemetInsertedManuallyController.swift */; };
 		95D97A27226493B0002A4515 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D97A26226493B0002A4515 /* CameraManager.swift */; };
 		95D97A2922663B07002A4515 /* AppDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D97A2822663B07002A4515 /* AppDelegateExtension.swift */; };
-		95D98AAF22798F9B005919D0 /* ExtensionAppDelegateInAppPurchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D98AAE22798F9B005919D0 /* ExtensionAppDelegateInAppPurchase.swift */; };
 		95DB84AA21ADA84D00D13E6A /* StaticClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DB84A921ADA84D00D13E6A /* StaticClass.swift */; };
 		95DB84AC21ADB1F300D13E6A /* PlicoMainControllerTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DB84AB21ADB1F300D13E6A /* PlicoMainControllerTable.swift */; };
 		95DB84AE21ADE98800D13E6A /* PlicheMoethodController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DB84AD21ADE98800D13E6A /* PlicheMoethodController.swift */; };
@@ -134,6 +141,12 @@
 		95DD858B2255C41300087CEB /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DD85862255C41200087CEB /* SwiftyJSON.swift */; };
 		95E9B4DA21C8DA0E00C8A076 /* VirtualPlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E9B4D821C8DA0E00C8A076 /* VirtualPlane.swift */; };
 		95E9B4DC21C8DA1900C8A076 /* my.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 95E9B4DB21C8DA1900C8A076 /* my.scnassets */; };
+		95E9C6DA228C141E00433558 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95E9C6D9228C141E00433558 /* GoogleService-Info.plist */; };
+		95E9C6ED228C16B800433558 /* FIRAnalyticsConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E9C6E4228C16B700433558 /* FIRAnalyticsConnector.framework */; };
+		95E9C6EE228C16B800433558 /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E9C6E9228C16B700433558 /* FirebaseAnalytics.framework */; };
+		95E9C6EF228C16B800433558 /* FirebaseCoreDiagnostics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E9C6EA228C16B700433558 /* FirebaseCoreDiagnostics.framework */; };
+		95E9C6F0228C16B800433558 /* FirebaseInstanceID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E9C6EB228C16B700433558 /* FirebaseInstanceID.framework */; };
+		95E9C6F1228C16B800433558 /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E9C6EC228C16B700433558 /* FirebaseCore.framework */; };
 		95EB82F621E7B1C200AB639D /* BodyMeasure+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EB82EE21E7B1C200AB639D /* BodyMeasure+CoreDataClass.swift */; };
 		95EB82F821E7B1C200AB639D /* PicFullRes+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EB82F021E7B1C200AB639D /* PicFullRes+CoreDataClass.swift */; };
 		95EB82FA21E7B1C200AB639D /* PlicheMeasure+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EB82F221E7B1C200AB639D /* PlicheMeasure+CoreDataClass.swift */; };
@@ -219,6 +232,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		662E9C90229551CD00CB745C /* ConsentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentManager.swift; sourceTree = "<group>"; };
+		667DF3FC228FF193005176FF /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		667DF42522913DE1005176FF /* PageMenuIntro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageMenuIntro.swift; sourceTree = "<group>"; };
+		667DF4282291440E005176FF /* HealthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthController.swift; sourceTree = "<group>"; };
+		667DF42A2291443B005176FF /* GDPRController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDPRController.swift; sourceTree = "<group>"; };
+		667DF42C22916394005176FF /* MyTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabbarController.swift; sourceTree = "<group>"; };
+		667DF42E2291CC52005176FF /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		66F91583228D3AF400AC0D54 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		9506885321CF90F3006AC1DB /* AppStoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStoreManager.swift; sourceTree = "<group>"; };
 		9506885B21D01D9C006AC1DB /* measureRowValueDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = measureRowValueDetails.swift; sourceTree = "<group>"; };
 		95084E3621D4AAC200EF307A /* AllertViewIntro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllertViewIntro.swift; sourceTree = "<group>"; };
@@ -351,7 +372,6 @@
 		95D97A20226492E9002A4515 /* SupplemetInsertedManuallyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplemetInsertedManuallyController.swift; sourceTree = "<group>"; };
 		95D97A26226493B0002A4515 /* CameraManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
 		95D97A2822663B07002A4515 /* AppDelegateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateExtension.swift; sourceTree = "<group>"; };
-		95D98AAE22798F9B005919D0 /* ExtensionAppDelegateInAppPurchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionAppDelegateInAppPurchase.swift; sourceTree = "<group>"; };
 		95DB84A921ADA84D00D13E6A /* StaticClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticClass.swift; sourceTree = "<group>"; };
 		95DB84AB21ADB1F300D13E6A /* PlicoMainControllerTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlicoMainControllerTable.swift; sourceTree = "<group>"; };
 		95DB84AD21ADE98800D13E6A /* PlicheMoethodController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlicheMoethodController.swift; sourceTree = "<group>"; };
@@ -365,6 +385,12 @@
 		95DD85862255C41200087CEB /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		95E9B4D821C8DA0E00C8A076 /* VirtualPlane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirtualPlane.swift; sourceTree = "<group>"; };
 		95E9B4DB21C8DA1900C8A076 /* my.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = my.scnassets; sourceTree = "<group>"; };
+		95E9C6D9228C141E00433558 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		95E9C6E4228C16B700433558 /* FIRAnalyticsConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FIRAnalyticsConnector.framework; sourceTree = "<group>"; };
+		95E9C6E9228C16B700433558 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		95E9C6EA228C16B700433558 /* FirebaseCoreDiagnostics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseCoreDiagnostics.framework; sourceTree = "<group>"; };
+		95E9C6EB228C16B700433558 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseInstanceID.framework; sourceTree = "<group>"; };
+		95E9C6EC228C16B700433558 /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseCore.framework; sourceTree = "<group>"; };
 		95EB82EE21E7B1C200AB639D /* BodyMeasure+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BodyMeasure+CoreDataClass.swift"; sourceTree = "<group>"; };
 		95EB82F021E7B1C200AB639D /* PicFullRes+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PicFullRes+CoreDataClass.swift"; sourceTree = "<group>"; };
 		95EB82F221E7B1C200AB639D /* PlicheMeasure+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlicheMeasure+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -389,11 +415,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				667DF401228FF193005176FF /* AdSupport.framework in Frameworks */,
 				951AD5F92227D7BA009E046A /* CloudKit.framework in Frameworks */,
+				95E9C6F1228C16B800433558 /* FirebaseCore.framework in Frameworks */,
 				951AD60B2227D825009E046A /* Ensembles.framework in Frameworks */,
 				9521B9F3224E0CE000E9A7A5 /* GoogleMobileAds.framework in Frameworks */,
 				9521B9F1224E0CE000E9A7A5 /* GoogleAppMeasurement.framework in Frameworks */,
+				95E9C6EE228C16B800433558 /* FirebaseAnalytics.framework in Frameworks */,
+				95E9C6ED228C16B800433558 /* FIRAnalyticsConnector.framework in Frameworks */,
 				9521B9F2224E0CE000E9A7A5 /* nanopb.framework in Frameworks */,
+				95E9C6F0228C16B800433558 /* FirebaseInstanceID.framework in Frameworks */,
+				95E9C6EF228C16B800433558 /* FirebaseCoreDiagnostics.framework in Frameworks */,
 				95ACDF4221C812DE003A77BD /* HealthKit.framework in Frameworks */,
 				9521B9F0224E0CE000E9A7A5 /* GoogleUtilities.framework in Frameworks */,
 				959B10DD21CA751500CF2E3F /* Charts.framework in Frameworks */,
@@ -403,6 +435,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		667DF427229143D9005176FF /* IntroPageMenu */ = {
+			isa = PBXGroup;
+			children = (
+				667DF42522913DE1005176FF /* PageMenuIntro.swift */,
+				95084E3621D4AAC200EF307A /* AllertViewIntro.swift */,
+				667DF42A2291443B005176FF /* GDPRController.swift */,
+				667DF4282291440E005176FF /* HealthController.swift */,
+			);
+			path = IntroPageMenu;
+			sourceTree = "<group>";
+		};
 		9509532A226D8C7E002E89DB /* fit UITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -538,8 +581,8 @@
 			isa = PBXGroup;
 			children = (
 				95F21A6D2254C55C00049520 /* UserSupplementListAndScan.swift */,
-				95D97A20226492E9002A4515 /* SupplemetInsertedManuallyController.swift */,
 				95338648225BF88E009DBECB /* SupplementDetailsController.swift */,
+				95D97A20226492E9002A4515 /* SupplemetInsertedManuallyController.swift */,
 				953386202255DA9C009DBECB /* SupplementSearchedByName.swift */,
 				953386222255DAE2009DBECB /* ProductCellForSearched.swift */,
 				950B716F22632C1200596167 /* SelectedProductCell.swift */,
@@ -597,6 +640,7 @@
 		95946BD021AB458700D534D0 = {
 			isa = PBXGroup;
 			children = (
+				667DF42E2291CC52005176FF /* Settings.bundle */,
 				95F97974227C856100E6E08E /* Default-568h@2x.png */,
 				951AD5FA2227D7E8009E046A /* Ensembles iOS.xcodeproj */,
 				959B10CE21CA74D600CF2E3F /* Charts.xcodeproj */,
@@ -628,7 +672,9 @@
 				95523A5921B0921700761D1B /* Header.h */,
 				95F97976227C85C300E6E08E /* Info.plist */,
 				959FDF30227445CF00D1BE60 /* InfoPlist.strings */,
+				95E9C6D9228C141E00433558 /* GoogleService-Info.plist */,
 				954927F121BEFE3200F78FD8 /* Fit Measures.entitlements */,
+				667DF427229143D9005176FF /* IntroPageMenu */,
 				95DB84D321B006ED00D13E6A /* Girth */,
 				95DB84D221B006C900D13E6A /* SkinFold */,
 				95DB84D421B0070C00D13E6A /* Camera */,
@@ -638,6 +684,7 @@
 				95DB84A821ADA82600D13E6A /* Convenient Class */,
 				95946C1821AB4C7E00D534D0 /* Custom Class */,
 				9533863222568F54009DBECB /* Library */,
+				667DF42C22916394005176FF /* MyTabbarController.swift */,
 			);
 			path = "Fit Measures";
 			sourceTree = "<group>";
@@ -645,7 +692,6 @@
 		95946C1821AB4C7E00D534D0 /* Custom Class */ = {
 			isa = PBXGroup;
 			children = (
-				95084E3621D4AAC200EF307A /* AllertViewIntro.swift */,
 				95946C9D21AD416600D534D0 /* AllertViewGirthInsert.swift */,
 				95DB84B121ADF37600D13E6A /* AllertViewSkinFoldInsert.swift */,
 				9542CD2321BAA2AE00D72B6A /* AllertViewSkinFoldInsertWithGraph.swift */,
@@ -681,6 +727,12 @@
 		95ACDF4021C812DE003A77BD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				667DF3FC228FF193005176FF /* AdSupport.framework */,
+				95E9C6E4228C16B700433558 /* FIRAnalyticsConnector.framework */,
+				95E9C6E9228C16B700433558 /* FirebaseAnalytics.framework */,
+				95E9C6EC228C16B700433558 /* FirebaseCore.framework */,
+				95E9C6EA228C16B700433558 /* FirebaseCoreDiagnostics.framework */,
+				95E9C6EB228C16B700433558 /* FirebaseInstanceID.framework */,
 				9521B9ED224E0CDE00E9A7A5 /* GoogleAppMeasurement.framework */,
 				9521B9EF224E0CE000E9A7A5 /* GoogleMobileAds.framework */,
 				9521B9E8224E0CDE00E9A7A5 /* GoogleUtilities.framework */,
@@ -702,8 +754,9 @@
 				95ACDF3E21C7AAAB003A77BD /* HealthManager.swift */,
 				95C6AE2E224141C5000C48C6 /* IAPHelper.swift */,
 				95C6AE3022414224000C48C6 /* GandCProducts.swift */,
+				66F91583228D3AF400AC0D54 /* FirebaseManager.swift */,
+				662E9C90229551CD00CB745C /* ConsentManager.swift */,
 				95D97A2822663B07002A4515 /* AppDelegateExtension.swift */,
-				95D98AAE22798F9B005919D0 /* ExtensionAppDelegateInAppPurchase.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -930,9 +983,11 @@
 				9521B9F7225017FA00E9A7A5 /* Assets.xcassets in Resources */,
 				954927EB21BEEFC900F78FD8 /* Istruzioni.rtf in Resources */,
 				957CC16021D59F9A00B0AFCF /* method.rtf in Resources */,
+				667DF42F2291CC52005176FF /* Settings.bundle in Resources */,
 				95DB84C421AEE1EE00D13E6A /* Credit.rtf in Resources */,
 				95D64C9021E499D80071532C /* CameraUse_it.rtf in Resources */,
 				959FDF0C22742C3D00D1BE60 /* InsightStoryboard.storyboard in Resources */,
+				95E9C6DA228C141E00433558 /* GoogleService-Info.plist in Resources */,
 				95E9B4DC21C8DA1900C8A076 /* my.scnassets in Resources */,
 				959FDEF422742BE800D1BE60 /* Main.storyboard in Resources */,
 				95338645225B8219009DBECB /* IngredientsUIView.xib in Resources */,
@@ -1026,6 +1081,7 @@
 				95A05D9521D24A450033B0AB /* SkinFoldsRawValuDetails.swift in Sources */,
 				952B464622684B710005FD5B /* CAPSPageMenu+UIConfiguration.swift in Sources */,
 				9506885C21D01D9C006AC1DB /* measureRowValueDetails.swift in Sources */,
+				667DF42D22916394005176FF /* MyTabbarController.swift in Sources */,
 				95153BB721CC05DC0031FFB9 /* enum.swift in Sources */,
 				953386122255D396009DBECB /* Result.swift in Sources */,
 				95ACDF3F21C7AAAC003A77BD /* HealthManager.swift in Sources */,
@@ -1040,6 +1096,7 @@
 				950B71772263551800596167 /* Supplement+CoreDataClass.swift in Sources */,
 				9506885421CF90F3006AC1DB /* AppStoreManager.swift in Sources */,
 				95946C2421AC3C9100D534D0 /* MeasureCollectionViewCell.swift in Sources */,
+				667DF42B2291443B005176FF /* GDPRController.swift in Sources */,
 				95DB84AC21ADB1F300D13E6A /* PlicoMainControllerTable.swift in Sources */,
 				952B464422684B710005FD5B /* CAPSPageMenu.swift in Sources */,
 				95D97A2922663B07002A4515 /* AppDelegateExtension.swift in Sources */,
@@ -1047,10 +1104,10 @@
 				9533861B2255D396009DBECB /* ResponseSerialization.swift in Sources */,
 				95D97A21226492E9002A4515 /* SupplemetInsertedManuallyController.swift in Sources */,
 				95685D962227DA7200A2DF56 /* PlicheMeasure+CoreDataProperties.swift in Sources */,
+				662E9C91229551CD00CB745C /* ConsentManager.swift in Sources */,
 				954927E321BE92C100F78FD8 /* GhirtRawDataTableview.swift in Sources */,
 				950B717E226460C800596167 /* CirclePieView.swift in Sources */,
 				95DB84C621AEE25400D13E6A /* PrivacyController.swift in Sources */,
-				95D98AAF22798F9B005919D0 /* ExtensionAppDelegateInAppPurchase.swift in Sources */,
 				952B464822684B710005FD5B /* CAPSPageMenu+UIScrollViewDelegate.swift in Sources */,
 				9521B9F922538F9700E9A7A5 /* DataManagerGirth.swift in Sources */,
 				95DB84CB21AFF73D00D13E6A /* PicturesCell.swift in Sources */,
@@ -1059,6 +1116,8 @@
 				952B464E22684D960005FD5B /* MenuItemView.swift in Sources */,
 				95DB84B721AECA6600D13E6A /* SettingsMainTableViewController.swift in Sources */,
 				9541A9E621B1974D004AA622 /* UserDefaultsSettings.swift in Sources */,
+				66F91584228D3AF400AC0D54 /* FirebaseManager.swift in Sources */,
+				667DF42622913DE1005176FF /* PageMenuIntro.swift in Sources */,
 				9533860E2255D396009DBECB /* MultipartFormData.swift in Sources */,
 				95DB84AE21ADE98800D13E6A /* PlicheMoethodController.swift in Sources */,
 				953386112255D396009DBECB /* DispatchQueue+Alamofire.swift in Sources */,
@@ -1066,6 +1125,7 @@
 				95C6AE37224148FD000C48C6 /* ProductCell.swift in Sources */,
 				95DD858B2255C41300087CEB /* SwiftyJSON.swift in Sources */,
 				9533860F2255D396009DBECB /* NetworkReachabilityManager.swift in Sources */,
+				667DF4292291440E005176FF /* HealthController.swift in Sources */,
 				95685D942227DA7200A2DF56 /* Thumbnail+CoreDataProperties.swift in Sources */,
 				9533861F2255D423009DBECB /* DownloadManager.swift in Sources */,
 				952B464C22684C350005FD5B /* PageMenuBodyMeasurment.swift in Sources */,

@@ -151,7 +151,6 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         }
     }
     @IBAction func picturesSelfie(_ sender: Any) {
-        
         intitalView.alpha = 0
         if userPictureMode == .aReality {
             willDisappearAReality()
@@ -162,7 +161,7 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         shootButton.isHidden = false
         buttonAR.isEnabled = true
         buttonSelfie.isEnabled = false
-        
+
     }
     
     @IBAction func didTakePhoto(_ sender: Any) {
@@ -228,6 +227,7 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
             totalTime = 7
             let settings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
             stillImageOutput.capturePhoto(with: settings, delegate: self)
+            FirebaseManager.shared.trackLogEvent(type: "Pictures taken as", id: ".selfie")
             let authorizationStatus = AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
             
             switch authorizationStatus {
@@ -252,7 +252,7 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
             totalTime = 7
             let settings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
             stillImageOutput.capturePhoto(with: settings, delegate: self)
-            
+            FirebaseManager.shared.trackLogEvent(type: "Pictures taken as", id: ".aReality")
             let authorizationStatus = AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
             switch authorizationStatus {
             case .notDetermined:
@@ -272,6 +272,7 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
             }
         default : break
         }
+        
     }
     
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {

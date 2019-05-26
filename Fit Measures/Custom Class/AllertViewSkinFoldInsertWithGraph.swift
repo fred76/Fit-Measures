@@ -211,8 +211,8 @@ class AllertViewSkinFoldInsertWithGraph: UIViewController, ChartViewDelegate {
             case .jackson_7:notPurchasedLabel.isHidden = false
             case .jackson_3_Man:notPurchasedLabel.isHidden = false
             case .jackson_3_Woman:notPurchasedLabel.isHidden = false
-            case .sloanMen:notPurchasedLabel.isHidden = true
-            case .sloanWoman:notPurchasedLabel.isHidden = true
+            case .sloanMen:notPurchasedLabel.isHidden = false
+            case .sloanWoman:notPurchasedLabel.isHidden = false
             case .DurninMan:notPurchasedLabel.isHidden = true
                 
             }

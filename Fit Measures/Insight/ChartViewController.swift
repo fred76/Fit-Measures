@@ -27,8 +27,7 @@ class ChartViewController: UIViewController, ChartViewDelegate {
     var weightButtonisHidden : Bool = false
     var weightButtonTitle : String! = loc("LOCALOverlayWeight")
     
-    @IBOutlet var weightButton: UIButton!
-    var insightMainController : InsightMainController!
+    @IBOutlet var weightButton: UIButton! 
     @IBOutlet weak var chartView: LineChartView!
     var titleGraph : String! = "Non passa"
     
@@ -59,17 +58,16 @@ class ChartViewController: UIViewController, ChartViewDelegate {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
-        AppUtility.lockOrientation(.all, andRotateTo: .portrait)
+        AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
     }
+	
     var ds : [String] = []
     var isWeight : Bool = false
     
     @IBAction func shareButton(_ sender: Any) {
         shareImage()
     }
-    
-    
+     
     @IBAction func togleWeight(_ sender: Any) {
         isWeight = !isWeight
         if isWeight{

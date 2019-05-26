@@ -30,7 +30,7 @@ class PageMenuBodyMeasurment: UIViewController {
         super.viewDidLoad()
         
         let storyboardGirth = UIStoryboard(name: "GirthStoryboard", bundle: nil)
-        let controllerGirth : UIViewController = (storyboardGirth.instantiateViewController(withIdentifier: "MeasureMainController") as? MeasureMainController)!
+        let controllerGirth : UIViewController = (storyboardGirth.instantiateViewController(withIdentifier: "MeasureMainController") as? GirthsMainController)!
         controllerGirth.title = "Body Girths"
        _ = StaticClass.didLoadView(v: controllerGirth)
         controllerArray.append(controllerGirth)
@@ -86,8 +86,9 @@ class PageMenuBodyMeasurment: UIViewController {
             .titleTextSizeBasedOnMenuItemWidth(true),
             .scrollAnimationDurationOnMenuItemTap(500)
         ]
-        
+		
          pageMenu = CAPSPageMenu(viewControllers: controllerArray, frame: CGRect(x: 0.0, y: 0, width: self.contentView.frame.width, height: self.contentView.frame.height), pageMenuOptions: parameters)
+		pageMenu?.currentOrientationIsPortrait = true
         self.addChild(pageMenu!)
         self.contentView.addSubview(pageMenu!.view)
         self.pageMenu?.didMove(toParent: self)

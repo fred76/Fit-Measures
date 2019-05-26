@@ -10,7 +10,6 @@ import UIKit
 import CoreData
 import HealthKit
 import StoreKit
-import GoogleMobileAds
 protocol AlertViewDelegate {
     func alertSending(sender: UIAlertController)
 }
@@ -21,10 +20,10 @@ private struct ItemDef {
     let image :String
 }
 
-class MeasureMainController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIPopoverPresentationControllerDelegate, SKRequestDelegate, GADBannerViewDelegate {
+class GirthsMainController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIPopoverPresentationControllerDelegate, SKRequestDelegate {
+	
     private var itemDef : [ItemDef]!
-    var bannerView: GADBannerView!
-
+	 
     private let userHealthProfile = UserHealthProfile()
     @IBOutlet weak var measureCollctionView: UICollectionView!
     var bodyMeasurementPoint = BodyMeasurementPoints.weight 
@@ -67,58 +66,13 @@ class MeasureMainController: UIViewController, UICollectionViewDelegate, UIColle
         self.navigationItem.rightBarButtonItem?.isEnabled = false
         isAdded = DataManager.shared.bodyMeasurementForTodayIsAvailable()
         readItemDeaf () 
-        if  DataManager.shared.purchasedGirthsAndSkinfilds() {
-            print("something purchased")} else {
-            bannerView = GADBannerView(adSize: kGADAdSizeBanner)
-            addBannerViewToView(bannerView)
-            bannerView.adUnitID = StaticClass.GandCBannerStringProduction
-            bannerView.rootViewController = self
-            bannerView.load(GADRequest())
-            bannerView.delegate = self}
+		
+		AddMobManager.shared.addBanner(v: view, controller: self)
         
         measureCollctionView.reloadData()
     }
     
-    func addBannerViewToView(_ bannerView: GADBannerView) {
-        bannerView.translatesAutoresizingMaskIntoConstraints = false
-        
-        view.addSubview(bannerView)
-        if #available(iOS 11.0, *) {
-            positionBannerAtBottomOfSafeArea(bannerView)
-        }
-        else {
-            positionBannerAtBottomOfView(bannerView)
-        }
-    }
-    
-    @available (iOS 11, *)
-    func positionBannerAtBottomOfSafeArea(_ bannerView: UIView) {
-        let guide: UILayoutGuide = view.safeAreaLayoutGuide
-        
-        NSLayoutConstraint.activate(
-            [bannerView.centerXAnchor.constraint(equalTo: guide.centerXAnchor),
-             bannerView.bottomAnchor.constraint(equalTo: guide.bottomAnchor)]
-        )
-    }
-    
-    func positionBannerAtBottomOfView(_ bannerView: UIView) {
-        // Center the banner horizontally.
-        view.addConstraint(NSLayoutConstraint(item: bannerView,
-                                              attribute: .centerX,
-                                              relatedBy: .equal,
-                                              toItem: view,
-                                              attribute: .centerX,
-                                              multiplier: 1,
-                                              constant: 0))
-        // Lock the banner to the top of the bottom layout guide.
-        view.addConstraint(NSLayoutConstraint(item: bannerView,
-                                              attribute: .bottom,
-                                              relatedBy: .equal,
-                                              toItem: view.safeAreaLayoutGuide.bottomAnchor,
-                                              attribute: .top,
-                                              multiplier: 1,
-                                              constant: 0))
-    }
+	
     func readItemDeaf (){
         bodyMeasureSelected = DataManager.shared.getLastMeasureAvailable()
         let m = bodyMeasureSelected
@@ -175,7 +129,7 @@ class MeasureMainController: UIViewController, UICollectionViewDelegate, UIColle
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = measureCollctionView.dequeueReusableCell(withReuseIdentifier: "MeasureCell", for: indexPath) as! MeasureCollectionViewCell
+        let cell = measureCollctionView.dequeueReusableCell(withReuseIdentifier: "MeasureCell", for: indexPath) as! GirthsCollectionViewCell
         let def = self.itemDef[indexPath.row]
         cell.imageContent.image = UIImage(named: def.image)
         cell.nameLabel.text = def.title
@@ -209,7 +163,7 @@ class MeasureMainController: UIViewController, UICollectionViewDelegate, UIColle
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        if let cell = collectionView.cellForItem(at: indexPath) as? MeasureCollectionViewCell {
+        if let cell = collectionView.cellForItem(at: indexPath) as? GirthsCollectionViewCell {
             indexPathSelected = indexPath
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let customAlert = storyboard.instantiateViewController(withIdentifier: "CustomAlertID") as! AllertViewGirthInsert
@@ -266,10 +220,10 @@ class MeasureMainController: UIViewController, UICollectionViewDelegate, UIColle
     
 }
 
-extension MeasureMainController : AllertViewGirthInsertDelegate {
+extension GirthsMainController : AllertViewGirthInsertDelegate {
     func okButtonTapped(selectedOption: String, textFieldValue: String) {
         FirebaseManager.shared.trackLogEvent(type: "Girths", id: bodyMeasurementPoint.rawValue.self)
-        if let cell = measureCollctionView.cellForItem(at: indexPathSelected) as? MeasureCollectionViewCell {
+        if let cell = measureCollctionView.cellForItem(at: indexPathSelected) as? GirthsCollectionViewCell {
             setTabBarHidden(false)
             if textFieldValue.isEmpty == false {
                 var text = textFieldValue
@@ -330,7 +284,7 @@ extension MeasureMainController : AllertViewGirthInsertDelegate {
 }
 
 
-extension MeasureMainController { 
+extension GirthsMainController { 
     private func updateHealthInfo(closure: @escaping ()->()) {
         loadAndDisplayAgeSexAndBloodType()
         loadAndDisplayMostRecentHeight()

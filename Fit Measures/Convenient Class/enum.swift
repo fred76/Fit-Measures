@@ -44,13 +44,18 @@ enum Supplementlabels : String {
 }
 
 enum PlicheMethods : String {
-    case jackson_7 = "jackson & Polloc 7 point"
-   // case jackson_4 = "jackson & Polloc 4 point"
+    case jackson_7 = "jackson & Polloc 7 point" 
     case jackson_3_Man = "jackson & Polloc 3 point Man"
     case jackson_3_Woman = "jackson & Polloc 3 point Woman"
     case sloanMen = "Sloan - Men 2 point"
     case sloanWoman = "Sloan - Woman 2 point"
     case DurninMan = "Durnin & Womersley Man 4 Pliche"
+}
+
+enum GraphSelection : String {
+	case Girths = "Girths"
+	case SkinFolds = "SkinFolds"
+	case GirthsOverSkinFolds = "GirthsOverSkinFolds"
 }
 
 enum BodyMeasurementPoints : String {

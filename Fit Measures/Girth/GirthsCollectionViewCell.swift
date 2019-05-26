@@ -8,11 +8,14 @@
 
 import UIKit
 
-class MeasureCollectionViewCell: UICollectionViewCell {
+class GirthsCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageContent: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var measureLabel: UILabel!
     @IBOutlet weak var nameLabelCenterPosition: NSLayoutConstraint!
-    
+	
+	override func awakeFromNib() {
+		
+	}
 }

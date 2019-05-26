@@ -12,12 +12,14 @@ import UIKit
 class CustomViewDoubleColor: UIView {
     
     override func layoutSubviews() { setup() } // "layoutSubviews" is best
-   
+	
+	var headerHeight : CGFloat = 32
+     var r : CGFloat = 16.0
     func setup() { 
         
         self.backgroundColor = StaticClass.alertViewBackgroundColor
         
-        let r : CGFloat = 16.0
+		
         
         let path = UIBezierPath(roundedRect: self.bounds, cornerRadius:r)
         let mask = CAShapeLayer()
@@ -25,7 +27,7 @@ class CustomViewDoubleColor: UIView {
        self.layer.mask = mask
         
         let layer = CAShapeLayer()
-        layer.path = UIBezierPath(rect: CGRect(x: 0, y: 0, width: self.bounds.width, height: 32)).cgPath
+        layer.path = UIBezierPath(rect: CGRect(x: 0, y: 0, width: self.bounds.width, height: headerHeight)).cgPath
         layer.fillColor = StaticClass.alertViewHeaderColor.cgColor
         self.layer.insertSublayer(layer, at: 0)
     

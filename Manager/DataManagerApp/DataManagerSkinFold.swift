@@ -320,6 +320,7 @@ extension DataManager {
         
         // let plicheMethod = PlicheMethods.jackson_3_Man
         var plicheValueEntry : PlicheMeasure!
+		
         if plicheForTodayIsVavailable() {
             plicheValueEntry = getLastPlicheAvailable()!
         }
@@ -328,7 +329,7 @@ extension DataManager {
             plicheValueEntry.uniqueIdentifier = uuid + StaticClass.dateFormatterLongLong.string(from: now) as NSString
             
         }
-        
+			
         
         var lastWeight : Double = 0
         if let lastWeightA = getLastMeasureAvailable()?.weight {
@@ -538,3 +539,236 @@ extension DataManager {
         return (sum, bodyDensity,bodyFatPerc,leanMass,fatMass, lastWeight)
     }
 }
+
+
+class pippo: NSObject {
+	
+	static let shared = pippo()
+	var abdominal: Double = 0
+	var age: Double = 0
+	var biceps: Double = 0
+	var bodyDensity: Double = 0
+	var bodyFatPerc: Double = 0
+	var chest: Double = 0
+	var dateOfEntry: NSDate?
+	var leanMass: Double = 0
+	var method: String?
+	var midaxillary: Double = 0
+	var subscapular: Double = 0
+	var sum: Double = 0
+	var suprailiac: Double = 0
+	var thigh: Double = 0
+	var triceps: Double = 0
+	var weight: Double = 0
+	
+	func plicheAddedByUser(abdominal: Double?, biceps: Double?,chest: Double?,midaxillary: Double?,subscapular: Double?,suprailiac: Double?,thigh: Double?,triceps: Double?, viewVontroller : UIViewController,plicheMethod : String) -> (sum : Double,bodyDensity : Double,bodyFatPerc : Double,leanMass : Double,fatMass : Double,lastWeight : Double) {
+		
+		// let plicheMethod = PlicheMethods.jackson_3_Man
+		let plicheValueEntry = self
+		
+		
+		
+		
+		var lastWeight : Double = 0
+		if let lastWeightA = DataManager.shared.getLastMeasureAvailable()?.weight {
+			lastWeight = lastWeightA
+		}
+		
+		
+		var sum : Double = 0
+		var bodyDensity : Double = 0
+		var bodyFatPerc : Double = 0
+		var leanMass : Double = 0
+		var fatMass : Double = 0
+		plicheValueEntry.weight = lastWeight
+		if plicheMethod == "jackson & Polloc 7 point" {
+			if let chest = chest, let abdominal = abdominal, let thigh = thigh,let midaxillary = midaxillary,let suprailiac = suprailiac,let subscapular = subscapular,let triceps = triceps {
+				plicheValueEntry.chest = chest
+				plicheValueEntry.abdominal = abdominal
+				plicheValueEntry.thigh = thigh
+				plicheValueEntry.midaxillary = midaxillary
+				plicheValueEntry.suprailiac = suprailiac
+				plicheValueEntry.subscapular = subscapular
+				plicheValueEntry.triceps = triceps
+				plicheValueEntry.method = plicheMethod
+				plicheValueEntry.dateOfEntry = StaticClass.getDate() as NSDate
+				plicheValueEntry.age = UserDefaultsSettings.ageSet
+				
+				if UserDefaultsSettings.biologicalSexSet == "Male"{
+					// Densità corporea = 1.112-(0.00043499 X SUM7) + (0.00000055 X (SUM72) - (0.00028826 X età) - SUM7 = torace + addome + coscia + ascellare + soprailiaca + sottoscapolare + tricipite
+					sum = chest+abdominal+thigh+midaxillary+suprailiac+subscapular+triceps
+					bodyDensity = 1.112-(0.00043499 * sum) + (0.00000055 * (sum*sum)) - (0.00028826 * UserDefaultsSettings.ageSet)
+					bodyFatPerc = ((4.95/bodyDensity) - 4.5) * 100
+				} else {
+					// Densità corporea= 1.097 - (0.00046971 X SUM7) + (0.00000056 X SUM72 ) - (0.00012828 X età) - SUM7 = torace + addome + coscia + ascellare + soprailiaca + sottoscapolare + tricipite
+					
+					sum = chest+abdominal+thigh+midaxillary+suprailiac+subscapular+triceps
+					bodyDensity = 1.097-(0.00046971 * sum) + (0.00000056 * (sum*sum)) - (0.00012828 * UserDefaultsSettings.ageSet)
+					bodyFatPerc = ((4.95/bodyDensity) - 4.5) * 100
+				}
+				plicheValueEntry.sum = sum
+				plicheValueEntry.bodyDensity = bodyDensity
+				plicheValueEntry.bodyFatPerc = bodyFatPerc
+				plicheValueEntry.leanMass = lastWeight - ((lastWeight/100)*bodyFatPerc)
+				leanMass = lastWeight - ((lastWeight/100)*bodyFatPerc)
+				fatMass = lastWeight - leanMass
+				//save()()
+			} else {
+				DataManager.shared.allertWithParameter(title: "WARNING", message: "Entry All Measurement", viecontroller: viewVontroller)
+			}
+		}
+		
+		// Densità corporea = 1.10938 - (0.0008267 x SUM3) + (0.0000016 x SUM32 ) - (0.0002574 x età) - SUM3 = torace + addome + coscia
+		if plicheMethod == "jackson & Polloc 3 point Man" {
+			if let chest = chest, let abdominal = abdominal, let thigh = thigh {
+				plicheValueEntry.chest = chest
+				plicheValueEntry.abdominal = abdominal
+				plicheValueEntry.thigh = thigh
+				plicheValueEntry.method = plicheMethod
+				plicheValueEntry.dateOfEntry = StaticClass.getDate() as NSDate
+				plicheValueEntry.age = UserDefaultsSettings.ageSet
+				sum = chest+abdominal+thigh
+				bodyDensity = 1.10938-(0.0008267 * sum) + (0.0000016 * (sum*sum)) - (0.0002574 * UserDefaultsSettings.ageSet)
+				bodyFatPerc = ((4.95/bodyDensity) - 4.5) * 100
+				
+				plicheValueEntry.sum = sum
+				plicheValueEntry.bodyDensity = bodyDensity
+				plicheValueEntry.bodyFatPerc = bodyFatPerc
+				plicheValueEntry.leanMass = lastWeight - ((lastWeight/100)*bodyFatPerc)
+				leanMass = lastWeight - ((lastWeight/100)*bodyFatPerc)
+				fatMass = lastWeight - leanMass
+				//save()()
+			} else {
+				DataManager.shared.allertWithParameter(title: loc("WARNING"), message: loc("Entry All Measurement"), viecontroller: viewVontroller)
+			}
+		}
+		
+		// Densità corporea= 1.0994921 - (0.0009929 x SUM3) + (0.0000023 x SUM32 ) - (0.0001392 x età) - SUM3 = tricipite + soprailiaca + coscia
+		if plicheMethod == "jackson & Polloc 3 point Woman" {
+			if let thigh = thigh, let suprailiac = suprailiac, let triceps = triceps {
+				plicheValueEntry.thigh = thigh
+				plicheValueEntry.suprailiac = suprailiac
+				plicheValueEntry.triceps = triceps
+				plicheValueEntry.method = plicheMethod
+				plicheValueEntry.dateOfEntry = StaticClass.getDate() as NSDate
+				plicheValueEntry.age = UserDefaultsSettings.ageSet
+				sum = thigh+suprailiac+triceps
+				bodyDensity = 1.0994921-(0.0009929 * sum) + (0.0000023 * (sum*sum)) - (0.0001392 * UserDefaultsSettings.ageSet)
+				bodyFatPerc = ((4.95/bodyDensity) - 4.5) * 100
+				
+				plicheValueEntry.sum = sum
+				plicheValueEntry.bodyDensity = bodyDensity
+				plicheValueEntry.bodyFatPerc = bodyFatPerc
+				plicheValueEntry.leanMass = lastWeight - ((lastWeight/100)*bodyFatPerc)
+				leanMass = lastWeight - ((lastWeight/100)*bodyFatPerc)
+				fatMass = lastWeight - leanMass
+				//save()()
+			} else {
+				DataManager.shared.allertWithParameter(title: loc("WARNING"), message: loc("Entry All Measurement"), viecontroller: viewVontroller)
+			}
+		}
+		if plicheMethod == "Sloan - Men 2 point" { //D= 1,1043-0,001327 x pl.coscia – 0,00131 x pl.sottoscapolare
+			if let thigh = thigh, let subscapular = subscapular {
+				plicheValueEntry.thigh = thigh
+				plicheValueEntry.subscapular = subscapular
+				plicheValueEntry.method = plicheMethod
+				plicheValueEntry.dateOfEntry = StaticClass.getDate() as NSDate
+				plicheValueEntry.age = UserDefaultsSettings.ageSet
+				sum = thigh+subscapular
+				bodyDensity = 1.1043-(0.001327 * thigh) - (0.00000055 * subscapular)
+				bodyFatPerc = ((4.95/bodyDensity) - 4.5) * 100
+				
+				plicheValueEntry.sum = sum
+				plicheValueEntry.bodyDensity = bodyDensity
+				plicheValueEntry.bodyFatPerc = bodyFatPerc
+				plicheValueEntry.leanMass = lastWeight - ((lastWeight/100)*bodyFatPerc)
+				leanMass = lastWeight - ((lastWeight/100)*bodyFatPerc)
+				fatMass = lastWeight - leanMass
+				//save()()
+			} else {
+				DataManager.shared.allertWithParameter(title: loc("WARNING"), message: loc("Entry All Measurement"), viecontroller: viewVontroller)
+			}
+		}
+		
+		if plicheMethod == "Sloan - Woman 2 point" { //D= 1,0764 – 0,00081 x pl.soprailiaca – 0,00088 x pl.tricipitale
+			if let suprailiac = suprailiac, let triceps = triceps {
+				plicheValueEntry.suprailiac = suprailiac
+				plicheValueEntry.triceps = triceps
+				plicheValueEntry.method = plicheMethod
+				plicheValueEntry.dateOfEntry = StaticClass.getDate() as NSDate
+				plicheValueEntry.age = UserDefaultsSettings.ageSet
+				sum = suprailiac+triceps
+				bodyDensity = 1.0764-(0.0008 * suprailiac) - (0.00088 * triceps)
+				bodyFatPerc = ((4.95/bodyDensity) - 4.5) * 100
+				
+				plicheValueEntry.sum = sum
+				plicheValueEntry.bodyDensity = bodyDensity
+				plicheValueEntry.bodyFatPerc = bodyFatPerc
+				plicheValueEntry.leanMass = lastWeight - ((lastWeight/100)*bodyFatPerc)
+				leanMass = lastWeight - ((lastWeight/100)*bodyFatPerc)
+				fatMass = lastWeight - leanMass
+				//save()()
+			} else {
+				DataManager.shared.allertWithParameter(title: loc("WARNING"), message: loc("Entry All Measurement"), viecontroller: viewVontroller)
+			}
+		}
+		
+		if plicheMethod == "Durnin & Womersley Man 4 Pliche" {
+			if let biceps = biceps,let suprailiac = suprailiac,let subscapular = subscapular,let triceps = triceps {
+				plicheValueEntry.biceps = biceps
+				plicheValueEntry.suprailiac = suprailiac
+				plicheValueEntry.subscapular = subscapular
+				plicheValueEntry.triceps = triceps
+				plicheValueEntry.method = plicheMethod
+				plicheValueEntry.dateOfEntry = StaticClass.getDate() as NSDate
+				plicheValueEntry.age = UserDefaultsSettings.ageSet
+				let age = UserDefaultsSettings.ageSet
+				if UserDefaultsSettings.biologicalSexSet == "Male"{
+					// D= 1,1631– 0,0632 x log10 (pl.bicipite+ tricip.+sottoscap.+soprail.)
+					sum = triceps+biceps+subscapular+suprailiac
+					switch age {
+					case 0..<17: bodyDensity = 1.1533-(0.0643 * log10(sum))
+					case 17..<19: bodyDensity = 1.1620-(0.0630 * log10(sum))
+					case 19..<29: bodyDensity = 1.1631-(0.0632 * log10(sum))
+					case 29..<39: bodyDensity = 1.1422-(0.0544 * log10(sum))
+					case 39..<49: bodyDensity = 1.1620-(0.0700 * log10(sum))
+					case 49..<100: bodyDensity = 1.1715-(0.0779 * log10(sum))
+					default:
+						break
+					}
+					
+					bodyFatPerc = ((4.95/bodyDensity) - 4.5) * 100
+				} else {
+					// D= 1,1599– 0,0717 x log10 (pl.bicipite+ tricip.+sottoscap.+soprail.)
+					
+					sum = triceps+biceps+subscapular+suprailiac
+					switch age {
+					case 0..<17: bodyDensity = 1.1369-(0.0598 * log10(sum))
+					case 17..<19: bodyDensity = 1.1549-(0.0678 * log10(sum))
+					case 19..<29: bodyDensity = 1.1599-(0.0717 * log10(sum))
+					case 29..<39: bodyDensity = 1.1423-(0.0632 * log10(sum))
+					case 39..<49: bodyDensity = 1.1333-(0.0612 * log10(sum))
+					case 49..<100: bodyDensity = 1.1339-(0.0645 * log10(sum))
+					default:
+						break
+					}
+					bodyFatPerc = ((4.95/bodyDensity) - 4.5) * 100
+				}
+				plicheValueEntry.sum = sum
+				plicheValueEntry.bodyDensity = bodyDensity
+				plicheValueEntry.bodyFatPerc = bodyFatPerc
+				plicheValueEntry.leanMass = lastWeight - ((lastWeight/100)*bodyFatPerc)
+				leanMass = lastWeight - ((lastWeight/100)*bodyFatPerc)
+				fatMass = lastWeight - leanMass
+				//save()
+			} else {
+				DataManager.shared.allertWithParameter(title: loc("WARNING"), message: loc("Entry All Measurement"), viecontroller: viewVontroller)
+			}
+		}
+		
+		
+		
+		return (sum, bodyDensity,bodyFatPerc,leanMass,fatMass, lastWeight)
+	}
+}
+

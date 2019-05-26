@@ -48,6 +48,8 @@ class AllertViewSkinFoldInsert: UIViewController {
         case .jackson_7:purchaseCheck()
         case .jackson_3_Man:purchaseCheck()
         case .jackson_3_Woman:purchaseCheck()
+		case .sloanMen:purchaseCheck()
+		case .sloanWoman:purchaseCheck()
         default :break
         }
         
@@ -55,8 +57,10 @@ class AllertViewSkinFoldInsert: UIViewController {
     func purchaseCheck(){
         if !UserDefaults.standard.bool(forKey: "fred76.com.ifit.skinFolds.unlock") && showPurchaseInfo {
             messageLabel.text = loc("LOCSKINFOLDSHOP")
-            alertTextField_2.isHidden = true
-            alertTextField_3.isHidden = true
+            alertTextField_2.isEnabled = false
+			alertTextField_2.alpha = 0.5
+            alertTextField_3.isEnabled = false
+			alertTextField_3.alpha = 0.5
         }
     }
     func setupView() {

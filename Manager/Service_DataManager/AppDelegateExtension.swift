@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import CloudKit
 import HealthKit
+
 extension AppDelegate {
     func navBarAppereance() {
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)

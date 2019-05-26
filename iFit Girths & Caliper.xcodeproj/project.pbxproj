@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		662E9C91229551CD00CB745C /* ConsentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662E9C90229551CD00CB745C /* ConsentManager.swift */; };
+		6640E0B2229937BF00863F7B /* InsightCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6640E0B1229937BF00863F7B /* InsightCustomCell.swift */; };
+		6640E0B42299383A00863F7B /* InsightReusableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6640E0B32299383A00863F7B /* InsightReusableController.swift */; };
+		6640E0BB2299860900863F7B /* AddMobManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6640E0BA2299860900863F7B /* AddMobManager.swift */; };
 		667DF401228FF193005176FF /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 667DF3FC228FF193005176FF /* AdSupport.framework */; };
 		667DF42622913DE1005176FF /* PageMenuIntro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667DF42522913DE1005176FF /* PageMenuIntro.swift */; };
 		667DF4292291440E005176FF /* HealthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667DF4282291440E005176FF /* HealthController.swift */; };
@@ -39,7 +42,6 @@
 		9521B9FD22538FE000E9A7A5 /* DataManagerVersionCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9521B9FC22538FE000E9A7A5 /* DataManagerVersionCheck.swift */; };
 		9521B9FF2253911F00E9A7A5 /* DatamanagerAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9521B9FE2253911F00E9A7A5 /* DatamanagerAlertView.swift */; };
 		9521BA012253917B00E9A7A5 /* DataManagerPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9521BA002253917B00E9A7A5 /* DataManagerPhotos.swift */; };
-		9521BA03225391F800E9A7A5 /* DataManagerAdMob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9521BA02225391F800E9A7A5 /* DataManagerAdMob.swift */; };
 		95269EDE21B0888500DBD758 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95269EDD21B0888500DBD758 /* DataManager.swift */; };
 		952B464422684B710005FD5B /* CAPSPageMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952B463E22684B710005FD5B /* CAPSPageMenu.swift */; };
 		952B464522684B710005FD5B /* CAPSPageMenu+Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952B463F22684B710005FD5B /* CAPSPageMenu+Options.swift */; };
@@ -96,10 +98,9 @@
 		95946BDD21AB458700D534D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95946BDC21AB458700D534D0 /* AppDelegate.swift */; };
 		95946BE921AB458800D534D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95946BE721AB458800D534D0 /* LaunchScreen.storyboard */; };
 		95946C0D21AB478700D534D0 /* PhotoGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95946C0C21AB478700D534D0 /* PhotoGallery.swift */; };
-		95946C0F21AB48EC00D534D0 /* MeasureMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95946C0E21AB48EC00D534D0 /* MeasureMainController.swift */; };
-		95946C1321AB491300D534D0 /* InsightMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95946C1221AB491300D534D0 /* InsightMainController.swift */; };
+		95946C0F21AB48EC00D534D0 /* GirthsMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95946C0E21AB48EC00D534D0 /* GirthsMainController.swift */; };
 		95946C1F21ABCD0300D534D0 /* CustomViewDoubleColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95946C1E21ABCD0300D534D0 /* CustomViewDoubleColor.swift */; };
-		95946C2421AC3C9100D534D0 /* MeasureCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95946C2321AC3C9100D534D0 /* MeasureCollectionViewCell.swift */; };
+		95946C2421AC3C9100D534D0 /* GirthsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95946C2321AC3C9100D534D0 /* GirthsCollectionViewCell.swift */; };
 		95946C9E21AD416600D534D0 /* AllertViewGirthInsert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95946C9D21AD416600D534D0 /* AllertViewGirthInsert.swift */; };
 		9596BBD921C3815C00244C41 /* CameraUse.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9596BBD821C3815C00244C41 /* CameraUse.rtf */; };
 		9596BBDB21C3899100244C41 /* PicFullResController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9596BBDA21C3899100244C41 /* PicFullResController.swift */; };
@@ -129,7 +130,6 @@
 		95D97A27226493B0002A4515 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D97A26226493B0002A4515 /* CameraManager.swift */; };
 		95D97A2922663B07002A4515 /* AppDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D97A2822663B07002A4515 /* AppDelegateExtension.swift */; };
 		95DB84AA21ADA84D00D13E6A /* StaticClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DB84A921ADA84D00D13E6A /* StaticClass.swift */; };
-		95DB84AC21ADB1F300D13E6A /* PlicoMainControllerTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DB84AB21ADB1F300D13E6A /* PlicoMainControllerTable.swift */; };
 		95DB84AE21ADE98800D13E6A /* PlicheMoethodController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DB84AD21ADE98800D13E6A /* PlicheMoethodController.swift */; };
 		95DB84B021ADF02F00D13E6A /* PlicheMetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DB84AF21ADF02F00D13E6A /* PlicheMetCollectionViewCell.swift */; };
 		95DB84B221ADF37600D13E6A /* AllertViewSkinFoldInsert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DB84B121ADF37600D13E6A /* AllertViewSkinFoldInsert.swift */; };
@@ -233,6 +233,9 @@
 
 /* Begin PBXFileReference section */
 		662E9C90229551CD00CB745C /* ConsentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentManager.swift; sourceTree = "<group>"; };
+		6640E0B1229937BF00863F7B /* InsightCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightCustomCell.swift; sourceTree = "<group>"; };
+		6640E0B32299383A00863F7B /* InsightReusableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightReusableController.swift; sourceTree = "<group>"; };
+		6640E0BA2299860900863F7B /* AddMobManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMobManager.swift; sourceTree = "<group>"; };
 		667DF3FC228FF193005176FF /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		667DF42522913DE1005176FF /* PageMenuIntro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageMenuIntro.swift; sourceTree = "<group>"; };
 		667DF4282291440E005176FF /* HealthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthController.swift; sourceTree = "<group>"; };
@@ -265,7 +268,6 @@
 		9521B9FC22538FE000E9A7A5 /* DataManagerVersionCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerVersionCheck.swift; sourceTree = "<group>"; };
 		9521B9FE2253911F00E9A7A5 /* DatamanagerAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatamanagerAlertView.swift; sourceTree = "<group>"; };
 		9521BA002253917B00E9A7A5 /* DataManagerPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerPhotos.swift; sourceTree = "<group>"; };
-		9521BA02225391F800E9A7A5 /* DataManagerAdMob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerAdMob.swift; sourceTree = "<group>"; };
 		95269EDD21B0888500DBD758 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		952B463E22684B710005FD5B /* CAPSPageMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAPSPageMenu.swift; sourceTree = "<group>"; };
 		952B463F22684B710005FD5B /* CAPSPageMenu+Options.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAPSPageMenu+Options.swift"; sourceTree = "<group>"; };
@@ -324,10 +326,9 @@
 		95946BD921AB458700D534D0 /* iFit Girths & Caliper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iFit Girths & Caliper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95946BDC21AB458700D534D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95946C0C21AB478700D534D0 /* PhotoGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGallery.swift; sourceTree = "<group>"; };
-		95946C0E21AB48EC00D534D0 /* MeasureMainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureMainController.swift; sourceTree = "<group>"; };
-		95946C1221AB491300D534D0 /* InsightMainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightMainController.swift; sourceTree = "<group>"; };
+		95946C0E21AB48EC00D534D0 /* GirthsMainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GirthsMainController.swift; sourceTree = "<group>"; };
 		95946C1E21ABCD0300D534D0 /* CustomViewDoubleColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewDoubleColor.swift; sourceTree = "<group>"; };
-		95946C2321AC3C9100D534D0 /* MeasureCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureCollectionViewCell.swift; sourceTree = "<group>"; };
+		95946C2321AC3C9100D534D0 /* GirthsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GirthsCollectionViewCell.swift; sourceTree = "<group>"; };
 		95946C9D21AD416600D534D0 /* AllertViewGirthInsert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllertViewGirthInsert.swift; sourceTree = "<group>"; };
 		9596BBD821C3815C00244C41 /* CameraUse.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = CameraUse.rtf; sourceTree = "<group>"; };
 		9596BBDA21C3899100244C41 /* PicFullResController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicFullResController.swift; sourceTree = "<group>"; };
@@ -373,7 +374,6 @@
 		95D97A26226493B0002A4515 /* CameraManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
 		95D97A2822663B07002A4515 /* AppDelegateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateExtension.swift; sourceTree = "<group>"; };
 		95DB84A921ADA84D00D13E6A /* StaticClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticClass.swift; sourceTree = "<group>"; };
-		95DB84AB21ADB1F300D13E6A /* PlicoMainControllerTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlicoMainControllerTable.swift; sourceTree = "<group>"; };
 		95DB84AD21ADE98800D13E6A /* PlicheMoethodController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlicheMoethodController.swift; sourceTree = "<group>"; };
 		95DB84AF21ADF02F00D13E6A /* PlicheMetCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlicheMetCollectionViewCell.swift; sourceTree = "<group>"; };
 		95DB84B121ADF37600D13E6A /* AllertViewSkinFoldInsert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllertViewSkinFoldInsert.swift; sourceTree = "<group>"; };
@@ -435,6 +435,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		663DAC6A229AE97B009B462C /* Service_DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				9533861E2255D423009DBECB /* DownloadManager.swift */,
+				95D97A26226493B0002A4515 /* CameraManager.swift */,
+				9506885321CF90F3006AC1DB /* AppStoreManager.swift */,
+				95F21A672254BC4900049520 /* ScannerHelper.swift */,
+				95ACDF3E21C7AAAB003A77BD /* HealthManager.swift */,
+				95C6AE2E224141C5000C48C6 /* IAPHelper.swift */,
+				95C6AE3022414224000C48C6 /* GandCProducts.swift */,
+				66F91583228D3AF400AC0D54 /* FirebaseManager.swift */,
+				6640E0BA2299860900863F7B /* AddMobManager.swift */,
+				662E9C90229551CD00CB745C /* ConsentManager.swift */,
+				95D97A2822663B07002A4515 /* AppDelegateExtension.swift */,
+			);
+			path = Service_DataManager;
+			sourceTree = "<group>";
+		};
 		667DF427229143D9005176FF /* IntroPageMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -473,7 +491,6 @@
 				9521BA002253917B00E9A7A5 /* DataManagerPhotos.swift */,
 				9521B9F822538F9700E9A7A5 /* DataManagerGirth.swift */,
 				9521B9FE2253911F00E9A7A5 /* DatamanagerAlertView.swift */,
-				9521BA02225391F800E9A7A5 /* DataManagerAdMob.swift */,
 				9521B9FA22538FB700E9A7A5 /* DataManagerSkinFold.swift */,
 				9521B9FC22538FE000E9A7A5 /* DataManagerVersionCheck.swift */,
 				950B716D22630E1A00596167 /* DataManagerSupplement.swift */,
@@ -684,7 +701,6 @@
 				95DB84A821ADA82600D13E6A /* Convenient Class */,
 				95946C1821AB4C7E00D534D0 /* Custom Class */,
 				9533863222568F54009DBECB /* Library */,
-				667DF42C22916394005176FF /* MyTabbarController.swift */,
 			);
 			path = "Fit Measures";
 			sourceTree = "<group>";
@@ -700,6 +716,7 @@
 				952B464B22684C350005FD5B /* PageMenuBodyMeasurment.swift */,
 				952B464F2268D95F0005FD5B /* PageMenuInsight.swift */,
 				954C4BB0227B7BFF00CDC706 /* PageMenuSettings.swift */,
+				667DF42C22916394005176FF /* MyTabbarController.swift */,
 			);
 			path = "Custom Class";
 			sourceTree = "<group>";
@@ -715,11 +732,12 @@
 		95A1F89721B43AAD005B6CC5 /* Insight */ = {
 			isa = PBXGroup;
 			children = (
-				95946C1221AB491300D534D0 /* InsightMainController.swift */,
+				6640E0B32299383A00863F7B /* InsightReusableController.swift */,
 				95946C0C21AB478700D534D0 /* PhotoGallery.swift */,
 				9596BBDA21C3899100244C41 /* PicFullResController.swift */,
 				955592C521B6ECEF0059A83D /* ChartViewController.swift */,
 				95A1F89A21B43ADF005B6CC5 /* lastMeasureCell.swift */,
+				6640E0B1229937BF00863F7B /* InsightCustomCell.swift */,
 			);
 			path = Insight;
 			sourceTree = "<group>";
@@ -747,16 +765,7 @@
 			isa = PBXGroup;
 			children = (
 				9521BA04225392B800E9A7A5 /* DataManagerApp */,
-				9533861E2255D423009DBECB /* DownloadManager.swift */,
-				95D97A26226493B0002A4515 /* CameraManager.swift */,
-				9506885321CF90F3006AC1DB /* AppStoreManager.swift */,
-				95F21A672254BC4900049520 /* ScannerHelper.swift */,
-				95ACDF3E21C7AAAB003A77BD /* HealthManager.swift */,
-				95C6AE2E224141C5000C48C6 /* IAPHelper.swift */,
-				95C6AE3022414224000C48C6 /* GandCProducts.swift */,
-				66F91583228D3AF400AC0D54 /* FirebaseManager.swift */,
-				662E9C90229551CD00CB745C /* ConsentManager.swift */,
-				95D97A2822663B07002A4515 /* AppDelegateExtension.swift */,
+				663DAC6A229AE97B009B462C /* Service_DataManager */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -775,7 +784,6 @@
 		95DB84D221B006C900D13E6A /* SkinFold */ = {
 			isa = PBXGroup;
 			children = (
-				95DB84AB21ADB1F300D13E6A /* PlicoMainControllerTable.swift */,
 				95DB84AD21ADE98800D13E6A /* PlicheMoethodController.swift */,
 				95DB84AF21ADF02F00D13E6A /* PlicheMetCollectionViewCell.swift */,
 			);
@@ -785,8 +793,8 @@
 		95DB84D321B006ED00D13E6A /* Girth */ = {
 			isa = PBXGroup;
 			children = (
-				95946C0E21AB48EC00D534D0 /* MeasureMainController.swift */,
-				95946C2321AC3C9100D534D0 /* MeasureCollectionViewCell.swift */,
+				95946C0E21AB48EC00D534D0 /* GirthsMainController.swift */,
+				95946C2321AC3C9100D534D0 /* GirthsCollectionViewCell.swift */,
 			);
 			path = Girth;
 			sourceTree = "<group>";
@@ -1047,7 +1055,6 @@
 				95DB84AA21ADA84D00D13E6A /* StaticClass.swift in Sources */,
 				955592C621B6ECEF0059A83D /* ChartViewController.swift in Sources */,
 				95EB82F821E7B1C200AB639D /* PicFullRes+CoreDataClass.swift in Sources */,
-				9521BA03225391F800E9A7A5 /* DataManagerAdMob.swift in Sources */,
 				95F21A6E2254C55C00049520 /* UserSupplementListAndScan.swift in Sources */,
 				95C6AE35224146E7000C48C6 /* ShoppingController.swift in Sources */,
 				95EB82FA21E7B1C200AB639D /* PlicheMeasure+CoreDataClass.swift in Sources */,
@@ -1062,15 +1069,15 @@
 				954C4BB1227B7BFF00CDC706 /* PageMenuSettings.swift in Sources */,
 				95C6AE2F224141C5000C48C6 /* IAPHelper.swift in Sources */,
 				953386212255DA9C009DBECB /* SupplementSearchedByName.swift in Sources */,
-				95946C0F21AB48EC00D534D0 /* MeasureMainController.swift in Sources */,
+				95946C0F21AB48EC00D534D0 /* GirthsMainController.swift in Sources */,
 				95946C0D21AB478700D534D0 /* PhotoGallery.swift in Sources */,
 				95E9B4DA21C8DA0E00C8A076 /* VirtualPlane.swift in Sources */,
+				6640E0BB2299860900863F7B /* AddMobManager.swift in Sources */,
 				95523AAE21B1132800761D1B /* Model.xcdatamodeld in Sources */,
 				95D97A27226493B0002A4515 /* CameraManager.swift in Sources */,
 				95338649225BF88E009DBECB /* SupplementDetailsController.swift in Sources */,
 				957BDA9721CCFDB000E2718F /* NavController.swift in Sources */,
 				95946C9E21AD416600D534D0 /* AllertViewGirthInsert.swift in Sources */,
-				95946C1321AB491300D534D0 /* InsightMainController.swift in Sources */,
 				95C6AE3122414224000C48C6 /* GandCProducts.swift in Sources */,
 				9521B9FD22538FE000E9A7A5 /* DataManagerVersionCheck.swift in Sources */,
 				95DB84B221ADF37600D13E6A /* AllertViewSkinFoldInsert.swift in Sources */,
@@ -1089,17 +1096,18 @@
 				95685D952227DA7200A2DF56 /* BodyMeasure+CoreDataProperties.swift in Sources */,
 				953386172255D396009DBECB /* Response.swift in Sources */,
 				9533863722569176009DBECB /* SkinFoldsRawDataTableview.swift in Sources */,
+				6640E0B42299383A00863F7B /* InsightReusableController.swift in Sources */,
 				9533863B22572AC3009DBECB /* CalssModel.swift in Sources */,
 				952B464522684B710005FD5B /* CAPSPageMenu+Options.swift in Sources */,
 				9533861C2255D396009DBECB /* ServerTrustPolicy.swift in Sources */,
 				95269EDE21B0888500DBD758 /* DataManager.swift in Sources */,
 				950B71772263551800596167 /* Supplement+CoreDataClass.swift in Sources */,
 				9506885421CF90F3006AC1DB /* AppStoreManager.swift in Sources */,
-				95946C2421AC3C9100D534D0 /* MeasureCollectionViewCell.swift in Sources */,
+				95946C2421AC3C9100D534D0 /* GirthsCollectionViewCell.swift in Sources */,
 				667DF42B2291443B005176FF /* GDPRController.swift in Sources */,
-				95DB84AC21ADB1F300D13E6A /* PlicoMainControllerTable.swift in Sources */,
 				952B464422684B710005FD5B /* CAPSPageMenu.swift in Sources */,
 				95D97A2922663B07002A4515 /* AppDelegateExtension.swift in Sources */,
+				6640E0B2229937BF00863F7B /* InsightCustomCell.swift in Sources */,
 				9542CD2421BAA2AE00D72B6A /* AllertViewSkinFoldInsertWithGraph.swift in Sources */,
 				9533861B2255D396009DBECB /* ResponseSerialization.swift in Sources */,
 				95D97A21226492E9002A4515 /* SupplemetInsertedManuallyController.swift in Sources */,

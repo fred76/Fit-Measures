@@ -19,6 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CDEPersistentStoreEnsembl
     var window: UIWindow?
     
     var managedObjectContext: NSManagedObjectContext!
+	
+	var orientationLock = UIInterfaceOrientationMask.all
+	
     var storeDirectoryURL: URL {
         return try! FileManager.default.url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true) }
     
@@ -33,8 +36,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CDEPersistentStoreEnsembl
         DataManager.shared.managedContext = managedObjectContext 
         alertAboutiCloud()
         DataManager.shared.loadReceipt()
-        DataManager.shared.AddMobs()
+        AddMobManager.shared.AddMobs()
         ConsentManager.shared.showIntro()
+		AppUtility.lockOrientation(.portrait)
         //       CDESetCurrentLoggingLevel(CDELoggingLevel.verbose.rawValue)
         let center = UNUserNotificationCenter.current()
         center.delegate = self
@@ -98,7 +102,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CDEPersistentStoreEnsembl
         return true
     }
     
-    var orientationLock = UIInterfaceOrientationMask.all
+	
     
     func setupCoreData() {
         let modelURL = Bundle.main.url(forResource: "Model", withExtension: "momd")
@@ -188,10 +192,8 @@ struct AppUtility {
             delegate.orientationLock = orientation
         }
     }
-    static func lockOrientation(_ orientation: UIInterfaceOrientationMask, andRotateTo rotateOrientation:UIInterfaceOrientation) {
-        
+    static func lockOrientation(_ orientation: UIInterfaceOrientationMask, andRotateTo rotateOrientation:UIInterfaceOrientation) { 
         self.lockOrientation(orientation)
-        
         UIDevice.current.setValue(rotateOrientation.rawValue, forKey: "orientation")
     }
     

@@ -42,8 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CDEPersistentStoreEnsembl
         //       CDESetCurrentLoggingLevel(CDELoggingLevel.verbose.rawValue)
         let center = UNUserNotificationCenter.current()
         center.delegate = self
-        center.getPendingNotificationRequests { (notifications) in
-            print("Count: \(notifications.count)")
+        center.getPendingNotificationRequests { (notifications) in 
             for item in notifications {
                 print(item.content.body)
             }

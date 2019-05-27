@@ -131,6 +131,10 @@ class SupplementDetailsController: UITableViewController {
             // do nothing
         }
     }
+	
+	override var preferredStatusBarStyle: UIStatusBarStyle {
+		return .lightContent
+	}
     
     // MARK: - Table view data source
     
@@ -194,6 +198,8 @@ class SupplementDetailsController: UITableViewController {
     
     
 }
+
+
 
 extension SupplementDetailsController: UIPickerViewDelegate, UIPickerViewDataSource {
     

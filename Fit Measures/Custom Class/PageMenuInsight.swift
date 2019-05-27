@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PageMenuInsight: UIViewController {
+class PageMenuInsight: UIViewController, CAPSPageMenuDelegate {
     
     var pageMenu : CAPSPageMenu?
     var controllerArray : [UIViewController] = []
@@ -22,16 +22,11 @@ class PageMenuInsight: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-		print("------- ppppppppp  ------")
         self.title = "My Insight"
-        
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.tintColor = UIColor.white
 		
-		
-		
-        
-        
+		AddMobManager.shared.injectInterstitial()
 		
     }
 	
@@ -92,16 +87,19 @@ class PageMenuInsight: UIViewController {
 		
 		pageMenu = CAPSPageMenu(viewControllers: controllerArray, frame: CGRect(x: 0.0, y: 0, width: self.contentView.frame.width, height: self.contentView.frame.height), pageMenuOptions: parameters)
 		self.addChild(pageMenu!)
+		pageMenu?.delegate = self
 		self.contentView.addSubview(pageMenu!.view)
-		
-		
 		self.pageMenu?.didMove(toParent: self)
 	}
 	
 	override func viewDidDisappear(_ animated: Bool) {
 		controllerArray = []
 	}
-    
-    
+	
+	func didMoveToPage(_ controller: UIViewController, index: Int) {
+		if index > 0 {
+			AddMobManager.shared.showInterstitialWhenSelect(viewcontroller: self, upperLimit: 3, index: index)
+		}
+	}
 }
 

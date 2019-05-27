@@ -69,8 +69,7 @@ class HealthController: UIViewController {
     }
     
     @IBAction func onTapCancelButton(_ sender: Any) { 
-        if ConsentManager.shared.consentState(for: ConsentManager.shared.appHealthDisclamer) == .notProvided || ConsentManager.shared.consentState(for: ConsentManager.shared.appHealthDisclamer) == .unknown {
-            cancelButton.titleLabel?.text = loc("Next")
+        if ConsentManager.shared.consentState(for: ConsentManager.shared.appHealthDisclamer) == .notProvided || ConsentManager.shared.consentState(for: ConsentManager.shared.appHealthDisclamer) == .unknown { 
             ConsentManager.shared.authorizeHealthKit()
             
         } else {

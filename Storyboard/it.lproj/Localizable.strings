@@ -312,8 +312,8 @@
 "gdprAlertBody" = "Permetti la raccolta di dati statistici";
 "gdprOK" = "Ok share data";
 "gdprNotOK" = "Not share data";
-"gdprOK" = "Ok condividi dati";
-"gdprNotOK" = "Non condividere dati";
+"gdprOK" = "Ok";
+"gdprNotOK" = "Annulla";
 "HELTHTXT" = "Girths & Caliper desidera accedere ed aggiornare i tuoi dati sanitari";
 "LOCimportGirthsBODY" = "Per importare le Circonferenze compra il pacchetto o sblocca tutte le funzioni";
 "LOCimportskinFoldsBODY" = "Per importare le Pliche compra il pacchetto o sblocca tutte le funzioni";

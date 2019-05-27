@@ -30,7 +30,7 @@ class DownloadManager: NSObject {
             }
             
             guard let json = JSON(ilJson)["products"].array else {return }
-            print(json)
+     
             let totale = json.count
             for i in 0..<totale {
                 

@@ -105,11 +105,9 @@ class GDPRController: UIViewController {
     func permissionOK (alert: UIAlertAction){ 
         ConsentManager.shared.set(state: .provided, for: ConsentManager.shared.appAnalyticsDisclamer)
         FirebaseManager.shared.startFirebase()
-        cancelButton.titleLabel?.text = loc("Next")
     }
     
     func permissionNotOK (alert: UIAlertAction){
-        ConsentManager.shared.set(state: .notProvided, for: ConsentManager.shared.appAnalyticsDisclamer)
-        cancelButton.titleLabel?.text = "Next"
+        ConsentManager.shared.set(state: .notProvided, for: ConsentManager.shared.appAnalyticsDisclamer) 
     }
 }

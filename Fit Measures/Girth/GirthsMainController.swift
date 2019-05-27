@@ -23,7 +23,6 @@ private struct ItemDef {
 class GirthsMainController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIPopoverPresentationControllerDelegate, SKRequestDelegate {
 	
     private var itemDef : [ItemDef]!
-	 
     private let userHealthProfile = UserHealthProfile()
     @IBOutlet weak var measureCollctionView: UICollectionView!
     var bodyMeasurementPoint = BodyMeasurementPoints.weight 
@@ -54,12 +53,11 @@ class GirthsMainController: UIViewController, UICollectionViewDelegate, UICollec
     override func viewWillDisappear(_ animated: Bool) {
         Items.sharedInstance.updateMaesure()
         Items.sharedInstance.updatePliche()
-       
+		
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        #warning("stampa la cartella")
-       
+        #warning("stampa la cartella") 
         
         print("Documents Directory: ", FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last ?? "Not Found!") 
 //        measureCollctionView.reloadData()
@@ -67,7 +65,7 @@ class GirthsMainController: UIViewController, UICollectionViewDelegate, UICollec
         isAdded = DataManager.shared.bodyMeasurementForTodayIsAvailable()
         readItemDeaf () 
 		
-		AddMobManager.shared.addBanner(v: view, controller: self)
+		AddMobManager.shared.addBanner(v: self.view, controller: self)
         
         measureCollctionView.reloadData()
     }

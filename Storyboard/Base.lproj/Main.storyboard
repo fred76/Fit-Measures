@@ -105,6 +105,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="BdT-KE-ZBb"/>
                                         </constraints>
+                                        <inset key="titleEdgeInsets" minX="80" minY="0.0" maxX="80" maxY="0.0"/>
                                         <state key="normal" title="Got it">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -187,7 +188,8 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="eLs-36-XrA"/>
                                         </constraints>
-                                        <state key="normal" title="Got it">
+                                        <inset key="titleEdgeInsets" minX="80" minY="0.0" maxX="80" maxY="0.0"/>
+                                        <state key="normal" title="AAAAAAAAAAAAAAAAA">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>

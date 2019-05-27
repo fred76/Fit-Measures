@@ -21,8 +21,11 @@ class AddMobManager: NSObject {
 	let GandCBannerStringProduction : String = "ca-app-pub-9833367902957453/8227301931"
 	let GandCInterstitialProduction : String = "ca-app-pub-9833367902957453/4404866177"
 	
+	
+	
 	func AddMobs() {
-		GADMobileAds.sharedInstance().start(completionHandler: nil) 
+		GADMobileAds.sharedInstance().start(completionHandler: nil)
+		interstitial = createAndLoadInterstitial()
 	}
 	
 }
@@ -85,14 +88,16 @@ extension AddMobManager : GADBannerViewDelegate {
 
 extension AddMobManager : GADInterstitialDelegate {
 	
-	func showInterstitialWhenSelect(viewcontroller : UIViewController){
-		let randomBool = Bool.random()
-		print("randomBool \(randomBool)")
-		if randomBool{
-			
+	func showInterstitialWhenSelect(viewcontroller : UIViewController, upperLimit: Int, index : Int){
+//		let randomBool = Bool.random()
+//		print("randomBool \(randomBool)")
+		let random = StaticClass.randomIndexpath(upperLimit: upperLimit)
+		if random == index{
+			print("Match INDEX")
 			if  DataManager.shared.purchasedGirthsAndSkinfilds() { print("something purchased") } else {
 				if interstitial.isReady {
 					interstitial.present(fromRootViewController: viewcontroller)
+					
 				} else {
 					print("Ad wasn't ready")
 				}
@@ -100,7 +105,7 @@ extension AddMobManager : GADInterstitialDelegate {
 		}
 	}
 	
-	func injectInterstitial () {
+	func injectInterstitial () { 
 		interstitial = createAndLoadInterstitial()
 	}
 	
@@ -114,20 +119,6 @@ extension AddMobManager : GADInterstitialDelegate {
 	func interstitialDidDismissScreen(_ ad: GADInterstitial) {
 		interstitial = createAndLoadInterstitial()
 	}
-//
-//	func isShouldShowInterstitial() -> Bool{
-//		if showInterstitial {
-//			return true
-//		} else {
-//			return false
-//		}
-//	}
-//	
-//	func interstitialDidDismissScreen(_ ad: GADInterstitial) {
-//		showInterstitial = true
-//		 createAndLoadInterstitial()
-//	}
-	
-	 
+ 
 	
 }

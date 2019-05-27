@@ -53,9 +53,7 @@ class ProductCell: UITableViewCell {
     }
     
     override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        print("qwertyuio")
+        super.layoutSubviews() 
     }
     
     override func prepareForReuse() {

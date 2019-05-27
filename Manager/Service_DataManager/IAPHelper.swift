@@ -23,11 +23,10 @@ open class IAPHelper: NSObject  {
     
     private override init() {
         super.init()
-        SKPaymentQueue.default().add(self)
-        print("INIT")
+        SKPaymentQueue.default().add(self) 
     }
     func getProductes(productIds: Set<ProductIdentifier>) {
-        print("HHHHHHH")
+		
         productIdentifiers = productIds
         for productIdentifier in productIds {
             let purchased = UserDefaults.standard.bool(forKey: productIdentifier)
@@ -159,9 +158,7 @@ extension IAPHelper: SKPaymentTransactionObserver {
         guard let identifier = identifier else { return }
         
         if identifier == "fred76.com.ifit.bundle.unlock" {
-            print("ENTRO")
-            
-            print("AAAAAA \(UserDefaults.standard.bool(forKey: "fred76.com.ifit.bundle.unlock"))")
+			
            purchasedProductIdentifiers.insert("fred76.com.ifit.girths.unlock")
            purchasedProductIdentifiers.insert("fred76.com.ifit.skinFolds.unlock")
             purchasedProductIdentifiers.insert("fred76.com.ifit.supplement.unlock")

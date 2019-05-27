@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PageMenuBodyMeasurment: UIViewController {
+class PageMenuBodyMeasurment: UIViewController, CAPSPageMenuDelegate {
     
     @IBOutlet var contentView: UIView!
     var pageMenu : CAPSPageMenu?
@@ -28,7 +28,6 @@ class PageMenuBodyMeasurment: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let storyboardGirth = UIStoryboard(name: "GirthStoryboard", bundle: nil)
         let controllerGirth : UIViewController = (storyboardGirth.instantiateViewController(withIdentifier: "MeasureMainController") as? GirthsMainController)!
         controllerGirth.title = "Body Girths"
@@ -47,25 +46,21 @@ class PageMenuBodyMeasurment: UIViewController {
         if UserDefaultsSettings.biologicalSexSet == "Male" {
             controllerJackson_3.title = "Jackson & Polloc 3"
             controllerJackson_3.plicheMethod = .jackson_3_Man
-            controllerArray.append(controllerJackson_3)
         } else {
             controllerJackson_3.title = "Jackson & Polloc 3"
             controllerJackson_3.plicheMethod = .jackson_3_Woman
-            controllerArray.append(controllerJackson_3)
         }
-        
+        controllerArray.append(controllerJackson_3)
         let controllerSloan : PlicheMoethodController = (storyboardSkinFold.instantiateViewController(withIdentifier: "PlicheMoethodController") as? PlicheMoethodController)!
         _ = StaticClass.didLoadView(v: controllerSloan)
         if UserDefaultsSettings.biologicalSexSet == "Male" {
             controllerSloan.title = "Sloan"
             controllerSloan.plicheMethod = .sloanMen
-            controllerArray.append(controllerSloan)
         } else {
             controllerSloan.title = "Sloan"
             controllerSloan.plicheMethod = .sloanWoman
-            controllerArray.append(controllerSloan)
         }
-        
+        controllerArray.append(controllerSloan)
         let controllerDurnin : PlicheMoethodController = (storyboardSkinFold.instantiateViewController(withIdentifier: "PlicheMoethodController") as? PlicheMoethodController)!
         _ = StaticClass.didLoadView(v: controllerDurnin)
         controllerDurnin.title = "Durnin e Womersley"
@@ -90,11 +85,21 @@ class PageMenuBodyMeasurment: UIViewController {
          pageMenu = CAPSPageMenu(viewControllers: controllerArray, frame: CGRect(x: 0.0, y: 0, width: self.contentView.frame.width, height: self.contentView.frame.height), pageMenuOptions: parameters)
 		pageMenu?.currentOrientationIsPortrait = true
         self.addChild(pageMenu!)
+		
+		pageMenu?.delegate = self
         self.contentView.addSubview(pageMenu!.view)
         self.pageMenu?.didMove(toParent: self)
     }
-    
-   
+	
+	
+	
+	func didMoveToPage(_ controller: UIViewController, index: Int) {
+		if index > 0 {
+			AddMobManager.shared.showInterstitialWhenSelect(viewcontroller: self, upperLimit: 4, index: index)
+		}
+	}
+	
+
 }
 
 

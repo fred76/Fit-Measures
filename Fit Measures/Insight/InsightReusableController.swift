@@ -48,9 +48,14 @@ class InsightReusableController: UIViewController, UICollectionViewDelegate, UIC
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-		AppStoreReviewManager.requestReviewIfAppropriate()
-		AddMobManager.shared.injectInterstitial()
-		AddMobManager.shared.showInterstitialWhenSelect(viewcontroller: self)
+		AppStoreReviewManager.requestReviewIfAppropriate() 
+//		if ConsentManager.shared.consentState(for: ConsentManager.shared.appAnalyticsDisclamer) == .unknown {
+//			labelINFO.backgroundColor = .yellow
+//		} else if ConsentManager.shared.consentState(for: ConsentManager.shared.appAnalyticsDisclamer) == .notProvided {
+//			labelINFO.backgroundColor = .red
+//		} else {
+//			labelINFO.backgroundColor = .green
+//		}
 		switch graphSelection {
 		case .Girths:
 			if !UserDefaults.standard.bool(forKey: "fred76.com.ifit.girths.unlock") {
@@ -99,7 +104,7 @@ class InsightReusableController: UIViewController, UICollectionViewDelegate, UIC
 		parentNavigationController?.navigationBar.barTintColor = .black
 		myCollectionView.reloadData()
 	}
-	
+	 
 	
 	override var preferredStatusBarStyle: UIStatusBarStyle {
 		return .lightContent
@@ -195,13 +200,10 @@ class InsightReusableController: UIViewController, UICollectionViewDelegate, UIC
 }
 
 extension InsightReusableController {
-	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		print("PREPARE -)")
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) { 
 		if segue.identifier == "ToChart"{
-			print("ToChart -)")
 			let cell = sender as! InsightCustomCell
-			if let indexPath = myCollectionView.indexPath(for: cell) {
-				print("indexPath -)")
+			if let indexPath = myCollectionView.indexPath(for: cell) { 
 				let controller = segue.destination as! ChartViewController
 				switch graphSelection {
 				case .Girths:

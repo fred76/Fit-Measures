@@ -96,8 +96,7 @@ open class Snapshot: NSObject {
         do {
             let trimCharacterSet = CharacterSet.whitespacesAndNewlines
             deviceLanguage = try String(contentsOf: path, encoding: .utf8).trimmingCharacters(in: trimCharacterSet)
-            app.launchArguments += ["-AppleLanguages", "(\(deviceLanguage))"]
-            print(">>>>>>> \(deviceLanguage)")
+            app.launchArguments += ["-AppleLanguages", "(\(deviceLanguage))"] 
         } catch {
             print("Couldn't detect/set language...")
         }
@@ -116,11 +115,9 @@ open class Snapshot: NSObject {
             locale = try String(contentsOf: path, encoding: .utf8).trimmingCharacters(in: trimCharacterSet)
         } catch {
             print("Couldn't detect/set locale...")
-        }
-        print(">>>>> locale 222222 \(locale)")
+        } 
         if locale.isEmpty && !deviceLanguage.isEmpty {
             locale = Locale(identifier: deviceLanguage).identifier
-            print(">>>>> locale \(locale)")
         }
         
         if !locale.isEmpty {

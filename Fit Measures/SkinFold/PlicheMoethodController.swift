@@ -19,7 +19,7 @@ private struct ItemDef {
 
 
 class PlicheMoethodController: UIViewController , UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIPopoverPresentationControllerDelegate/*,GADInterstitialDelegate*/ {
-	
+ 
 	private var itemDef : [ItemDef]!
 	@IBOutlet weak var measureCollctionView: UICollectionView!
 	var bodyPlichePoint = BodyPlichePoints.tricipite
@@ -48,8 +48,7 @@ class PlicheMoethodController: UIViewController , UICollectionViewDelegate, UICo
 	var dictPlicheValue : [String:Double] = [:]
 	// var interstitial: GADInterstitial!
 	var showInterstitial : Bool = false
-	@IBOutlet var weightLabel: UILabel!
-	
+	@IBOutlet var weightLabel: UILabel! 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		self.measureCollctionView.delegate = self
@@ -103,9 +102,7 @@ class PlicheMoethodController: UIViewController , UICollectionViewDelegate, UICo
 	//        }
 	//    }
 	
-	override func viewWillAppear(_ animated: Bool) {
-		AddMobManager.shared.injectInterstitial()
-		AddMobManager.shared.showInterstitialWhenSelect(viewcontroller: self)
+	override func viewWillAppear(_ animated: Bool) { 
 		isAddedPliche = DataManager.shared.plicheForTodayIsVavailable()
 		self.navigationItem.rightBarButtonItem?.isEnabled = false
 		dictPlicheValue.removeAll()
@@ -118,6 +115,8 @@ class PlicheMoethodController: UIViewController , UICollectionViewDelegate, UICo
 	override var preferredStatusBarStyle: UIStatusBarStyle {
 		return .lightContent
 	}
+	
+	
 	
 	func bodyWeightWarning(){
 		if let weightAvailable = DataManager.shared.getLastMeasureAvailable() {

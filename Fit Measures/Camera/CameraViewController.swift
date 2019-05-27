@@ -235,7 +235,7 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
                 // permission dialog not yet presented, request authorization
                 AVCaptureDevice.requestAccess(for: AVMediaType.video,
                                               completionHandler: { (granted:Bool) -> Void in
-                                                if granted { print("eeeeee") }
+                                                if granted { print("granted") }
                                                 else {
                                                     // user denied, nothing much to do
                                                     
@@ -265,10 +265,10 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
                                                     
                                                 }
                 })
-            case .authorized: print("D"); return
-            case .denied : print("D"); return
-            case .restricted: print("D"); return
-            default: print("D"); return
+            case .authorized: return
+            case .denied : return
+            case .restricted: return
+            default: return
             }
         default : break
         }

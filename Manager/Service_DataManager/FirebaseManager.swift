@@ -44,7 +44,7 @@ class FirebaseManager: NSObject {
             analyticsCollectionPermision(set: UserDefaultsSettings.GDPRStatusSet)
             print("Firebase consent .provided")
             print("UserDefaultsSettings.GDPRStatusSet - \(UserDefaultsSettings.GDPRStatusSet)")
-        }
+        } 
         
     }
     

@@ -137,8 +137,8 @@
 "GDPRPRETEXT" = "Help Girths & Caliper improve its service by automatically sending diagnostic and data usage. Some data may include details about hardware and operating system specifications, performance statistics. None of the collected information identifies you personally. Age, biological sex and location are collected by age range and regional location.  You can review this information by going to Settings on your iOS device, tapping Girths & Caliper, tapping Analytics";
 "gdprAlertTXT" = "Privacy Consent";
 "gdprAlertBody" = "Allow Diagnostic Data Collection";
-"gdprOK" = "Ok share data";
-"gdprNotOK" = "Not share data";
+"gdprOK" = "Ok";
+"gdprNotOK" = "Cancel";
 "HELTHTXT" = "Girths & Caliper would like to acces and update your Helth";
 "LOCimportGirthsBODY" = "To import buy Girths package or All Features package";
 "LOCimportskinFoldsBODY" = "To import buy Skin Folds package or All Features package";

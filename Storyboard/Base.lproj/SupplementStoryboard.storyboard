@@ -50,7 +50,10 @@
                                                             </constraints>
                                                         </view>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AAA2" translatesAutoresizingMaskIntoConstraints="NO" id="HFj-SJ-UVx">
-                                                            <rect key="frame" x="8" y="108" width="61" height="62"/>
+                                                            <rect key="frame" x="8" y="108" width="63" height="62"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="HFj-SJ-UVx" secondAttribute="height" multiplier="63:62" id="nDV-gB-ItW"/>
+                                                            </constraints>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="JUK-FO-hTs">
                                                             <rect key="frame" x="79" y="40" width="287" height="63"/>
@@ -104,7 +107,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="cmt-Tg-v7Z">
-                                                            <rect key="frame" x="79" y="111" width="287" height="63"/>
+                                                            <rect key="frame" x="81" y="111" width="287" height="63"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="nLE-pG-yJU">
                                                                     <rect key="frame" x="0.0" y="0.0" width="287" height="31.5"/>
@@ -157,8 +160,8 @@
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.26663362979999999" green="0.26668566469999999" blue="0.26663035149999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="cmt-Tg-v7Z" secondAttribute="bottom" constant="4" id="52n-MI-jRx"/>
                                                         <constraint firstItem="HFj-SJ-UVx" firstAttribute="top" secondItem="ZSq-tY-I3M" secondAttribute="bottom" constant="5" id="85m-uw-yln"/>
-                                                        <constraint firstItem="cmt-Tg-v7Z" firstAttribute="height" secondItem="JUK-FO-hTs" secondAttribute="height" id="AsC-ge-0xW"/>
                                                         <constraint firstAttribute="bottom" secondItem="HFj-SJ-UVx" secondAttribute="bottom" constant="8" id="F4k-Wj-HNK"/>
                                                         <constraint firstItem="NoP-B2-Z5m" firstAttribute="top" secondItem="g5s-6d-jDN" secondAttribute="top" constant="8" id="FvW-CG-Eoe"/>
                                                         <constraint firstItem="HFj-SJ-UVx" firstAttribute="leading" secondItem="g5s-6d-jDN" secondAttribute="leading" constant="8" id="I20-If-omZ"/>
@@ -169,8 +172,8 @@
                                                         <constraint firstItem="cmt-Tg-v7Z" firstAttribute="leading" secondItem="HFj-SJ-UVx" secondAttribute="trailing" constant="10" id="fgw-eo-0Vm"/>
                                                         <constraint firstItem="NoP-B2-Z5m" firstAttribute="leading" secondItem="g5s-6d-jDN" secondAttribute="leading" constant="20" id="gjv-9E-jnm"/>
                                                         <constraint firstItem="JUK-FO-hTs" firstAttribute="leading" secondItem="ZSq-tY-I3M" secondAttribute="trailing" constant="8" id="lCk-6z-YHg"/>
-                                                        <constraint firstItem="cmt-Tg-v7Z" firstAttribute="width" secondItem="JUK-FO-hTs" secondAttribute="width" id="lT9-2w-Gtn"/>
-                                                        <constraint firstItem="cmt-Tg-v7Z" firstAttribute="centerX" secondItem="JUK-FO-hTs" secondAttribute="centerX" id="qbJ-oc-CYg"/>
+                                                        <constraint firstAttribute="trailing" secondItem="cmt-Tg-v7Z" secondAttribute="trailing" constant="6" id="s1R-J1-vK6"/>
+                                                        <constraint firstItem="HFj-SJ-UVx" firstAttribute="width" secondItem="ZSq-tY-I3M" secondAttribute="width" id="sCr-eH-D7u"/>
                                                         <constraint firstItem="ZSq-tY-I3M" firstAttribute="leading" secondItem="g5s-6d-jDN" secondAttribute="leading" constant="8" id="sq2-eX-Oco"/>
                                                         <constraint firstItem="JUK-FO-hTs" firstAttribute="height" secondItem="ZSq-tY-I3M" secondAttribute="height" id="vCU-RR-81b"/>
                                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="NoP-B2-Z5m" secondAttribute="trailing" constant="20" symbolic="YES" id="wUZ-py-19Z"/>
@@ -519,15 +522,15 @@
                                                     <rect key="frame" x="8" y="0.0" width="398" height="83"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="WHh-IO-apW">
-                                                            <rect key="frame" x="8" y="4" width="382" height="75"/>
+                                                            <rect key="frame" x="8" y="8.5" width="382" height="66"/>
                                                         </stackView>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.16468328239999999" green="0.16471883649999999" blue="0.16468104720000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstItem="WHh-IO-apW" firstAttribute="leading" secondItem="fUT-qr-JTN" secondAttribute="leading" constant="8" id="209-rb-vOZ"/>
                                                         <constraint firstAttribute="trailing" secondItem="WHh-IO-apW" secondAttribute="trailing" constant="8" id="Rj5-7D-OY5"/>
-                                                        <constraint firstItem="WHh-IO-apW" firstAttribute="centerY" secondItem="fUT-qr-JTN" secondAttribute="centerY" id="YLi-K8-d0Y"/>
-                                                        <constraint firstItem="WHh-IO-apW" firstAttribute="top" secondItem="fUT-qr-JTN" secondAttribute="top" constant="4" id="bqc-gc-Dc5"/>
+                                                        <constraint firstItem="WHh-IO-apW" firstAttribute="centerY" secondItem="fUT-qr-JTN" secondAttribute="centerY" id="cGF-kK-aLM"/>
+                                                        <constraint firstItem="WHh-IO-apW" firstAttribute="height" secondItem="fUT-qr-JTN" secondAttribute="height" multiplier="0.8" id="iNK-7Z-Eg3"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -1392,7 +1395,7 @@
         <!--Supplements-->
         <scene sceneID="b6E-n1-Akp">
             <objects>
-                <navigationController title="Supplements" id="zcX-uU-7XM" sceneMemberID="viewController">
+                <navigationController title="Supplements" id="zcX-uU-7XM" customClass="NavController" customModule="iFit_Girths___Caliper" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Supplements" image="Supplement" id="YCA-OF-KmQ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="MFf-2T-jDF">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -1416,6 +1419,6 @@
         <image name="Supplement" width="31" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7na-GI-Sf9"/>
+        <segue reference="9ik-ja-he3"/>
     </inferredMetricsTieBreakers>
 </document>
